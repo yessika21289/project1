@@ -19,7 +19,7 @@ class MyAdmin extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	function index()
 	{
 		$user = $this->session->userdata('logged_in');
 
@@ -36,7 +36,7 @@ class MyAdmin extends CI_Controller
 		}
 	}
 
-	public function to($link) {
+	function to($link) {
 		$data['menu_active'] = $link;
 		$this->load->view('admin_header');
 		$this->load->view('admin_left_menu', $data);
@@ -44,7 +44,7 @@ class MyAdmin extends CI_Controller
 		$this->load->view('admin_footer');
 	}
 
-	public function login() {
+	function login() {
 		$username = $this->security->xss_clean($this->input->post('username'));
 
 		if (!empty($username)) {
@@ -67,7 +67,7 @@ class MyAdmin extends CI_Controller
 		}
 	}
 
-	public function logout() {
+	function logout() {
 		$this->session->sess_destroy();
 		redirect(base_url() . 'MyAdmin');
 	}

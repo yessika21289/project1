@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e61c0d25-fb3f-44cc-8a27-6cd57fd44bfe" name="Default" comment="Admin page theme (done).&#10;About Us (done).&#10;Login / logout (done).&#10;News (on progress).">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/404.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/News_model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/blank.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/login.php" />
-      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\application\views\404.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\application\views\blank.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\application\views\login.html" afterPath="" />
-      <change type="MOVED" beforePath="C:\laragon\www\kawandasawolu\application\views\profile.html" afterPath="$PROJECT_DIR$/application/views/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/AboutUs.php" afterPath="$PROJECT_DIR$/application/controllers/AboutUs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/About_us_model.php" afterPath="$PROJECT_DIR$/application/models/About_us_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/News.php" afterPath="$PROJECT_DIR$/application/controllers/News.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin_about_us.php" afterPath="$PROJECT_DIR$/application/views/admin_about_us.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin_add_news.php" afterPath="$PROJECT_DIR$/application/views/admin_add_news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin_left_menu.php" afterPath="$PROJECT_DIR$/application/views/admin_left_menu.php" />
+    <list default="true" id="e61c0d25-fb3f-44cc-8a27-6cd57fd44bfe" name="Default" comment="">
+      <change type="MOVED" beforePath="C:\laragon\www\kawandasawolu\application\controllers\Myadmin.php" afterPath="$PROJECT_DIR$/application/controllers/MyAdmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/News_model.php" afterPath="$PROJECT_DIR$/application/models/News_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin_news.php" afterPath="$PROJECT_DIR$/application/views/admin_news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/basic_table.php" afterPath="$PROJECT_DIR$/application/views/basic_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buttons.html" afterPath="$PROJECT_DIR$/application/views/buttons.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/chart-chartjs.html" afterPath="$PROJECT_DIR$/application/views/chart-chartjs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/form_validation.php" afterPath="$PROJECT_DIR$/application/views/form_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/general.html" afterPath="$PROJECT_DIR$/application/views/general.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/grids.html" afterPath="$PROJECT_DIR$/application/views/grids.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/widgets.html" afterPath="$PROJECT_DIR$/application/views/widgets.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kawandasawolu.iws" />
@@ -49,17 +30,30 @@
       <file leaf-file-name="News_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/News_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.25">
-              <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+            <state vertical-scroll-proportion="-6.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="News.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyAdmin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40449437">
+              <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
+              <folding>
+                <element signature="e#111#605#0#PHP" expanded="false" />
+                <marker date="1456675651688" expanded="true" signature="1584:1671" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49438202">
+            <state vertical-scroll-proportion="-40.25">
               <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding />
             </state>
@@ -69,8 +63,8 @@
       <file leaf-file-name="admin_news.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin_news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.75">
-              <caret line="59" column="57" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
+            <state vertical-scroll-proportion="-1.5">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,9 +109,9 @@
         <option value="$PROJECT_DIR$/application/views/admin_add_news.php" />
         <option value="$PROJECT_DIR$/application/controllers/AboutUs.php" />
         <option value="$PROJECT_DIR$/application/controllers/MyAdmin.php" />
-        <option value="$PROJECT_DIR$/application/models/News_model.php" />
-        <option value="$PROJECT_DIR$/application/views/admin_news.php" />
         <option value="$PROJECT_DIR$/application/controllers/News.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_news.php" />
+        <option value="$PROJECT_DIR$/application/models/News_model.php" />
       </list>
     </option>
   </component>
@@ -313,7 +307,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455901088658</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Admin news management (done).">
+      <created>1456676576831</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1456676576831</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -323,6 +323,7 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2647504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -331,7 +332,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -356,7 +356,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Admin page theme" />
     <MESSAGE value="Admin page theme (done).&#10;About Us (done).&#10;Login / logout (done).&#10;News (on progress)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin page theme (done).&#10;About Us (done).&#10;Login / logout (done).&#10;News (on progress)." />
+    <MESSAGE value="Admin news management (done)." />
+    <MESSAGE value="Admin news management (enhanced)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin news management (enhanced)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -627,6 +629,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7303371">
           <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -634,6 +637,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.25">
           <caret line="25" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -641,6 +645,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30149812">
           <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -664,6 +669,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19101124">
           <caret line="849" column="50" selection-start-line="849" selection-start-column="50" selection-end-line="849" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -691,17 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23595506">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="e#111#605#0#PHP" expanded="false" />
-            <marker date="1456675651688" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/AboutUs.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7078652">
@@ -710,27 +705,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/News_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25">
-          <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin_news.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.75">
-          <caret line="59" column="57" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
+        <state vertical-scroll-proportion="-1.5">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49438202">
+        <state vertical-scroll-proportion="-40.25">
           <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/News_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40449437">
+          <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
+          <folding>
+            <element signature="e#111#605#0#PHP" expanded="false" />
+            <marker date="1456675651688" expanded="true" signature="1584:1671" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

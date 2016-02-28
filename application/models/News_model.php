@@ -9,8 +9,8 @@ class News_model extends CI_Model
 
     function getData($news_id = NULL) {
         if(!empty($news_id)) $this->db->where('id', $news_id);
+        $this->db->order_by('updated_at', 'desc');
         $query = $this->db->get('news');
-        $this->db->order_by('updated_at', 'DESC');
         return $query->result();
     }
 
@@ -48,7 +48,12 @@ class News_model extends CI_Model
     }
 
     function set_active($post) {
-        $data['is_active'] = $post['is_active'];
+        $data = array(
+            'is_active' => $post['is_active'],
+            'updated_at' => time(),
+            'updated_by' => 'superadmin'
+        );
+
         $this->db->where('id', $post['news_id']);
         $update = $this->db->update('news', $data);
         if($data['is_active'] == 1) return 'published';
