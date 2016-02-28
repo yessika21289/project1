@@ -19,21 +19,66 @@ class News extends CI_Controller
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index()
+    function index()
     {
+        $data['added_id'] = $this->session->flashdata('added_id');
+        $data['updated_id'] = $this->session->flashdata('updated_id');
+        $data['set_active'] = $this->session->flashdata('set_active');
+        $data['set_active_id'] = $this->session->flashdata('set_active_id');
+        $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
+
+        $this->load->model('News_model');
+        $news = $this->News_model->getData();
+        if(!empty($news)) $data['news'] = $news;
+
         $data['menu_active'] = 'news';
+
         $this->load->view('admin_header');
         $this->load->view('admin_left_menu', $data);
         $this->load->view('admin_news');
         $this->load->view('admin_footer');
     }
 
-    public function add()
+    function add($news_id = NULL)
     {
-        $data['menu_active'] = 'add_news';
-        $this->load->view('admin_header');
-        $this->load->view('admin_left_menu', $data);
-        $this->load->view('admin_add_news');
-        $this->load->view('admin_footer');
+        $this->load->model('News_model');
+
+        if(!empty($_POST)) {
+            if(empty($_POST['news_id'])) {
+                $added_id = $this->News_model->add($_POST);
+                if($added_id) $this->session->set_flashdata('added_id', $added_id);
+            }
+            else {
+                $updated_id = $this->News_model->update($_POST);
+                if($updated_id) $this->session->set_flashdata('updated_id', $updated_id);
+            }
+            redirect('News');
+        } elseif($this->input->get('is_active') != NULL) {
+            $post['news_id'] = $this->input->get('id');
+            $post['is_active'] = $this->input->get('is_active');
+            $set_active = $this->News_model->set_active($post);
+            $this->session->set_flashdata('set_active', $set_active);
+            $this->session->set_flashdata('set_active_id', $post['news_id']);
+
+            redirect('News');
+        } else {
+            if(!empty($news_id)) {
+                $data['news'] = $this->News_model->getData($news_id);
+            }
+            $data['menu_active'] = 'add_news';
+            $this->load->view('admin_header');
+            $this->load->view('admin_left_menu', $data);
+            $this->load->view('admin_add_news');
+            $this->load->view('admin_footer');
+        }
+    }
+
+    function delete($news_id = NULL) {
+        $this->load->model('News_model');
+        if(!empty($news_id)) {
+            $delete = $this->News_model->delete($news_id);
+            if($delete) $this->session->set_flashdata('delete_confirm', $delete);
+            redirect('News');
+        } else redirect('News');
     }
 }

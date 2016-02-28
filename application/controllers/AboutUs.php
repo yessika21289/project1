@@ -19,7 +19,7 @@ class AboutUs extends CI_Controller
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index()
+    function index()
     {
         $data['update_confirm'] = $this->session->flashdata('update_confirm');
         $this->load->model('About_us_model');
@@ -40,9 +40,10 @@ class AboutUs extends CI_Controller
         $this->load->model('About_us_model');
         if(isset($_POST['id_about_us'])) {
             $updated = $this->About_us_model->update($_POST);
-        } else $updated = $this->About_us_model->add($_POST);
+        } else $added = $this->About_us_model->add($_POST);
 
-        $this->session->set_flashdata('update_confirm', $updated);
+        if(!empty($updated)) $this->session->set_flashdata('update_confirm', $updated);
+        elseif(!empty($added)) $this->session->set_flashdata('add_confirm', $added);
         redirect('AboutUs');
 //        $data['menu_active'] = 'about_us';
 //        $this->load->view('admin_header');

@@ -41,7 +41,7 @@
                 </a>
                 <ul class="sub">
                     <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/form_component">Form Elements</a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin">Form Validation</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/form_validation">Form Validation</a></li>
                 </ul>
             </li>
 
@@ -52,7 +52,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="basic_table.html">Basic Table</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/basic_table">Basic Table</a></li>
                 </ul>
             </li>
 
@@ -63,10 +63,10 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="profile.html">Profile</a></li>
-                    <li><a class="" href="login.html"><span>Login Page</span></a></li>
-                    <li><a class="" href="blank.html">Blank Page</a></li>
-                    <li><a class="" href="404.html">404 Error</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/profile">Profile</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/login"><span>Login Page</span></a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/basic_table/blank">Blank Page</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/404">404 Error</a></li>
                 </ul>
             </li>
 

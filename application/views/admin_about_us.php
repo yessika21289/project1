@@ -24,6 +24,18 @@
                 </div>
             </div>
         </div>
+        <?php elseif(isset($add_confirm) && $add_confirm == 1): ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>Success!</strong> About us has been added.
+                    </div>
+                </div>
+            </div>
         <?php endif; ?>
 
         <div class="row">

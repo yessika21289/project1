@@ -12,7 +12,18 @@ class About_us_model extends CI_Model
         return $query->result();
     }
 
-    function add($post) {}
+    function add($post) {
+        $about = trim(strip_tags($post['about_us'], $this->allowed_tags));
+        $data = array(
+            'about' => $about,
+            'created_at' => time(),
+            'created_by' => 'superadmin',
+            'updated_at' => time(),
+            'updated_by' => 'superadmin'
+        );
+        $insert = $this->db->insert('about_us', $data);
+        return $insert;
+    }
 
     function update($post) {
         $about = trim(strip_tags($post['about_us'], $this->allowed_tags));
