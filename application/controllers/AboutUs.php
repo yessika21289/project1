@@ -21,10 +21,33 @@ class AboutUs extends CI_Controller
      */
     public function index()
     {
+        $data['update_confirm'] = $this->session->flashdata('update_confirm');
+        $this->load->model('About_us_model');
+        $about_us = $this->About_us_model->getData();
+        if(!empty($about_us)) {
+            $data['id_about_us'] = $about_us[0]->id;
+            $data['about_us'] = $about_us[0]->about;
+        }
+
         $data['menu_active'] = 'about_us';
         $this->load->view('admin_header');
         $this->load->view('admin_left_menu', $data);
         $this->load->view('admin_about_us');
         $this->load->view('admin_footer');
+    }
+
+    function update() {
+        $this->load->model('About_us_model');
+        if(isset($_POST['id_about_us'])) {
+            $updated = $this->About_us_model->update($_POST);
+        } else $updated = $this->About_us_model->add($_POST);
+
+        $this->session->set_flashdata('update_confirm', $updated);
+        redirect('AboutUs');
+//        $data['menu_active'] = 'about_us';
+//        $this->load->view('admin_header');
+//        $this->load->view('admin_left_menu', $data);
+//        $this->load->view('admin_about_us');
+//        $this->load->view('admin_footer');
     }
 }

@@ -38,6 +38,8 @@
 <script src="<?php echo base_url(); ?>js/sparklines.js"></script>
 <script src="<?php echo base_url(); ?>js/charts.js"></script>
 <script src="<?php echo base_url(); ?>js/jquery.slimscroll.min.js"></script>
+<script src="<?php echo base_url(); ?>ckeditor/ckeditor.js"></script>
+
 <script>
 
     //knob

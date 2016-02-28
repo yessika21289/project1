@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e61c0d25-fb3f-44cc-8a27-6cd57fd44bfe" name="Default" comment="Admin page theme (done).&#10;About Us (done).&#10;Login / logout (done).&#10;News (on progress).">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/admin_avatar.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/link/images/anchor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/images/arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/images/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/magicline/images/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/assets/inlineall/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/about/dialogs/logo_ckeditor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/images/mini.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/image/images/noimage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.fla" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/assets/sample.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/fakeobjects/images/spacer.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/AboutUs.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/About_us_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/CHANGES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/scayt/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/My_admin_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/News.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/scayt/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/about/dialogs/about.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_about_us.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_add_news.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_left_menu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin_news.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/af.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/ajax.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/link/dialogs/anchor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/api.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/appendto.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/basic_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/bn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/bs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/build-config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/ciframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/ckeditor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/contents.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/cy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/cy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/pastefromword/filter/default.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/dialog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/dialog/dialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/dialog/dialogDefinition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/dialog_ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/dialog_ie7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/dialog_ie8.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/dialog_iequirks.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/dialog_opera.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/divreplace.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/editor.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/editor_gecko.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/editor_ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/editor_ie7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/editor_ie8.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/editor_iequirks.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/en-au.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/en-ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/en-gb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/enterkey/enterkey.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/eo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/eo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/fo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/form_component.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/form_validation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/fr-ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/wysiwygarea/fullpage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/gl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/gu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/hi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/image/dialogs/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/inlineall.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/inlinebycode.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/is.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ka.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kawandasawolu.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/km.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ku.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ku.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/assets/uilanguages/languages.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/link/dialogs/link.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/magicline/magicline.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/mk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/mn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ms.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/dialog/assets/my_dialog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/no.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/no.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/scayt/dialogs/options.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/htmlwriter/outputforflash.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/htmlwriter/outputhtml.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/assets/outputxhtml/outputxhtml.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/clipboard/dialogs/paste.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/assets/posteddata.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/pt-br.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/skins/moono/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/readonly.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/replacebyclass.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/replacebycode.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/sample.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/assets/sample.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/sample.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/sample_posteddata.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/sl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/specialchar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/sr-latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/sr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/styles.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/tabindex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/table/dialogs/table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/tabletools/dialogs/tableCell.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/scayt/dialogs/toolbar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/plugins/toolbar/toolbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/ug.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ug.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/uicolor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/uilanguages.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/wsc.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/wsc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/samples/xhtmlstyle.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/zh-cn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ckeditor/lang/zh.js" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\application\views\basic_table.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\application\views\form_component.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\application\views\form_validation.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\CHANGES.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\build-config.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\ckeditor.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\config.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\contents.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\af.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ar.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\bg.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\bn.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\bs.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ca.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\cs.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\cy.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\da.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\de.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\el.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\en-au.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\en-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\en-gb.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\en.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\eo.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\es.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\et.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\eu.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\fa.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\fi.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\fo.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\fr-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\fr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\gl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\gu.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\he.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\hi.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\hr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\hu.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\is.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\it.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ja.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ka.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\km.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ko.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ku.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\lt.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\lv.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\mk.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\mn.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ms.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\nb.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\nl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\no.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\pl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\pt.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ro.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ru.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\sk.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\sl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\sr-latn.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\sr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\sv.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\th.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\tr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\ug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\uk.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\vi.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\lang\zh.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\about\dialogs\about.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\about\dialogs\logo_ckeditor.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\clipboard\dialogs\paste.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\dialog\dialogDefinition.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\fakeobjects\images\spacer.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\icons.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\image\dialogs\image.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\image\images\noimage.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\link\dialogs\anchor.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\link\dialogs\link.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\link\images\anchor.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\magicline\images\icon.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\pastefromword\filter\default.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\scayt\LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\scayt\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\scayt\dialogs\options.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\scayt\dialogs\toolbar.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\ca.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\cs.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\cy.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\de.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\el.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\en.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\eo.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\et.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\fa.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\fi.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\fr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\he.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\hr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\it.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\ku.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\lv.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\nb.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\nl.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\no.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\sk.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\sv.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\tr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\ug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\specialchar\dialogs\specialchar.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\table\dialogs\table.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\tabletools\dialogs\tableCell.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\wsc\LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\wsc\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\wsc\dialogs\ciframe.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\wsc\dialogs\wsc.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\plugins\wsc\dialogs\wsc.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\ajax.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\api.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\appendto.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\assets\inlineall\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\assets\outputxhtml\outputxhtml.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\assets\posteddata.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\assets\sample.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\assets\sample.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\assets\uilanguages\languages.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\divreplace.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\inlineall.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\inlinebycode.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\dialog\assets\my_dialog.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\dialog\dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\enterkey\enterkey.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\htmlwriter\outputforflash.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\htmlwriter\outputhtml.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\magicline\magicline.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\toolbar\toolbar.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\plugins\wysiwygarea\fullpage.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\readonly.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\replacebyclass.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\replacebycode.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\sample.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\sample.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\sample_posteddata.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\tabindex.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\uicolor.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\uilanguages.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\samples\xhtmlstyle.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\dialog.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\dialog_ie.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\dialog_ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\dialog_ie8.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\dialog_iequirks.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\dialog_opera.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\editor.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\editor_gecko.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\editor_ie.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\editor_ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\editor_ie8.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\editor_iequirks.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\icons.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\images\arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\images\close.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\images\mini.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\skins\moono\readme.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\laragon\www\kawandasawolu\assets\ckeditor\styles.js" afterPath="" />
+      <change type="MOVED" beforePath="C:\laragon\www\kawandasawolu\application\controllers\Myadmin.php" afterPath="$PROJECT_DIR$/application/controllers/MyAdmin.php" />
+      <change type="MOVED" beforePath="C:\laragon\www\kawandasawolu\application\views\dashboard.html" afterPath="$PROJECT_DIR$/application/views/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/404.html" afterPath="$PROJECT_DIR$/application/views/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/autoload.php" afterPath="$PROJECT_DIR$/application/config/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/blank.html" afterPath="$PROJECT_DIR$/application/views/blank.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buttons.html" afterPath="$PROJECT_DIR$/application/views/buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/chart-chartjs.html" afterPath="$PROJECT_DIR$/application/views/chart-chartjs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/general.html" afterPath="$PROJECT_DIR$/application/views/general.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/grids.html" afterPath="$PROJECT_DIR$/application/views/grids.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login.html" afterPath="$PROJECT_DIR$/application/views/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/profile.html" afterPath="$PROJECT_DIR$/application/views/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/widgets.html" afterPath="$PROJECT_DIR$/application/views/widgets.html" />
+    </list>
+    <ignored path="kawandasawolu.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="kawandasawolu" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="News.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35190615">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_news.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin_news.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.5">
+              <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_add_news.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin_add_news.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.0">
+              <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form_component.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/form_component.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.208333">
+              <caret line="26" column="36" selection-start-line="21" selection-start-column="30" selection-end-line="26" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/system/helpers/url_helper.php" />
+        <option value="$PROJECT_DIR$/application/views/index_admin.php" />
+        <option value="$PROJECT_DIR$/application/views/dashboard.html" />
+        <option value="$PROJECT_DIR$/application/controllers/Myadmin.php" />
+        <option value="$PROJECT_DIR$/application/models/admin.php" />
+        <option value="$PROJECT_DIR$/application/views/dashboard.php" />
+        <option value="$PROJECT_DIR$/application/views/form_component.php" />
+        <option value="$PROJECT_DIR$/system/core/Model.php" />
+        <option value="$PROJECT_DIR$/application/models/AboutUsModels.php" />
+        <option value="$PROJECT_DIR$/application/config/config.php" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/application/config/database.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_footer.php" />
+        <option value="$PROJECT_DIR$/application/models/About_us_models.php" />
+        <option value="$PROJECT_DIR$/application/models/About_us_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/AboutUs.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_about_us.php" />
+        <option value="$PROJECT_DIR$/application/config/autoload.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Login.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_login.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_header.php" />
+        <option value="$PROJECT_DIR$/application/controllers/MyAdmin.php" />
+        <option value="$PROJECT_DIR$/application/models/My_admin_model.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_news.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_left_menu.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/application/controllers/News.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_add_news.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckeditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kawandasawolu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ypki" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\kawandasawolu\application\views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e61c0d25-fb3f-44cc-8a27-6cd57fd44bfe" name="Default" comment="" />
+      <created>1455896336865</created>
+      <option name="number" value="Default" />
+      <updated>1455896336865</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Admin page theme">
+      <created>1455901088658</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1455901088658</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60750854" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Admin page theme" />
+    <MESSAGE value="Admin page theme (done).&#10;About Us (done).&#10;Login / logout (done).&#10;News (on progress)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin page theme (done).&#10;About Us (done).&#10;Login / logout (done).&#10;News (on progress)." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/views/admin_about_us.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_left_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="288" column="29" selection-start-line="288" selection-start-column="29" selection-end-line="288" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/form_component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="630" column="46" selection-start-line="630" selection-start-column="46" selection-end-line="630" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_about_us.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/form_component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="625" column="77" selection-start-line="625" selection-start-column="77" selection-end-line="625" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_about_us.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/form_component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="625" column="77" selection-start-line="625" selection-start-column="77" selection-end-line="625" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_about_us.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/form_component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="625" column="77" selection-start-line="625" selection-start-column="77" selection-end-line="625" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/helpers/url_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34649912">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/elegant-icons-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="4167" selection-start-line="30" selection-start-column="4157" selection-end-line="30" selection-end-column="4167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/chart-chartjs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7432675">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="291" column="45" selection-start-line="291" selection-start-column="45" selection-end-line="291" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/jquery-file-upload/server/php/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/database/DB_driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33213645">
+          <caret line="455" column="20" selection-start-line="455" selection-start-column="20" selection-end-line="455" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/database/drivers/mysql/mysql_driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7414722">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.791667">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ckeditor/ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33168316">
+          <caret line="17" column="297" selection-start-line="17" selection-start-column="297" selection-end-line="17" selection-end-column="297" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ckeditor/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38709676">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74157304">
+          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/About_us_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35955057">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6635514">
+          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="61" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36891386">
+          <caret line="279" column="73" selection-start-line="279" selection-start-column="73" selection-end-line="279" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5730337">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5505618">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="e#111#605#0#PHP" expanded="false" />
+            <marker date="1456588640933" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/AboutUs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17602997">
+          <caret line="24" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_about_us.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4166665">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/My_admin_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8108614">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8064516">
+          <caret line="4940" column="1" selection-start-line="4940" selection-start-column="1" selection-end-line="4940" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/form_component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.208333">
+          <caret line="26" column="36" selection-start-line="21" selection-start-column="30" selection-end-line="26" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.5">
+          <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_add_news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.0">
+          <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_left_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30149812">
+          <caret line="19" column="110" selection-start-line="19" selection-start-column="110" selection-end-line="19" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35190615">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

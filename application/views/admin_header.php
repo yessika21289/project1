@@ -270,14 +270,16 @@
 <!--                </li>-->
                 <!-- alert notification end-->
                 <!-- user login dropdown start-->
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle">
-                            <span class="profile-ava">
-                                <img alt="" src="<?php echo base_url(); ?>img/admin_avatar.png" width="35">
-                            </span>
+<!--                <li class="dropdown">-->
+                <li>
+<!--                    <a data-toggle="dropdown" class="dropdown-toggle">-->
+                        <span class="profile-ava">
+                            <img alt="" src="<?php echo base_url(); ?>img/admin_avatar.png" width="35">
+                        </span>
                         <span class="username">Welcome, Admin!</span>
+                        <a href="<?php echo base_url(); ?>MyAdmin/logout" class="username pull-right"><small>(Log Out)</small></a>
 <!--                        <b class="caret"></b>-->
-                    </a>
+<!--                    </a>-->
 <!--                    <ul class="dropdown-menu extended logout">-->
 <!--                        <div class="log-arrow-up"></div>-->
 <!--                        <li class="eborder-top">-->
@@ -294,9 +296,6 @@
 <!--                        </li>-->
 <!--                        <li>-->
 <!--                            <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="--><?php //echo base_url(); ?><!--documentation.html"><i class="icon_key_alt"></i> Documentation</a>-->
 <!--                        </li>-->
 <!--                        <li>-->
 <!--                            <a href="--><?php //echo base_url(); ?><!--documentation.html"><i class="icon_key_alt"></i> Documentation</a>-->
