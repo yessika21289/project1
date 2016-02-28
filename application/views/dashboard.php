@@ -52,7 +52,7 @@
             </div>
 
             <!--logo start-->
-            <a href="dashboard.html" class="logo">Nice <span class="lite">Admin</span></a>
+            <a href="dashboard.php" class="logo">Nice <span class="lite">Admin</span></a>
             <!--logo end-->
 
             <div class="nav search-row" id="top_menu">
@@ -314,7 +314,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="active">
-                      <a class="" href="dashboard.html">
+                      <a class="" href="dashboard.php">
                           <i class="icon_house_alt"></i>
                           <span>Dashboard</span>
                       </a>
@@ -396,7 +396,7 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
 					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="dashboard.html">Home</a></li>
+						<li><i class="fa fa-home"></i><a href="dashboard.php">Home</a></li>
 						<li><i class="fa fa-laptop"></i>Dashboard</li>						  	
 					</ol>
 				</div>
@@ -445,9 +445,9 @@
 						<div class="panel-heading">
 							<h2><i class="fa fa-map-marker red"></i><strong>Countries</strong></h2>
 							<div class="panel-actions">
-								<a href="dashboard.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-								<a href="dashboard.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-								<a href="dashboard.html#" class="btn-close"><i class="fa fa-times"></i></a>
+								<a href="dashboard.php#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+								<a href="dashboard.php#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+								<a href="dashboard.php#" class="btn-close"><i class="fa fa-times"></i></a>
 							</div>	
 						</div>
 						<div class="panel-body-map">
@@ -500,9 +500,9 @@
 						<div class="panel-heading">
 							<h2><i class="fa fa-flag-o red"></i><strong>Registered Users</strong></h2>
 							<div class="panel-actions">
-								<a href="dashboard.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-								<a href="dashboard.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-								<a href="dashboard.html#" class="btn-close"><i class="fa fa-times"></i></a>
+								<a href="dashboard.php#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+								<a href="dashboard.php#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+								<a href="dashboard.php#" class="btn-close"><i class="fa fa-times"></i></a>
 							</div>
 						</div>
 						<div class="panel-body">
