@@ -4939,3 +4939,35 @@ span.customSelect.changed {
 .customSelectInner {
     background:url(../img/customSelect-arrow.gif) no-repeat center right;
 }
+
+.song-cover {
+    border: groove;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+
+.edit-cover {
+    text-align: center;
+    background-color: #878787;
+    opacity: 0.8;
+    display: block;
+    width: 131px;
+    margin-top: -23px;
+    margin-left: 2px;
+    color: white;
+    font-weight: lighter;
+}
+
+.edit-cover:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #4c4c4c;
+}
+
+.form-song input {
+    margin-bottom: 15px;
+}
+
+.form-song .row {
+    margin-left: 20px;
+}
