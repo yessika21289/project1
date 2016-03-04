@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MyAdmin extends CI_Controller
+class Admin extends CI_Controller
 {
 
 	/**
@@ -48,11 +48,11 @@ class MyAdmin extends CI_Controller
 		$username = $this->security->xss_clean($this->input->post('username'));
 
 		if (!empty($username)) {
-			$this->load->model('My_admin_model');
-			$result = $this->My_admin_model->login();
+			$this->load->model('Admin_model');
+			$result = $this->Admin_model->login();
 
 			if ($result) {
-				redirect(base_url() . 'MyAdmin');
+				redirect(base_url() . 'Admin');
 			} else {
 				$msg =
 					"<div class='alert alert-danger' role='alert'>
@@ -60,15 +60,15 @@ class MyAdmin extends CI_Controller
 					<br/>Username/Password tidak cocok.
 				</div>";
 				$this->session->set_flashdata('login_failed_msg', $msg);
-				redirect(base_url() . 'MyAdmin');
+				redirect(base_url() . 'Admin');
 			}
 		} else {
-			redirect(base_url() . 'MyAdmin');
+			redirect(base_url() . 'Admin');
 		}
 	}
 
 	function logout() {
 		$this->session->sess_destroy();
-		redirect(base_url() . 'MyAdmin');
+		redirect(base_url() . 'Admin');
 	}
 }

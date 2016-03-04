@@ -4,7 +4,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
             <li <?php if($menu_active == 'dashboard') echo 'class="active"'; ?> >
-                <a class="" href="<?php echo base_url(); ?>MyAdmin">
+                <a class="" href="<?php echo base_url(); ?>Admin">
                     <i class="icon_house_alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -56,8 +56,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/form_component">Form Elements</a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/form_validation">Form Validation</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/form_component">Form Elements</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/form_validation">Form Validation</a></li>
                 </ul>
             </li>
 
@@ -68,7 +68,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/basic_table">Basic Table</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/basic_table">Basic Table</a></li>
                 </ul>
             </li>
 
@@ -79,10 +79,10 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/profile">Profile</a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/login"><span>Login Page</span></a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/basic_table/blank">Blank Page</a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>MyAdmin/to/404">404 Error</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/profile">Profile</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/login"><span>Login Page</span></a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/basic_table/blank">Blank Page</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/404">404 Error</a></li>
                 </ul>
             </li>
 

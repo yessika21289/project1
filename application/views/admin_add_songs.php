@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <h3 class="page-header"><i class="icon_group"></i> News</h3>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>MyAdmin">Home</a></li>
+                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>Admin">Home</a></li>
                     <li><i class="icon_group"></i>News</li>
                 </ol>
             </div>
