@@ -52,7 +52,7 @@
                                     <label class="control-label col-sm-1">Tag line:</label>
                                     <div class="col-sm-11">
                                         <input placeholder="Tagline" class="form-control"
-                                           type="text" name="tagline" value="<?php echo $tagline; ?>">
+                                           type="text" name="tagline" value="<?php if(!empty($tagline)) echo $tagline; ?>">
                                     </div>
                                 </div>
 

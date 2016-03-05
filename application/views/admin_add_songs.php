@@ -33,8 +33,9 @@
                                 <div class="form-group form-song">
                                     <div class="row">
                                         <div class="col-md-2 clearfix" style="width: 13.6667%;">
-                                           <img class="song-cover" src="<?php echo base_url(); ?>img/default_cover.png">
-                                           <a href="" class="edit-cover">Edit</a>
+                                            <img class="song-cover" src="<?php echo base_url(); ?>img/default_cover.png">
+                                            <input id="upload-cover" type="file"/>
+                                            <a href="" id="upload-cover-link" class="edit-cover">Edit</a>
                                         </div>
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="title"
@@ -70,3 +71,4 @@
 <!--main content end-->
 </section>
 <!-- container section start -->
+

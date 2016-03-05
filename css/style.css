@@ -4976,3 +4976,7 @@ span.customSelect.changed {
     margin-left: 15px;
     width: 703px;
 }
+
+#upload-cover {
+    display: none;
+}

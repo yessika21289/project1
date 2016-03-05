@@ -86,6 +86,12 @@
         });
     });
 
+    $(function(){
+        $("#upload-cover-link").on('click', function(e){
+            e.preventDefault();
+            $("#upload-cover:hidden").trigger('click');
+        });
+    });
 
 
 </script>
