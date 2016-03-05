@@ -14,8 +14,10 @@ class About_us_model extends CI_Model
 
     function add($post) {
         $about = trim(strip_tags($post['about_us'], $this->allowed_tags));
+
         $data = array(
             'about' => $about,
+            'tagline' => $post['tagline'],
             'created_at' => time(),
             'created_by' => 'superadmin',
             'updated_at' => time(),
@@ -29,6 +31,7 @@ class About_us_model extends CI_Model
         $about = trim(strip_tags($post['about_us'], $this->allowed_tags));
         $data = array(
             'about' => $about,
+            'tagline' => $post['tagline'],
             'updated_at' => time(),
             'updated_by' => 'superadmin'
         );

@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <h3 class="page-header"><i class="icon_group"></i> News</h3>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>Admin">Home</a></li>
+                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
                     <li><i class="icon_group"></i>News</li>
                 </ol>
             </div>
@@ -56,7 +56,7 @@
         <?php elseif(isset($delete_confirm)): ?>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="alert alert-danger alert-dismissible" role="alert">
+                    <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
@@ -106,19 +106,19 @@
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-primary" title="Edit"
-                                       href="<?php echo base_url() ?>News/add/<?php echo $row->id; ?>">
+                                       href="<?php echo base_url() ?>admin/News/add/<?php echo $row->id; ?>">
                                         <i class="icon_pencil-edit"></i></a>
                                     <?php if($row->is_active == 0): ?>
                                     <a class="btn btn-success" title="Publish"
-                                       href="<?php echo base_url() ?>News/add?id=<?php echo $row->id; ?>&is_active=1">
+                                       href="<?php echo base_url() ?>admin/News/add?id=<?php echo $row->id; ?>&is_active=1">
                                         <i class="icon_cloud-upload_alt"></i></a>
                                     <?php else: ?>
                                     <a class="btn btn-warning" title="Unpublish"
-                                       href="<?php echo base_url() ?>News/add?id=<?php echo $row->id; ?>&is_active=0" >
+                                       href="<?php echo base_url() ?>admin/News/add?id=<?php echo $row->id; ?>&is_active=0" >
                                         <i class="icon_cloud"></i></a>
                                     <?php endif; ?>
                                     <a class="btn btn-danger" title="Delete"
-                                       href="<?php echo base_url() ?>News/delete/<?php echo $row->id; ?>">
+                                       href="<?php echo base_url() ?>admin/News/delete/<?php echo $row->id; ?>">
                                         <i class="icon_trash_alt"></i></a>
                                 </div>
                             </td>

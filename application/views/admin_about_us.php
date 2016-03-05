@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <h3 class="page-header"><i class="icon_group"></i> About Us</h3>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>Admin">Home</a></li>
+                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
                     <li><i class="icon_group"></i>About Us</li>
                 </ol>
             </div>
@@ -47,15 +47,23 @@
                     </header>
                     <div class="panel-body">
                         <div class="form">
-                            <form action="<?php echo base_url(); ?>AboutUs/update" class="form-horizontal" method="post" enctype="multipart/form-data">
+                            <form action="<?php echo base_url(); ?>admin/AboutUs/update" class="form-horizontal" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-1">Tag line:</label>
+                                    <div class="col-sm-11">
+                                        <input placeholder="Tagline" class="form-control"
+                                           type="text" name="tagline" value="<?php echo $tagline; ?>">
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label class="control-label col-sm-1">About us:</label>
                                     <div class="col-sm-11">
                                         <textarea class="form-control ckeditor" name="about_us" rows="6">
-                                            <?php
-                                                if(!empty($about_us)):
-                                                    echo $about_us;
-                                            ?>
+                                        <?php
+                                            if(!empty($about_us)):
+                                                echo $about_us;
+                                        ?>
                                         </textarea>
                                         <input type="hidden" name="id_about_us" value="<?php echo $id_about_us; ?>">
                                         <?php endif; ?>

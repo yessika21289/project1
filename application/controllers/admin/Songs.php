@@ -41,6 +41,7 @@ class Songs extends CI_Controller
 
     function add($songs_id = NULL)
     {
+//        print_r($_POST);exit;
         $this->load->model('Songs_model');
 
         if(!empty($_POST)) {
@@ -52,7 +53,7 @@ class Songs extends CI_Controller
                 $updated_id = $this->Songs_model->update($_POST);
                 if($updated_id) $this->session->set_flashdata('updated_id', $updated_id);
             }
-            redirect('Songs');
+            redirect('admin/Songs');
         } elseif($this->input->get('is_active') != NULL) {
             $post['songs_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
@@ -60,7 +61,7 @@ class Songs extends CI_Controller
             $this->session->set_flashdata('set_active', $set_active);
             $this->session->set_flashdata('set_active_id', $post['songs_id']);
 
-            redirect('Songs');
+            redirect('admin/Songs');
         } else {
             if(!empty($songs_id)) {
                 $data['songs'] = $this->Songs_model->getData($songs_id);
@@ -78,7 +79,7 @@ class Songs extends CI_Controller
         if(!empty($songs_id)) {
             $delete = $this->Songs_model->delete($songs_id);
             if($delete) $this->session->set_flashdata('delete_confirm', $delete);
-            redirect('Songs');
-        } else redirect('Songs');
+            redirect('admin/Songs');
+        } else redirect('admin/Songs');
     }
 }

@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <h3 class="page-header"><i class="icon_group"></i> News</h3>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>Admin">Home</a></li>
+                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
                     <li><i class="icon_group"></i>News</li>
                 </ol>
             </div>
@@ -27,7 +27,7 @@
                     </header>
                     <div class="panel-body">
                         <div class="form">
-                            <form action="<?php echo base_url(); ?>News/add" class="form-horizontal"
+                            <form action="<?php echo base_url(); ?>admin/News/add" class="form-horizontal"
                                   method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label class="col-sm-1 control-label">Title</label>

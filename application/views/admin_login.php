@@ -33,7 +33,7 @@
 
     <div class="container">
 
-      <form class="login-form" action="<?php echo base_url(); ?>Admin/login" enctype="multipart/form-data" method="post">
+      <form class="login-form" action="<?php echo base_url(); ?>admin/login" enctype="multipart/form-data" method="post">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">

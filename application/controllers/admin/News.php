@@ -52,7 +52,7 @@ class News extends CI_Controller
                 $updated_id = $this->News_model->update($_POST);
                 if($updated_id) $this->session->set_flashdata('updated_id', $updated_id);
             }
-            redirect('News');
+            redirect('admin/News');
         } elseif($this->input->get('is_active') != NULL) {
             $post['news_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
@@ -60,7 +60,7 @@ class News extends CI_Controller
             $this->session->set_flashdata('set_active', $set_active);
             $this->session->set_flashdata('set_active_id', $post['news_id']);
 
-            redirect('News');
+            redirect('admin/News');
         } else {
             if(!empty($news_id)) {
                 $data['news'] = $this->News_model->getData($news_id);
@@ -78,7 +78,7 @@ class News extends CI_Controller
         if(!empty($news_id)) {
             $delete = $this->News_model->delete($news_id);
             if($delete) $this->session->set_flashdata('delete_confirm', $delete);
-            redirect('News');
-        } else redirect('News');
+            redirect('admin/News');
+        } else redirect('admin/News');
     }
 }

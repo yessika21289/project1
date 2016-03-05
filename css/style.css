@@ -4971,3 +4971,8 @@ span.customSelect.changed {
 .form-song .row {
     margin-left: 20px;
 }
+
+.lyric {
+    margin-left: 15px;
+    width: 703px;
+}

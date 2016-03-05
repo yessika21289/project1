@@ -11,7 +11,7 @@
             </li>
 
             <li <?php if($menu_active == 'about_us') echo 'class="active"'; ?> >
-                <a class="" href="<?php echo base_url(); ?>AboutUs">
+                <a class="" href="<?php echo base_url(); ?>admin/AboutUs">
                     <i class="icon_group"></i>
                     <span>About Us</span>
                 </a>
@@ -25,10 +25,10 @@
                 </a>
                 <ul class="sub">
                     <li class="<?php if($menu_active == 'add_news') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>News/add">Add News</a>
+                        <a class="" href="<?php echo base_url(); ?>admin/News/add">Add News</a>
                     </li>
                     <li class="<?php if($menu_active == 'news') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>News">See All News</a>
+                        <a class="" href="<?php echo base_url(); ?>admin/News">See All News</a>
                     </li>
                 </ul>
             </li>
@@ -41,10 +41,10 @@
                 </a>
                 <ul class="sub">
                     <li class="<?php if($menu_active == 'add_songs') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>Songs/add">Add Songs</a>
+                        <a class="" href="<?php echo base_url(); ?>admin/Songs/add">Add Songs</a>
                     </li>
                     <li class="<?php if($menu_active == 'songs') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>Songs">See All Songs</a>
+                        <a class="" href="<?php echo base_url(); ?>admin/Songs">See All Songs</a>
                     </li>
                 </ul>
             </li>
@@ -56,8 +56,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/form_component">Form Elements</a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/form_validation">Form Validation</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>admin/to/form_component">Form Elements</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>admin/to/form_validation">Form Validation</a></li>
                 </ul>
             </li>
 
@@ -68,7 +68,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/basic_table">Basic Table</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>admin/to/basic_table">Basic Table</a></li>
                 </ul>
             </li>
 
@@ -79,10 +79,10 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/profile">Profile</a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/login"><span>Login Page</span></a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/basic_table/blank">Blank Page</a></li>
-                    <li><a class="" href="<?php echo base_url(); ?>Admin/to/404">404 Error</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>admin/to/profile">Profile</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>admin/to/login"><span>Login Page</span></a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>admin/to/basic_table/blank">Blank Page</a></li>
+                    <li><a class="" href="<?php echo base_url(); ?>admin/to/404">404 Error</a></li>
                 </ul>
             </li>
 

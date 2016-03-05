@@ -52,7 +52,7 @@ class Admin extends CI_Controller
 			$result = $this->Admin_model->login();
 
 			if ($result) {
-				redirect(base_url() . 'Admin');
+				redirect('admin');
 			} else {
 				$msg =
 					"<div class='alert alert-danger' role='alert'>
@@ -60,15 +60,15 @@ class Admin extends CI_Controller
 					<br/>Username/Password tidak cocok.
 				</div>";
 				$this->session->set_flashdata('login_failed_msg', $msg);
-				redirect(base_url() . 'Admin');
+				redirect('admin');
 			}
 		} else {
-			redirect(base_url() . 'Admin');
+			redirect('admin');
 		}
 	}
 
 	function logout() {
 		$this->session->sess_destroy();
-		redirect(base_url() . 'Admin');
+		redirect('admin');
 	}
 }

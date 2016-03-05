@@ -27,6 +27,7 @@ class AboutUs extends CI_Controller
         if(!empty($about_us)) {
             $data['id_about_us'] = $about_us[0]->id;
             $data['about_us'] = $about_us[0]->about;
+            $data['tagline'] = $about_us[0]->tagline;
         }
 
         $data['menu_active'] = 'about_us';
@@ -44,7 +45,7 @@ class AboutUs extends CI_Controller
 
         if(!empty($updated)) $this->session->set_flashdata('update_confirm', $updated);
         elseif(!empty($added)) $this->session->set_flashdata('add_confirm', $added);
-        redirect('AboutUs');
+        redirect('admin/AboutUs');
 //        $data['menu_active'] = 'about_us';
 //        $this->load->view('admin_header');
 //        $this->load->view('admin_left_menu', $data);

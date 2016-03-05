@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <h3 class="page-header"><i class="icon_group"></i> News</h3>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>Admin">Home</a></li>
+                    <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
                     <li><i class="icon_group"></i>News</li>
                 </ol>
             </div>
@@ -16,6 +16,7 @@
 //        $songs_id = (!empty($songs[0]->id)) ? $songs[0]->id : '';
 //        $title = (!empty($songs[0]->title)) ? $songs[0]->title : '';
 //        $content = (!empty($songs[0]->content)) ? $songs[0]->content : '';
+//        $lyric = (!empty($songs[0]->lyric)) ? $songs[0]->lyric : '';
         ?>
 
         <div class="row">
@@ -27,7 +28,7 @@
                     </header>
                     <div class="panel-body">
                         <div class="form">
-                            <form action="<?php echo base_url(); ?>Songs/add" class="form-horizontal"
+                            <form action="<?php echo base_url(); ?>admin/Songs/add" class="form-horizontal"
                                   method="post" enctype="multipart/form-data">
                                 <div class="form-group form-song">
                                     <div class="row">
@@ -40,12 +41,20 @@
                                                placeholder="Song title..." value="<?php //echo $title; ?>">
                                             <input type="text" class="form-control" name="title"
                                                    placeholder="Author..." value="<?php //echo $title; ?>">
-                                            <input type="text" class="form-control" name="title"
+                                            <input type="date" class="form-control" name="title"
                                                    placeholder="Release Date..." value="<?php //echo $title; ?>">
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <textarea class="col-md-8"></textarea>
+                                        <textarea class="lyric" rows="20">
+                                            <?php //echo $lyric; ?>
+                                        </textarea>
+
+                                    <div class="lyric">
+                                        <button style="margin-top:20px;" type="submit" class="btn btn-primary pull-right">
+                                            Save
+                                        </button>
+                                    </div>
                                     </div>
                                 </div>
 

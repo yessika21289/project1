@@ -277,7 +277,8 @@
                             <img alt="" src="<?php echo base_url(); ?>img/admin_avatar.png" width="35">
                         </span>
                         <span class="username">Welcome, Admin!</span>
-                        <a href="<?php echo base_url(); ?>Admin/logout" class="username pull-right"><small>(Log Out)</small></a>
+                        <a href="<?php echo base_url(); ?>admin/logout" class="username pull-right">
+                            <small>(Log Out)</small></a>
 <!--                        <b class="caret"></b>-->
 <!--                    </a>-->
 <!--                    <ul class="dropdown-menu extended logout">-->
