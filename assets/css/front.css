@@ -191,6 +191,27 @@ body{
 	margin-bottom: 50px;
 }
 
+
+/*=========GALLERY=========*/
+.album-cover{
+	margin-bottom:30px;
+}
+
+.album-cover-desc{
+	position: relative;
+	width: 100%;
+}
+
+.album-cover-desc div{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(255,255,255,0.8);
+	font-size: 1.3em;
+	padding: 10px;
+	text-align: center;
+}
+
 /*=========FOOTER=========*/
 .footer{
 	text-align: center;

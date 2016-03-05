@@ -22,13 +22,13 @@
                         <a class="page-scroll menu-header" href="/news">News</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/song">Songs</a>
+                        <a class="page-scroll menu-header" href="/song">Song</a>
                     </li>
                     <li>
                         <a class="page-scroll menu-header" href="/video">Video</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/galeri">Galeri</a>
+                        <a class="page-scroll menu-header" href="/gallery">Galeri</a>
                     </li>
                     <li>
                         <a class="page-scroll menu-header" href="#how">Merchandise</a>
