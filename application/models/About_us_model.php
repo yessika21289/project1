@@ -23,6 +23,7 @@ class About_us_model extends CI_Model
             'updated_at' => time(),
             'updated_by' => 'superadmin'
         );
+        $this->db->empty_table('about_us');
         $insert = $this->db->insert('about_us', $data);
         return $insert;
     }
@@ -36,7 +37,7 @@ class About_us_model extends CI_Model
             'updated_by' => 'superadmin'
         );
 
-        $this->db->where('id', $post['id_about_us']);
+        $this->db->where('id', 1);
         $update = $this->db->update('about_us', $data);
         return $update;
     }

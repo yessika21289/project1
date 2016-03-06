@@ -60,13 +60,8 @@
                                     <label class="control-label col-sm-1">About us:</label>
                                     <div class="col-sm-11">
                                         <textarea class="form-control ckeditor" name="about_us" rows="6">
-                                        <?php
-                                            if(!empty($about_us)):
-                                                echo $about_us;
-                                        ?>
+                                            <?php if(!empty($about_us)) echo $about_us ?>
                                         </textarea>
-                                        <input type="hidden" name="id_about_us" value="<?php echo $id_about_us; ?>">
-                                        <?php endif; ?>
                                         <span class="pull-right">
                                             <button style="margin-top:20px;" type="submit" class="btn btn-primary">
                                                 Save
