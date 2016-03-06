@@ -38,6 +38,8 @@
 <script src="<?php echo base_url(); ?>assets/js/sparklines.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/charts.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/jquery.slimscroll.min.js"></script>
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.uploadPreview.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
 
 <script>
@@ -93,6 +95,13 @@
         });
     });
 
+    $(document).ready(function() {
+        $.uploadPreview({
+            input_field: "#upload-cover",
+            preview_box: "#cover-image-holder",
+            label_field: "#upload-cover-link"
+        });
+    });
 
 </script>
 

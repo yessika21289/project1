@@ -32,22 +32,23 @@
                                   method="post" enctype="multipart/form-data">
                                 <div class="form-group form-song">
                                     <div class="row">
-                                        <div class="col-md-2 clearfix" style="width: 13.6667%;">
-                                            <img class="song-cover" src="<?php echo base_url(); ?>assets/img/default_cover.png">
-                                            <input id="upload-cover" type="file"/>
+                                        <div class="col-md-2 clearfix preview-cover" style="width: 13.6667%;">
+                                            <div id="cover-image-holder" class="song-cover"></div>
+<!--                                                 src="--><?php //echo base_url(); ?><!--assets/img/default_cover.png">-->
+                                            <input id="upload-cover" type="file" name="song_cover" />
                                             <a href="" id="upload-cover-link" class="edit-cover">Edit</a>
                                         </div>
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="title"
                                                placeholder="Song title..." value="<?php //echo $title; ?>">
-                                            <input type="text" class="form-control" name="title"
+                                            <input type="text" class="form-control" name="author"
                                                    placeholder="Author..." value="<?php //echo $title; ?>">
-                                            <input type="date" class="form-control" name="title"
+                                            <input type="date" class="form-control" name="release_date"
                                                    placeholder="Release Date..." value="<?php //echo $title; ?>">
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <textarea class="lyric" rows="20">
+                                        <textarea name="lyric" class="lyric" rows="20">
                                             <?php //echo $lyric; ?>
                                         </textarea>
 

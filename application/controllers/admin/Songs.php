@@ -41,7 +41,8 @@ class Songs extends CI_Controller
 
     function add($songs_id = NULL)
     {
-//        print_r($_POST);exit;
+//        print_r($_POST);
+//        print_r($_FILES);exit;
         $this->load->model('Songs_model');
 
         if(!empty($_POST)) {
