@@ -41,6 +41,9 @@
 <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.uploadPreview.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/locales/bootstrap-datepicker.en-GB.min.js"></script>
 
 <script>
 
@@ -101,6 +104,11 @@
             preview_box: "#cover-image-holder",
             label_field: "#upload-cover-link"
         });
+    });
+
+    $('#sandbox-container .input-append.date').datepicker({
+        clearBtn: true,
+        todayHighlight: true
     });
 
 </script>

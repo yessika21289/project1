@@ -33,6 +33,9 @@
     <link href="<?php echo base_url(); ?>assets/css/style-responsive.css" rel="stylesheet" />
     <link href="<?php echo base_url(); ?>assets/css/xcharts.min.css" rel=" stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <!-- Bootstrap Date Picker-->
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap-datepicker3.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
     <script src="<?php echo base_url(); ?>assets/js/html5shiv.js"></script>

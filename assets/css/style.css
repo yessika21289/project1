@@ -4983,3 +4983,8 @@ span.customSelect.changed {
 #upload-cover {
     display: none;
 }
+
+label.upload-song {
+    font-size: 12pt;
+    font-weight: bold;
+}
