@@ -106,6 +106,21 @@
         });
     });
 
+    $(function(){
+        $("#upload-avatar-link").on('click', function(e){
+            e.preventDefault();
+            $("#upload-avatar:hidden").trigger('click');
+        });
+    });
+
+    $(document).ready(function() {
+        $.uploadPreview({
+            input_field: "#upload-avatar",
+            preview_box: "#avatar-image-holder",
+            label_field: "#upload-avatar-link"
+        });
+    });
+
     $('#sandbox-container .input-append.date').datepicker({
         clearBtn: true,
         todayHighlight: true

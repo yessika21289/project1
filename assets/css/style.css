@@ -4949,7 +4949,16 @@ span.customSelect.changed {
     background: url(../img/default_cover.PNG) no-repeat center;
 }
 
-.edit-cover {
+.avatar {
+    border: groove;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    width: 135px;
+    height:180px;
+    background: url(../img/member_avatar.png) no-repeat center;
+}
+
+.edit-cover, .edit-avatar {
     text-align: center;
     background-color: #878787;
     opacity: 0.8;
@@ -4961,7 +4970,7 @@ span.customSelect.changed {
     font-weight: lighter;
 }
 
-.edit-cover:hover {
+.edit-cover:hover, .edit-avatar:hover {
     text-decoration: none;
     color: white;
     background-color: #4c4c4c;
@@ -4980,11 +4989,33 @@ span.customSelect.changed {
     width: 703px;
 }
 
-#upload-cover {
+#upload-cover, #upload-avatar {
     display: none;
 }
 
 label.upload-song {
     font-size: 12pt;
     font-weight: bold;
+}
+
+.socmed-add-icon {
+    /*background: url(../img/fb-icon.png) no-repeat center;*/
+    padding-left: 7px;
+    margin-bottom: 18px;
+}
+
+.socmed-add-textfield {
+    width: 91%;
+    float: right;
+}
+
+.view-avatar {
+    position: relative;
+    width: 135px;
+    height:180px;
+}
+
+.socmed-icon {
+    margin-right: 10px;
+    margin-bottom: 5px;
 }

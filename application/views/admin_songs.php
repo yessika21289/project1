@@ -7,7 +7,7 @@
                 <h3 class="page-header"><i class="icon_group"></i> Songs</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
-                    <li><i class="icon_group"></i>Songs</li>
+                    <li><i class="icon_headphones"></i>Songs</li>
                 </ol>
             </div>
         </div>
@@ -66,6 +66,12 @@
                 </div>
             </div>
         <?php endif; ?>
+
+        <div class="row" style="margin: 0 0 15px 0;">
+            <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/Songs/add" title="Add Songs">
+                <span class="fa fa-plus"></span> Add Songs
+            </a>
+        </div>
 
         <div class="row">
             <div class="col-lg-12">

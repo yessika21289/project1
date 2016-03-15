@@ -7,7 +7,7 @@
                 <h3 class="page-header"><i class="icon_group"></i> News</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
-                    <li><i class="icon_group"></i>News</li>
+                    <li><i class="icon_document_alt"></i>News</li>
                 </ol>
             </div>
         </div>

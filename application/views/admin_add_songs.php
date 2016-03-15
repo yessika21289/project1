@@ -4,10 +4,10 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="icon_group"></i> News</h3>
+                <h3 class="page-header"><i class="icon_group"></i> Songs</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
-                    <li><i class="icon_group"></i>News</li>
+                    <li><i class="icon_headphones"></i>Songs</li>
                 </ol>
             </div>
         </div>

@@ -93,7 +93,7 @@ class Songs_model extends CI_Model
     }
 
     function delete($song_id) {
-        $this->db->where('id', $song_id);
+        $this->db->wherea('id', $song_id);
         $query = $this->db->get('songs');
         $result = $query->result();
         if(!empty($result)) {
