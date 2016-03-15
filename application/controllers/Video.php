@@ -10,6 +10,9 @@ class Video extends CI_Controller {
 
 	public function index()
 	{
+		$data['title'] = 'Video';
+		$this->load->view('tag_open',$data);
 		$this->load->view('video_list');
+		$this->load->view('tag_close');
 	}
 }

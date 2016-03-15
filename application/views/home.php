@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kawandasawolu</title>
 
 	<?php
@@ -13,27 +14,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	?>
 </head>
 <body>
-<div style="background-color:grey; position:fixed; right:0; top:30%; z-index:1">
-	
-		<a class="page-scroll right-menu" href="#banner"><img src="/assets/img/home.png"/></a>
-		<a class="page-scroll right-menu" href="#about_us">home</a>
-		<a class="page-scroll right-menu" href="#news"><img src="/assets/img/news.png"/></a>
-		<a class="page-scroll right-menu" href="#songs"><img src="/assets/img/song.png"/></a>
-		<a class="page-scroll right-menu" href="#videos">home</a>
-		<a class="page-scroll right-menu" href="#merchandise">home</a>
-		<a class="page-scroll right-menu" href="#member">home</a>
-		<a class="page-scroll right-menu" href="#contact_us">home</a>
-	
-	
-
+<div class="navbar" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:20%; z-index:1; opacity:0.7">
+	<a class="page-scroll right-menu" href="#banner"><img src="/assets/img/icon/home.png"/></a>
+	<a class="page-scroll right-menu" href="#about_us"><img src="/assets/img/icon/about.png"/></a>
+	<a class="page-scroll right-menu" href="#news"><img src="/assets/img/icon/news.png"/></a>
+	<a class="page-scroll right-menu" href="#song"><img src="/assets/img/icon/song.png"/></a>
+	<a class="page-scroll right-menu" href="#video"><img src="/assets/img/icon/video.png"/></a>
+	<a class="page-scroll right-menu" href="#merchandise"><img src="/assets/img/icon/hat.png"/></a>
+	<a class="page-scroll right-menu" href="#member"><img src="/assets/img/icon/member.png"/></a>
+	<a class="page-scroll right-menu" href="#contact_us"><img src="/assets/img/icon/contact.png"/></a>
 </div>
 <div id="skrollr-body">
 	<section id="banner" style="position: relative; background-color:#CA292B; z-index:-2">
 		<div style="height:30%">
 			<img src="/assets/img/triangle_ornament.png" height="100%" />
 		</div>
-		<div style="position: fixed; top: 20%; left:35%; z-index:-1">
-		<img src="/assets/img/logojawa.png" height="100%" />
+		<div class="col-xs-12" style="position: fixed; z-index:-1; text-align:center">
+		<img src="/assets/img/logojawa2.png" height="100%" />
 		</div>
 		<div 
 		data-top-bottom="left:-200px;"
@@ -50,10 +47,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</section>
 
 	<section id="about_us">
-		<div class="bcg skrollable skrollable-between" 
-		data-bottom-top="background-position: center -400px;"
-		data-top-bottom="background-position: center -200px;"
-		data-anchor-target="#about_us" style="background-image: url(assets/img/kawandasaWow.jpg); background-size:cover; height: 100%; width:100%">
+		<div class="bcg skrollable skrollable-between about-us-bg-home" 
+		data-top-top="background-position: center 0px;"
+		data-top-bottom="background-position: center 200px;"
+		data-anchor-target="#about_us">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12">
@@ -73,10 +70,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</section>
 
 	<section id="news">
-		<div class="bcg skrollable skrollable-between" 
-		data-bottom-top="background-position: 10px 0px;"
-		data-top-bottom="background-position: -100px 0px;"
-		data-anchor-target="#news" style="background-image: url(assets/img/about.jpg); background-size:cover; height: 100%; width:100%">
+		<div class="bcg skrollable skrollable-between news-bg-home" 
+		data-bottom-top="background-position: right 0px;"
+		data-top-bottom="background-position: right -100px;"
+		data-anchor-target="#news">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
@@ -131,13 +128,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</section>
 
-	<section id="songs">
+	<section id="song">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 hidden-xs"
+				<div class="col-sm-6 hidden-xs song-cover-home"
 					data-bottom-top="margin-left:-500px; transform:rotate(0deg);"
-					data-center-center="margin-left:-100px; transform:rotate(90deg);"
-					style="height:400px; width:400px; background-color:red;">
+					data-center-center="margin-left:-100px; transform:rotate(90deg);">
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<h2>Songs</h2>
@@ -148,7 +144,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</section>
 
-	<section id="videos">
+	<section id="video">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">

@@ -38,6 +38,9 @@ class Contact extends CI_Controller {
               'value'       => 'Kirim Pesan',
               'style'		=> 'padding:5px 10px'
 			);
-		$this->load->view('contact_us',$data);
+		$data['title'] = 'Kontak Kami';
+		$this->load->view('tag_open',$data);
+		$this->load->view('contact_us');
+		$this->load->view('tag_close');
 	}
 }

@@ -1,29 +1,9 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-	<title>Kawandasawolu</title>
-
-	<?php
-	echo link_tag('/assets/css/front.css');
-	echo link_tag('/assets/css/bootstrap.min.css');
-	echo link_tag('/assets/css/scrolling-nav.css');
-	echo link_tag('/assets/css/font-awesome.min.css');
-	echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');
-
-	?>
-</head>
-<body style="background-color:#EEEEEE">
-<?php include('header_fixed.php');?>
-<div class="container news-list" style="padding-top:120px;">
+<div class="container content">
 	<ol class="breadcrumb" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Contact Us</li>
 	</ol>
-	<h1 style="font-family:'Alex Brush'; font-size:60px;">Contact Kawandasawolu</h1>
+	<h1>Contact Kawandasawolu</h1>
 	<div class="col-sm-7 col-xs-12" style="margin-bottom:25px;">
 	Kami sangat menantikan Anda. Silakan isi form di bawah ini untuk menghubungi kami.
 	<?php echo form_open(base_url().'contact/send');?>
@@ -56,10 +36,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 </div>
-<?php include('footer.php');?>
-<script type="text/javascript" src="assets/js/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/skrollr.min.js"></script>
-<script type="text/javascript" src="/assets/js/scrolling-nav.js"></script>
-</body>
-</html>
