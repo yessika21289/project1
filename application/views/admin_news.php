@@ -111,7 +111,7 @@
                             <tr class="<?php  echo $row_changed; ?>">
                                 <td><?php echo $no; ?></td>
                                 <td>
-                                    <?php echo $row->title; ?>
+                                    <span class="title"><?php echo $row->title; ?></span>
                                     <?php if($row->is_active == 0): ?>
                                         <br/><span class="label label-warning">-not published-</span>
                                     <?php endif; ?>
@@ -134,6 +134,7 @@
                                             <i class="icon_cloud"></i></a>
                                         <?php endif; ?>
                                         <a class="btn btn-danger" title="Delete"
+                                           onclick="return confirm('Are you sure?');"
                                            href="<?php echo base_url() ?>admin/News/delete/<?php echo $row->id; ?>">
                                             <i class="icon_trash_alt"></i></a>
                                     </div>

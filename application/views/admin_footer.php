@@ -91,6 +91,7 @@
         });
     });
 
+    // ====== upload song cover ======= //
     $(function(){
         $("#upload-cover-link").on('click', function(e){
             e.preventDefault();
@@ -106,6 +107,7 @@
         });
     });
 
+    // ====== upload member's avatar ======= //
     $(function(){
         $("#upload-avatar-link").on('click', function(e){
             e.preventDefault();
@@ -121,10 +123,10 @@
         });
     });
 
-    $('#sandbox-container .input-append.date').datepicker({
-        clearBtn: true,
-        todayHighlight: true
-    });
+//    $('#sandbox-container .input-append.date').datepicker({
+//        clearBtn: true,
+//        todayHighlight: true
+//    });
 
 </script>
 

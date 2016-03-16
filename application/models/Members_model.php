@@ -14,17 +14,20 @@ class Members_model extends CI_Model
         $query = $this->db->get('members');
         $results = $query->result();
 
+        $i = 0;
         foreach($results as $result) {
+            $members[$i]['id'] = $result->id;
+            $members[$i]['name'] = $result->name;
+            $members[$i]['avatar'] = $result->avatar;
+
             $this->db->where('id_member', $result->id);
             $query2 = $this->db->get('members_socmed');
             $results2 = $query2->result();
 
             foreach($results2 as $result2) {
-                $members[$result->id]['id'] = $result->id;
-                $members[$result->id]['name'] = $result->name;
-                $members[$result->id]['avatar'] = $result->avatar;
-                $members[$result->id][$result2->type] = $result2->id_socmed;
+                $members[$i]['socmed'][$result2->type] = $result2->id_socmed;
             }
+            $i++;
         }
 
         return $members;

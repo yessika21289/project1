@@ -67,9 +67,17 @@ class Members extends CI_Controller
 
                 if(empty($error)) {
                     move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
+                    $this->load->library('image_lib');
+                    $config['image_library'] = 'gd2';
+                    $config['source_image'] = $target_file;
+                    $config['width'] = 135;
+                    $config['height'] = 180;
 
+                    $this->image_lib->initialize($config);
+                    $this->image_lib->resize();
                 } else {
-                    echo "Error";
+                    if($error['file_exist']) echo "File already exist.<br/>";
+                    if($error['not_allowed_filetype']) echo "Not allowed file type.";
                 }
             }
 

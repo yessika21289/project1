@@ -45,7 +45,7 @@ class Songs extends CI_Controller
         $data['menu_active'] = 'add_songs';
 
         if(!empty($_POST)) {
-            if(empty($_POST['songs_id'])) {
+            if(empty($_POST['song_id'])) {
                 $added_id = $this->Songs_model->add($_POST, $_FILES);
                 if($added_id) $this->session->set_flashdata('added_id', $added_id);
             }
@@ -57,7 +57,7 @@ class Songs extends CI_Controller
             // ======================================= UPLOAD IMAGE COVER =========================================== //
             if(!empty($_FILES['song_cover'])) {
                 $target_dir = "assets/songs/cover/";
-                $ext = pathinfo($_FILES['song_cover']['name'], PATHINFO_EXTENSION);
+                $ext = strtolower(pathinfo($_FILES['song_cover']['name'], PATHINFO_EXTENSION));
 
                 $target_file = $target_dir.$_POST['title'].'.'.$ext;
 
@@ -67,9 +67,18 @@ class Songs extends CI_Controller
 
                 if(empty($error)) {
                     move_uploaded_file($_FILES['song_cover']['tmp_name'], $target_file);
+                    $this->load->library('image_lib');
+                    $config['image_library'] = 'gd2';
+                    $config['source_image'] = $target_file;
+                    $config['width'] = 135;
+                    $config['height'] = 135;
+
+                    $this->image_lib->initialize($config);
+                    $this->image_lib->resize();
 
                 } else {
-                    echo "Error";
+                    if($error['file_exist']) echo "File already exist.<br/>";
+                    if($error['not_allowed_filetype']) echo "Not allowed file type.";
                 }
             }
 
@@ -78,16 +87,16 @@ class Songs extends CI_Controller
                 $target_dir = "assets/songs/";
                 $ext = pathinfo($_FILES['song']['name'], PATHINFO_EXTENSION);
 
-                $target_file = $target_dir.$_POST['title'].'.'.$ext;
+                $target_file = $target_dir . $_POST['title'] . '.' . $ext;
 
                 $error = array();
 //                if(file_exists($target_file)) $error['file_exist'] = 1;
-                if(!in_array($ext, array('mp3', 'wav'))) $error['not_allowed_filetype'] = 1;
+                if (!in_array($ext, array('mp3', 'wav'))) $error['not_allowed_filetype'] = 1;
 
-                if(empty($error)) {
+                if (empty($error)) {
                     move_uploaded_file($_FILES['song']['tmp_name'], $target_file);
                 } else {
-                    echo "Error";exit;
+                    echo "Error";
                 }
             }
             redirect('admin/Songs');

@@ -13,10 +13,13 @@
         </div>
 
         <?php
-            $songs_id = (!empty($songs[0]->id)) ? $songs[0]->id : '';
+            $song_id = (!empty($songs[0]->id)) ? $songs[0]->id : '';
             $title = (!empty($songs[0]->title)) ? $songs[0]->title : '';
-            $content = (!empty($songs[0]->content)) ? $songs[0]->content : '';
             $lyric = (!empty($songs[0]->lyric)) ? $songs[0]->lyric : '';
+            $author = (!empty($songs[0]->author)) ? $songs[0]->author : '';
+            $release_date = (!empty($songs[0]->release_date)) ? $songs[0]->release_date : '';
+            $song_cover_path = (!empty($songs[0]->song_cover_path)) ? $songs[0]->song_cover_path : '';
+            $song_path = (!empty($songs[0]->song_path)) ? $songs[0]->song_path : '';
         ?>
 
         <div class="row">
@@ -34,21 +37,22 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-cover" style="width: 13.6667%;">
-                                            <div id="cover-image-holder" class="song-cover"></div>
+                                            <div id="cover-image-holder" class="song-cover"
+                                                <?php if(!empty($song_cover_path)): ?>
+                                                style="background: url(<?php echo base_url().$song_cover_path; ?>) no-repeat center;"
+                                                 <?php endif; ?>
+                                            ></div>
                                             <input id="upload-cover" type="file" name="song_cover" />
                                             <a href="" id="upload-cover-link" class="edit-cover">Edit</a>
                                         </div>
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="title"
-                                               placeholder="Song title..." value="<?php //echo $title; ?>">
+                                               placeholder="Song title..." value="<?php echo $title; ?>">
                                             <input type="text" class="form-control" name="author"
-                                                   placeholder="Author..." value="<?php //echo $title; ?>">
+                                                   placeholder="Author..." value="<?php echo $author; ?>">
                                             <input type="date" class="form-control" name="release_date"
-                                                   placeholder="Release Date..." value="<?php //echo $title; ?>">
-<!--                                            <div class="input-append date">-->
-<!--                                                <input type="text" class="span2">-->
-<!--                                                    <span class="add-on"><i class="icon-th"></i></span>-->
-<!--                                            </div>-->
+                                                   placeholder="Release Date..." value="<?php echo $release_date; ?>">
+                                            <input type="hidden" class="form-control" name="song_id" value="<?php echo $song_id; ?>">
                                         </div>
                                     </div>
 
@@ -63,7 +67,7 @@
 
                                     <div class="row">
                                         <textarea name="lyric" class="lyric" rows="20">
-                                            <?php //echo $lyric; ?>
+                                            <?php echo $lyric; ?>
                                         </textarea>
 
                                     <div class="lyric">

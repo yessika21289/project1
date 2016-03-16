@@ -13,17 +13,14 @@
         </div>
 
         <?php
-            foreach($members as $member) {
-                $member_id = (!empty($member['id'])) ? $member['id'] : '';
-                $name = (!empty($member['name'])) ? $member['name'] : '';
-                $avatar = (!empty($member['avatar'])) ? $member['avatar'] : '';
-                $facebook = (!empty($member['facebook'])) ? $member['facebook'] : '';
-                $twitter = (!empty($member['twitter'])) ? $member['twitter'] : '';
-                $instagram = (!empty($member['instagram'])) ? $member['instagram'] : '';
-                $path = (!empty($member['path'])) ? $member['path'] : '';
-                $web = (!empty($member['web'])) ? $member['web'] : '';
-            }
-
+            $member_id = (!empty($members[0]['id'])) ? $members[0]['id'] : '';
+            $name = (!empty($members[0]['name'])) ? $members[0]['name'] : '';
+            $avatar = (!empty($members[0]['avatar'])) ? $members[0]['avatar'] : '';
+            $facebook = (!empty($members[0]['socmed']['facebook'])) ? $members[0]['socmed']['facebook'] : '';
+            $twitter = (!empty($members[0]['socmed']['twitter'])) ? $members[0]['socmed']['twitter'] : '';
+            $instagram = (!empty($members[0]['socmed']['instagram'])) ? $members[0]['socmed']['instagram'] : '';
+            $path = (!empty($members[0]['socmed']['path'])) ? $members[0]['socmed']['path'] : '';
+            $web = (!empty($members[0]['socmed']['web'])) ? $members[0]['socmed']['web'] : '';
         ?>
 
         <div class="row">
@@ -41,7 +38,10 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-avatar" style="width: 13.6667%;">
-                                            <div id="avatar-image-holder" class="avatar"></div>
+                                            <div id="avatar-image-holder" class="avatar"
+                                            <?php if(!empty($avatar)): ?>
+                                                style="background: url(<?php echo base_url().$avatar; ?>) no-repeat center;"
+                                            <?php endif; ?>></div>
                                             <input id="upload-avatar" type="file" name="avatar" />
                                             <a href="" id="upload-avatar-link" class="edit-avatar">Edit</a>
                                         </div>

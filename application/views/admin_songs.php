@@ -56,7 +56,7 @@
         <?php elseif(isset($delete_confirm)): ?>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="alert alert-danger alert-dismissible" role="alert">
+                    <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
@@ -136,6 +136,7 @@
                                                 <i class="icon_cloud"></i></a>
                                         <?php endif; ?>
                                         <a class="btn btn-danger" title="Delete"
+                                           onclick="return confirm('Are you sure?');"
                                            href="<?php echo base_url() ?>admin/Songs/delete/<?php echo $row->id; ?>">
                                             <i class="icon_trash_alt"></i></a>
                                     </div>
