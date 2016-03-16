@@ -4,7 +4,7 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="icon_group"></i> News</h3>
+                <h3 class="page-header"><i class="icon_document_alt"></i> News</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
                     <li><i class="icon_document_alt"></i>News</li>
@@ -91,7 +91,7 @@
                         <table class="table table-striped table-advance table-hover">
                             <tbody>
                             <tr>
-                                <th>ID</th>
+                                <th>No</th>
                                 <th>Title</th>
                                 <th>Content</th>
                                 <th>Updated Date</th>
@@ -99,7 +99,9 @@
                                 <th>Action</th>
                             </tr>
                             <?php
+                                $no = 0;
                                 foreach($news as $row):
+                                    $no++;
                                     $row_changed = '';
                                     $label = '';
                                     if($row->id == $added_id || $row->id == $updated_id) $row_changed = 'success';
@@ -107,7 +109,7 @@
                                     if($row->id == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
                             ?>
                             <tr class="<?php  echo $row_changed; ?>">
-                                <td><?php echo $row->id; ?></td>
+                                <td><?php echo $no; ?></td>
                                 <td>
                                     <?php echo $row->title; ?>
                                     <?php if($row->is_active == 0): ?>

@@ -4,7 +4,7 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="icon_group"></i> News</h3>
+                <h3 class="page-header"><i class="icon_document_alt"></i> News</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
                     <li><i class="icon_document_alt"></i>News</li>
@@ -42,10 +42,13 @@
                                             <?php echo $content; ?>
                                         </textarea>
                                         <input type="hidden" name="news_id" value="<?php echo $news_id; ?>">
-                                        <span class="pull-right">
-                                            <button style="margin-top:20px;" type="submit" class="btn btn-primary">
-                                                Publish
+                                        <span class="pull-right" style="margin-top:20px;">
+                                            <button type="submit" class="btn btn-primary">
+                                                Save
                                             </button>
+                                            <a class="btn btn-danger" title="Cancel"
+                                               href="<?php echo base_url(); ?>admin/News">Cancel
+                                            </a>
                                         </span>
                                     </div>
 

@@ -14,16 +14,16 @@ class News_model extends CI_Model
         return $query->result();
     }
 
-    function add($post) {
+    function add($user, $post) {
         $title = $post['title'];
         $content = trim(strip_tags($post['content'], $this->allowed_tags));
         $data = array(
             'title' => $title,
             'content' => $content,
             'created_at' => time(),
-            'created_by' => 'superadmin',
+            'created_by' => $user,
             'updated_at' => time(),
-            'updated_by' => 'superadmin',
+            'updated_by' => $user,
             'is_active' => 1
         );
         $this->db->insert('news', $data);
@@ -31,13 +31,13 @@ class News_model extends CI_Model
         return $insert_id;
     }
 
-    function update($post) {
+    function update($user, $post) {
         $content = trim(strip_tags($post['content'], $this->allowed_tags));
         $data = array(
             'title' => $post['title'],
             'content' => $content,
             'updated_at' => time(),
-            'updated_by' => 'superadmin',
+            'updated_by' => $user,
             'is_active' => 1
         );
 
@@ -47,11 +47,11 @@ class News_model extends CI_Model
         else return false;
     }
 
-    function set_active($post) {
+    function set_active($user, $post) {
         $data = array(
             'is_active' => $post['is_active'],
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
 
         $this->db->where('id', $post['news_id']);

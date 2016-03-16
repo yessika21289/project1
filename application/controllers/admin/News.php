@@ -41,22 +41,23 @@ class News extends CI_Controller
 
     function add($news_id = NULL)
     {
+        $user = $this->session->userdata('username');
         $this->load->model('News_model');
 
         if(!empty($_POST)) {
             if(empty($_POST['news_id'])) {
-                $added_id = $this->News_model->add($_POST);
+                $added_id = $this->News_model->add($user, $_POST);
                 if($added_id) $this->session->set_flashdata('added_id', $added_id);
             }
             else {
-                $updated_id = $this->News_model->update($_POST);
+                $updated_id = $this->News_model->update($user, $_POST);
                 if($updated_id) $this->session->set_flashdata('updated_id', $updated_id);
             }
             redirect('admin/News');
         } elseif($this->input->get('is_active') != NULL) {
             $post['news_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
-            $set_active = $this->News_model->set_active($post);
+            $set_active = $this->News_model->set_active($user, $post);
             $this->session->set_flashdata('set_active', $set_active);
             $this->session->set_flashdata('set_active_id', $post['news_id']);
 
