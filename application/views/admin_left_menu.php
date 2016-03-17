@@ -5,7 +5,7 @@
         <ul class="sidebar-menu">
             <li <?php if($menu_active == 'dashboard') echo 'class="active"'; ?> >
                 <a class="" href="<?php echo base_url(); ?>admin">
-                    <i class="icon_house_alt"></i>
+                    <i class="ic    on_house_alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -61,6 +61,22 @@
                     </li>
                     <li class="<?php if($menu_active == 'members') echo 'active'; ?>">
                         <a class="" href="<?php echo base_url(); ?>admin/Members">See All Members</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_merchandise', 'merchandise'))) echo 'active'; ?>">
+                <a href="javascript:" class="">
+                    <i class="icon_gift_alt"></i>
+                    <span>Merchandise</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li class="<?php if($menu_active == 'add_merchandise') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Merchandise/add">Add Merchandise</a>
+                    </li>
+                    <li class="<?php if($menu_active == 'merchandise') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Merchandise">See All Merchandise</a>
                     </li>
                 </ul>
             </li>

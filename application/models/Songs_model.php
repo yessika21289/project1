@@ -14,28 +14,19 @@ class Songs_model extends CI_Model
         return $query->result();
     }
 
-    function add($post, $files) {
+    function add($post, $cover_file, $song_file) {
         $title = $post['title'];
         $lyric = $post['lyric'];
-        $author = $post['author'];
+        $artist = $post['artist'];
         $release_date = $post['release_date'];
-
-        if(!empty($files['song_cover'])) {
-            $ext = pathinfo($files['song_cover']['name'], PATHINFO_EXTENSION);
-            $song_cover_path = 'assets/songs/cover/'.$title.'.'.$ext;
-        }
-        if(!empty($files['song'])) {
-            $ext = pathinfo($files['song']['name'], PATHINFO_EXTENSION);
-            $song_path = 'assets/songs/'.$title.'.'.$ext;
-        }
 
         $data = array(
             'title' => $title,
             'lyric' => $lyric,
-            'author' => $author,
+            'artist' => $artist,
             'release_date' => $release_date,
-            'song_cover_path' => (!empty($song_cover_path)) ? $song_cover_path : NULL,
-            'song_path' => (!empty($song_path)) ? $song_path : NULL,
+            'song_cover_path' => (!empty($cover_file)) ? $cover_file : NULL,
+            'song_path' => (!empty($song_file)) ? $song_file : NULL,
             'created_at' => time(),
             'created_by' => 'superadmin',
             'updated_at' => time(),
@@ -47,27 +38,19 @@ class Songs_model extends CI_Model
         return $insert_id;
     }
 
-    function update($post, $files) {
+    function update($post, $cover_file, $song_file) {
         $title = $post['title'];
         $lyric = $post['lyric'];
-        $author = $post['author'];
+        $artist = $post['artist'];
         $release_date = $post['release_date'];
-        if(!empty($files['song_cover'])) {
-            $ext = pathinfo($files['song_cover']['name'], PATHINFO_EXTENSION);
-            $song_cover_path = 'assets/songs/cover/'.$title.'.'.$ext;
-        }
-        if(!empty($files['song'])) {
-            $ext = pathinfo($files['song']['name'], PATHINFO_EXTENSION);
-            $song_path = 'assets/songs/'.$title.'.'.$ext;
-        }
 
         $data = array(
             'title' => $title,
             'lyric' => $lyric,
-            'author' => $author,
+            'artist' => $artist,
             'release_date' => $release_date,
-            'song_cover_path' => (!empty($song_cover_path)) ? $song_cover_path : NULL,
-            'song_path' => (!empty($song_path)) ? $song_path : NULL,
+            'song_cover_path' => (!empty($cover_file)) ? $cover_file : NULL,
+            'song_path' => (!empty($song_file)) ? $song_file : NULL,
             'updated_at' => time(),
             'updated_by' => 'superadmin',
             'is_active' => 1

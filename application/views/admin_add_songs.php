@@ -2,9 +2,10 @@
 <section id="main-content">
     <section class="wrapper">
         <!--overview start-->
+
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="icon_group"></i> Songs</h3>
+                <h3 class="page-header"><i class="icon_headphones"></i> Songs</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
                     <li><i class="icon_headphones"></i>Songs</li>
@@ -12,11 +13,25 @@
             </div>
         </div>
 
+        <?php if(isset($error_upload)): ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>Error!</strong> <?php echo $error_upload; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <?php
             $song_id = (!empty($songs[0]->id)) ? $songs[0]->id : '';
             $title = (!empty($songs[0]->title)) ? $songs[0]->title : '';
             $lyric = (!empty($songs[0]->lyric)) ? $songs[0]->lyric : '';
-            $author = (!empty($songs[0]->author)) ? $songs[0]->author : '';
+            $artist = (!empty($songs[0]->artist)) ? $songs[0]->artist : '';
             $release_date = (!empty($songs[0]->release_date)) ? $songs[0]->release_date : '';
             $song_cover_path = (!empty($songs[0]->song_cover_path)) ? $songs[0]->song_cover_path : '';
             $song_path = (!empty($songs[0]->song_path)) ? $songs[0]->song_path : '';
@@ -48,10 +63,10 @@
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="title"
                                                placeholder="Song title..." value="<?php echo $title; ?>">
-                                            <input type="text" class="form-control" name="author"
-                                                   placeholder="Author..." value="<?php echo $author; ?>">
+                                            <input type="text" class="form-control" name="artist"
+                                                   placeholder="Artist..." value="<?php echo $artist; ?>">
                                             <input type="date" class="form-control" name="release_date"
-                                                   placeholder="Release Date..." value="<?php echo $release_date; ?>">
+                                                   placehodlder="Release Date..." value="<?php echo $release_date; ?>">
                                             <input type="hidden" class="form-control" name="song_id" value="<?php echo $song_id; ?>">
                                         </div>
                                     </div>

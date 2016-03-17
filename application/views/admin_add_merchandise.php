@@ -13,14 +13,14 @@
         </div>
 
         <?php
-            $member_id = (!empty($members[0]['id'])) ? $members[0]['id'] : '';
-            $name = (!empty($members[0]['name'])) ? $members[0]['name'] : '';
-            $avatar = (!empty($members[0]['avatar'])) ? $members[0]['avatar'] : '';
-            $facebook = (!empty($members[0]['socmed']['facebook'])) ? $members[0]['socmed']['facebook'] : '';
-            $twitter = (!empty($members[0]['socmed']['twitter'])) ? $members[0]['socmed']['twitter'] : '';
-            $instagram = (!empty($members[0]['socmed']['instagram'])) ? $members[0]['socmed']['instagram'] : '';
-            $path = (!empty($members[0]['socmed']['path'])) ? $members[0]['socmed']['path'] : '';
-            $web = (!empty($members[0]['socmed']['web'])) ? $members[0]['socmed']['web'] : '';
+        $member_id = (!empty($members[0]['id'])) ? $members[0]['id'] : '';
+        $name = (!empty($members[0]['name'])) ? $members[0]['name'] : '';
+        $avatar = (!empty($members[0]['avatar'])) ? $members[0]['avatar'] : '';
+        $facebook = (!empty($members[0]['socmed']['facebook'])) ? $members[0]['socmed']['facebook'] : '';
+        $twitter = (!empty($members[0]['socmed']['twitter'])) ? $members[0]['socmed']['twitter'] : '';
+        $instagram = (!empty($members[0]['socmed']['instagram'])) ? $members[0]['socmed']['instagram'] : '';
+        $path = (!empty($members[0]['socmed']['path'])) ? $members[0]['socmed']['path'] : '';
+        $web = (!empty($members[0]['socmed']['web'])) ? $members[0]['socmed']['web'] : '';
         ?>
 
         <div class="row">
@@ -39,9 +39,9 @@
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-avatar" style="width: 13.6667%;">
                                             <div id="avatar-image-holder" class="avatar"
-                                            <?php if(!empty($avatar)): ?>
-                                                style="background: url(<?php echo base_url().$avatar; ?>) no-repeat center;"
-                                            <?php endif; ?>></div>
+                                                <?php if(!empty($avatar)): ?>
+                                                    style="background: url(<?php echo base_url().$avatar; ?>) no-repeat center;"
+                                                <?php endif; ?>></div>
                                             <input id="upload-avatar" type="file" name="avatar" />
                                             <a href="" id="upload-avatar-link" class="edit-avatar">Edit</a>
                                         </div>
@@ -54,7 +54,7 @@
                                                 <img src="<?php echo base_url(); ?>assets/img/fb-icon.png">
                                             </span>
                                             <input type="text" class="form-control col-md-10 socmed-add-textfield" name="facebook"
-                                               placeholder="Facebook ID" value="<?php echo $facebook; ?>">
+                                                   placeholder="Facebook ID" value="<?php echo $facebook; ?>">
 
                                             <span class="col-md-1 socmed-add-icon">
                                                 <img src="<?php echo base_url(); ?>assets/img/twitter-icon.png">

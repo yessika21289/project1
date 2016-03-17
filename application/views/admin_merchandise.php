@@ -84,74 +84,74 @@
                         </header>
                     <?php else: ?>
                         <?php foreach($members as $member): ?>
-                        <div class="panel-body">
-                            <div class="col-md-2 clearfix" style="width: 13.6667%;">
-                                <img src="<?php echo base_url().$member['avatar']; ?>" class="view-avatar" />
-                            </div>
-                            <div class="col-md-10">
-                                <h2 style="margin-top: 0;"><?php echo $member['name']; ?></h2>
-                                <hr style="margin-top: 0px; margin-bottom: 10px; border-top: 1px solid #cccccc"/>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="<?php echo base_url(); ?>assets/img/fb-icon.png" class="socmed-icon">
-                                        <?php
+                            <div class="panel-body">
+                                <div class="col-md-2 clearfix" style="width: 13.6667%;">
+                                    <img src="<?php echo base_url().$member['avatar']; ?>" class="view-avatar" />
+                                </div>
+                                <div class="col-md-10">
+                                    <h2 style="margin-top: 0;"><?php echo $member['name']; ?></h2>
+                                    <hr style="margin-top: 0px; margin-bottom: 10px; border-top: 1px solid #cccccc"/>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="<?php echo base_url(); ?>assets/img/fb-icon.png" class="socmed-icon">
+                                            <?php
                                             if(!empty($member['socmed']['facebook'])) echo $member['socmed']['facebook'];
                                             else echo '-';
-                                        ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="<?php echo base_url(); ?>assets/img/instagram-icon.png" class="socmed-icon">
-                                        <?php
+                                            ?>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="<?php echo base_url(); ?>assets/img/instagram-icon.png" class="socmed-icon">
+                                            <?php
                                             if(!empty($member['socmed']['instagram'])) echo $member['socmed']['instagram'];
                                             else echo '-';
-                                        ?>
+                                            ?>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="<?php echo base_url(); ?>assets/img/twitter-icon.png" class="socmed-icon">
-                                        <?php
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="<?php echo base_url(); ?>assets/img/twitter-icon.png" class="socmed-icon">
+                                            <?php
                                             if(!empty($member['socmed']['twitter'])) echo $member['socmed']['twitter'];
                                             else echo '-';
-                                        ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="<?php echo base_url(); ?>assets/img/path-icon.png" class="socmed-icon">
-                                        <?php
+                                            ?>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="<?php echo base_url(); ?>assets/img/path-icon.png" class="socmed-icon">
+                                            <?php
                                             if(!empty($member['socmed']['path'])) echo $member['socmed']['path'];
                                             else echo '-';
-                                        ?>
+                                            ?>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="<?php echo base_url(); ?>assets/img/web-icon.png" class="socmed-icon">
-                                        <?php
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="<?php echo base_url(); ?>assets/img/web-icon.png" class="socmed-icon">
+                                            <?php
                                             if(!empty($member['web'])) echo $member['web'];
                                             else echo '-';
-                                        ?>
+                                            ?>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <br/>
+                                    <br/>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="btn btn-primary" title="Edit"
-                                           href="<?php echo base_url(); ?>admin/Members/add/<?php echo $member['id']; ?>">
-                                            <span class="icon_pencil-edit"></span> Edit
-                                        </a>
-                                        <a class="btn btn-danger" title="Delete"
-                                           href="<?php echo base_url(); ?>admin/Members/delete/<?php echo $member['id']; ?>">
-                                            <span class="icon_trash_alt"></span> Delete
-                                        </a>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a class="btn btn-primary" title="Edit"
+                                               href="<?php echo base_url(); ?>admin/Members/add/<?php echo $member['id']; ?>">
+                                                <span class="icon_pencil-edit"></span> Edit
+                                            </a>
+                                            <a class="btn btn-danger" title="Delete"
+                                               href="<?php echo base_url(); ?>admin/Members/delete/<?php echo $member['id']; ?>">
+                                                <span class="icon_trash_alt"></span> Delete
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
-                        </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </section>
