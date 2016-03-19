@@ -123,6 +123,22 @@
         });
     });
 
+    // ====== upload merchandise ======= //
+    $(function(){
+        $("#upload-merchandise-link").on('click', function(e){
+            e.preventDefault();
+            $("#upload-merchandise:hidden").trigger('click');
+        });
+    });
+
+    $(document).ready(function() {
+        $.uploadPreview({
+            input_field: "#upload-merchandise",
+            preview_box: "#merchandise-image-holder",
+            label_field: "#upload-merchandise-link"
+        });
+    });
+
 //    $('#sandbox-container .input-append.date').datepicker({
 //        clearBtn: true,
 //        todayHighlight: true

@@ -43,26 +43,79 @@ class Songs extends CI_Controller {
         $this->load->model('Songs_model');
         $data['menu_active'] = 'add_songs';
 
+        // ================================================ ADD SONG ================================================ //
         if (!empty($_POST)) {
             $now = time();
-            $error = array();
-            $cover_file = '';
-            $song_file = '';
+            $error = '';
+            $cover_dir = '';
+            $song_dir = '';
+            $songs = array(
+                'title' => (!empty($_POST['title'])) ? $_POST['title'] : '',
+                'artist' => (!empty($_POST['artist'])) ? $_POST['artist'] : '',
+                'release_date' => (!empty($_POST['release_date'])) ? $_POST['release_date'] : '',
+                'lyric' => (!empty($_POST['lyric'])) ? $_POST['lyric'] : ''
+            );
+            $this->session->set_flashdata('songs', $songs);
 
-            // ======================================= UPLOAD IMAGE COVER =========================================== //
+            // ============================================ UPLOAD SONG ============================================ //
+            if (!empty($_FILES['song']['tmp_name'])) {
+
+                $song_folder = "assets/songs/";
+                $song_ext = pathinfo($_FILES['song']['name'], PATHINFO_EXTENSION);
+                $song_file = $song_folder . $now . '.' . $song_ext;
+
+                if (is_dir($song_folder) == 0) {
+                    $error = $song_folder . ' folder is not exist';
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Songs/add');
+                }
+                else if (file_exists($song_file)) {
+                    $error = 'Song already exist.';
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Songs/add');
+                }
+                else if (!in_array($song_ext, array('mp3', 'wav'))) {
+                    $error = 'Only mp3/wav which are allowed.';
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Songs/add');
+                }
+                else {
+                    if (move_uploaded_file($_FILES['song']['tmp_name'], $song_file)) {
+                    }
+                    else {
+                        $error = 'Upload song failed!';
+                        $this->session->set_flashdata('error_upload', $error);
+                        redirect('admin/Songs/add');
+                    }
+                }
+            }
+
+            // ====================================== UPLOAD IMAGE COVER =========================================== //
             if (!empty($_FILES['song_cover']['tmp_name'])) {
-                $cover_folder = "assets/songs/cover/";
+                $cover_dir = "assets/songs/cover/";
+
                 $cover_ext = strtolower(pathinfo($_FILES['song_cover']['name'], PATHINFO_EXTENSION));
-                $cover_file = $cover_folder . $now . '.' . $cover_ext;
+                $cover_file = $cover_dir . $now . '.' . $cover_ext;
 
-                if (file_exists($cover_file)) {
+                if (is_dir($cover_dir) == 0) {
+                    $error = $cover_dir . ' folder is not exist';
+                    if (!empty($song_file)) unlink($song_file);
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Songs/add');
+                }
+                else if (file_exists($cover_file)) {
                     $error = 'Cover already exist.';
+                    if (!empty($song_file)) unlink($song_file);
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Songs/add');
                 }
-                if (!in_array($cover_ext, array('jpg', 'jpeg', 'png'))) {
+                else if (!in_array($cover_ext, array('jpg', 'jpeg', 'png'))) {
                     $error = 'Only jpg/jpeg/png which are allowed.';
+                    if (!empty($song_file)) unlink($song_file);
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Songs/add');
                 }
-
-                if (empty($error)) {
+                else {
                     if (move_uploaded_file($_FILES['song_cover']['tmp_name'], $cover_file)) {
                         $this->load->library('image_lib');
                         $config_cover['image_library'] = 'gd2';
@@ -75,79 +128,50 @@ class Songs extends CI_Controller {
                     }
                     else {
                         $error = 'Upload cover failed!';
+                        if (!empty($song_file)) unlink($song_file);
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('admin/Songs/add');
                     }
                 }
-                else {
-                    $this->session->set_flashdata('error_upload', $error);
-                    redirect('admin/Songs/add');
-                }
             }
 
-            // ======================================= UPLOAD SONG =========================================== //
-            if (!empty($_FILES['song']['tmp_name'])) {
-
-                $song_folder = "assets/songs/";
-                $song_ext = pathinfo($_FILES['song']['name'], PATHINFO_EXTENSION);
-
-                $song_file = $song_folder . $now . '.' . $song_ext;
-
-                if (file_exists($song_file)) {
-                    $error = 'Song already exist.';
-                }
-                if (!in_array($song_ext, array('mp3', 'wav'))) {
-                    $error = 'Only mp3/wav which are allowed.';
-                }
-
-                if (empty($error)) {
-                    if(move_uploaded_file($_FILES['song']['tmp_name'], $song_file)) {}
-                    else {
-                        $error = 'Upload song failed!';
-                        $this->session->set_flashdata('error_upload', $error);
-                        redirect('admin/Songs/add');
-                    }
-                }
-                else {
-                    $this->session->set_flashdata('error_upload', $error);
-                    redirect('admin/Songs/add');
-                }
-            }
-
+            // ============================================= NEW SONG ============================================= //
             if (empty($_POST['song_id'])) {
                 $added_id = $this->Songs_model->add($_POST, $cover_file, $song_file);
                 if ($added_id) {
                     $this->session->set_flashdata('added_id', $added_id);
                 }
+                else {
+                    if (!empty($song_file)) unlink($song_file);
+                    if (!empty($cover_file)) unlink($song_file);
+                }
             }
+            // ============================================ UPDATE SONG ============================================ //
             else {
                 $songs = $this->Songs_model->getData($_POST['song_id']);
-                if (!empty($cover_file)) {
-                    if (!empty($songs[0]->song_cover_path)) {
-                        unlink($songs[0]->song_cover_path);
-                    }
+                if (!empty($cover_file) && !empty($songs[0]->song_cover_path)) {
+                    unlink($songs[0]->song_cover_path);
                 }
-                else {
-                    $cover_file = !empty($songs[0]->song_cover_path) ? $songs[0]->song_cover_path : '';
-                }
+                else $cover_file = !empty($songs[0]->song_cover_path) ? $songs[0]->song_cover_path : '';
 
-                if (!empty($song_file)) {
-                    if (!empty($songs[0]->song_path)) {
-                        unlink($songs[0]->song_path);
-                    }
+                if (!empty($song_file) && !empty($songs[0]->song_path)) {
+                    unlink($songs[0]->song_path);
                 }
-                else {
-                    $song_file = !empty($songs[0]->song_path) ? $songs[0]->song_path : '';
-                }
+                else $song_file = !empty($songs[0]->song_path) ? $songs[0]->song_path : '';
 
                 $updated_id = $this->Songs_model->update($_POST, $cover_file, $song_file);
                 if ($updated_id) {
                     $this->session->set_flashdata('updated_id', $updated_id);
                 }
+                else {
+                    if (!empty($song_file)) unlink($song_file);
+                    if (!empty($cover_file)) unlink($song_file);
+                }
             }
 
             redirect('admin/Songs');
         }
+        // ========================================== PUBLISH / UNPUBLISH ========================================== //
         elseif ($this->input->get('is_active') != NULL) {
             $post['song_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
@@ -157,11 +181,24 @@ class Songs extends CI_Controller {
 
             redirect('admin/Songs');
         }
+        // ============================================ goto SONG's FORM ============================================ //
         else {
             if (!empty($song_id)) {
-                $data['songs'] = $this->Songs_model->getData($song_id);
+                $songs = $this->Songs_model->getData($song_id);
+                $data['songs'] = array(
+                    'id' => $songs[0]->id,
+                    'title' => $songs[0]->title,
+                    'artist' => $songs[0]->artist,
+                    'lyric' => $songs[0]->lyric,
+                    'release_date' => $songs[0]->release_date,
+                );
             }
-            $data['error_upload'] = $this->session->flashdata('error_upload');
+
+            if(!empty($this->session->flashdata('error_upload'))) {
+                $data['error_upload'] = $this->session->flashdata('error_upload');
+                $data['songs'] = $this->session->flashdata('songs');
+            }
+
             $this->load->view('admin_header');
             $this->load->view('admin_left_menu', $data);
             $this->load->view('admin_add_songs');

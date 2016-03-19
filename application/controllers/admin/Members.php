@@ -45,11 +45,15 @@ class Members extends CI_Controller {
         $data['menu_active'] = 'add_members';
 
         if (!empty($_POST)) {
+            $now = time();
+            $error = '';
+            $avatar_dir = '';
+            $song_file = '';
 
             // ======================================= UPLOAD IMAGE COVER =========================================== //
             if (!empty($_FILES['avatar']['tmp_name'])) {
-                $error = array();
                 $target_dir = "assets/members/";
+                if(is_dir($song_folder) == 0) $error = $song_folder.' folder is not exist';
                 $avatar_ext = strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
 
                 $avatar_file = $target_dir . time() . '.' . $avatar_ext;

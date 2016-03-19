@@ -4949,6 +4949,15 @@ span.customSelect.changed {
     background: url(../img/default_cover.PNG) no-repeat center;
 }
 
+.merchandise {
+    border: groove;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    width: 135px;
+    height:135px;
+    background: url(../img/default_merchandise.png) no-repeat center;
+}
+
 .avatar {
     border: groove;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -4958,7 +4967,7 @@ span.customSelect.changed {
     background: url(../img/member_avatar.png) no-repeat center;
 }
 
-.edit-cover, .edit-avatar {
+.edit-cover, .edit-avatar, .edit-merchandise {
     text-align: center;
     background-color: #878787;
     opacity: 0.8;
@@ -4970,7 +4979,7 @@ span.customSelect.changed {
     font-weight: lighter;
 }
 
-.edit-cover:hover, .edit-avatar:hover {
+.edit-cover:hover, .edit-avatar:hover, .edit-merchandise:hover {
     text-decoration: none;
     color: white;
     background-color: #4c4c4c;
@@ -4989,7 +4998,7 @@ span.customSelect.changed {
     width: 703px;
 }
 
-#upload-cover, #upload-avatar {
+#upload-cover, #upload-avatar, #upload-merchandise {
     display: none;
 }
 

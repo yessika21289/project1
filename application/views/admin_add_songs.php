@@ -28,13 +28,14 @@
         <?php endif; ?>
 
         <?php
-            $song_id = (!empty($songs[0]->id)) ? $songs[0]->id : '';
-            $title = (!empty($songs[0]->title)) ? $songs[0]->title : '';
-            $lyric = (!empty($songs[0]->lyric)) ? $songs[0]->lyric : '';
-            $artist = (!empty($songs[0]->artist)) ? $songs[0]->artist : '';
-            $release_date = (!empty($songs[0]->release_date)) ? $songs[0]->release_date : '';
-            $song_cover_path = (!empty($songs[0]->song_cover_path)) ? $songs[0]->song_cover_path : '';
-            $song_path = (!empty($songs[0]->song_path)) ? $songs[0]->song_path : '';
+
+            $song_id = (!empty($songs['id'])) ? $songs['id'] : '';
+            $title = (!empty($songs['title'])) ? $songs['title'] : '';
+            $lyric = (!empty($songs['lyric'])) ? $songs['lyric'] : '';
+            $artist = (!empty($songs['artist'])) ? $songs['artist'] : '';
+            $release_date = (!empty($songs['release_date'])) ? $songs['release_date'] : '';
+            $song_cover_path = (!empty($songs['song_cover_path'])) ? $songs['song_cover_path'] : '';
+            $song_path = (!empty($songs['song_path'])) ? $songs['song_path'] : '';
         ?>
 
         <div class="row">
@@ -42,7 +43,7 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        Songs
+                        AdSong
                     </header>
                     <div class="panel-body">
                         <div class="form">
@@ -61,7 +62,7 @@
                                             <a href="" id="upload-cover-link" class="edit-cover">Edit</a>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" name="title"
+                                            <input type="text" class="form-control" name="title" required
                                                placeholder="Song title..." value="<?php echo $title; ?>">
                                             <input type="text" class="form-control" name="artist"
                                                    placeholder="Artist..." value="<?php echo $artist; ?>">
@@ -80,13 +81,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <textarea name="lyric" class="lyric" rows="20">
+                                    <div class="col-md-8" style="margin-left: 15px; width: 64%;">
+                                        Lyric:
+                                        <textarea class="form-control ckeditor" name="lyric" rows="6">
                                             <?php echo $lyric; ?>
                                         </textarea>
 
                                     <div class="lyric">
-                                        <button style="margin-top:20px;" type="submit" class="btn btn-primary pull-right">
+                                        <button style="margin:20px 10px 0 0;" type="submit" class="btn btn-primary pull-right">
                                             Save
                                         </button>
                                     </div>

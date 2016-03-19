@@ -7,30 +7,13 @@ class Merchandise_model extends CI_Model
         $this->allowed_tags = '<p><div><br><span><strong><em><sub><sup><ul><ol><li><a><blockquote><iframe><img>';
     }
 
-    function getData($member_id = NULL) {
-        $merchandise = array();
-        if(!empty($member_id)) $this->db->where('id', $member_id);
+    function getData($merchandise_id = NULL) {
+        if(!empty($merchandise_id)) $this->db->where('id', $merchandise_id);
         $this->db->order_by('updated_at', 'desc');
         $query = $this->db->get('merchandise');
         $results = $query->result();
 
-        $i = 0;
-        foreach($results as $result) {
-            $merchandise[$i]['id'] = $result->id;
-            $merchandise[$i]['name'] = $result->name;
-            $merchandise[$i]['avatar'] = $result->avatar;
-
-            $this->db->where('id_member', $result->id);
-            $query2 = $this->db->get('merchandise_socmed');
-            $results2 = $query2->result();
-
-            foreach($results2 as $result2) {
-                $merchandise[$i]['socmed'][$result2->type] = $result2->id_socmed;
-            }
-            $i++;
-        }
-
-        return $merchandise;
+        return $results;
     }
 
     function add($post, $files) {

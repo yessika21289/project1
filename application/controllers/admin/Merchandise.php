@@ -40,26 +40,18 @@ class Merchandise extends CI_Controller
         $this->load->view('admin_footer');
     }
 
-    function add($member_id = NULL)
+    function add($merchandise_id = NULL)
     {
         $this->load->model('Merchandise_model');
         $data['menu_active'] = 'add_merchandise';
         if(!empty($_POST)) {
-            if(empty($_POST['member_id'])) {
-                $member_id = $this->Merchandise_model->add($_POST, $_FILES);
-                if($member_id) $this->session->set_flashdata('added_id', $member_id);
-            }
-            else {
-                $member_id = $this->Merchandise_model->update($_POST, $_FILES);
-                if($member_id) $this->session->set_flashdata('updated_id', $member_id);
-            }
-
-            // ======================================= UPLOAD IMAGE COVER =========================================== //
+            // ===================================== UPLOAD MERCHANDISE PICTURE ===================================== //
             if(!empty($_FILES['avatar'])) {
+                $now = time();
                 $target_dir = "assets/merchandise/";
-                $ext = strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
+                $merchandise_ext = strtolower(pathinfo($_FILES['merchandise']['name'], PATHINFO_EXTENSION));
 
-                $target_file = $target_dir.$member_id.'_'.$_POST['name'].'.'.$ext;
+                $target_file = $target_dir.$now.'.'.$ext;
 
                 $error = array();
                 if(file_exists($target_file)) $error['file_exist'] = 1;
@@ -79,6 +71,15 @@ class Merchandise extends CI_Controller
                     if($error['file_exist']) echo "File already exist.<br/>";
                     if($error['not_allowed_filetype']) echo "Not allowed file type.";
                 }
+            }
+
+            if(empty($_POST['member_id'])) {
+                $member_id = $this->Merchandise_model->add($_POST, $_FILES);
+                if($member_id) $this->session->set_flashdata('added_id', $member_id);
+            }
+            else {
+                $member_id = $this->Merchandise_model->update($_POST, $_FILES);
+                if($member_id) $this->session->set_flashdata('updated_id', $member_id);
             }
 
             redirect('admin/Merchandise');

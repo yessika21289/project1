@@ -23,7 +23,7 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        News
+                        Add News
                     </header>
                     <div class="panel-body">
                         <div class="form">
