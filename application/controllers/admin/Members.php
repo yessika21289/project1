@@ -41,6 +41,7 @@ class Members extends CI_Controller {
     }
 
     function add($member_id = NULL) {
+        $user = $this->session->userdata('username');
         $this->load->model('Members_model');
         $data['menu_active'] = 'add_members';
 
@@ -48,24 +49,39 @@ class Members extends CI_Controller {
             $now = time();
             $error = '';
             $avatar_dir = '';
-            $song_file = '';
+            $avatar_file = '';
+
+            $members = array(
+                'name' => $_POST['name'],
+                'socmed' => array(
+                    'facebook' => $_POST['facebook'],
+                    'twitter' => $_POST['twitter'],
+                    'instagram' => $_POST['instagram'],
+                    'path' => $_POST['path'],
+                    'web' => $_POST['web']
+                ),
+            );
+            $this->session->set_flashdata('members', $members);
 
             // ======================================= UPLOAD IMAGE COVER =========================================== //
             if (!empty($_FILES['avatar']['tmp_name'])) {
-                $target_dir = "assets/members/";
-                if(is_dir($song_folder) == 0) $error = $song_folder.' folder is not exist';
+                $avatar_dir = "assets/members/";
                 $avatar_ext = strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
+                $avatar_file = $avatar_dir . time() . '.' . $avatar_ext;
 
-                $avatar_file = $target_dir . time() . '.' . $avatar_ext;
-
-                if (file_exists($avatar_file)) {
-                    $error['file_exist'] = 1;
-                }
-                if (!in_array($avatar_ext, array('jpg', 'jpeg', 'png'))) {
-                    $error['not_allowed_filetype'] = 1;
+                if (is_dir($avatar_dir) == 0) {
+                    $error = $avatar_dir . ' folder is not exist';
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Members/add');
                 }
 
-                if (empty($error)) {
+                else if (!in_array($avatar_ext, array('jpg', 'jpeg', 'png'))) {
+                    $error = 'Only jpg/jpeg/png which are allowed.';
+                    $this->session->set_flashdata('error_upload', $error);
+                    redirect('admin/Members/add');
+                }
+
+                else {
                     if (move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar_file)) {
                         $this->load->library('image_lib');
                         $config['image_library'] = 'gd2';
@@ -75,44 +91,73 @@ class Members extends CI_Controller {
 
                         $this->image_lib->initialize($config);
                         $this->image_lib->resize();
-                    } else {
+                    }
+                    else {
                         $error = 'Upload avatar failed!';
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('admin/Members/add');
                     }
                 }
-                else {
-
-                }
             }
 
+            // ========================================= ADD NEW MEMBER ============================================= //
             if (empty($_POST['member_id'])) {
-                $member_id = $this->Members_model->add($_POST, $_FILES);
-                if ($member_id) {
-                    $this->session->set_flashdata('added_id', $member_id);
+                $added_member_id = $this->Members_model->add($user, $_POST, $avatar_file);
+                if ($added_member_id) {
+                    $this->session->set_flashdata('added_id', $added_member_id);
+                } else {
+                    if(!empty($avatar_file)) unlink($avatar_file);
                 }
             }
+            // ======================================== UPDATE A MEMBER ============================================ //
             else {
-                $member_id = $this->Members_model->update($_POST, $_FILES);
-                if ($member_id) {
-                    $this->session->set_flashdata('updated_id', $member_id);
+                $member = $this->Members_model->getData($_POST['member_id']);
+
+                if(!empty($avatar_file) && !empty($member[0]['avatar'])) {
+                    unlink($member[0]['avatar']);
+                }
+
+                $updated_member_id = $this->Members_model->update($user, $_POST, $avatar_file);
+                if ($updated_member_id) {
+                    $this->session->set_flashdata('updated_id', $updated_member_id);
+                } else {
+                    if(!empty($avatar_file)) unlink($avatar_file);
                 }
             }
 
             redirect('admin/Members');
         }
+        // ========================================= PUBLISH / UNPUBLISH ============================================= //
         elseif ($this->input->get('is_active') != NULL) {
-            $post['song_id'] = $this->input->get('id');
+            $post['member_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
-            $set_active = $this->Members_model->set_active($post);
+            $set_active = $this->Members_model->set_active($user, $post);
             $this->session->set_flashdata('set_active', $set_active);
             $this->session->set_flashdata('set_active_id', $post['members_id']);
 
             redirect('admin/Members');
         }
+        // ========================================= goto MEMBER's form ============================================= //
         else {
             if (!empty($member_id)) {
-                $data['members'] = $this->Members_model->getData($member_id);
+                $member = $this->Members_model->getData($member_id);
+                $data['member'] = array(
+                    'id' => $member[0]['id'],
+                    'name' => $member[0]['name'],
+                    'avatar' => $member[0]['avatar'],
+                    'socmed' => array(
+                        'facebook' => $member[0]['socmed']['facebook'],
+                        'twitter' => $member[0]['socmed']['twitter'],
+                        'instagram' => $member[0]['socmed']['instagram'],
+                        'path' => $member[0]['socmed']['path'],
+                        'web' => $member[0]['socmed']['web']
+                    ),
+                );
+            }
+
+            if(!empty($this->session->flashdata('error_upload'))) {
+                $data['error_upload'] = $this->session->flashdata('error_upload');
+                $data['members'] = $this->session->flashdata('members');
             }
 
             $this->load->view('admin_header');
@@ -123,11 +168,11 @@ class Members extends CI_Controller {
         }
     }
 
-    function delete($members_id = NULL) {
+    function delete($member_id = NULL) {
         $this->load->model('Members_model');
 
-        if (!empty($members_id)) {
-            $delete = $this->Members_model->delete($members_id);
+        if (!empty($member_id)) {
+            $delete = $this->Members_model->delete($member_id);
             if ($delete) {
                 $this->session->set_flashdata('delete_confirm', $delete);
             }

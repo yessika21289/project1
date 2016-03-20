@@ -16,73 +16,32 @@ class Merchandise_model extends CI_Model
         return $results;
     }
 
-    function add($post, $files) {
+    function add($user, $post, $merchandise_file) {
         $data = array(
-            'name' => $post['name'],
+            'title' => $post['title'],
+            'price' => $post['price'],
+            'description' => $post['desc'],
+            'image' => !empty($merchandise_file) ? $merchandise_file : NULL,
             'created_at' => time(),
-            'created_by' => 'superadmin',
+            'created_by' => $user,
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
         $this->db->insert('merchandise', $data);
         $insert_id = $this->db->insert_id();
 
-        if(!empty($files['avatar'])) {
-            $ext = pathinfo($files['avatar']['name'], PATHINFO_EXTENSION);
-            $avatar_path = 'assets/merchandise/'.$insert_id.'_'.$post['name'].'.'.$ext;
-            $this->db->where('id', $insert_id);
-            $this->db->update('merchandise', array('avatar' => $avatar_path));
-        }
-
-        $keys = array_keys($post);
-        foreach($keys as $key) {
-            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web'))) {
-                $socmed = array(
-                    'id_member' => $insert_id,
-                    'type' => $key,
-                    'id_socmed' => $post[$key],
-                    'created_at' => time(),
-                    'created_by' => 'superadmin',
-                    'updated_at' => time(),
-                    'updated_by' => 'superadmin'
-                );
-                $this->db->insert('merchandise_socmed', $socmed);
-            }
-        }
-
         return $insert_id;
     }
 
-    function update($post, $files) {
+    function update($user, $post, $files) {
         $data = array(
             'name' => $post['name'],
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
         $this->db->where('id', $post['member_id']);
         $this->db->update('merchandise', $data);
 
-        if(!empty($files['avatar'])) {
-            $ext = pathinfo($files['avatar']['name'], PATHINFO_EXTENSION);
-            $avatar_path = 'assets/merchandise/'.$post['member_id'].'_'.$post['name'].'.'.$ext;
-            $this->db->where('id', $post['member_id']);
-            $this->db->update('merchandise', array('avatar' => $avatar_path));
-        }
-
-        $keys = array_keys($post);
-        foreach($keys as $key) {
-            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web'))) {
-                $socmed = array(
-                    'id_member' => $post['member_id'],
-                    'type' => $key,
-                    'id_socmed' => $post[$key],
-                    'updated_at' => time(),
-                    'updated_by' => 'superadmin'
-                );
-                $this->db->where('id_member', $post['member_id']);
-                $this->db->update('merchandise_socmed', $socmed);
-            }
-        }
 
         return $post['member_id'];
     }

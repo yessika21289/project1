@@ -102,9 +102,10 @@
                             <th>Action</th>
                         </tr>
                         <?php
-                        $i = 0;
+                        $no = 0;
                         foreach($songs as $row):
-                            $i++;
+                            $song_cover_path = (!empty($row->song_cover_path)) ? $row->song_cover_path : 'assets/img/default_cover.png';
+                            $no++;
                             $row_changed = '';
                             $label = '';
                             if($row->id == $added_id || $row->id == $updated_id) $row_changed = 'success';
@@ -112,9 +113,9 @@
                             if($row->id == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
                             ?>
                             <tr class="<?php  echo $row_changed; ?>">
-                                <td><?php echo $i; ?></td>
+                                <td><?php echo $no; ?></td>
                                 <td>
-                                    <img src="<?php echo base_url().$row->song_cover_path; ?>" width="30">
+                                    <img src="<?php echo base_url().$song_cover_path; ?>" width="30">
                                 </td>
                                 <td>
                                     <?php echo $row->title; ?>

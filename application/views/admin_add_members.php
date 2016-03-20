@@ -12,15 +12,29 @@
             </div>
         </div>
 
+        <?php if(isset($error_upload)): ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>Error!</strong> <?php echo $error_upload; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <?php
-            $member_id = (!empty($members[0]['id'])) ? $members[0]['id'] : '';
-            $name = (!empty($members[0]['name'])) ? $members[0]['name'] : '';
-            $avatar = (!empty($members[0]['avatar'])) ? $members[0]['avatar'] : '';
-            $facebook = (!empty($members[0]['socmed']['facebook'])) ? $members[0]['socmed']['facebook'] : '';
-            $twitter = (!empty($members[0]['socmed']['twitter'])) ? $members[0]['socmed']['twitter'] : '';
-            $instagram = (!empty($members[0]['socmed']['instagram'])) ? $members[0]['socmed']['instagram'] : '';
-            $path = (!empty($members[0]['socmed']['path'])) ? $members[0]['socmed']['path'] : '';
-            $web = (!empty($members[0]['socmed']['web'])) ? $members[0]['socmed']['web'] : '';
+            $member_id = (!empty($members['id'])) ? $members['id'] : '';
+            $name = (!empty($members['name'])) ? $members['name'] : '';
+            $avatar = (!empty($members['avatar'])) ? $members['avatar'] : '';
+            $facebook = (!empty($members['socmed']['facebook'])) ? $members['socmed']['facebook'] : '';
+            $twitter = (!empty($members['socmed']['twitter'])) ? $members['socmed']['twitter'] : '';
+            $instagram = (!empty($members['socmed']['instagram'])) ? $members['socmed']['instagram'] : '';
+            $path = (!empty($members['socmed']['path'])) ? $members['socmed']['path'] : '';
+            $web = (!empty($members['socmed']['web'])) ? $members['socmed']['web'] : '';
         ?>
 
         <div class="row">

@@ -14,7 +14,7 @@ class Songs_model extends CI_Model
         return $query->result();
     }
 
-    function add($post, $cover_file, $song_file) {
+    function add($user, $post, $cover_file, $song_file) {
         $title = $post['title'];
         $lyric = $post['lyric'];
         $artist = $post['artist'];
@@ -28,9 +28,9 @@ class Songs_model extends CI_Model
             'song_cover_path' => (!empty($cover_file)) ? $cover_file : NULL,
             'song_path' => (!empty($song_file)) ? $song_file : NULL,
             'created_at' => time(),
-            'created_by' => 'superadmin',
+            'created_by' => $user,
             'updated_at' => time(),
-            'updated_by' => 'superadmin',
+            'updated_by' => $user,
             'is_active' => 1
         );
         $this->db->insert('songs', $data);
@@ -38,7 +38,7 @@ class Songs_model extends CI_Model
         return $insert_id;
     }
 
-    function update($post, $cover_file, $song_file) {
+    function update($user, $post, $cover_file, $song_file) {
         $title = $post['title'];
         $lyric = $post['lyric'];
         $artist = $post['artist'];
@@ -52,7 +52,7 @@ class Songs_model extends CI_Model
             'song_cover_path' => (!empty($cover_file)) ? $cover_file : NULL,
             'song_path' => (!empty($song_file)) ? $song_file : NULL,
             'updated_at' => time(),
-            'updated_by' => 'superadmin',
+            'updated_by' => $user,
             'is_active' => 1
         );
 
@@ -62,11 +62,11 @@ class Songs_model extends CI_Model
         else return false;
     }
 
-    function set_active($post) {
+    function set_active($user, $post) {
         $data = array(
             'is_active' => $post['is_active'],
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
 
         $this->db->where('id', $post['song_id']);

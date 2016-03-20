@@ -40,6 +40,7 @@ class Songs extends CI_Controller {
     }
 
     function add($song_id = NULL) {
+        $user = $this->session->userdata('username');
         $this->load->model('Songs_model');
         $data['menu_active'] = 'add_songs';
 
@@ -137,7 +138,7 @@ class Songs extends CI_Controller {
 
             // ============================================= NEW SONG ============================================= //
             if (empty($_POST['song_id'])) {
-                $added_id = $this->Songs_model->add($_POST, $cover_file, $song_file);
+                $added_id = $this->Songs_model->add($user, $_POST, $cover_file, $song_file);
                 if ($added_id) {
                     $this->session->set_flashdata('added_id', $added_id);
                 }
@@ -152,14 +153,12 @@ class Songs extends CI_Controller {
                 if (!empty($cover_file) && !empty($songs[0]->song_cover_path)) {
                     unlink($songs[0]->song_cover_path);
                 }
-                else $cover_file = !empty($songs[0]->song_cover_path) ? $songs[0]->song_cover_path : '';
 
                 if (!empty($song_file) && !empty($songs[0]->song_path)) {
                     unlink($songs[0]->song_path);
                 }
-                else $song_file = !empty($songs[0]->song_path) ? $songs[0]->song_path : '';
 
-                $updated_id = $this->Songs_model->update($_POST, $cover_file, $song_file);
+                $updated_id = $this->Songs_model->update($user, $_POST, $cover_file, $song_file);
                 if ($updated_id) {
                     $this->session->set_flashdata('updated_id', $updated_id);
                 }
@@ -175,7 +174,7 @@ class Songs extends CI_Controller {
         elseif ($this->input->get('is_active') != NULL) {
             $post['song_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
-            $set_active = $this->Songs_model->set_active($post);
+            $set_active = $this->Songs_model->set_active($user, $post);
             $this->session->set_flashdata('set_active', $set_active);
             $this->session->set_flashdata('set_active_id', $post['songs_id']);
 

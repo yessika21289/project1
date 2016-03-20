@@ -83,10 +83,12 @@
                             -No data stored-
                         </header>
                     <?php else: ?>
-                        <?php foreach($members as $member): ?>
+                        <?php foreach($members as $member):
+                            $avatar = !empty($member['avatar']) ? $member['avatar'] : 'assets/img/default_avatar.png';
+                            ?>
                         <div class="panel-body">
                             <div class="col-md-2 clearfix" style="width: 13.6667%;">
-                                <img src="<?php echo base_url().$member['avatar']; ?>" class="view-avatar" />
+                                <img src="<?php echo base_url().$avatar; ?>" class="view-avatar" />
                             </div>
                             <div class="col-md-10">
                                 <h2 style="margin-top: 0;"><?php echo $member['name']; ?></h2>
@@ -129,7 +131,7 @@
                                     <div class="col-md-6">
                                         <img src="<?php echo base_url(); ?>assets/img/web-icon.png" class="socmed-icon">
                                         <?php
-                                            if(!empty($member['web'])) echo $member['web'];
+                                            if(!empty($member['socmed']['web'])) echo $member['socmed']['web'];
                                             else echo '-';
                                         ?>
                                     </div>

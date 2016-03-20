@@ -33,23 +33,17 @@ class Members_model extends CI_Model
         return $members;
     }
 
-    function add($post, $files) {
+    function add($user, $post, $avatar_file) {
         $data = array(
             'name' => $post['name'],
+            'avatar' => !empty($avatar_file) ? $avatar_file : NULL,
             'created_at' => time(),
-            'created_by' => 'superadmin',
+            'created_by' => $user,
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
         $this->db->insert('members', $data);
         $insert_id = $this->db->insert_id();
-
-        if(!empty($files['avatar'])) {
-            $ext = pathinfo($files['avatar']['name'], PATHINFO_EXTENSION);
-            $avatar_path = 'assets/members/'.$insert_id.'_'.$post['name'].'.'.$ext;
-            $this->db->where('id', $insert_id);
-            $this->db->update('members', array('avatar' => $avatar_path));
-        }
 
         $keys = array_keys($post);
         foreach($keys as $key) {
@@ -59,9 +53,9 @@ class Members_model extends CI_Model
                     'type' => $key,
                     'id_socmed' => $post[$key],
                     'created_at' => time(),
-                    'created_by' => 'superadmin',
+                    'created_by' => $user,
                     'updated_at' => time(),
-                    'updated_by' => 'superadmin'
+                    'updated_by' => $user
                 );
                 $this->db->insert('members_socmed', $socmed);
             }
@@ -70,33 +64,27 @@ class Members_model extends CI_Model
         return $insert_id;
     }
 
-    function update($post, $files) {
+    function update($user, $post, $avatar_file) {
         $data = array(
             'name' => $post['name'],
+            'avatar' => !empty($avatar_file) ? $avatar_file : NULL,
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
         $this->db->where('id', $post['member_id']);
         $this->db->update('members', $data);
-
-        if(!empty($files['avatar'])) {
-            $ext = pathinfo($files['avatar']['name'], PATHINFO_EXTENSION);
-            $avatar_path = 'assets/members/'.$post['member_id'].'_'.$post['name'].'.'.$ext;
-            $this->db->where('id', $post['member_id']);
-            $this->db->update('members', array('avatar' => $avatar_path));
-        }
 
         $keys = array_keys($post);
         foreach($keys as $key) {
             if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web'))) {
                 $socmed = array(
                     'id_member' => $post['member_id'],
-                    'type' => $key,
                     'id_socmed' => $post[$key],
                     'updated_at' => time(),
-                    'updated_by' => 'superadmin'
+                    'updated_by' => $user
                 );
                 $this->db->where('id_member', $post['member_id']);
+                $this->db->where('type', $key);
                 $this->db->update('members_socmed', $socmed);
             }
         }
@@ -104,11 +92,11 @@ class Members_model extends CI_Model
         return $post['member_id'];
     }
 
-    function set_active($post) {
+    function set_active($user, $post) {
         $data = array(
             'is_active' => $post['is_active'],
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
 
         $this->db->where('id', $post['song_id']);
@@ -117,17 +105,20 @@ class Members_model extends CI_Model
         else return 'unpublished';
     }
 
-    function delete($song_id) {
-        $this->db->where('id', $song_id);
+    function delete($member_id) {
+        $this->db->where('id', $member_id);
         $query = $this->db->get('members');
         $result = $query->result();
-        if(!empty($result)) {
-            unlink($result[0]->song_cover_path);
-            unlink($result[0]->song_path);
-        }
 
-        $this->db->where('id', $song_id);
+        if(!empty($result)) {
+            unlink($result[0]->avatar);
+        }
+        $this->db->where('id_member', $member_id);
+        $this->db->delete('members_socmed');
+
+        $this->db->where('id', $member_id);
         $delete = $this->db->delete('members');
+
         return $delete;
     }
 }

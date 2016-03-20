@@ -4,10 +4,10 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="icon_id_alt"></i> Members</h3>
+                <h3 class="page-header"><i class="icon_gift_alt"></i> Merchandise</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
-                    <li><i class="icon_id_alt"></i>Members</li>
+                    <li><i class="icon_gift_alt"></i>Merchandise</li>
                 </ol>
             </div>
         </div>
@@ -20,7 +20,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Member has been added.
+                        <strong>Success!</strong> Merchandise has been added.
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Member has been updated.
+                        <strong>Success!</strong> Merchandise has been updated.
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Member has been <?php echo $set_active; ?>.
+                        <strong>Success!</strong> Merchandise has been <?php echo $set_active; ?>.
                     </div>
                 </div>
             </div>
@@ -61,15 +61,15 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Member has been deleted.
+                        <strong>Success!</strong> Merchandise has been deleted.
                     </div>
                 </div>
             </div>
         <?php endif; ?>
 
         <div class="row" style="margin: 0 0 15px 0;">
-            <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/Members/add" title="Add Members">
-                <span class="fa fa-plus"></span> Add Members
+            <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/Merchandise/add" title="Add Members">
+                <span class="fa fa-plus"></span> Add Merchandise
             </a>
         </div>
 
@@ -77,82 +77,79 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <?php
-                    if(empty($members)):
+                    if(empty($merchandise)):
                         ?>
                         <header class="panel-heading">
                             -No data stored-
                         </header>
                     <?php else: ?>
-                        <?php foreach($members as $member): ?>
-                            <div class="panel-body">
-                                <div class="col-md-2 clearfix" style="width: 13.6667%;">
-                                    <img src="<?php echo base_url().$member['avatar']; ?>" class="view-avatar" />
-                                </div>
-                                <div class="col-md-10">
-                                    <h2 style="margin-top: 0;"><?php echo $member['name']; ?></h2>
-                                    <hr style="margin-top: 0px; margin-bottom: 10px; border-top: 1px solid #cccccc"/>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="<?php echo base_url(); ?>assets/img/fb-icon.png" class="socmed-icon">
-                                            <?php
-                                            if(!empty($member['socmed']['facebook'])) echo $member['socmed']['facebook'];
-                                            else echo '-';
-                                            ?>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img src="<?php echo base_url(); ?>assets/img/instagram-icon.png" class="socmed-icon">
-                                            <?php
-                                            if(!empty($member['socmed']['instagram'])) echo $member['socmed']['instagram'];
-                                            else echo '-';
-                                            ?>
-                                        </div>
-                                    </div>
+                        <header class="panel-heading">
+                            All Merchandise
+                        </header>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="<?php echo base_url(); ?>assets/img/twitter-icon.png" class="socmed-icon">
-                                            <?php
-                                            if(!empty($member['socmed']['twitter'])) echo $member['socmed']['twitter'];
-                                            else echo '-';
-                                            ?>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img src="<?php echo base_url(); ?>assets/img/path-icon.png" class="socmed-icon">
-                                            <?php
-                                            if(!empty($member['socmed']['path'])) echo $member['socmed']['path'];
-                                            else echo '-';
-                                            ?>
-                                        </div>
-                                    </div>
+                        <table class="table table-striped table-advance table-hover">
+                            <tbody>
+                            <tr>
+                                <th>No</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Decription</th>
+                                <th>Updated Date</th>
+                                <th>Updated By</th>
+                                <th>Action</th>
+                            </tr>
+                            <?php
+                            $no = 0;
+                            foreach($merchandise as $row):
+                                $item_image = (!empty($row->image)) ? $row->image : 'assets/img/default_merchandise.png';
+                                $no++;
+                                $row_changed = '';
+                                $label = '';
+                                if($row->id == $added_id || $row->id == $updated_id) $row_changed = 'success';
+//                                if($row->id == $set_active_id && $set_active == 'published') $row_changed = 'success';
+//                                if($row->id == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
+                                ?>
+                                <tr class="<?php  echo $row_changed; ?>">
+                                    <td><?php echo $no; ?></td>
+                                    <td>
+                                        <img src="<?php echo base_url().$item_image; ?>" width="30">
+                                    </td>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="<?php echo base_url(); ?>assets/img/web-icon.png" class="socmed-icon">
-                                            <?php
-                                            if(!empty($member['web'])) echo $member['web'];
-                                            else echo '-';
-                                            ?>
-                                        </div>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                    <td>
+                                        <span class="title"><?php echo $row->title; ?></span>
+<!--                                        --><?php //if($row->is_active == 0): ?>
+<!--                                            <br/><span class="label label-warning">-not published-</span>-->
+<!--                                        --><?php //endif; ?>
+                                    </td>
+                                    <td><?php echo $row->price; ?></td>
+                                    <td><?php echo word_limiter($row->description, 30); ?></td>
+                                    <td><?php echo date('Y-m-d H:i:s', $row->updated_at); ?></td>
+                                    <td><?php echo $row->updated_by; ?></td>
+                                    <td>
+                                        <div class="btn-group">
                                             <a class="btn btn-primary" title="Edit"
-                                               href="<?php echo base_url(); ?>admin/Members/add/<?php echo $member['id']; ?>">
-                                                <span class="icon_pencil-edit"></span> Edit
-                                            </a>
+                                               href="<?php echo base_url() ?>admin/Merchandise/add/<?php echo $row->id; ?>">
+                                                <i class="icon_pencil-edit"></i></a>
+<!--                                            --><?php //if($row->is_active == 0): ?>
+<!--                                                <a class="btn btn-success" title="Publish"-->
+<!--                                                   href="--><?php //echo base_url() ?><!--admin/Merchandise/add?id=--><?php //echo $row->id; ?><!--&is_active=1">-->
+<!--                                                    <i class="icon_cloud-upload_alt"></i></a>-->
+<!--                                            --><?php //else: ?>
+<!--                                                <a class="btn btn-warning" title="Unpublish"-->
+<!--                                                   href="--><?php //echo base_url() ?><!--admin/Merchandise/add?id=--><?php //echo $row->id; ?><!--&is_active=0" >-->
+<!--                                                    <i class="icon_cloud"></i></a>-->
+<!--                                            --><?php //endif; ?>
                                             <a class="btn btn-danger" title="Delete"
-                                               href="<?php echo base_url(); ?>admin/Members/delete/<?php echo $member['id']; ?>">
-                                                <span class="icon_trash_alt"></span> Delete
-                                            </a>
+                                               onclick="return confirm('Are you sure?');"
+                                               href="<?php echo base_url() ?>admin/Merchandise/delete/<?php echo $row->id; ?>">
+                                                <i class="icon_trash_alt"></i></a>
                                         </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     <?php endif; ?>
                 </section>
             </div>

@@ -11,13 +11,26 @@
                 </ol>
             </div>
         </div>
+        <?php if(isset($error_upload)): ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>Error!</strong> <?php echo $error_upload; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <?php
-            $merchandise_id = (!empty($merchandise[0]->id)) ? $merchandise[0]->id : '';
-            $title = (!empty($merchandise[0]['title'])) ? $merchandise[0]['title'] : '';
-            $desc = (!empty($merchandise[0]['desc'])) ? $merchandise[0]['desc'] : '';
-            $price = (!empty($merchandise[0]['price'])) ? $merchandise[0]['price'] : '';
-            $image = (!empty($merchandise[0]['image'])) ? $merchandise[0]['image'] : '';
+            $merchandise_id = (!empty($merchandise['id'])) ? $merchandise['id'] : '';
+            $title = (!empty($merchandise['title'])) ? $merchandise['title'] : '';
+            $desc = (!empty($merchandise['desc'])) ? $merchandise['desc'] : '';
+            $price = (!empty($merchandise['price'])) ? $merchandise['price'] : '';
+            $image = (!empty($merchandise['image'])) ? $merchandise['image'] : '';
         ?>
 
         <div class="row">
