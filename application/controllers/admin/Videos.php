@@ -39,14 +39,14 @@ class Videos extends CI_Controller
         $this->load->view('admin_footer');
     }
 
-    function add($videos_id = NULL)
+    function add($video_id = NULL)
     {
         $user = $this->session->userdata('username');
         $this->load->model('Videos_model');
 
         if(!empty($_POST)) {
             if(empty($_POST['video_id'])) {
-                $added_id = $this->video_model->add($user, $_POST);
+                $added_id = $this->Videos_model->add($user, $_POST);
                 if($added_id) $this->session->set_flashdata('added_id', $added_id);
             }
             else {

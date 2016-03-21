@@ -5,7 +5,7 @@
         <ul class="sidebar-menu">
             <li <?php if($menu_active == 'dashboard') echo 'class="active"'; ?> >
                 <a class="" href="<?php echo base_url(); ?>admin">
-                    <i class="ic    on_house_alt"></i>
+                    <i class="icon_house_alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -49,18 +49,18 @@
                 </ul>
             </li>
 
-            <li class="sub-menu <?php if(in_array($menu_active, array('add_songs', 'songs'))) echo 'active'; ?>">
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_videos', 'videos'))) echo 'active'; ?>">
                 <a href="javascript:" class="">
-                    <i class="icon_headphones"></i>
-                    <span>Songs</span>
+                    <i class="fa fa-video-camera"></i>
+                    <span>Videos</span>
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
                     <li class="<?php if($menu_active == 'add_songs') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>admin/Songs/add">Add Songs</a>
+                        <a class="" href="<?php echo base_url(); ?>admin/Videos/add">Add Videos</a>
                     </li>
                     <li class="<?php if($menu_active == 'songs') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>admin/Songs">See All Songs</a>
+                        <a class="" href="<?php echo base_url(); ?>admin/Videos">See All Videos</a>
                     </li>
                 </ul>
             </li>

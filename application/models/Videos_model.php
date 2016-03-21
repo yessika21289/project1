@@ -16,10 +16,10 @@ class Videos_model extends CI_Model
 
     function add($user, $post) {
         $title = $post['title'];
-        $content = trim(strip_tags($post['content'], $this->allowed_tags));
+        $link = trim(strip_tags($post['youtube_id'], $this->allowed_tags));
         $data = array(
             'title' => $title,
-            'content' => $content,
+            'link' => $link,
             'created_at' => time(),
             'created_by' => $user,
             'updated_at' => time(),
@@ -32,16 +32,16 @@ class Videos_model extends CI_Model
     }
 
     function update($user, $post) {
-        $content = trim(strip_tags($post['content'], $this->allowed_tags));
+        $link = trim(strip_tags($post['youtube_id'], $this->allowed_tags));
         $data = array(
             'title' => $post['title'],
-            'content' => $content,
+            'link' => $link,
             'updated_at' => time(),
             'updated_by' => $user,
             'is_active' => 1
         );
 
-        $this->db->where('id', $post['videos_id']);
+        $this->db->where('id', $post['video_id']);
         $update = $this->db->update('videos', $data);
         if($update) return $post['video_id'];
         else return false;
