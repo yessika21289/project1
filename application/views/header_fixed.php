@@ -1,4 +1,6 @@
 	<nav class="navbar navbar-default navbar-fixed-top kw-nav-top" role="navigation">
+        <div class="header-back-batik">
+        </div>
         <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -16,28 +18,28 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="">
-                        <a class="page-scroll menu-header" href="/about">About Us</a>
+                        <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/news">News</a>
+                        <a class="page-scroll menu-header" href="/news">Berita &amp; Event</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/song">Songs</a>
+                        <a class="page-scroll menu-header" href="/song">Lagu</a>
                     </li>
                     <li>
                         <a class="page-scroll menu-header" href="/video">Video</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/galeri">Galeri</a>
+                        <a class="page-scroll menu-header" href="/gallery">Galeri</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="#how">Merchandise</a>
+                        <a class="page-scroll menu-header" href="/merchandise">Merchandise</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/member">Member</a>
+                        <a class="page-scroll menu-header" href="/member">Anggota</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/contact">Contact Us</a>
+                        <a class="page-scroll menu-header" href="/contact">Kontak Kami</a>
                     </li>
                 </ul>
             </div>

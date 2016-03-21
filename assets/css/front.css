@@ -12,6 +12,16 @@ html, body {
 
 body{
 	overflow-x: hidden;
+	background-color: #EEEEEE;
+}
+
+.container.content{
+	padding-top: 120px;
+}
+
+.container h1{
+	 font-family:'Alex Brush';
+	 font-size:60px;
 }
 
 .skrollr-desktop body {
@@ -25,31 +35,47 @@ body{
 }
 
 .right-menu{
-	width: 32px;
-	height: 32px;
-	border: 1px black solid;
+	width: 52px;
+	height: 52px;
 	display: block;
+	padding: 10px;
 }
 
-/*======================*/
+/*==========HOME============*/
 #banner{
 	height: 100%;
-	border: 1px black solid;
 }
 
 #about_us{
 	text-align: center;
-	min-height: 500px;
-	color: #FFFFFF;
+}
+
+.about-us-bg-home{
+	background-image: url(/assets/img/about_grad.jpg);
+	background-repeat: round;
+	height: 100%;
+	width:100%;
 }
 
 #news{
 	min-height: 500px;
-	color: #FFFFFF;
+}
+
+.news-bg-home{
+	background-image: url(/assets/img/news_grad.jpg);
+	background-size:cover;
+	height: 100%;
+	width:100%;
 }
 
 #songs, #video{
 	background-color: #FFFFFF;
+}
+
+.song-cover-home{
+	height: 400px;
+	width: 400px !important;
+	background-color: red;
 }
 
 #merchandise, #member, #contact_us{
@@ -62,10 +88,10 @@ body{
 }
 
 #contact_us{
-	background-color: orange;
+	background-color: #CA292B;
 }
 
-/*======================*/
+/*==========HEADER=========*/
 .kw-nav-top{
 	background-color: #CA292B !important;
 	border-color: #921C1E !important;
@@ -77,6 +103,8 @@ body{
 
 .page-scroll{
 	color: #FFFFFF !important;
+	/*font-size: 0.8em;
+	padding: 6px !important;*/
 }
 
 .page-scroll:hover{
@@ -90,10 +118,33 @@ body{
 .navbar-toggle{
 	margin-top: 16px !important;
 }
-/*=========NEWS=========*/
-.news-list h1{
-	padding: 0 15px;
+
+.header-back-batik{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(/assets/img/header_batik2.png);
+	background-size: cover;
+	background-position: right;
+	background-repeat: no-repeat;
+	z-index: -1;
 }
+
+/*=========ABOUT=========*/
+.about-tagline{
+	background-color: rgba(244,244,244,0.5);
+	padding: 25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius:25px;
+	border-left: 4px solid #333333;
+	border-bottom: 4px solid #333333;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+}
+
+/*=========NEWS=========*/
 .news-list-item{
 	background-color:rgba(255,255,255,0.5);
 	-webkit-border-radius: 25px;
@@ -123,7 +174,7 @@ body{
 	-moz-border-radius: 10px;
 	border-radius:10px;
 	padding: 5px;
-	min-height: 90px;
+	height: 110px;
 	border: 1px #AAAAAA solid;
 }
 
@@ -135,13 +186,9 @@ body{
 
 /*=========VIDEO=========*/
 .video-desc{
-	border: 1px black solid;
 	height: 250px;
 	word-wrap: break-word;
 	overflow-y: auto;
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius:25px;
 	margin-bottom: 50px;
 }
 
@@ -191,6 +238,27 @@ body{
 	margin-bottom: 50px;
 }
 
+
+/*=========GALLERY=========*/
+.album-cover{
+	margin-bottom:30px;
+}
+
+.album-cover-desc{
+	position: relative;
+	width: 100%;
+}
+
+.album-cover-desc div{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(255,255,255,0.8);
+	font-size: 1.3em;
+	padding: 10px;
+	text-align: center;
+}
+
 /*=========FOOTER=========*/
 .footer{
 	text-align: center;
@@ -212,4 +280,27 @@ body{
 		height: initial !important;
 	}
 
+	.header-back-batik{
+		background-size: initial;
+		height: 65px;
+		background-position: top right;
+	}
+
+}
+
+@media (min-width:992px) and (max-width: 1199px){
+	.page-scroll{
+		font-size: 0.9em;
+	}
+}
+
+@media (min-width:768px) and (max-width: 991px){
+	.page-scroll{
+		font-size: 0.7em;
+	}
+
+	.nav>li>a{
+	    padding-left: 10px !important;
+	    padding-right: 10px !important;
+	}
 }

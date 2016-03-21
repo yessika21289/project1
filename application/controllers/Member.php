@@ -10,6 +10,9 @@ class Member extends CI_Controller {
 
 	public function index()
 	{
+		$data['title'] = 'Anggota';
+		$this->load->view('tag_open',$data);
 		$this->load->view('member_list');
+		$this->load->view('tag_close');
 	}
 }

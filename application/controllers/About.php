@@ -10,6 +10,9 @@ class About extends CI_Controller {
 
 	public function index()
 	{
+		$data['title'] = 'Tentang Kami';
+		$this->load->view('tag_open',$data);
 		$this->load->view('about_us');
+		$this->load->view('tag_close');
 	}
 }

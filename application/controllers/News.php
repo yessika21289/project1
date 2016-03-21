@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Video extends CI_Controller {
+class News extends CI_Controller {
 	public function __construct()
     {
             parent::__construct();
@@ -10,9 +10,9 @@ class Video extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'Video';
+		$data['title'] = 'Berita dan Event';
 		$this->load->view('tag_open',$data);
-		$this->load->view('video_list');
+		$this->load->view('news_list');
 		$this->load->view('tag_close');
 	}
 }
