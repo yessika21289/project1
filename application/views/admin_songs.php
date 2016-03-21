@@ -103,49 +103,49 @@
                         </tr>
                         <?php
                         $no = 0;
-                        foreach($songs as $row):
-                            $song_cover_path = (!empty($row->song_cover_path)) ? $row->song_cover_path : 'assets/img/default_cover.png';
+                        foreach($songs as $song):
+                            $song_cover_path = (!empty($song->song_cover_path)) ? $song->song_cover_path : 'assets/img/default_cover.png';
                             $no++;
-                            $row_changed = '';
+                            $song_changed = '';
                             $label = '';
-                            if($row->id == $added_id || $row->id == $updated_id) $row_changed = 'success';
-                            if($row->id == $set_active_id && $set_active == 'published') $row_changed = 'success';
-                            if($row->id == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
+                            if($song->id == $added_id || $song->id == $updated_id) $song_changed = 'success';
+                            if($song->id == $set_active_id && $set_active == 'published') $song_changed = 'success';
+                            if($song->id == $set_active_id && $set_active == 'unpublished') $song_changed = 'warning';
                             ?>
-                            <tr class="<?php  echo $row_changed; ?>">
+                            <tr class="<?php  echo $song_changed; ?>">
                                 <td><?php echo $no; ?></td>
                                 <td>
                                     <img src="<?php echo base_url().$song_cover_path; ?>" width="30">
                                 </td>
                                 <td>
-                                    <?php echo $row->title; ?>
-                                    <?php if($row->is_active == 0): ?>
+                                    <?php echo $song->title; ?>
+                                    <?php if($song->is_active == 0): ?>
                                         <br/><span class="label label-warning">-not published-</span>
                                     <?php endif; ?>
                                 </td>
 
-                                <td><?php echo nl2br(substr($row->lyric, 0, 100)); ?></td>
-                                <td><?php echo $row->artist; ?></td>
-                                <td><?php echo $row->release_date; ?></td>
-                                <td><?php echo date('Y-m-d H:i:s', $row->updated_at); ?></td>
-                                <td><?php echo $row->updated_by; ?></td>
+                                <td><?php echo nl2br(substr($song->lyric, 0, 100)); ?></td>
+                                <td><?php echo $song->artist; ?></td>
+                                <td><?php echo $song->release_date; ?></td>
+                                <td><?php echo date('Y-m-d H:i:s', $song->updated_at); ?></td>
+                                <td><?php echo $song->updated_by; ?></td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-primary" title="Edit"
-                                           href="<?php echo base_url() ?>admin/Songs/add/<?php echo $row->id; ?>">
+                                           href="<?php echo base_url() ?>admin/Songs/add/<?php echo $song->id; ?>">
                                             <i class="icon_pencil-edit"></i></a>
-                                        <?php if($row->is_active == 0): ?>
+                                        <?php if($song->is_active == 0): ?>
                                             <a class="btn btn-success" title="Publish"
-                                               href="<?php echo base_url() ?>admin/Songs/add?id=<?php echo $row->id; ?>&is_active=1">
+                                               href="<?php echo base_url() ?>admin/Songs/add?id=<?php echo $song->id; ?>&is_active=1">
                                                 <i class="icon_cloud-upload_alt"></i></a>
                                         <?php else: ?>
                                             <a class="btn btn-warning" title="Unpublish"
-                                               href="<?php echo base_url() ?>admin/Songs/add?id=<?php echo $row->id; ?>&is_active=0" >
+                                               href="<?php echo base_url() ?>admin/Songs/add?id=<?php echo $song->id; ?>&is_active=0" >
                                                 <i class="icon_cloud"></i></a>
                                         <?php endif; ?>
                                         <a class="btn btn-danger" title="Delete"
                                            onclick="return confirm('Are you sure?');"
-                                           href="<?php echo base_url() ?>admin/Songs/delete/<?php echo $row->id; ?>">
+                                           href="<?php echo base_url() ?>admin/Songs/delete/<?php echo $song->id; ?>">
                                             <i class="icon_trash_alt"></i></a>
                                     </div>
                                 </td>

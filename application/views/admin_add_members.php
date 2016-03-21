@@ -27,14 +27,13 @@
         <?php endif; ?>
 
         <?php
-            $member_id = (!empty($members['id'])) ? $members['id'] : '';
-            $name = (!empty($members['name'])) ? $members['name'] : '';
-            $avatar = (!empty($members['avatar'])) ? $members['avatar'] : '';
-            $facebook = (!empty($members['socmed']['facebook'])) ? $members['socmed']['facebook'] : '';
-            $twitter = (!empty($members['socmed']['twitter'])) ? $members['socmed']['twitter'] : '';
-            $instagram = (!empty($members['socmed']['instagram'])) ? $members['socmed']['instagram'] : '';
-            $path = (!empty($members['socmed']['path'])) ? $members['socmed']['path'] : '';
-            $web = (!empty($members['socmed']['web'])) ? $members['socmed']['web'] : '';
+            $member_id = (!empty($members['id'])) ? $member['id'] : '';
+            $name = (!empty($member['name'])) ? $member['name'] : '';
+            $facebook = (!empty($member['socmed']['facebook'])) ? $member['socmed']['facebook'] : '';
+            $twitter = (!empty($member['socmed']['twitter'])) ? $member['socmed']['twitter'] : '';
+            $instagram = (!empty($member['socmed']['instagram'])) ? $member['socmed']['instagram'] : '';
+            $path = (!empty($member['socmed']['path'])) ? $member['socmed']['path'] : '';
+            $web = (!empty($member['socmed']['web'])) ? $member['socmed']['web'] : '';
         ?>
 
         <div class="row">
@@ -52,10 +51,7 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-avatar" style="width: 13.6667%;">
-                                            <div id="avatar-image-holder" class="avatar"
-                                            <?php if(!empty($avatar)): ?>
-                                                style="background: url(<?php echo base_url().$avatar; ?>) no-repeat center;"
-                                            <?php endif; ?>></div>
+                                            <div id="avatar-image-holder" class="avatar"></div>
                                             <input id="upload-avatar" type="file" name="avatar" />
                                             <a href="" id="upload-avatar-link" class="edit-avatar">Edit</a>
                                         </div>

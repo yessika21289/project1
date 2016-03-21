@@ -98,23 +98,25 @@ class Merchandise extends CI_Controller {
                 $added_merchandise_id = $this->Merchandise_model->add($user, $_POST, $merchandise_file);
                 if ($added_merchandise_id) {
                     $this->session->set_flashdata('added_id', $added_merchandise_id);
-                } else {
-                    if(!empty($merchandise_file)) unlink($merchandise_file);
+                }
+                else {
+                    if (!empty($merchandise_file)) unlink($merchandise_file);
                 }
             }
             // ======================================== UPDATE AN ITEM ============================================ //
             else {
                 $merchandise = $this->Merchandise_model->getData($_POST['merchandise_id']);
 
-                if(!empty($merchandise_file) && !empty($merchandise[0]['image'])) {
-                    unlink($merchandise[0]['image']);
+                if (!empty($merchandise[0]->image)) {
+                    unlink($merchandise[0]->image);
                 }
 
                 $updated_merchandise_id = $this->Merchandise_model->update($user, $_POST, $merchandise_file);
                 if ($updated_merchandise_id) {
                     $this->session->set_flashdata('updated_id', $updated_merchandise_id);
-                } else {
-                    if(!empty($merchandise_file)) unlink($merchandise_file);
+                }
+                else {
+                    if (!empty($merchandise_file)) unlink($merchandise_file);
                 }
             }
 
@@ -122,13 +124,13 @@ class Merchandise extends CI_Controller {
         }
         // ========================================= PUBLISH / UNPUBLISH ============================================= //
         elseif ($this->input->get('is_active') != NULL) {
-            $post['member_id'] = $this->input->get('id');
+            $post['merchandise_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
-            $set_active = $this->Members_model->set_active($post);
+            $set_active = $this->Merchandise_model->set_active($user, $post);
             $this->session->set_flashdata('set_active', $set_active);
-            $this->session->set_flashdata('set_active_id', $post['members_id']);
+            $this->session->set_flashdata('set_active_id', $post['merchandise_id']);
 
-            redirect('admin/Members');
+            redirect('admin/Merchandise');
         }
         // ========================================= goto MEMBER's form ============================================= //
         else {
@@ -142,7 +144,7 @@ class Merchandise extends CI_Controller {
                 );
             }
 
-            if(!empty($this->session->flashdata('error_upload'))) {
+            if (!empty($this->session->flashdata('error_upload'))) {
                 $data['error_upload'] = $this->session->flashdata('error_upload');
                 $data['merchandise'] = $this->session->flashdata('merchandise');
             }
@@ -151,7 +153,6 @@ class Merchandise extends CI_Controller {
             $this->load->view('admin_left_menu', $data);
             $this->load->view('admin_add_merchandise');
             $this->load->view('admin_footer');
-
         }
     }
 

@@ -107,8 +107,8 @@
                                 $row_changed = '';
                                 $label = '';
                                 if($row->id == $added_id || $row->id == $updated_id) $row_changed = 'success';
-//                                if($row->id == $set_active_id && $set_active == 'published') $row_changed = 'success';
-//                                if($row->id == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
+                                if($row->id == $set_active_id && $set_active == 'published') $row_changed = 'success';
+                                if($row->id == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
                                 ?>
                                 <tr class="<?php  echo $row_changed; ?>">
                                     <td><?php echo $no; ?></td>
@@ -118,9 +118,9 @@
 
                                     <td>
                                         <span class="title"><?php echo $row->title; ?></span>
-<!--                                        --><?php //if($row->is_active == 0): ?>
-<!--                                            <br/><span class="label label-warning">-not published-</span>-->
-<!--                                        --><?php //endif; ?>
+                                        <?php if($row->is_active == 0): ?>
+                                            <br/><span class="label label-warning">-not published-</span>
+                                        <?php endif; ?>
                                     </td>
                                     <td><?php echo $row->price; ?></td>
                                     <td><?php echo word_limiter($row->description, 30); ?></td>
@@ -131,15 +131,15 @@
                                             <a class="btn btn-primary" title="Edit"
                                                href="<?php echo base_url() ?>admin/Merchandise/add/<?php echo $row->id; ?>">
                                                 <i class="icon_pencil-edit"></i></a>
-<!--                                            --><?php //if($row->is_active == 0): ?>
-<!--                                                <a class="btn btn-success" title="Publish"-->
-<!--                                                   href="--><?php //echo base_url() ?><!--admin/Merchandise/add?id=--><?php //echo $row->id; ?><!--&is_active=1">-->
-<!--                                                    <i class="icon_cloud-upload_alt"></i></a>-->
-<!--                                            --><?php //else: ?>
-<!--                                                <a class="btn btn-warning" title="Unpublish"-->
-<!--                                                   href="--><?php //echo base_url() ?><!--admin/Merchandise/add?id=--><?php //echo $row->id; ?><!--&is_active=0" >-->
-<!--                                                    <i class="icon_cloud"></i></a>-->
-<!--                                            --><?php //endif; ?>
+                                            <?php if($row->is_active == 0): ?>
+                                                <a class="btn btn-success" title="Publish"
+                                                   href="<?php echo base_url() ?>admin/Merchandise/add?id=<?php echo $row->id; ?>&is_active=1">
+                                                    <i class="icon_cloud-upload_alt"></i></a>
+                                            <?php else: ?>
+                                                <a class="btn btn-warning" title="Unpublish"
+                                                   href="<?php echo base_url() ?>admin/Merchandise/add?id=<?php echo $row->id; ?>&is_active=0" >
+                                                    <i class="icon_cloud"></i></a>
+                                            <?php endif; ?>
                                             <a class="btn btn-danger" title="Delete"
                                                onclick="return confirm('Are you sure?');"
                                                href="<?php echo base_url() ?>admin/Merchandise/delete/<?php echo $row->id; ?>">

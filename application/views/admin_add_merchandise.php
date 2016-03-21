@@ -30,7 +30,6 @@
             $title = (!empty($merchandise['title'])) ? $merchandise['title'] : '';
             $desc = (!empty($merchandise['desc'])) ? $merchandise['desc'] : '';
             $price = (!empty($merchandise['price'])) ? $merchandise['price'] : '';
-            $image = (!empty($merchandise['image'])) ? $merchandise['image'] : '';
         ?>
 
         <div class="row">
@@ -48,10 +47,7 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-merchandise" style="width: 13.6667%;">
-                                            <div id="merchandise-image-holder" class="merchandise"
-                                                <?php if(!empty($image)): ?>
-                                                    style="background: url(<?php echo base_url().$image; ?>) no-repeat center;"
-                                                <?php endif; ?>></div>
+                                            <div id="merchandise-image-holder" class="merchandise"></div>
                                             <input id="upload-merchandise" type="file" name="merchandise" />
                                             <a href="" id="upload-merchandise-link" class="edit-merchandise">Edit</a>
                                         </div>

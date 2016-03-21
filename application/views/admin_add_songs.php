@@ -28,14 +28,11 @@
         <?php endif; ?>
 
         <?php
-
-            $song_id = (!empty($songs['id'])) ? $songs['id'] : '';
-            $title = (!empty($songs['title'])) ? $songs['title'] : '';
-            $lyric = (!empty($songs['lyric'])) ? $songs['lyric'] : '';
-            $artist = (!empty($songs['artist'])) ? $songs['artist'] : '';
-            $release_date = (!empty($songs['release_date'])) ? $songs['release_date'] : '';
-            $song_cover_path = (!empty($songs['song_cover_path'])) ? $songs['song_cover_path'] : '';
-            $song_path = (!empty($songs['song_path'])) ? $songs['song_path'] : '';
+            $song_id = (!empty($song['id'])) ? $song['id'] : '';
+            $title = (!empty($song['title'])) ? $song['title'] : '';
+            $lyric = (!empty($song['lyric'])) ? $song['lyric'] : '';
+            $artist = (!empty($song['artist'])) ? $song['artist'] : '';
+            $release_date = (!empty($song['release_date'])) ? $song['release_date'] : '';
         ?>
 
         <div class="row">
@@ -43,7 +40,7 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        AdSong
+                        Add Song
                     </header>
                     <div class="panel-body">
                         <div class="form">
@@ -53,11 +50,7 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-cover" style="width: 13.6667%;">
-                                            <div id="cover-image-holder" class="song-cover"
-                                                <?php if(!empty($song_cover_path)): ?>
-                                                style="background: url(<?php echo base_url().$song_cover_path; ?>) no-repeat center;"
-                                                 <?php endif; ?>
-                                            ></div>
+                                            <div id="cover-image-holder" class="song-cover"></div>
                                             <input id="upload-cover" type="file" name="song_cover" />
                                             <a href="" id="upload-cover-link" class="edit-cover">Edit</a>
                                         </div>

@@ -50,13 +50,13 @@ class Songs extends CI_Controller {
             $error = '';
             $cover_dir = '';
             $song_dir = '';
-            $songs = array(
+            $song = array(
                 'title' => (!empty($_POST['title'])) ? $_POST['title'] : '',
                 'artist' => (!empty($_POST['artist'])) ? $_POST['artist'] : '',
                 'release_date' => (!empty($_POST['release_date'])) ? $_POST['release_date'] : '',
                 'lyric' => (!empty($_POST['lyric'])) ? $_POST['lyric'] : ''
             );
-            $this->session->set_flashdata('songs', $songs);
+            $this->session->set_flashdata('song', $song);
 
             // ============================================ UPLOAD SONG ============================================ //
             if (!empty($_FILES['song']['tmp_name'])) {
@@ -149,13 +149,13 @@ class Songs extends CI_Controller {
             }
             // ============================================ UPDATE SONG ============================================ //
             else {
-                $songs = $this->Songs_model->getData($_POST['song_id']);
-                if (!empty($cover_file) && !empty($songs[0]->song_cover_path)) {
-                    unlink($songs[0]->song_cover_path);
+                $song = $this->Songs_model->getData($_POST['song_id']);
+                if (!empty($song[0]->song_cover_path)) {
+                    unlink($song[0]->song_cover_path);
                 }
 
-                if (!empty($song_file) && !empty($songs[0]->song_path)) {
-                    unlink($songs[0]->song_path);
+                if (!empty($song[0]->song_path)) {
+                    unlink($song[0]->song_path);
                 }
 
                 $updated_id = $this->Songs_model->update($user, $_POST, $cover_file, $song_file);
@@ -176,24 +176,24 @@ class Songs extends CI_Controller {
             $post['is_active'] = $this->input->get('is_active');
             $set_active = $this->Songs_model->set_active($user, $post);
             $this->session->set_flashdata('set_active', $set_active);
-            $this->session->set_flashdata('set_active_id', $post['songs_id']);
+            $this->session->set_flashdata('set_active_id', $post['song_id']);
 
             redirect('admin/Songs');
         }
         // ============================================ goto SONG's FORM ============================================ //
         else {
             if (!empty($song_id)) {
-                $songs = $this->Songs_model->getData($song_id);
-                $data['songs'] = array(
-                    'id' => $songs[0]->id,
-                    'title' => $songs[0]->title,
-                    'artist' => $songs[0]->artist,
-                    'lyric' => $songs[0]->lyric,
-                    'release_date' => $songs[0]->release_date,
+                $song = $this->Songs_model->getData($song_id);
+                $data['song'] = array(
+                    'id' => $song[0]->id,
+                    'title' => $song[0]->title,
+                    'artist' => $song[0]->artist,
+                    'lyric' => $song[0]->lyric,
+                    'release_date' => $song[0]->release_date,
                 );
             }
 
-            if(!empty($this->session->flashdata('error_upload'))) {
+            if (!empty($this->session->flashdata('error_upload'))) {
                 $data['error_upload'] = $this->session->flashdata('error_upload');
                 $data['songs'] = $this->session->flashdata('songs');
             }
@@ -206,11 +206,11 @@ class Songs extends CI_Controller {
         }
     }
 
-    function delete($songs_id = NULL) {
+    function delete($song_id = NULL) {
         $this->load->model('Songs_model');
 
-        if (!empty($songs_id)) {
-            $delete = $this->Songs_model->delete($songs_id);
+        if (!empty($song_id)) {
+            $delete = $this->Songs_model->delete($song_id);
             if ($delete) {
                 $this->session->set_flashdata('delete_confirm', $delete);
             }

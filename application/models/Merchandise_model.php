@@ -33,42 +33,43 @@ class Merchandise_model extends CI_Model
         return $insert_id;
     }
 
-    function update($user, $post, $files) {
+    function update($user, $post, $merchandise_file) {
         $data = array(
-            'name' => $post['name'],
+            'title' => $post['title'],
+            'price' => $post['price'],
+            'description' => $post['desc'],
+            'image' => !empty($merchandise_file) ? $merchandise_file : NULL,
             'updated_at' => time(),
             'updated_by' => $user
         );
-        $this->db->where('id', $post['member_id']);
+        $this->db->where('id', $post['merchandise_id']);
         $this->db->update('merchandise', $data);
 
-
-        return $post['member_id'];
+        return $post['merchandise_id'];
     }
 
-    function set_active($post) {
+    function set_active($user, $post) {
         $data = array(
             'is_active' => $post['is_active'],
             'updated_at' => time(),
-            'updated_by' => 'superadmin'
+            'updated_by' => $user
         );
 
-        $this->db->where('id', $post['song_id']);
+        $this->db->where('id', $post['merchandise_id']);
         $update = $this->db->update('merchandise', $data);
         if($post['is_active'] == 1) return 'published';
         else return 'unpublished';
     }
 
-    function delete($song_id) {
-        $this->db->where('id', $song_id);
+    function delete($merchandise_id) {
+        $this->db->where('id', $merchandise_id);
         $query = $this->db->get('merchandise');
         $result = $query->result();
         if(!empty($result)) {
-            unlink($result[0]->song_cover_path);
-            unlink($result[0]->song_path);
+            unlink($result[0]->image);
         }
 
-        $this->db->where('id', $song_id);
+        $this->db->where('id', $merchandise_id);
         $delete = $this->db->delete('merchandise');
         return $delete;
     }

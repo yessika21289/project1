@@ -145,6 +145,15 @@
                                            href="<?php echo base_url(); ?>admin/Members/add/<?php echo $member['id']; ?>">
                                             <span class="icon_pencil-edit"></span> Edit
                                         </a>
+                                        <?php if($member['is_active'] == 0): ?>
+                                            <a class="btn btn-success" title="Publish"
+                                               href="<?php echo base_url() ?>admin/Members/add?id=<?php echo $member['id']; ?>&is_active=1">
+                                                <span class="icon_cloud-upload_alt"></span>Publish</a>
+                                        <?php else: ?>
+                                            <a class="btn btn-warning" title="Unpublish"
+                                               href="<?php echo base_url() ?>admin/Members/add?id=<?php echo $member['id']; ?>&is_active=0" >
+                                                <span class="icon_cloud"></span>Unpublish</a>
+                                        <?php endif; ?>
                                         <a class="btn btn-danger" title="Delete"
                                            href="<?php echo base_url(); ?>admin/Members/delete/<?php echo $member['id']; ?>">
                                             <span class="icon_trash_alt"></span> Delete

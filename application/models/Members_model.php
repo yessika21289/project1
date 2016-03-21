@@ -19,6 +19,7 @@ class Members_model extends CI_Model
             $members[$i]['id'] = $result->id;
             $members[$i]['name'] = $result->name;
             $members[$i]['avatar'] = $result->avatar;
+            $members[$i]['is_active'] = $result->is_active;
 
             $this->db->where('id_member', $result->id);
             $query2 = $this->db->get('members_socmed');
@@ -99,7 +100,7 @@ class Members_model extends CI_Model
             'updated_by' => $user
         );
 
-        $this->db->where('id', $post['song_id']);
+        $this->db->where('id', $post['member_id']);
         $update = $this->db->update('members', $data);
         if($post['is_active'] == 1) return 'published';
         else return 'unpublished';
