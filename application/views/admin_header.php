@@ -11,7 +11,7 @@
     <title>Creative - Bootstrap Admin Template</title>
 
     <!-- Bootstrap CSS -->
-    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.v3.0.0.css" rel="stylesheet">
     <!-- bootstrap theme -->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
