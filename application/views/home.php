@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<?php
 	echo link_tag('/assets/css/front.css');
-	echo link_tag('/assets/css/bootstrap.min.css');
+	echo link_tag('/assets/css/bootstrap.min.v3.6.6.css');
 	echo link_tag('/assets/css/font-awesome.min.css');
 	?>
 </head>
