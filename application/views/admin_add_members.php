@@ -95,9 +95,14 @@
                                     <div class="row">
                                         <div class="lyric">
                                             <input type="hidden" name="member_id" value="<?php echo $member_id; ?>">
-                                            <button style="margin-top:20px;" type="submit" class="btn btn-primary pull-right">
-                                                Save
-                                            </button>
+                                            <span class="pull-right" style="margin-top:20px;">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Save
+                                                </button>
+                                                <a class="btn btn-danger" title="Cancel"
+                                                   href="<?php echo base_url(); ?>admin/Members">Cancel
+                                                </a>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

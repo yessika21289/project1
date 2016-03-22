@@ -26,6 +26,22 @@
                 </ul>
             </li>
 
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_events', 'events'))) echo 'active'; ?>">
+                <a href="javascript:" class="">
+                    <i class="icon_calendar"></i>
+                    <span>Events</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li class="<?php if($menu_active == 'add_events') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Events/add">Add Events</a>
+                    </li>
+                    <li class="<?php if($menu_active == 'events') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Events">See All Events</a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="sub-menu <?php if(in_array($menu_active, array('add_songs', 'songs'))) echo 'active'; ?>">
                 <a href="javascript:" class="">
                     <i class="icon_headphones"></i>

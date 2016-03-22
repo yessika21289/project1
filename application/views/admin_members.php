@@ -155,6 +155,7 @@
                                                 <span class="icon_cloud"></span>Unpublish</a>
                                         <?php endif; ?>
                                         <a class="btn btn-danger" title="Delete"
+                                           onclick="return confirm('Are you sure?');"
                                            href="<?php echo base_url(); ?>admin/Members/delete/<?php echo $member['id']; ?>">
                                             <span class="icon_trash_alt"></span> Delete
                                         </a>
