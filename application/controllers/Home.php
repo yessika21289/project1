@@ -10,6 +10,25 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		$data['title'] = 'Kawandasawolu';
+		$data['meta_description'] = '';
+		$data['meta_keywords'] = 'kawandasawolu, empat puluh delapan, 48, JKT48, AKB48';
+		
+		$this->load->model('About_us_model');
+        $about_us = $this->About_us_model->getData();
+        if(!empty($about_us)) {
+            $data['about_us'] = $about_us[0]->about;
+            $data['tagline'] = $about_us[0]->tagline;
+        }
+
+		$this->load->model('News_model');
+        $news = $this->News_model->getData();
+        if(!empty($news)) $data['news'] = $news;
+
+        $this->load->model('Songs_model');
+        $songs = $this->Songs_model->getData();
+        if (!empty($songs)) $data['songs'] = $songs;
+
+		$this->load->view('home', $data);
 	}
 }

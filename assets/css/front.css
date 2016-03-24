@@ -61,6 +61,10 @@ body{
 	min-height: 500px;
 }
 
+#news h2{
+	margin-bottom: 20px;
+}
+
 .news-bg-home{
 	background-image: url(/assets/img/news_grad.jpg);
 	background-size:cover;
@@ -68,14 +72,14 @@ body{
 	width:100%;
 }
 
-#songs, #video{
+#song, #video{
 	background-color: #FFFFFF;
 }
 
 .song-cover-home{
 	height: 400px;
 	width: 400px !important;
-	background-color: red;
+	margin-right: 25px;
 }
 
 #merchandise, #member, #contact_us{

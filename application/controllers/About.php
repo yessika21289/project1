@@ -11,6 +11,12 @@ class About extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Tentang Kami';
+		$this->load->model('About_us_model');
+        $about_us = $this->About_us_model->getData();
+        if(!empty($about_us)) {
+            $data['about_us'] = $about_us[0]->about;
+            $data['tagline'] = $about_us[0]->tagline;
+        }
 		$this->load->view('tag_open',$data);
 		$this->load->view('about_us');
 		$this->load->view('tag_close');

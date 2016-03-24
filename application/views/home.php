@@ -56,12 +56,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-12 col-sm-12">
 						<h2>About Us</h2>
 						<br/>
-						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px;">
-							<i class="fa fa-quote-left" style="font-size:3em"></i>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit,sdfdafaf af adsfsafsafas
+						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px; border-right: 3px solid #555555">
+							<i class="fa fa-quote-left" style="font-size:1.5em"></i>
+							<?php echo $tagline;?>
 						</div>
 						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+							<?php echo $about_us;?>
 						</div>
 					</div>
 				</div>
@@ -77,50 +77,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
-						<h2>News</h2>
-						<br/>
+						<h2>Berita</h2>
 						<ol type="1">
-						<li>
-							<dl>
-								<dt>Berita 1</dt>
-								<dd>asdfdfdafadfad asdfa faafasfa asfa fadfsafdas fdasfasfas fasfas fafaf afa fafa faf asfaf afads fasdfa sfasfd asdfas dfasdf asfda sfdasfd asdf asdfas dfasdf asdfa sfdasdf af asdf asdfa sfasf asfda fa fadf afa fa fdads</dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt>Berita 1</dt>
-								<dd>asdfdfdafadfad</dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt>Berita 1</dt>
-								<dd>asdfdfdafadfad</dd>
-							</dl>
-						</li>
-						</ol>
+						<?php foreach ($news as $key => $news_item) {
+							echo '
+							<li>
+								<dl>
+									<dt>'.$news_item->title.'</dt>
+									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="">[baca]</a></dd>
+								</dl>
+							</li>';
 
+							if ($key == 1) break; //limit only max. 2 news
+						}
+						?>
+						</ol>
 						<h2>Events</h2>
-						<br/>
 						<ol type="1">
-						<li>
-							<dl>
-								<dt>Berita 1</dt>
-								<dd>asdfdfdafadfad asdfa faafasfa asfa fadfsafdas fdasfasfas fasfas fafaf afa fafa faf asfaf afads fasdfa sfasfd asdfas dfasdf asfda sfdasfd asdf asdfas dfasdf asdfa sfdasdf af asdf asdfa sfasf asfda fa fadf afa fa fdads</dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt>Berita 1</dt>
-								<dd>asdfdfdafadfad</dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt>Berita 1</dt>
-								<dd>asdfdfdafadfad</dd>
-							</dl>
-						</li>
+						<?php foreach ($news as $key => $news_item) {
+							echo '
+							<li>
+								<dl>
+									<dt>'.$news_item->title.'</dt>
+									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="">[baca]</a></dd>
+								</dl>
+							</li>';
+
+							if ($key == 1) break; //limit only max. 2 events
+						}
+						?>
 						</ol>
 					</div>
 				</div>
@@ -132,13 +117,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 hidden-xs song-cover-home"
-					data-bottom-top="margin-left:-500px; transform:rotate(0deg);"
-					data-center-center="margin-left:-100px; transform:rotate(90deg);">
+					data-bottom-top="margin-left:-500px; transform:rotate(-90deg);"
+					data-center-center="margin-left:-100px; transform:rotate(0deg);">
+					<img src="<?php print_r($songs[0]->song_cover_path);?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<h2>Songs</h2>
-					<br/>
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+					<ol type="1">
+					<?php foreach ($songs as $key => $songs_item) {
+						echo '
+						<li>
+							<dl>
+								<dt>'.$songs_item->title.'</dt>
+								<dd>'.$songs_item->artist.'</dd>
+							</dl>
+						</li>';
+
+						if ($key == 4) break; //limit only max. 5 songs
+					}
+					?>
+					</ol>
 				</div>
 			</div>
 		</div>

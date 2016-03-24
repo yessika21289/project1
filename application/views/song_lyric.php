@@ -7,9 +7,9 @@
 	<h1>Judul</h1>
 	<br/>
 	<div class="col-xs-12">
-		<img src="/assets/img/scene.jpeg" width="200" height="200" />
-		<br/><br/>Tahun:<br/><br/>
-		<div style="width:500px; height:50px; border:1px black solid;"></div>
+		<img src="/assets/songs/cover/1458653780.jpg" width="200" height="200" />
+		<br/>Tahun:<br/><br/>
+		<audio src="/assets/songs/1458653780.mp3" preload="auto"></audio>
 		
 		<div class="lyric">
 		<?php
@@ -66,3 +66,10 @@ And I'm officially missing you
 	</div>
 	
 </div>
+
+<script src="/assets/js/audiojs/audio.min.js"></script>
+<script>
+	audiojs.events.ready(function() {
+    	var as = audiojs.createAll();
+  	});
+</script
