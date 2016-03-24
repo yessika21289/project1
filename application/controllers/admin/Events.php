@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Videos extends CI_Controller
+class Events extends CI_Controller
 {
 
     /**
@@ -27,59 +27,59 @@ class Videos extends CI_Controller
         $data['set_active_id'] = $this->session->flashdata('set_active_id');
         $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
 
-        $this->load->model('Videos_model');
-        $videos = $this->Videos_model->getData();
-        if(!empty($videos)) $data['videos'] = $videos;
+        $this->load->model('Events_model');
+        $events = $this->Events_model->getData();
+        if(!empty($events)) $data['events'] = $events;
 
-        $data['menu_active'] = 'videos';
+        $data['menu_active'] = 'events';
 
         $this->load->view('admin_header');
         $this->load->view('admin_left_menu', $data);
-        $this->load->view('admin_videos');
+        $this->load->view('admin_events');
         $this->load->view('admin_footer');
     }
 
-    function add($video_id = NULL)
+    function add($event_id = NULL)
     {
         $user = $this->session->userdata('username');
-        $this->load->model('Videos_model');
+        $this->load->model('Events_model');
 
         if(!empty($_POST)) {
-            if(empty($_POST['video_id'])) {
-                $added_id = $this->Videos_model->add($user, $_POST);
+            if(empty($_POST['event_id'])) {
+                $added_id = $this->Events_model->add($user, $_POST);
                 if($added_id) $this->session->set_flashdata('added_id', $added_id);
             }
             else {
-                $updated_id = $this->Videos_model->update($user, $_POST);
+                $updated_id = $this->Events_model->update($user, $_POST);
                 if($updated_id) $this->session->set_flashdata('updated_id', $updated_id);
             }
-            redirect('admin/Videos');
+            redirect('admin/Events');
         } elseif($this->input->get('is_active') != NULL) {
-            $post['video_id'] = $this->input->get('id');
+            $post['event_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
-            $set_active = $this->Videos_model->set_active($user, $post);
+            $set_active = $this->Events_model->set_active($user, $post);
             $this->session->set_flashdata('set_active', $set_active);
-            $this->session->set_flashdata('set_active_id', $post['video_id']);
+            $this->session->set_flashdata('set_active_id', $post['event_id']);
 
-            redirect('admin/Videos');
+            redirect('admin/Events');
         } else {
-            if(!empty($video_id)) {
-                $data['video'] = $this->Videos_model->getData($video_id);
+            if(!empty($event_id)) {
+                $data['event'] = $this->Events_model->getData($event_id);
             }
-            $data['menu_active'] = 'add_videos';
+            $data['menu_active'] = 'add_events';
             $this->load->view('admin_header');
             $this->load->view('admin_left_menu', $data);
-            $this->load->view('admin_add_videos');
+            $this->load->view('admin_add_events');
             $this->load->view('admin_footer');
         }
     }
 
-    function delete($video_id = NULL) {
-        $this->load->model('Videos_model');
-        if(!empty($video_id)) {
-            $delete = $this->Videos_model->delete($video_id);
+    function delete($event_id = NULL) {
+        $this->load->model('Events_model');
+        if(!empty($event_id)) {
+            $delete = $this->Events_model->delete($event_id);
             if($delete) $this->session->set_flashdata('delete_confirm', $delete);
-            redirect('admin/Videos');
-        } else redirect('admin/Videos');
+            redirect('admin/Events');
+        } else redirect('admin/Events');
     }
 }

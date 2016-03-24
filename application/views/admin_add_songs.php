@@ -80,11 +80,16 @@
                                             <?php echo $lyric; ?>
                                         </textarea>
 
-                                    <div class="lyric">
-                                        <button style="margin:20px 10px 0 0;" type="submit" class="btn btn-primary pull-right">
-                                            Save
-                                        </button>
-                                    </div>
+                                        <div class="lyric">
+                                            <span class="pull-right" style="margin-top:20px;">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Save
+                                                </button>
+                                                <a class="btn btn-danger" title="Cancel"
+                                                   href="<?php echo base_url(); ?>admin/Songs">Cancel
+                                                </a>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
 

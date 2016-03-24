@@ -3,13 +3,6 @@
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-            <li <?php if($menu_active == 'dashboard') echo 'class="active"'; ?> >
-                <a class="" href="<?php echo base_url(); ?>admin">
-                    <i class="ic    on_house_alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-
             <li <?php if($menu_active == 'about_us') echo 'class="active"'; ?> >
                 <a class="" href="<?php echo base_url(); ?>admin/AboutUs">
                     <i class="icon_group"></i>
@@ -33,18 +26,18 @@
                 </ul>
             </li>
 
-            <li class="sub-menu <?php if(in_array($menu_active, array('add_songs', 'songs'))) echo 'active'; ?>">
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_events', 'events'))) echo 'active'; ?>">
                 <a href="javascript:" class="">
-                    <i class="icon_headphones"></i>
-                    <span>Songs</span>
+                    <i class="icon_calendar"></i>
+                    <span>Events</span>
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li class="<?php if($menu_active == 'add_songs') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>admin/Songs/add">Add Songs</a>
+                    <li class="<?php if($menu_active == 'add_events') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Events/add">Add Events</a>
                     </li>
-                    <li class="<?php if($menu_active == 'songs') echo 'active'; ?>">
-                        <a class="" href="<?php echo base_url(); ?>admin/Songs">See All Songs</a>
+                    <li class="<?php if($menu_active == 'events') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Events">See All Events</a>
                     </li>
                 </ul>
             </li>
@@ -61,6 +54,22 @@
                     </li>
                     <li class="<?php if($menu_active == 'songs') echo 'active'; ?>">
                         <a class="" href="<?php echo base_url(); ?>admin/Songs">See All Songs</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_videos', 'videos'))) echo 'active'; ?>">
+                <a href="javascript:" class="">
+                    <i class="fa fa-video-camera"></i>
+                    <span>Videos</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li class="<?php if($menu_active == 'add_songs') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Videos/add">Add Videos</a>
+                    </li>
+                    <li class="<?php if($menu_active == 'songs') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>admin/Videos">See All Videos</a>
                     </li>
                 </ul>
             </li>

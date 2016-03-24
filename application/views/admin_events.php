@@ -4,10 +4,10 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-video-camera"></i> Videos</h3>
+                <h3 class="page-header"><i class="icon_calendar"></i> Events</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>admin">Home</a></li>
-                    <li><i class="fa fa-video-camera"></i>Videos</li>
+                    <li><i class="icon_calendar"></i>Events</li>
                 </ol>
             </div>
         </div>
@@ -20,7 +20,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Video has been added.
+                        <strong>Success!</strong> Event has been added.
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Video has been updated.
+                        <strong>Success!</strong> Event has been updated.
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Video has been <?php echo $set_active; ?>.
+                        <strong>Success!</strong> Event has been <?php echo $set_active; ?>.
                     </div>
                 </div>
             </div>
@@ -61,15 +61,15 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Video has been deleted.
+                        <strong>Success!</strong> Event has been deleted.
                     </div>
                 </div>
             </div>
         <?php endif; ?>
 
         <div class="row" style="margin: 0 0 15px 0;">
-            <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/News/add" title="Add News">
-                <span class="fa fa-plus"></span> Add Video
+            <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/Events/add" title="Add Events">
+                <span class="fa fa-plus"></span> Add Event
             </a>
         </div>
 
@@ -77,7 +77,7 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <?php
-                    if(empty($videos)):
+                    if(empty($events)):
                         ?>
                         <header class="panel-heading">
                             -No data stored-
@@ -85,7 +85,7 @@
                     <?php else: ?>
 
                         <header class="panel-heading">
-                            All News
+                            All Events
                         </header>
 
                         <table class="table table-striped table-advance table-hover">
@@ -93,49 +93,53 @@
                             <tr>
                                 <th>No</th>
                                 <th>Title</th>
-                                <th>Youtube ID</th>
+                                <th>Content</th>
+                                <th>Event Date</th>
                                 <th>Updated Date</th>
                                 <th>Updated By</th>
                                 <th>Action</th>
                             </tr>
                             <?php
                             $no = 0;
-                            foreach($videos as $video):
+                            foreach($events as $row):
+                                $start_date = !empty($row->start_date) ? date('d M Y', $row->start_date) : '';
+                                $end_date = !empty($row->end_date) ? ' - '.date('d M Y', $row->end_date) : '';
                                 $no++;
-                                $video_changed = '';
+                                $row_changed = '';
                                 $label = '';
-                                if($video->id == $added_id || $video->id == $updated_id) $video_changed = 'success';
-                                if($video->id == $set_active_id && $set_active == 'published') $video_changed = 'success';
-                                if($video->id == $set_active_id && $set_active == 'unpublished') $video_changed = 'warning';
+                                if($row->id == $added_id || $row->id == $updated_id) $row_changed = 'success';
+                                if($row->id == $set_active_id && $set_active == 'published') $row_changed = 'success';
+                                if($row->id == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
                                 ?>
-                                <tr class="<?php  echo $video_changed; ?>">
+                                <tr class="<?php  echo $row_changed; ?>">
                                     <td><?php echo $no; ?></td>
                                     <td>
-                                        <span class="title"><?php echo $video->title; ?></span>
-                                        <?php if($video->is_active == 0): ?>
+                                        <span class="title"><?php echo $row->title; ?></span>
+                                        <?php if($row->is_active == 0): ?>
                                             <br/><span class="label label-warning">-not published-</span>
                                         <?php endif; ?>
                                     </td>
-                                    <td><?php echo $video->link, 30; ?></td>
-                                    <td><?php echo date('Y-m-d H:i:s', $video->updated_at); ?></td>
-                                    <td><?php echo $video->updated_by; ?></td>
+                                    <td><?php echo word_limiter($row->content, 30); ?></td>
+                                    <td><?php echo $start_date.$end_date; ?></td>
+                                    <td><?php echo date('Y-m-d H:i:s', $row->updated_at); ?></td>
+                                    <td><?php echo $row->updated_by; ?></td>
                                     <td>
                                         <div class="btn-group">
                                             <a class="btn btn-primary" title="Edit"
-                                               href="<?php echo base_url() ?>admin/Videos/add/<?php echo $video->id; ?>">
+                                               href="<?php echo base_url() ?>admin/Events/add/<?php echo $row->id; ?>">
                                                 <i class="icon_pencil-edit"></i></a>
-                                            <?php if($video->is_active == 0): ?>
+                                            <?php if($row->is_active == 0): ?>
                                                 <a class="btn btn-success" title="Publish"
-                                                   href="<?php echo base_url() ?>admin/Videos/add?id=<?php echo $video->id; ?>&is_active=1">
+                                                   href="<?php echo base_url() ?>admin/Events/add?id=<?php echo $row->id; ?>&is_active=1">
                                                     <i class="icon_cloud-upload_alt"></i></a>
                                             <?php else: ?>
                                                 <a class="btn btn-warning" title="Unpublish"
-                                                   href="<?php echo base_url() ?>admin/Videos/add?id=<?php echo $video->id; ?>&is_active=0" >
+                                                   href="<?php echo base_url() ?>admin/Events/add?id=<?php echo $row->id; ?>&is_active=0" >
                                                     <i class="icon_cloud"></i></a>
                                             <?php endif; ?>
                                             <a class="btn btn-danger" title="Delete"
                                                onclick="return confirm('Are you sure?');"
-                                               href="<?php echo base_url() ?>admin/Videos/delete/<?php echo $video->id; ?>">
+                                               href="<?php echo base_url() ?>admin/Events/delete/<?php echo $row->id; ?>">
                                                 <i class="icon_trash_alt"></i></a>
                                         </div>
                                     </td>

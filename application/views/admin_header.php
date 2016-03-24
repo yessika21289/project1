@@ -11,7 +11,7 @@
     <title>Creative - Bootstrap Admin Template</title>
 
     <!-- Bootstrap CSS -->
-    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.v3.0.0.css" rel="stylesheet">
     <!-- bootstrap theme -->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
@@ -35,6 +35,7 @@
     <link href="<?php echo base_url(); ?>assets/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <!-- Bootstrap Date Picker-->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap-datepicker3.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/admin.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>

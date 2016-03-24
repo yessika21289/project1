@@ -36,14 +36,6 @@ class Admin extends CI_Controller
 		}
 	}
 
-	function to($link) {
-		$data['menu_active'] = $link;
-		$this->load->view('admin_header');
-		$this->load->view('admin_left_menu', $data);
-		$this->load->view($link, $data);
-		$this->load->view('admin_footer');
-	}
-
 	function login() {
 		$username = $this->security->xss_clean($this->input->post('username'));
 
