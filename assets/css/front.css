@@ -48,7 +48,6 @@ body{
 
 #about_us{
 	text-align: center;
-	border-top: 3px #666666 solid;
 	border-bottom: 3px #666666 solid;
 }
 
@@ -104,7 +103,6 @@ body{
 #member, #contact_us{
 	color: #FFFFFF;
 	text-align: center;
-	border-bottom: 3px #666666 solid;
 }
 
 #merchandise{
@@ -117,6 +115,7 @@ body{
 
 #member{
 	background-color: #AAAAAA;
+	border-bottom: 3px #666666 solid;
 }
 
 #contact_us{
@@ -127,6 +126,11 @@ body{
 
 #contact_us img{
 	margin: 0 10px 10px 0;
+}
+
+#contact_us a{
+	color: #FFFFFF;
+	text-decoration: underline;
 }
 
 /*==========HEADER=========*/

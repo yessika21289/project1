@@ -240,7 +240,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a href="https://www.youtube.com/user/kawandasawolu" target="_blank"><img src="/assets/img/icon/youtube.png" width="64" /></a>
 						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" /></a>
 						<br/><br/>
-						If you have any inquiry, please click here to fill the form.<br/><br/><br/>
+						If you have any inquiry, please <a href="/contact">send us message</a>.<br/><br/><br/>
 						<img src="/assets/img/logojawa2.png" height="100%" />
 						<br/><br/><br/>
 					</div>
