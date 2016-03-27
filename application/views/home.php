@@ -233,12 +233,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<h2>Contact Us</h2>
 					<br/>
 					<div class="col-xs-12">
-						<img src="/assets/img/icon/fb_inverse.png" width="64" style="z-index:1" />
-						<img src="/assets/img/icon/twitter_inverse.png" width="64" style="z-index:1" />
-						<img src="/assets/img/icon/dailymotion.png" width="64" />
-						<img src="/assets/img/icon/soundcloud_icon.png" width="64" />
-						<img src="/assets/img/icon/youtube.png" width="64" />
-						<img src="/assets/img/icon/instagram.png" width="64" /><br/><br/>
+						<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/icon/fb_inverse.png" width="64" /></a>
+						<a href="https://www.twitter.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/twitter_inverse.png" width="64" /></a>
+						<a href="http://www.dailymotion.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/dailymotion.png" width="64" /></a>
+						<a href="https://www.soundcloud.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/soundcloud_icon.png" width="64" /></a>
+						<a href="https://www.youtube.com/user/kawandasawolu" target="_blank"><img src="/assets/img/icon/youtube.png" width="64" /></a>
+						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" /></a>
+						<br/><br/>
 						If you have any inquiry, please click here to fill the form.<br/><br/><br/>
 						<img src="/assets/img/logojawa2.png" height="100%" />
 						<br/><br/><br/>
