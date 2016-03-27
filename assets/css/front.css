@@ -12,7 +12,7 @@ html, body {
 
 body{
 	overflow-x: hidden;
-	background-color: #EEEEEE;
+	background-color: #EEEEEE !important;
 }
 
 .container.content{
@@ -48,21 +48,31 @@ body{
 
 #about_us{
 	text-align: center;
+	border-top: 3px #666666 solid;
+	border-bottom: 3px #666666 solid;
 }
 
 .about-us-bg-home{
-	background-image: url(/assets/img/about_grad.jpg);
-	background-repeat: round;
+	/*background-image: url(/assets/img/about_grad.jpg);
+	background-repeat: round;*/
 	height: 100%;
 	width:100%;
+	/*background-color: #FFD000;*/
+	background-color: rgb(250,235,135);
 }
 
 #news{
 	min-height: 500px;
+	border-bottom: 3px #666666 solid;
 }
 
 #news h2{
+	margin-left: 12px;
 	margin-bottom: 20px;
+}
+
+#news ol{
+	margin-left: 30px;
 }
 
 .news-bg-home{
@@ -74,25 +84,49 @@ body{
 
 #song, #video{
 	background-color: #FFFFFF;
+	border-bottom: 3px #666666 solid;
+}
+
+#song h2{
+	margin-left: 12px;
+}
+
+#song ol{
+	margin-left: 30px;
 }
 
 .song-cover-home{
-	height: 400px;
+	/*height: 400px;*/
 	width: 400px !important;
 	margin-right: 25px;
 }
 
-#merchandise, #member, #contact_us{
+#member, #contact_us{
 	color: #FFFFFF;
+	text-align: center;
+	border-bottom: 3px #666666 solid;
+}
+
+#merchandise{
+	border-bottom: 3px #666666 solid;
+}
+
+#merchandise h2{
 	text-align: center;
 }
 
 #member{
-	background-color: grey;
+	background-color: #AAAAAA;
 }
 
 #contact_us{
 	background-color: #CA292B;
+	/*height: 100%;*/
+	/*background-image: url('/assets/img/batik_back2.jpg');*/
+}
+
+#contact_us img{
+	margin: 0 10px 10px 0;
 }
 
 /*==========HEADER=========*/
@@ -163,6 +197,12 @@ body{
 	border-right: 1px solid #CCCCCC;
 }
 
+.news-list-date{
+	font-style: italic;
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: right;
+}
 
 /*=========MEMBER=========*/
 .member-list-item{
@@ -232,10 +272,19 @@ body{
 	border-bottom: 4px solid #333333;
 	border-top: 1px solid #CCCCCC;
 	border-right: 1px solid #CCCCCC;
+	line-height: 20px
 }
 
 .song-desc h4{
-	margin-bottom: 0px;
+	margin-bottom: 10px;
+}
+
+.song-desc h4 a{
+	color: rgb(0,0,0);
+}
+
+.song-desc span{
+	font-size: 0.8em;
 }
 
 .lyric{
@@ -271,6 +320,12 @@ body{
 	color: #FFFFFF;
 }
 
+
+@media (max-width: 350px){
+	.song-desc{
+		width: 100%;
+	}
+}
 
 @media (min-width: 768px){
 	.menu-header{

@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php
 	echo link_tag('/assets/css/front.css');
 	echo link_tag('/assets/css/bootstrap.min.v3.6.6.css');
+	echo link_tag('/assets/css/bootstrap-ms.css');
 	echo link_tag('/assets/css/font-awesome.min.css');
 	?>
 </head>
@@ -60,8 +61,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<i class="fa fa-quote-left" style="font-size:1.5em"></i>
 							<?php echo $tagline;?>
 						</div>
-						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-							<?php echo $about_us;?>
+						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="text-align:left">
+							<?php echo word_limiter($about_us,64);?>
 						</div>
 					</div>
 				</div>
@@ -71,8 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<section id="news">
 		<div class="bcg skrollable skrollable-between news-bg-home" 
-		data-bottom-top="background-position: right 0px;"
-		data-top-bottom="background-position: right -100px;"
+		data-bottom-top="background-position: center 0px;"
+		data-top-bottom="background-position: center 00px;"
 		data-anchor-target="#news">
 			<div class="container">
 				<div class="row">
@@ -147,24 +148,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-xs-12">
 					<h2>Video</h2>
-					<br/>
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 				</div>
-				<div class="col-lg-4 col-sm-6 col-xs-12">
-					<div class="videoWrapper">
-						<iframe width="100%" src="https://www.youtube.com/embed/QI9rPwl1KuM?showinfo=0" frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6 col-xs-12">
-					<div class="videoWrapper">
-						<iframe width="100%" src="https://www.youtube.com/embed/QI9rPwl1KuM?showinfo=0" frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6 col-xs-12">
-					<div class="videoWrapper">
-						<iframe width="100%" src="https://www.youtube.com/embed/QI9rPwl1KuM?showinfo=0" frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
+				<?php foreach ($videos as $key => $videos_item) {
+					echo '
+					<div class="col-lg-4 col-sm-6 col-xs-12">
+						<div class="videoWrapper">
+							<iframe width="100%" src="https://www.youtube.com/embed/'.$videos_item->link.'?showinfo=0" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>';
+
+					if ($key == 2) break; //limit only max. 3 videos
+				}
+				?>
 			</div>
 		</div>
 	</section>
@@ -173,13 +168,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="bcg skrollable skrollable-between" 
 		data-bottom-top="background-position: 0px -400px;"
 		data-top-bottom="background-position: 0px -100px;"
-		data-anchor-target="#merchandise" style="background-image: url(assets/img/merchandise.jpg); background-size:cover; height: 200px; width:100%">
+		data-anchor-target="#merchandise" style="background-image: url(assets/img/bg-2.jpg); background-position:center; width:100%">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
 						<h2>Merchandise</h2>
 						<br/>
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+						<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
+						<div 
+						data-top-bottom="margin-top:-100px;"
+						data-bottom-bottom="margin-top:0px;">
+						<img src="/assets/img/kaos.png" width="300px" />
+						</div>
+						<div 
+						data-top-bottom="top:25px;"
+						data-bottom-bottom="top:100px;"
+						style="position: absolute;bottom: 0; left:0">
+						<img src="/assets/img/cd.png" width="200px" />
+						</div>
+						<div 
+						data-top-bottom="top:100px;"
+						data-bottom-bottom="top:75px;"
+						style="position: absolute;bottom: 0; left:100px">
+						<img src="/assets/img/topi.png" width="200px" />
+						</div>
+						</div>
+						<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
+						Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
+						</div>
 					</div>
 				</div>
 			</div>
@@ -192,24 +208,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-xs-12">
 					<h2>Member</h2>
 				</div>
-				<div class="col-xs-6 col-sm-2">
-					<img src="/assets/img/profile.png" alt="" width="100%"/>
-				</div>
-				<div class="col-xs-6 col-sm-2">
-					<img src="/assets/img/profile.png" alt="" width="100%"/>
-				</div>
-				<div class="col-xs-6 col-sm-2">
-					<img src="/assets/img/profile.png" alt="" width="100%"/>
-				</div>
-				<div class="col-xs-6 col-sm-2">
-					<img src="/assets/img/profile.png" alt="" width="100%"/>
-				</div>
-				<div class="col-xs-6 col-sm-2 hidden-xs">
-					<img src="/assets/img/profile.png" alt="" width="100%"/>
-				</div>
-				<div class="col-xs-6 col-sm-2 hidden-xs">
-					<img src="/assets/img/profile.png" alt="" width="100%"/>
-				</div>
+				<?php foreach ($members as $key => $members_item) {
+				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
+						<img src="/'.$members_item['avatar'].'" alt="" width="100%" style="border-radius:50%;"/><br/>
+						'.$members_item['name'].'
+					</div>
+					';
+					
+					if ($key == 5) break; //limit only max. 6 members
+				}
+				?>
 				<div class="col-xs-12">
 					See more >>>
 				</div>
@@ -224,10 +232,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-xs-12">
 					<h2>Contact Us</h2>
 					<br/>
-					Phone Number<br/>
-					Email<br/>
-					BBM<br/><br/>
-					If you have any inquiry, please click here to fill the form.<br/><br/>
+					<div class="col-xs-12">
+						<img src="/assets/img/icon/fb_inverse.png" width="64" style="z-index:1" />
+						<img src="/assets/img/icon/twitter_inverse.png" width="64" style="z-index:1" />
+						<img src="/assets/img/icon/dailymotion.png" width="64" />
+						<img src="/assets/img/icon/soundcloud_icon.png" width="64" />
+						<img src="/assets/img/icon/youtube.png" width="64" />
+						<img src="/assets/img/icon/instagram.png" width="64" /><br/><br/>
+						If you have any inquiry, please click here to fill the form.<br/><br/><br/>
+						<img src="/assets/img/logojawa2.png" height="100%" />
+						<br/><br/><br/>
+					</div>
 				</div>
 			</div>
 		</div>

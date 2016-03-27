@@ -29,6 +29,15 @@ class Home extends CI_Controller {
         $songs = $this->Songs_model->getData();
         if (!empty($songs)) $data['songs'] = $songs;
 
+        $this->load->model('Videos_model');
+        $videos = $this->Videos_model->getData();
+        if(!empty($videos)) $data['videos'] = $videos;
+
+        $this->load->model('Members_model');
+        $members = $this->Members_model->getData();
+
+        if (!empty($members)) $data['members'] = $members;
+
 		$this->load->view('home', $data);
 	}
 }

@@ -11,6 +11,10 @@ class Song extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Lagu';
+		$this->load->model('Songs_model');
+        $songs = $this->Songs_model->getData();
+        if (!empty($songs)) $data['songs'] = $songs;
+        
 		$this->load->view('tag_open',$data);
 		$this->load->view('song_list');
 		$this->load->view('tag_close');
