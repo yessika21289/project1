@@ -32,9 +32,37 @@ class Galleries_model extends CI_Model
         return $insert_id;
     }
 
+    function editAlbum($post, $user, $old_album_dir, $new_album_dir) {
+        $data = array(
+            'title' => !empty($post['album_title']) ? $post['album_title'] : '',
+            'directory' => $new_album_dir,
+            'album_date' => !empty($post['album_date']) ? strtotime($post['album_date']) : '',
+            'updated_at' => time(),
+            'updated_by' => $user,
+            'is_active' => 1
+        );
+        rename($old_album_dir, $new_album_dir);
+        $this->db->where('id', $post['album_id']);
+        $update = $this->db->update('albums', $data);
+        if($update) return $post['album_id'];
+        else return false;
+    }
+
     function getPhotos($album_id) {
         $this->db->where('album_id', $album_id);
         $this->db->order_by('id', 'desc');
+        $query = $this->db->get('photos');
+        return $query->result();
+    }
+
+    function deletePhotos($album_id) {
+        $this->db->where('album_id', $album_id);
+        $delete = $this->db->delete('photos');
+        return $delete;
+    }
+
+    function getPhotoFile($photo_id) {
+        $this->db->where('id', $photo_id);
         $query = $this->db->get('photos');
         return $query->result();
     }
@@ -52,38 +80,39 @@ class Galleries_model extends CI_Model
         return $album_id;
     }
 
-    function update($user, $post) {
-//        $link = trim(strip_tags($post['youtube_id'], $this->allowed_tags));
-//        $data = array(
-//            'title' => $post['title'],
-//            'link' => $link,
-//            'updated_at' => time(),
-//            'updated_by' => $user,
-//            'is_active' => 1
-//        );
-//
-//        $this->db->where('id', $post['gallery_id']);
-//        $update = $this->db->update('galleries', $data);
-//        if($update) return $post['gallery_id'];
-//        else return false;
+    function editPhotos($user, $photo_id, $new_photo) {
+        $data = array(
+            'photo' => $new_photo,
+            'updated_at' => time(),
+            'updated_by' => $user
+        );
+        $this->db->where('id', $photo_id);
+        if($this->db->update('photos', $data)) return true;
+        else return false;
+    }
+
+    function deletePhoto($photo_id) {
+        $this->db->where('id', $photo_id);
+        $delete = $this->db->delete('photos');
+        return $delete;
     }
 
     function set_active($user, $post) {
-//        $data = array(
-//            'is_active' => $post['is_active'],
-//            'updated_at' => time(),
-//            'updated_by' => $user
-//        );
-//
-//        $this->db->where('id', $post['gallery_id']);
-//        $update = $this->db->update('galleries', $data);
-//        if($data['is_active'] == 1) return 'published';
-//        else return 'unpublished';
+        $data = array(
+            'is_active' => $post['is_active'],
+            'updated_at' => time(),
+            'updated_by' => $user
+        );
+
+        $this->db->where('id', $post['album_id']);
+        $update = $this->db->update('albums', $data);
+        if($data['is_active'] == 1) return 'published';
+        else return 'unpublished';
     }
 
-    function delete($gallery_id) {
-//        $this->db->where('id', $gallery_id);
-//        $delete = $this->db->delete('galleries');
-//        return $delete;
+    function delete($album_id) {
+        $this->db->where('id', $album_id);
+        $delete = $this->db->delete('albums');
+        return $delete;
     }
 }

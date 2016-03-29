@@ -63,14 +63,70 @@ class Galleries extends CI_Controller {
         redirect('admin/Galleries/add');
     }
 
-    function add($gallery_id = NULL) {
+    function edit_album() {
+        $user = $this->session->userdata('username');
+        $this->load->model('Galleries_model');
+        $path = 'assets/galleries/';
+        $new_album_dir = $path . strtolower($_POST['album_title']) . '/';
+
+        if (!empty($_POST)) {
+            $album_id = $_POST['album_id'];
+            $album = $this->Galleries_model->getAlbums($album_id);
+            $photos = $this->Galleries_model->getPhotos($album_id);
+            foreach ($photos as $photo) {
+                $photo_file = substr($photo->photo, strrpos($photo->photo, '/') + 1);
+                $new_photo_file = $new_album_dir . $photo_file;
+                $this->Galleries_model->editPhotos($user, $photo->id, $new_photo_file);
+            }
+
+            $old_album_dir = $album[0]->directory;
+            $updated_id = $this->Galleries_model->editAlbum($_POST, $user, $old_album_dir, $new_album_dir);
+
+            if (!is_dir($new_album_dir)) {
+                $error = $new_album_dir . ' folder is not exist';
+                $this->session->set_flashdata('error_upload', $error);
+                redirect('admin/Galleries/edit/' . $album_id);
+            }
+            else if (!empty($_FILES['photos']['tmp_name'][0])) {
+                for ($i = 0; $i < count($_FILES['photos']['name']); $i++) {
+                    $photo_ext = strtolower(pathinfo($_FILES['photos']['name'][$i], PATHINFO_EXTENSION));
+                    $photo_file = $new_album_dir . time() . '_' . ($i + 1) . '.' . $photo_ext;
+
+                    if (!in_array($photo_ext, array('jpg', 'jpeg', 'png'))) {
+                        $error = 'Only jpg/jpeg/png which are allowed.';
+                        $this->session->set_flashdata('error_upload', $error);
+                        redirect('admin/Galleries/edit/' . $album_id);
+                    }
+                    else if (move_uploaded_file($_FILES['photos']['tmp_name'][$i], $photo_file)) {
+                        $this->load->library('image_lib');
+                        $config['image_library'] = 'gd2';
+                        $config['source_image'] = $photo_file;
+                        $config['width'] = 180;
+                        $config['height'] = 135;
+
+                        $this->image_lib->initialize($config);
+                        $this->image_lib->resize();
+
+                        $added_id = $this->Galleries_model->addPhotos($user, $photo_file, $album_id);
+                    }
+                    else {
+                        $error = 'Upload photos failed!';
+                        $this->session->set_flashdata('error_upload', $error);
+                        redirect('admin/Galleries/edit/' . $album_id);
+                    }
+                }
+            }
+
+            if ($updated_id) $this->session->set_flashdata('updated_id', $updated_id);
+            redirect('admin/Galleries');
+        }
+    }
+
+    function add($album_id = NULL) {
         $user = $this->session->userdata('username');
         $this->load->model('Galleries_model');
 
         if (!empty($_POST)) {
-//            print_r($_POST);
-//            print_r($_FILES);
-//            exit;
             $album_id = $_POST['album_id'];
             $album = $this->Galleries_model->getAlbums($album_id);
             $album_dir = $album[0]->directory;
@@ -80,7 +136,7 @@ class Galleries extends CI_Controller {
                 $this->session->set_flashdata('error_upload', $error);
                 redirect('admin/Galleries/add');
             }
-            else if (!empty($_FILES['photos']['tmp_name'])) {
+            else if (!empty($_FILES['photos']['tmp_name'][0])) {
                 for ($i = 0; $i < count($_FILES['photos']['name']); $i++) {
                     $photo_ext = strtolower(pathinfo($_FILES['photos']['name'][$i], PATHINFO_EXTENSION));
                     $photo_file = $album_dir . time() . '_' . ($i + 1) . '.' . $photo_ext;
@@ -114,11 +170,11 @@ class Galleries extends CI_Controller {
             redirect('admin/Galleries');
         }
         elseif ($this->input->get('is_active') != NULL) {
-            $post['gallery_id'] = $this->input->get('id');
+            $post['album_id'] = $this->input->get('id');
             $post['is_active'] = $this->input->get('is_active');
             $set_active = $this->Galleries_model->set_active($user, $post);
             $this->session->set_flashdata('set_active', $set_active);
-            $this->session->set_flashdata('set_active_id', $post['gallery_id']);
+            $this->session->set_flashdata('set_active_id', $post['album_id']);
 
             redirect('admin/Galleries');
         }
@@ -150,10 +206,34 @@ class Galleries extends CI_Controller {
         $this->load->view('admin_footer');
     }
 
-    function delete($gallery_id = NULL) {
+    function del_photo($photo_id) {
         $this->load->model('Galleries_model');
-        if (!empty($gallery_id)) {
-            $delete = $this->Galleries_model->delete($gallery_id);
+        if (!empty($photo_id)) {
+            $photo_file = $this->Galleries_model->getPhotoFile($photo_id);
+            if (!empty($photo_file[0]->photo)) unlink($photo_file[0]->photo);
+            $delete = $this->Galleries_model->deletePhoto($photo_id);
+            if ($delete) $this->session->set_flashdata('delete_confirm', $delete);
+            redirect('admin/Galleries/edit/' . $photo_file[0]->album_id);
+        }
+        else redirect('admin/Galleries');
+    }
+
+    function delete($album_id = NULL) {
+        $this->load->model('Galleries_model');
+        if (!empty($album_id)) {
+            $photos = $this->Galleries_model->getPhotos($album_id);
+            if (!empty($photos)) {
+                foreach ($photos as $photo) {
+                    unlink($photo->photo);
+                }
+                $this->Galleries_model->deletePhotos($album_id);
+            }
+
+            $album = $this->Galleries_model->getAlbums($album_id);
+            if (!empty($album)) {
+                rmdir($album[0]->directory);
+                $delete = $this->Galleries_model->delete($album_id);
+            }
             if ($delete) $this->session->set_flashdata('delete_confirm', $delete);
             redirect('admin/Galleries');
         }

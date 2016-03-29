@@ -1,4 +1,3 @@
-<?php //echo time();exit; ?>
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
@@ -56,7 +55,7 @@
 
                         <br/>
 
-                        <div id="add-album-form" class="row form" style="border: groove; width: 30%;">
+                        <div id="add-album-form" class="row form">
                             <form action="<?php echo base_url(); ?>admin/Galleries/add_album" class="form-horizontal"
                                   method="post" enctype="multipart/form-data">
 
@@ -103,13 +102,6 @@
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
-
-<!--                                        <label class="control-label col-md-3">Album Event Date</label>-->
-<!--                                        <div class="col-md-4">-->
-<!--                                            <input type="date" class="form-control" name="album_date"-->
-<!--                                               value="--><?php //echo $album->album_date; ?><!--">-->
-<!--                                        </div>-->
-<!--                                        <input type="hidden" name="album_id" value="--><?php ////echo $video_id; ?><!--">-->
                                     </div>
                                 </div>
 

@@ -74,7 +74,7 @@
                 </ul>
             </li>
 
-            <li class="sub-menu <?php if(in_array($menu_active, array('add_galleries', 'galleries'))) echo 'active'; ?>">
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_galleries', 'galleries', 'edit_galleries'))) echo 'active'; ?>">
                 <a href="javascript:" class="">
                     <i class="icon_images"></i>
                     <span>Galleries</span>
