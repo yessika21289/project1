@@ -86,3 +86,29 @@ label.upload-song {
     margin-right: 10px;
     margin-bottom: 5px;
 }
+
+div.MultiFile-label {
+    border: groove;
+    margin: 10px 20px 0 0;
+    padding: 0 10px 10px 10px;
+    width: 200px;
+    height: 180px;
+}
+
+span.MultiFile-title {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+a.MultiFile-remove {
+    font-size: 15pt;
+    color: red;
+}
+
+#add-album-form {
+    display: none;
+    border: groove;
+    padding: 20px 20px 20px 0;
+    width: 30%;
+    margin-left: 15px;
+}

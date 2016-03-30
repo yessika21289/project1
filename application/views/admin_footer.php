@@ -45,6 +45,10 @@
 <script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/locales/bootstrap-datepicker.en-GB.min.js"></script>
 
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>-->
+<script src="<?php echo base_url(); ?>assets/multifile-master/jquery.MultiFile.js" type="text/javascript" language="javascript"></script>
+
+
 <script>
 
     //knob
@@ -143,6 +147,10 @@
 //        clearBtn: true,
 //        todayHighlight: true
 //    });
+
+    function addAlbum() {
+        $("#add-album-form").toggle('slow');
+    }
 
 </script>
 
