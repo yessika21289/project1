@@ -12,19 +12,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	echo link_tag('/assets/css/bootstrap.min.v3.6.6.css');
 	echo link_tag('/assets/css/bootstrap-ms.css');
 	echo link_tag('/assets/css/font-awesome.min.css');
+	echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');
 	?>
 </head>
 <body>
-<div class="navbar" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:20%; z-index:1; opacity:0.7">
+
+<!-- <div class="navbar hidden-xs" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:0; z-index:1; opacity:0.7; width: 55px; height:100%"> -->
+
+<div class="navbar hidden-xs" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:20%; z-index:1; opacity:0.7">
 	<a class="page-scroll right-menu" href="#banner"><img src="/assets/img/icon/home.png"/></a>
 	<a class="page-scroll right-menu" href="#about_us"><img src="/assets/img/icon/about.png"/></a>
 	<a class="page-scroll right-menu" href="#news"><img src="/assets/img/icon/news.png"/></a>
 	<a class="page-scroll right-menu" href="#song"><img src="/assets/img/icon/song.png"/></a>
 	<a class="page-scroll right-menu" href="#video"><img src="/assets/img/icon/video.png"/></a>
+	<a class="page-scroll right-menu" href="#gallery"><img src="/assets/img/icon/album.png"/></a>
 	<a class="page-scroll right-menu" href="#merchandise"><img src="/assets/img/icon/hat.png"/></a>
 	<a class="page-scroll right-menu" href="#member"><img src="/assets/img/icon/member.png"/></a>
 	<a class="page-scroll right-menu" href="#contact_us"><img src="/assets/img/icon/contact.png"/></a>
 </div>
+<!-- </div> -->
 <div id="skrollr-body">
 	<section id="banner" style="position: relative; background-color:#CA292B; z-index:-2">
 		<div style="height:30%">
@@ -62,9 +68,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<?php echo $tagline;?>
 						</div>
 						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="text-align:left">
-							<?php echo word_limiter($about_us,64);?>
+							<?php echo word_limiter($about_us,64);?> [<a href="/about">Read more</a>]
 						</div>
 					</div>
+				</div>
+				<div class="col-xs-12">
+					<hr class="hr-home" />
 				</div>
 			</div>
 		</div>
@@ -72,9 +81,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<section id="news">
 		<div class="bcg skrollable skrollable-between news-bg-home" 
-		data-bottom-top="background-position: center 0px;"
-		data-top-bottom="background-position: center 00px;"
-		data-anchor-target="#news">
+		data-bottom-top="background-position: center 00px;"
+		data-top-bottom="background-position: center 0px;"
+		data-anchor-target="#news"
+		style="background-image: url(/assets/img/news_grad.png);">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
@@ -109,6 +119,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						?>
 						</ol>
 					</div>
+					<div class="col-xs-12">
+						<hr class="hr-home" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -139,6 +152,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					?>
 					</ol>
 				</div>
+				<div class="col-xs-12">
+					<hr class="hr-home" />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -152,6 +168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php foreach ($videos as $key => $videos_item) {
 					echo '
 					<div class="col-lg-4 col-sm-6 col-xs-12">
+						'.character_limiter($videos_item->title,48).'
 						<div class="videoWrapper">
 							<iframe width="100%" src="https://www.youtube.com/embed/'.$videos_item->link.'?showinfo=0" frameborder="0" allowfullscreen></iframe>
 						</div>
@@ -160,6 +177,56 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					if ($key == 2) break; //limit only max. 3 videos
 				}
 				?>
+				<div class="col-xs-12">
+					<hr class="hr-home" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="gallery">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>Galeri</h2>
+				</div>
+				<div style="text-align:center; position:relative">
+					Every moment is a special moment for us.<br/>
+					[<a href="/gallery">Explore more</a>]
+				</div>
+				<div style="position: relative;height:300px; width: 650px; margin: auto;">
+					<div 
+					data-bottom-top="right: 0px;"
+					data-400-top="right: 550px;"
+					class="gallery-item-home">
+						<img src="/assets/img/kawandasawolu.jpg" width="100">
+					</div>
+					<div 
+					data-bottom-top="right: 00px;"
+					data-400-top="right: 450px;"
+					class="gallery-item-home">
+						<img src="/assets/img/kawandasawolu.jpg" width="150">
+					</div>
+					<div 
+					data-bottom-top="right: 0px;"
+					data-400-top="right: 325px;"
+					class="gallery-item-home">
+						<img src="/assets/img/kawandasawolu.jpg" width="200">
+					</div>
+					<div 
+					data-bottom-top="right: 0px;"
+					data-400-top="right: 175px;"
+					class="gallery-item-home">
+						<img src="/assets/img/kawandasawolu.jpg" width="250">
+					</div>
+					<div class="gallery-item-home" style="right: 0px">
+						<img src="/assets/img/kawandasawolu.jpg" width="300">
+					</div>
+				</div>
+				<div style="clear:both"></div>
+				<div class="col-xs-12">
+					<hr class="hr-home" />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -168,7 +235,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="bcg skrollable skrollable-between" 
 		data-bottom-top="background-position: 0px -400px;"
 		data-top-bottom="background-position: 0px -100px;"
-		data-anchor-target="#merchandise" style="background-image: url(assets/img/bg-2.jpg); background-position:center; width:100%">
+		data-anchor-target="#merchandise">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
@@ -195,9 +262,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 						<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
 						Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
+						<br/><br/>
+						[<a href="/merchandise">Get more</a>]
 						</div>
 					</div>
 				</div>
+					<div class="col-xs-12">
+						<hr class="hr-home" />
+					</div>
 			</div>
 		</div>
 	</section>
@@ -210,7 +282,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<?php foreach ($members as $key => $members_item) {
 				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
-						<img src="/'.$members_item['avatar'].'" alt="" width="100%" style="border-radius:50%;"/><br/>
+						<img src="/'.$members_item['avatar'].'" alt="" width="100%" style="border-radius:50%; border:4px #999999 solid"/><br/>
 						'.$members_item['name'].'
 					</div>
 					';
@@ -219,7 +291,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 				?>
 				<div class="col-xs-12">
-					See more >>>
+					<a href="/member">[See more]</a>
 				</div>
 				
 			</div>
@@ -293,6 +365,27 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 
 	// Kick off one resize to fix all videos on page load
 	}).resize();
+
+	$('.owl-carousel').owlCarousel({
+	    loop:true,
+	    margin:10,
+	    responsiveClass:true,
+	    responsive:{
+	        0:{
+	            items:1,
+	            nav:true
+	        },
+	        600:{
+	            items:3,
+	            nav:true
+	        },
+	        1000:{
+	            items:6,
+	            nav:true,
+	            loop:false
+	        }
+	    }
+	})
 </script>
 </body>
 </html>

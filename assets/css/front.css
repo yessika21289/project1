@@ -20,8 +20,8 @@ body{
 }
 
 .container h1{
-	 font-family:'Alex Brush';
-	 font-size:60px;
+	font-family:'Alex Brush';
+	font-size:60px;
 }
 
 .skrollr-desktop body {
@@ -42,27 +42,35 @@ body{
 }
 
 /*==========HOME============*/
+section h2{
+	font-family:'Alex Brush';
+	font-size: 4em;
+}
+
+hr.hr-home{
+	width: 60%;
+    margin: 20px auto 20px auto;
+    border-top: 2px #BBBBBB solid;
+}
+
 #banner{
 	height: 100%;
 }
 
 #about_us{
 	text-align: center;
-	border-bottom: 3px #666666 solid;
 }
 
 .about-us-bg-home{
-	/*background-image: url(/assets/img/about_grad.jpg);
-	background-repeat: round;*/
 	height: 100%;
 	width:100%;
-	/*background-color: #FFD000;*/
-	background-color: rgb(250,235,135);
+	/*background-color: rgb(250,235,135);*/
+	background-color: #FFFFFF;
 }
 
 #news{
 	min-height: 500px;
-	border-bottom: 3px #666666 solid;
+	background-color: #FFFFFF;
 }
 
 #news h2{
@@ -75,15 +83,25 @@ body{
 }
 
 .news-bg-home{
-	background-image: url(/assets/img/news_grad.jpg);
+	/*background-color: rgb(202,41,43);*/
 	background-size:cover;
 	height: 100%;
 	width:100%;
 }
 
-#song, #video{
+#song{
+	/*background-color: rgb(250,235,135);*/
 	background-color: #FFFFFF;
-	border-bottom: 3px #666666 solid;
+}
+
+#video{
+	/*background-color: rgb(202,41,43);*/
+	background-color: #FFFFFF;
+	/*color: #FFFFFF;*/
+}
+
+#video h2{
+	text-align: center;
 }
 
 #song h2{
@@ -100,13 +118,25 @@ body{
 	margin-right: 25px;
 }
 
+#gallery{
+	background-color: #FFFFFF;
+}
+
+#gallery h2{
+	text-align: center;
+}
+
+.gallery-item-home{
+	position: absolute;
+	right: 0px;
+}
+
 #member, #contact_us{
-	color: #FFFFFF;
 	text-align: center;
 }
 
 #merchandise{
-	border-bottom: 3px #666666 solid;
+	background-color: #FFFFFF;
 }
 
 #merchandise h2{
@@ -114,12 +144,14 @@ body{
 }
 
 #member{
-	background-color: #AAAAAA;
-	border-bottom: 3px #666666 solid;
+	color: #000000;
+	/*background-color: rgb(250,235,135);*/
+	background-color: #FFFFFF;
 }
 
 #contact_us{
-	background-color: #CA292B;
+	color: #FFFFFF;
+	background-color: rgb(202,41,43);
 	/*height: 100%;*/
 	/*background-image: url('/assets/img/batik_back2.jpg');*/
 }
