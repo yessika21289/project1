@@ -48,8 +48,9 @@ class Galleries_model extends CI_Model
         else return false;
     }
 
-    function getPhotos($album_id) {
-        $this->db->where('album_id', $album_id);
+    function getPhotos($album_id = NULL) {
+        if(!empty($album_id)) $this->db->where('album_id', $album_id);
+
         $this->db->order_by('id', 'desc');
         $query = $this->db->get('photos');
         return $query->result();

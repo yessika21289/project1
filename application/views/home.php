@@ -42,13 +42,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div 
 		data-top-bottom="left:-200px;"
 		data-bottom-bottom="left:0px;"
-		style="height:40%; width:80%; position: absolute; bottom: 0; right:0">
+		style="height:40%; position: absolute; bottom: 0; right:0">
 		<img src="/assets/img/clouds.png" height="100%" />
 		</div>
 		<div 
 		data-top-bottom="left:300px;"
 		data-bottom-bottom="left:0px;"
-		style="height: 30%; width:80%; position: absolute; bottom: 0;">
+		style="height: 30%; position: absolute; bottom: 0;">
 		<img src="/assets/img/becak_tugu_pohon.png" height="100%" />
 		</div>
 	</section>
@@ -195,32 +195,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					[<a href="/gallery">Explore more</a>]
 				</div>
 				<div style="position: relative;height:300px; width: 650px; margin: auto;">
+				<?php $photo_index = array_rand($photos,5);?>
 					<div 
-					data-bottom-top="right: 0px;"
-					data-400-top="right: 550px;"
-					class="gallery-item-home">
-						<img src="/assets/img/kawandasawolu.jpg" width="100">
+					data-bottom-top="right: 200px;"
+					data-center-center="right: 550px;"
+					class="gallery-item-home"
+					style="right: 0px; width: 100px; height: 100px; background-image:url('/<?php print_r($photos[$photo_index[4]]->photo);?>');">
 					</div>
 					<div 
-					data-bottom-top="right: 00px;"
-					data-400-top="right: 450px;"
-					class="gallery-item-home">
-						<img src="/assets/img/kawandasawolu.jpg" width="150">
+					data-bottom-top="right: 150px;"
+					data-center-center="right: 450px;"
+					class="gallery-item-home"
+					style="right: 0px; width: 150px; height: 150px; background-image:url('/<?php print_r($photos[$photo_index[3]]->photo);?>');">
 					</div>
 					<div 
-					data-bottom-top="right: 0px;"
-					data-400-top="right: 325px;"
-					class="gallery-item-home">
-						<img src="/assets/img/kawandasawolu.jpg" width="200">
+					data-bottom-top="right: 100px;"
+					data-center-center="right: 325px;"
+					class="gallery-item-home"
+					style="right: 0px; width: 200px; height: 200px; background-image:url('/<?php print_r($photos[$photo_index[2]]->photo);?>');">
 					</div>
 					<div 
-					data-bottom-top="right: 0px;"
-					data-400-top="right: 175px;"
-					class="gallery-item-home">
-						<img src="/assets/img/kawandasawolu.jpg" width="250">
+					data-bottom-top="right: 50px;"
+					data-center-center="right: 175px;"
+					class="gallery-item-home"
+					style="right: 0px; width: 250px; height: 250px; background-image:url('/<?php print_r($photos[$photo_index[1]]->photo);?>');">
 					</div>
-					<div class="gallery-item-home" style="right: 0px">
-						<img src="/assets/img/kawandasawolu.jpg" width="300">
+					<div 
+					class="gallery-item-home" 
+					style="right: 0px; width: 300px; height: 300px; background-image:url('/<?php print_r($photos[$photo_index[0]]->photo);?>');">
 					</div>
 				</div>
 				<div style="clear:both"></div>
@@ -280,14 +282,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-xs-12">
 					<h2>Member</h2>
 				</div>
-				<?php foreach ($members as $key => $members_item) {
+				<?php $member_index = array_rand($members,6);?>
+
+				<?php foreach ($member_index as $key => $index) {
 				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
-						<img src="/'.$members_item['avatar'].'" alt="" width="100%" style="border-radius:50%; border:4px #999999 solid"/><br/>
-						'.$members_item['name'].'
+						<img src="/'.$members[$index]['avatar'].'" alt="" width="100%" style="border-radius:50%; border:4px #999999 solid"/><br/>
+						'.$members[$index]['name'].'
 					</div>
 					';
-					
-					if ($key == 5) break; //limit only max. 6 members
 				}
 				?>
 				<div class="col-xs-12">

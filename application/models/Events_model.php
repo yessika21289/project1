@@ -9,7 +9,8 @@ class Events_model extends CI_Model
 
     function getData($event_id = NULL) {
         if(!empty($event_id)) $this->db->where('id', $event_id);
-        $this->db->order_by('updated_at', 'desc');
+        //$this->db->order_by('updated_at', 'desc');
+        $this->db->order_by('start_date', 'asc');
         $query = $this->db->get('events');
         return $query->result();
     }

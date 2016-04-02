@@ -33,6 +33,10 @@ class Home extends CI_Controller {
         $videos = $this->Videos_model->getData();
         if(!empty($videos)) $data['videos'] = $videos;
 
+        $this->load->model('Galleries_model');
+        $photos = $this->Galleries_model->getPhotos();
+        if (!empty($photos)) $data['photos'] = $photos;
+
         $this->load->model('Members_model');
         $members = $this->Members_model->getData();
 

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class News extends CI_Controller {
+class Event extends CI_Controller {
 	public function __construct()
     {
             parent::__construct();
@@ -11,13 +11,13 @@ class News extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'Berita';
-		$this->load->model('News_model');
-        $news = $this->News_model->getData();
-        if(!empty($news)) $data['news'] = $news;
+		$data['title'] = 'Event';
+		$this->load->model('Events_model');
+        $events = $this->Events_model->getData();
+        if(!empty($events)) $data['events'] = $events;
 
 		$this->load->view('tag_open',$data);
-		$this->load->view('news_list');
+		$this->load->view('event_list');
 		$this->load->view('tag_close');
 	}
 }

@@ -6,6 +6,7 @@ class Member extends CI_Controller {
     {
             parent::__construct();
             $this->load->helper('html');
+            $this->load->helper('url');
     }
 
 	public function index()

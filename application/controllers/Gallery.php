@@ -11,6 +11,11 @@ class Gallery extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Galeri Album';
+		
+		$this->load->model('Galleries_model');
+        $albums = $this->Galleries_model->getAlbums();
+        if (!empty($albums)) $data['albums'] = $albums;
+
 		$this->load->view('tag_open',$data);
 		$this->load->view('gallery_album');
 		$this->load->view('tag_close');

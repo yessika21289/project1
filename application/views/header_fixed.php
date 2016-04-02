@@ -21,7 +21,10 @@
                         <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
                     </li>
                     <li>
-                        <a class="page-scroll menu-header" href="/news">Berita &amp; Event</a>
+                        <a class="page-scroll menu-header" href="/news">Berita</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll menu-header" href="/event">Event</a>
                     </li>
                     <li>
                         <a class="page-scroll menu-header" href="/song">Lagu</a>
