@@ -25,7 +25,8 @@ class Merchandise_model extends CI_Model
             'created_at' => time(),
             'created_by' => $user,
             'updated_at' => time(),
-            'updated_by' => $user
+            'updated_by' => $user,
+            'is_active' => 1
         );
         $this->db->insert('merchandise', $data);
         $insert_id = $this->db->insert_id();
@@ -40,7 +41,8 @@ class Merchandise_model extends CI_Model
             'description' => $post['desc'],
             'image' => !empty($merchandise_file) ? $merchandise_file : NULL,
             'updated_at' => time(),
-            'updated_by' => $user
+            'updated_by' => $user,
+            'is_active' => 1
         );
         $this->db->where('id', $post['merchandise_id']);
         $this->db->update('merchandise', $data);

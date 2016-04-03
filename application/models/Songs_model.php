@@ -18,7 +18,7 @@ class Songs_model extends CI_Model
         $title = $post['title'];
         $lyric = $post['lyric'];
         $artist = $post['artist'];
-        $release_date = $post['release_date'];
+        $release_date = strtotime($post['release_date']);
 
         $data = array(
             'title' => $title,

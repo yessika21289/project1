@@ -15,7 +15,7 @@ body {
     font-family: 'Lato', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
-    font-size:14px !important;    
+    font-size:14px !important;
 }
 h1,h2,h3,h4,h5{
     font-weight: 300;
@@ -65,6 +65,8 @@ table tr th { color: #688a7e;}
 }
 .lite{
     color: #00a0df !important;
+    margin-left: 5px;
+    vertical-align: -webkit-baseline-middle;
 }
 
 /*login page*/
@@ -72,27 +74,27 @@ table tr th { color: #688a7e;}
 .login-body {
     background-color: #f1f2f7;
 }
-.login-img-body{
-  background: url('../img/bg-1.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.login-img2-body{
-  background: url('../img/bg-1.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.login-img3-body{
-  background: url('../img/bg-1.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+/*.login-img-body{*/
+  /*background: url('../img/bg-1.jpg') no-repeat center center fixed; */
+  /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+  /*-o-background-size: cover;*/
+  /*background-size: cover;*/
+/*}*/
+/*.login-img2-body{*/
+  /*background: url('../img/bg-1.jpg') no-repeat center center fixed; */
+  /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+  /*-o-background-size: cover;*/
+  /*background-size: cover;*/
+/*}*/
+/*.login-img3-body{*/
+  /*background: url('../img/bg-1.jpg') no-repeat center center fixed;*/
+  /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+  /*-o-background-size: cover;*/
+  /*background-size: cover;*/
+/*}*/
 
 .login-form {
     max-width: 350px;
@@ -532,7 +534,7 @@ a.logo {
     font-weight: 300;
     color: #fed189;
     float: left;
-    margin-top: 15px;
+    margin-top: 9px;
     text-transform: uppercase;
 }
 
@@ -759,7 +761,7 @@ div[data-role="editor-toolbar"] {
 }
 
 .top-nav  {
-    margin-top: 7px;
+    margin-top: 20px;
 }
 
 .top-nav ul.top-menu > li .dropdown-menu.logout {
@@ -832,6 +834,7 @@ div[data-role="editor-toolbar"] {
 .top-nav .username {
     font-size: 13px;
     color: #bdbdbd;
+    margin-left: 5px;
 }
 
 .top-nav ul.top-menu > li > a {
@@ -4940,3 +4943,8 @@ span.customSelect.changed {
     background:url(../img/customSelect-arrow.gif) no-repeat center right;
 }
 
+.admin-background {
+    background: url('../img/background-login-admin.png') no-repeat center center fixed;
+    height: 100%;
+    width: 100%;
+}
