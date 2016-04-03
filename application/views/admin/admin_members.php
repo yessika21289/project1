@@ -85,8 +85,12 @@
                     <?php else: ?>
                         <?php foreach($members as $member):
                             $avatar = !empty($member['avatar']) ? $member['avatar'] : 'assets/img/default_avatar.png';
-                            ?>
-                        <div class="panel-body">
+                            $row_changed = '';
+                            if($member['id'] == $added_id || $member['id'] == $updated_id) $row_changed = 'success';
+                            if($member['id'] == $set_active_id && $set_active == 'published') $row_changed = 'success';
+                            if($member['id'] == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
+                        ?>
+                        <div class="panel-body <?php echo $row_changed; ?>">
                             <div class="col-md-2 clearfix" style="width: 13.6667%;">
                                 <img src="<?php echo base_url().$avatar; ?>" class="view-avatar" />
                             </div>

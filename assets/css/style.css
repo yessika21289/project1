@@ -4948,3 +4948,11 @@ span.customSelect.changed {
     height: 100%;
     width: 100%;
 }
+
+div.warning {
+    background-color: #fff0b3;
+}
+
+div.success {
+    background-color: #dff8e3;
+}

@@ -156,14 +156,11 @@ class Members extends CI_Controller {
                         'id' => $member[0]['id'],
                         'name' => $member[0]['name'],
                         'is_active' => $member[0]['is_active'],
-                        'socmed' => array(
-                            'facebook' => $member[0]['socmed']['facebook'],
-                            'twitter' => $member[0]['socmed']['twitter'],
-                            'instagram' => $member[0]['socmed']['instagram'],
-                            'path' => $member[0]['socmed']['path'],
-                            'web' => $member[0]['socmed']['web']
-                        ),
                     );
+
+                    foreach(array_keys($member[0]['socmed']) as $socmed) {
+                        $data['member']['socmed'][$socmed] = $member[0]['socmed'][$socmed];
+                    }
                 }
 
                 if (!empty($this->session->flashdata('error_upload'))) {
