@@ -51,9 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['default_controller'] = 'Home';
-$route['admin'] = 'admin/Admin';
-$route['admin/login'] = 'admin/Admin/login';
-$route['admin/logout'] = 'admin/Admin/logout';
+$route['myadminkw'] = 'myadminkw/Myadminkw';
+$route['myadminkw/login'] = 'myadminkw/Myadminkw/login';
+$route['myadminkw/logout'] = 'myadminkw/Myadminkw/logout';
 
 $route['404_override'] = '';
 //$route['translate_uri_dashes'] = FALSE;

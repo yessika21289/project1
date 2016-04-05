@@ -30,7 +30,6 @@ class Members_model extends CI_Model
             }
             $i++;
         }
-
         return $members;
     }
 
@@ -41,14 +40,15 @@ class Members_model extends CI_Model
             'created_at' => time(),
             'created_by' => $user,
             'updated_at' => time(),
-            'updated_by' => $user
+            'updated_by' => $user,
+            'is_active' => 1
         );
         $this->db->insert('members', $data);
         $insert_id = $this->db->insert_id();
 
         $keys = array_keys($post);
         foreach($keys as $key) {
-            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web'))) {
+            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web')) && !empty($post[$key])) {
                 $socmed = array(
                     'id_member' => $insert_id,
                     'type' => $key,
@@ -70,23 +70,28 @@ class Members_model extends CI_Model
             'name' => $post['name'],
             'avatar' => !empty($avatar_file) ? $avatar_file : NULL,
             'updated_at' => time(),
-            'updated_by' => $user
+            'updated_by' => $user,
+            'is_active' => 1
         );
         $this->db->where('id', $post['member_id']);
         $this->db->update('members', $data);
 
+        $this->db->where('id_member', $post['member_id']);
+        $this->db->delete('members_socmed');
+
         $keys = array_keys($post);
         foreach($keys as $key) {
-            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web'))) {
+            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web')) && !empty($post[$key])) {
                 $socmed = array(
                     'id_member' => $post['member_id'],
+                    'type' => $key,
                     'id_socmed' => $post[$key],
+                    'created_at' => time(),
+                    'created_by' => $user,
                     'updated_at' => time(),
                     'updated_by' => $user
                 );
-                $this->db->where('id_member', $post['member_id']);
-                $this->db->where('type', $key);
-                $this->db->update('members_socmed', $socmed);
+                $this->db->insert('members_socmed', $socmed);
             }
         }
 

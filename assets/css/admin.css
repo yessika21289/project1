@@ -112,3 +112,11 @@ a.MultiFile-remove {
     width: 30%;
     margin-left: 15px;
 }
+
+div.warning {
+    background-color: #fff0b3;
+}
+
+div.success {
+    background-color: #dff8e3;
+}
