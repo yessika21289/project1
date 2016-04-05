@@ -4944,15 +4944,5 @@ span.customSelect.changed {
 }
 
 .admin-background {
-    background: url('../img/background-login-admin.png') no-repeat center center fixed;
-    height: 100%;
-    width: 100%;
-}
-
-div.warning {
-    background-color: #fff0b3;
-}
-
-div.success {
-    background-color: #dff8e3;
+    background: url('../img/background-login-admin.png') no-repeat;
 }
