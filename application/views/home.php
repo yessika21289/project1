@@ -194,7 +194,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					Every moment is a special moment for us.<br/>
 					[<a href="/gallery">Explore more</a>]
 				</div>
-				<div id="gallery-item-cont" style="position: relative;height:300px; width: 650px; margin: auto;">
+				<div id="gallery-item-cont">
 				<?php $photo_index = array_rand($photos,5);?>
 					<div 
 					data-bottom-top="right: 200px;"
