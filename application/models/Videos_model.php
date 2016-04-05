@@ -17,9 +17,11 @@ class Videos_model extends CI_Model
     function add($user, $post) {
         $title = $post['title'];
         $link = trim(strip_tags($post['youtube_id'], $this->allowed_tags));
+        $description = trim(strip_tags($post['description'], $this->allowed_tags));
         $data = array(
             'title' => $title,
             'link' => $link,
+            'description' => $description,
             'created_at' => time(),
             'created_by' => $user,
             'updated_at' => time(),
@@ -33,9 +35,11 @@ class Videos_model extends CI_Model
 
     function update($user, $post) {
         $link = trim(strip_tags($post['youtube_id'], $this->allowed_tags));
+        $description = trim(strip_tags($post['description'], $this->allowed_tags));
         $data = array(
             'title' => $post['title'],
             'link' => $link,
+            'description' => $description,
             'updated_at' => time(),
             'updated_by' => $user,
             'is_active' => 1

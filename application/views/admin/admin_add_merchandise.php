@@ -62,7 +62,7 @@
 
                                         <div class="col-md-6">
                                             <h3 style="margin-top: 0;">Description:</h3>
-                                            <textarea name="desc" class="ckeditor" rows="6">
+                                            <textarea name="desc" class="editor-merchandise" rows="6">
                                                 <?php echo $desc; ?>
                                             </textarea>
                                         </div>
