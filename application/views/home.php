@@ -194,7 +194,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					Every moment is a special moment for us.<br/>
 					[<a href="/gallery">Explore more</a>]
 				</div>
-				<div style="position: relative;height:300px; width: 650px; margin: auto;">
+				<div id="gallery-item-cont" style="position: relative;height:300px; width: 650px; margin: auto;">
 				<?php $photo_index = array_rand($photos,5);?>
 					<div 
 					data-bottom-top="right: 200px;"
@@ -234,45 +234,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</section>
 
 	<section id="merchandise">
-		<div class="bcg skrollable skrollable-between" 
-		data-bottom-top="background-position: 0px -400px;"
-		data-top-bottom="background-position: 0px -100px;"
-		data-anchor-target="#merchandise">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<h2>Merchandise</h2>
-						<br/>
-						<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
-						<div 
-						data-top-bottom="margin-top:-100px;"
-						data-bottom-bottom="margin-top:0px;">
-						<img src="/assets/img/kaos.png" width="300px" />
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>Merchandise</h2>
+					<br/>
+					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
+						<div id="slideshow" style="margin:auto">
+						    <div style="background-color:white"><img src="/assets/img/kaos.png" width="100%" border="0" alt="" /></div>
+						    <div style="background-color:white"><img src="/assets/img/cd.png" width="100%" border="0" alt="" /></div>
+						    <div style="background-color:white"><img src="/assets/img/topi.png" width="100%" border="0" alt="" /></div>
 						</div>
-						<div 
-						data-top-bottom="top:25px;"
-						data-bottom-bottom="top:100px;"
-						style="position: absolute;bottom: 0; left:0">
-						<img src="/assets/img/cd.png" width="200px" />
-						</div>
-						<div 
-						data-top-bottom="top:100px;"
-						data-bottom-bottom="top:75px;"
-						style="position: absolute;bottom: 0; left:100px">
-						<img src="/assets/img/topi.png" width="200px" />
-						</div>
-						</div>
-						<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
-						Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
-						<br/><br/>
-						[<a href="/merchandise">Get more</a>]
-						</div>
+					</div>
+					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
+					Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
+					<br/><br/>
+					[<a href="/merchandise">Get more</a>]
 					</div>
 				</div>
-					<div class="col-xs-12">
-						<hr class="hr-home" />
-					</div>
 			</div>
+				<div class="col-xs-12">
+					<hr class="hr-home" />
+				</div>
 		</div>
 	</section>
 
@@ -329,6 +312,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="/assets/js/scrolling-nav.js"></script>
+<script type="text/javascript" src="/assets/js/fadeSlideShow.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
 
@@ -368,26 +352,17 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 	// Kick off one resize to fix all videos on page load
 	}).resize();
 
-	$('.owl-carousel').owlCarousel({
-	    loop:true,
-	    margin:10,
-	    responsiveClass:true,
-	    responsive:{
-	        0:{
-	            items:1,
-	            nav:true
-	        },
-	        600:{
-	            items:3,
-	            nav:true
-	        },
-	        1000:{
-	            items:6,
-	            nav:true,
-	            loop:false
-	        }
-	    }
-	})
+	$(document).ready(function(){
+	    $('#slideshow').fadeSlideShow({
+	    	width: 240,
+	    	height: 320,
+	    	allowKeyboardCtrl: false,
+	    	PlayPauseElement: false,
+			NextElement: false,
+			PrevElement: false,
+			ListElement: false
+	    });
+	});
 </script>
 </body>
 </html>

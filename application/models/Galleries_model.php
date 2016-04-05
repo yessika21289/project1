@@ -14,6 +14,19 @@ class Galleries_model extends CI_Model
         return $query->result();
     }
 
+    function getAlbumsAndPhotos($album_id = NULL) {
+        if(!empty($album_id)) $this->db->where('id', $album_id);
+
+        $this->db->where('is_active', 1);
+        $this->db->order_by('created_at', 'desc');
+        $query = $this->db->get('albums');
+        $albums = $query->result();
+        foreach ($albums as $key => $album) {
+            $albums[$key]->photos = $this->getPhotos($album->id);
+        }
+        return $albums;
+    }
+
     function addAlbum($user, $post, $album_dir) {
         $data = array(
             'title' => !empty($post['album_title']) ? $post['album_title'] : '',
@@ -51,7 +64,7 @@ class Galleries_model extends CI_Model
     function getPhotos($album_id = NULL) {
         if(!empty($album_id)) $this->db->where('album_id', $album_id);
 
-        $this->db->order_by('id', 'desc');
+        $this->db->order_by('id', 'asc');
         $query = $this->db->get('photos');
         return $query->result();
     }

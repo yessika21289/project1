@@ -13,7 +13,7 @@ class Gallery extends CI_Controller {
 		$data['title'] = 'Galeri Album';
 		
 		$this->load->model('Galleries_model');
-        $albums = $this->Galleries_model->getAlbums();
+        $albums = $this->Galleries_model->getAlbumsAndPhotos();
         if (!empty($albums)) $data['albums'] = $albums;
 
 		$this->load->view('tag_open',$data);
@@ -21,9 +21,14 @@ class Gallery extends CI_Controller {
 		$this->load->view('tag_close');
 	}
 
-	public function photo()
+	public function photo($album_id)
 	{
 		$data['title'] = 'Galeri Foto';
+
+		$this->load->model('Galleries_model');
+        $photos = $this->Galleries_model->getPhotos($album_id);
+        if (!empty($photos)) $data['photos'] = $photos;
+
 		$this->load->view('tag_open',$data);
 		$this->load->view('gallery_photo');
 		$this->load->view('tag_close');
