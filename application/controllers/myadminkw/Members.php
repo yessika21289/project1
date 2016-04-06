@@ -92,13 +92,54 @@ class Members extends CI_Controller {
                     else {
                         if (move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar_file)) {
                             $this->load->library('image_lib');
-                            $config['image_library'] = 'gd2';
-                            $config['source_image'] = $avatar_file;
-                            $config['width'] = 135;
-                            $config['height'] = 180;
+                            
+                            $size = getimagesize($avatar_file);
+                            $img_width = $size[0];
+                            $img_height = $size[1];
 
-                            $this->image_lib->initialize($config);
+                            $crop1_config['image_library'] = 'gd2';
+                            $crop1_config['source_image']  = $avatar_file;
+
+                            //---------ratio (135/180) = 0.75-----------
+
+                            if($img_width <= $img_height){
+                                if($img_width/$img_height <= 0.75){
+                                    $crop1_config['width']  = 135;
+                                    //$crop1_config['height'] = 135*$img_height/$img_width;
+                                }
+                                else{
+                                    $crop1_config['height'] = 180;
+                                    //$crop1_config['width'] = 180*$img_width/$img_height;
+                                }
+                            }
+                            else{
+                                $crop1_config['height'] = 180;
+                                $crop1_config['width']  = 180/$img_height*$img_width;
+                            }
+
+                            $this->image_lib->initialize($crop1_config);
+
                             $this->image_lib->resize();
+
+                            $size = getimagesize($avatar_file);
+                            $img_width = $size[0];
+                            $img_height = $size[1];
+
+                            $crop2_config['image_library'] = 'gd2';
+                            $crop2_config['source_image']   = $avatar_file;
+                            $crop2_config['maintain_ratio'] = FALSE;
+                            if($img_width <= $img_height){
+                                $crop2_config['x_axis'] = ($img_width - 135) / 2;
+                            }
+                            else{
+                                $crop2_config['7_axis'] = ($img_height- 180) / 2;
+                            }
+                            $crop2_config['width']  = 135;
+                            $crop2_config['height'] = 180;
+
+                            $this->image_lib->initialize($crop2_config);
+
+                            $this->image_lib->crop();
                         }
                         else {
                             $error = 'Upload avatar failed!';
@@ -123,8 +164,10 @@ class Members extends CI_Controller {
                 else {
                     $member = $this->Members_model->getData($_POST['member_id']);
 
-                    if (!empty($member[0]['avatar'])) {
-                        unlink($member[0]['avatar']);
+                    if (!empty($_FILES['avatar']['tmp_name'])) {
+                        if (!empty($member[0]['avatar'])) {
+                            unlink($member[0]['avatar']);
+                        }
                     }
 
                     $updated_member_id = $this->Members_model->update($user, $_POST, $avatar_file);
@@ -157,11 +200,14 @@ class Members extends CI_Controller {
                     $data['member'] = array(
                         'id' => $member[0]['id'],
                         'name' => $member[0]['name'],
+                        'avatar' => $member[0]['avatar'],
                         'is_active' => $member[0]['is_active'],
                     );
 
-                    foreach(array_keys($member[0]['socmed']) as $socmed) {
-                        $data['member']['socmed'][$socmed] = $member[0]['socmed'][$socmed];
+                    if(!empty($member[0]['socmed'])){
+                        foreach(array_keys($member[0]['socmed']) as $socmed) {
+                            $data['member']['socmed'][$socmed] = $member[0]['socmed'][$socmed];
+                        }
                     }
                 }
 

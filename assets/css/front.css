@@ -284,6 +284,16 @@ hr.hr-event{
 	border: 1px #AAAAAA solid;
 }
 
+.member-item-info hr{
+	margin: auto;
+	border-top-color: #AAAAAA;
+	width: 80%;
+}
+
+.member-item-info div a{
+	margin: 0 5px;
+}
+
 .img-profile{
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;

@@ -68,11 +68,13 @@ class Members_model extends CI_Model
     function update($user, $post, $avatar_file) {
         $data = array(
             'name' => $post['name'],
-            'avatar' => !empty($avatar_file) ? $avatar_file : NULL,
             'updated_at' => time(),
             'updated_by' => $user,
             'is_active' => 1
         );
+        if(!empty($avatar_file))
+            $data['avatar'] = $avatar_file;
+
         $this->db->where('id', $post['member_id']);
         $this->db->update('members', $data);
 
