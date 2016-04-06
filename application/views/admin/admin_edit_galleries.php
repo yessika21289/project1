@@ -64,7 +64,7 @@
 
                             <br/>
 
-                            <div class="row">
+                            <div class="row" style="padding-left: 15px;">
                                 <?php foreach ($photos as $photo): ?>
                                     <div class="MultiFile-label col-md-3">
                                         <a class="MultiFile-remove"
