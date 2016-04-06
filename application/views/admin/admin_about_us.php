@@ -59,7 +59,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-1">About us:</label>
                                     <div class="col-sm-11">
-                                        <textarea class="form-control ckeditor" name="about_us" rows="6">
+                                        <textarea class="form-control editor" name="about_us" rows="6">
                                             <?php if(!empty($about_us)) echo $about_us ?>
                                         </textarea>
                                         <span class="pull-right">

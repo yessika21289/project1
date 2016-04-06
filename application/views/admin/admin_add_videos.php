@@ -13,9 +13,10 @@
         </div>
 
         <?php
-            $video_id = (!empty($video[0]->id)) ? $video[0]->id : '';
-            $title = (!empty($video[0]->title)) ? $video[0]->title : '';
-            $link = (!empty($video[0]->link)) ? $video[0]->link : '';
+        $video_id = (!empty($video[0]->id)) ? $video[0]->id : '';
+        $title = (!empty($video[0]->title)) ? $video[0]->title : '';
+        $link = (!empty($video[0]->link)) ? $video[0]->link : '';
+        $description = (!empty($video[0]->description)) ? $video[0]->description : '';
         ?>
 
         <div class="row">
@@ -31,16 +32,35 @@
                                   method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <label class="col-md-2 control-label" style="width: 10%;">Title</label>
+
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="title" value="<?php echo $title; ?>">
+                                        <input type="text" class="form-control" name="title"
+                                               value="<?php echo $title; ?>">
                                     </div>
                                 </div>
                                 <br/>
+
                                 <div class="row">
                                     <label class="control-label col-md-2" style="width: 10%;">Youtube ID</label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" name="youtube_id" value="<?php echo $link; ?>">
 
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="youtube_id"
+                                               value="<?php echo $link; ?>">
+                                    </div>
+                                </div>
+                                <br/>
+
+                                <div class="row">
+                                    <label class="control-label col-md-2" style="width: 10%;">Description</label>
+
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control"
+                                               name="description" value="<?php echo $description; ?>">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2" style="width: 10%;"></div>
+                                    <div class="col-md-6">
                                         <input type="hidden" name="video_id" value="<?php echo $video_id; ?>">
                                         <span class="pull-right" style="margin-top:20px;">
                                             <button type="submit" class="btn btn-primary">
@@ -58,7 +78,8 @@
                     </div>
                 </section>
             </div>
-        </div><!--/.row-->
+        </div>
+        <!--/.row-->
 
     </section>
 </section>

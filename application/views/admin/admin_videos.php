@@ -94,6 +94,7 @@
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Youtube ID</th>
+                                <th>Description</th>
                                 <th>Updated Date</th>
                                 <th>Updated By</th>
                                 <th>Action</th>
@@ -116,7 +117,8 @@
                                             <br/><span class="label label-warning">-not published-</span>
                                         <?php endif; ?>
                                     </td>
-                                    <td><?php echo $video->link, 30; ?></td>
+                                    <td><?php echo $video->link; ?></td>
+                                    <td><?php echo $video->description; ?></td>
                                     <td><?php echo date('d-m-Y | H:i:s', $video->updated_at); ?></td>
                                     <td><?php echo $video->updated_by; ?></td>
                                     <td>

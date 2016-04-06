@@ -19,7 +19,7 @@ class Admin_model extends CI_Model
         {
             $row = $query->row();
 
-            if($row->password == md5($password))
+            if($row->password == sha1(md5($password)))
             {
                 $data = array(
                     'username' => $row->username,
