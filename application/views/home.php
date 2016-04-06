@@ -133,7 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-sm-6 hidden-xs song-cover-home"
 					data-bottom-top="margin-left:-500px; transform:rotate(-90deg);"
 					data-center-center="margin-left:-100px; transform:rotate(0deg);">
-					<img src="<?php print_r($songs[0]->song_cover_path);?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
+					<img src="<?php print_r(str_replace('.','_home.',$songs[0]->song_cover_path));?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<h2>Songs</h2>

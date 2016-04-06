@@ -105,6 +105,7 @@ class Songs extends CI_Controller {
 
                     $cover_ext = strtolower(pathinfo($_FILES['song_cover']['name'], PATHINFO_EXTENSION));
                     $cover_file = $cover_dir . $now . '.' . $cover_ext;
+                    $cover_file_home = $cover_dir . $now . '_home.' . $cover_ext;
 
                     if (is_dir($cover_dir) == 0) {
                         $error = $cover_dir . ' folder is not exist';
@@ -127,12 +128,57 @@ class Songs extends CI_Controller {
                     else {
                         if (move_uploaded_file($_FILES['song_cover']['tmp_name'], $cover_file)) {
                             $this->load->library('image_lib');
-                            $config_cover['image_library'] = 'gd2';
-                            $config_cover['source_image'] = $cover_file;
-                            $config_cover['width'] = 135;
-                            $config_cover['height'] = 135;
+                            
+                            $size = getimagesize($cover_file);
+                            $img_width = $size[0];
+                            $img_height = $size[1];
 
-                            $this->image_lib->initialize($config_cover);
+                            $crop1_config['image_library'] = 'gd2';
+                            $crop1_config['source_image']  = $cover_file;
+
+                            //---------ratio (370/370) = 1-----------
+
+                            if($img_width/$img_height <= 1){
+                                $crop1_config['width']  = 370;
+                            }
+                            else{
+                                $crop1_config['height'] = 370;
+                            }
+
+                            $this->image_lib->initialize($crop1_config);
+
+                            $this->image_lib->resize();
+
+                            $size = getimagesize($cover_file);
+                            $img_width = $size[0];
+                            $img_height = $size[1];
+
+                            $crop2_config['image_library'] = 'gd2';
+                            $crop2_config['source_image']   = $cover_file;
+                            $crop2_config['new_image'] = $cover_file_home;
+                            $crop2_config['maintain_ratio'] = FALSE;
+                            if($img_width <= $img_height){
+                                $crop2_config['y_axis'] = ($img_height- 370) / 2;
+                            }
+                            else{
+                                $crop2_config['x_axis'] = ($img_width - 370) / 2;
+                            }
+                            $crop2_config['width']  = 370;
+                            $crop2_config['height'] = 370;
+
+                            $this->image_lib->initialize($crop2_config);
+
+                            $this->image_lib->crop();
+
+                            $crop3_config['image_library'] = 'gd2';
+                            $crop3_config['source_image']  = $cover_file_home;
+                            $crop3_config['new_image'] = $cover_file;
+
+                            $crop3_config['width']  = 135;
+                            $crop3_config['height'] = 135;
+
+                            $this->image_lib->initialize($crop3_config);
+
                             $this->image_lib->resize();
                         }
                         else {
