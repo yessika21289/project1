@@ -32,7 +32,7 @@
             $title = (!empty($song['title'])) ? $song['title'] : '';
             $lyric = (!empty($song['lyric'])) ? $song['lyric'] : '';
             $artist = (!empty($song['artist'])) ? $song['artist'] : '';
-            $release_date = (!empty($song['release_date'])) ? date('m/d/Y',$song['release_date']) : '';
+            $release_date = (!empty($song['release_date'])) ? date('Y-m-d',$song['release_date']) : '';
             $cover = (!empty($song['song_cover_path'])) ? "background-image:url('/".$song['song_cover_path']."')" : '';
         ?>
 
