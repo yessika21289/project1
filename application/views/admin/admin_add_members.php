@@ -29,6 +29,7 @@
         <?php
             $member_id = (!empty($member['id'])) ? $member['id'] : '';
             $name = (!empty($member['name'])) ? $member['name'] : '';
+            $avatar = (!empty($member['avatar'])) ? "background-image:url('/".$member['avatar']."')" : '';
             $facebook = (!empty($member['socmed']['facebook'])) ? $member['socmed']['facebook'] : '';
             $twitter = (!empty($member['socmed']['twitter'])) ? $member['socmed']['twitter'] : '';
             $instagram = (!empty($member['socmed']['instagram'])) ? $member['socmed']['instagram'] : '';
@@ -51,7 +52,7 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-avatar" style="width: 13.6667%;">
-                                            <div id="avatar-image-holder" class="avatar"></div>
+                                            <div id="avatar-image-holder" class="avatar" style="<?php echo $avatar; ?>"></div>
                                             <input id="upload-avatar" type="file" name="avatar" />
                                             <a href="" id="upload-avatar-link" class="edit-avatar">Edit</a>
                                         </div>
