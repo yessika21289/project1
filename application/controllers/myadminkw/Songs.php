@@ -57,7 +57,9 @@ class Songs extends CI_Controller {
                 $now = time();
                 $error = '';
                 $cover_dir = '';
+                $cover_file = '';
                 $song_dir = '';
+                $song_file = '';
                 $song = array(
                     'title' => (!empty($_POST['title'])) ? $_POST['title'] : '',
                     'artist' => (!empty($_POST['artist'])) ? $_POST['artist'] : '',
@@ -128,7 +130,7 @@ class Songs extends CI_Controller {
                     else {
                         if (move_uploaded_file($_FILES['song_cover']['tmp_name'], $cover_file)) {
                             $this->load->library('image_lib');
-                            
+
                             $size = getimagesize($cover_file);
                             $img_width = $size[0];
                             $img_height = $size[1];
@@ -204,12 +206,16 @@ class Songs extends CI_Controller {
                 // ============================================ UPDATE SONG ============================================ //
                 else {
                     $song = $this->Songs_model->getData($_POST['song_id']);
-                    if (!empty($song[0]->song_cover_path)) {
-                        unlink($song[0]->song_cover_path);
+                    if (!empty($_FILES['song_cover']['tmp_name'])){
+                        if (!empty($song[0]->song_cover_path)) {
+                            unlink($song[0]->song_cover_path);
+                        }
                     }
 
-                    if (!empty($song[0]->song_path)) {
-                        unlink($song[0]->song_path);
+                    if (!empty($_FILES['song']['tmp_name'])){
+                        if (!empty($song[0]->song_path)) {
+                            unlink($song[0]->song_path);
+                        }
                     }
 
                     $updated_id = $this->Songs_model->update($user, $_POST, $cover_file, $song_file);
@@ -244,6 +250,7 @@ class Songs extends CI_Controller {
                         'artist' => $song[0]->artist,
                         'lyric' => $song[0]->lyric,
                         'release_date' => $song[0]->release_date,
+                        'song_cover_path' => $song[0]->song_cover_path
                     );
                 }
 

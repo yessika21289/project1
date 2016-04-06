@@ -72,6 +72,7 @@ class Members_model extends CI_Model
             'updated_by' => $user,
             'is_active' => 1
         );
+        
         if(!empty($avatar_file))
             $data['avatar'] = $avatar_file;
 

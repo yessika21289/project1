@@ -32,7 +32,8 @@
             $title = (!empty($song['title'])) ? $song['title'] : '';
             $lyric = (!empty($song['lyric'])) ? $song['lyric'] : '';
             $artist = (!empty($song['artist'])) ? $song['artist'] : '';
-            $release_date = (!empty($song['release_date'])) ? $song['release_date'] : '';
+            $release_date = (!empty($song['release_date'])) ? date('m/d/Y',$song['release_date']) : '';
+            $cover = (!empty($song['song_cover_path'])) ? "background-image:url('/".$song['song_cover_path']."')" : '';
         ?>
 
         <div class="row">
@@ -50,7 +51,7 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-cover" style="width: 13.6667%;">
-                                            <div id="cover-image-holder" class="song-cover"></div>
+                                            <div id="cover-image-holder" class="song-cover" style="<?php echo $cover; ?>"></div>
                                             <input id="upload-cover" type="file" name="song_cover" />
                                             <a href="" id="upload-cover-link" class="edit-cover">Edit</a>
                                         </div>
@@ -76,9 +77,7 @@
 
                                     <div class="col-md-8" style="margin-left: 15px; width: 64%;">
                                         Lyric:
-                                        <textarea class="form-control ckeditor" name="lyric" rows="6">
-                                            <?php echo $lyric; ?>
-                                        </textarea>
+                                        <textarea class="form-control ckeditor" name="lyric" rows="6"><?php echo $lyric; ?></textarea>
 
                                         <div class="lyric">
                                             <span class="pull-right" style="margin-top:20px;">
