@@ -21,6 +21,7 @@ class Songs extends CI_Controller {
     function index() {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
+            $data['name'] = $this->session->userdata('username');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -35,8 +36,8 @@ class Songs extends CI_Controller {
 
             $data['menu_active'] = 'songs';
 
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_songs');
             $this->load->view('admin/admin_footer');
         }
@@ -190,6 +191,7 @@ class Songs extends CI_Controller {
             }
             // ============================================ goto SONG's FORM ============================================ //
             else {
+                $data['name'] = $this->session->userdata('username');
                 if (!empty($song_id)) {
                     $song = $this->Songs_model->getData($song_id);
                     $data['song'] = array(
@@ -206,8 +208,8 @@ class Songs extends CI_Controller {
                     $data['songs'] = $this->session->flashdata('songs');
                 }
 
-                $this->load->view('admin/admin_header');
-                $this->load->view('admin/admin_left_menu', $data);
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_add_songs');
                 $this->load->view('admin/admin_footer');
 

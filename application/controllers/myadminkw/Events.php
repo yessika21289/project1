@@ -23,6 +23,7 @@ class Events extends CI_Controller
     {
         $user = $this->session->userdata('logged_in');
         if(isset($user)) {
+            $data['name'] = $this->session->userdata('username');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -35,8 +36,8 @@ class Events extends CI_Controller
 
             $data['menu_active'] = 'events';
 
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_events');
             $this->load->view('admin/admin_footer');
         } else {
@@ -48,7 +49,8 @@ class Events extends CI_Controller
     {
         $user = $this->session->userdata('logged_in');
         if(isset($user)) {
-            $user = $this->session->userdata('username');
+            $data['name'] = $this->session->userdata('username');
+            $user = $data['name'];
             $this->load->model('Events_model');
 
             if(!empty($_POST)) {
@@ -74,8 +76,8 @@ class Events extends CI_Controller
                     $data['event'] = $this->Events_model->getData($event_id);
                 }
                 $data['menu_active'] = 'add_events';
-                $this->load->view('admin/admin_header');
-                $this->load->view('admin/admin_left_menu', $data);
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_add_events');
                 $this->load->view('admin/admin_footer');
             }

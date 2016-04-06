@@ -21,6 +21,7 @@ class Videos extends CI_Controller {
     function index() {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
+            $data['name'] = $this->session->userdata('username');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -33,8 +34,8 @@ class Videos extends CI_Controller {
 
             $data['menu_active'] = 'videos';
 
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_videos');
             $this->load->view('admin/admin_footer');
         }
@@ -70,12 +71,13 @@ class Videos extends CI_Controller {
                 redirect('myadminkw/Videos');
             }
             else {
+                $data['name'] = $this->session->userdata('username');
                 if (!empty($video_id)) {
                     $data['video'] = $this->Videos_model->getData($video_id);
                 }
                 $data['menu_active'] = 'add_videos';
-                $this->load->view('admin/admin_header');
-                $this->load->view('admin/admin_left_menu', $data);
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_add_videos');
                 $this->load->view('admin/admin_footer');
 

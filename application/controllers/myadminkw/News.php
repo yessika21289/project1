@@ -23,6 +23,7 @@ class News extends CI_Controller
     {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
+            $data['name'] = $this->session->userdata('username');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -35,8 +36,8 @@ class News extends CI_Controller
 
             $data['menu_active'] = 'news';
 
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_news');
             $this->load->view('admin/admin_footer');
         } else {
@@ -72,12 +73,13 @@ class News extends CI_Controller
                 redirect('myadminkw/News');
             }
             else {
+                $data['name'] = $this->session->userdata('username');
                 if (!empty($news_id)) {
                     $data['news'] = $this->News_model->getData($news_id);
                 }
                 $data['menu_active'] = 'add_news';
-                $this->load->view('admin/admin_header');
-                $this->load->view('admin/admin_left_menu', $data);
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_add_news');
                 $this->load->view('admin/admin_footer');
             }

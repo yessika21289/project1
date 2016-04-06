@@ -66,7 +66,7 @@
 
 
         <div class="top-nav notification-row">
-                    <span class="username">Welcome, Admin!</span>
+                    <span class="username">Welcome, <?php echo ucfirst($name); ?>!</span>
                     <a href="<?php echo base_url(); ?>myadminkw/logout" class="username pull-right">
                     <small>(Log Out)</small></a>
         </div>

@@ -21,6 +21,7 @@ class Merchandise extends CI_Controller {
     function index() {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
+            $data['name'] = $this->session->userdata('username');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -34,8 +35,8 @@ class Merchandise extends CI_Controller {
 
             $data['menu_active'] = 'merchandise';
 
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_merchandise');
             $this->load->view('admin/admin_footer');
         } else {
@@ -141,6 +142,7 @@ class Merchandise extends CI_Controller {
             }
             // ========================================= goto MEMBER's form ============================================= //
             else {
+                $data['name'] = $this->session->userdata('username');
                 if (!empty($merchandise_id)) {
                     $merchandise = $this->Merchandise_model->getData($merchandise_id);
                     $data['merchandise'] = array(
@@ -156,8 +158,8 @@ class Merchandise extends CI_Controller {
                     $data['merchandise'] = $this->session->flashdata('merchandise');
                 }
 
-                $this->load->view('admin/admin_header');
-                $this->load->view('admin/admin_left_menu', $data);
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_add_merchandise');
                 $this->load->view('admin/admin_footer');
             }

@@ -86,7 +86,7 @@
     });
 
     tinymce.init({
-        selector: ".editor-merchandise",
+        selector: ".editor-2",
         plugins: [
             "advlist autolink autosave link lists charmap print preview hr anchor pagebreak spellchecker",
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",

@@ -21,6 +21,7 @@ class Members extends CI_Controller {
     function index() {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
+            $data['name'] = $this->session->userdata('username');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -36,8 +37,8 @@ class Members extends CI_Controller {
 
             $data['menu_active'] = 'members';
 
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_members');
             $this->load->view('admin/admin_footer');
         } else {
@@ -149,6 +150,7 @@ class Members extends CI_Controller {
             }
             // ========================================= goto MEMBER's form ============================================= //
             else {
+                $data['name'] = $this->session->userdata('username');
                 if (!empty($member_id)) {
                     $member = $this->Members_model->getData($member_id);
 
@@ -168,8 +170,8 @@ class Members extends CI_Controller {
                     $data['member'] = $this->session->flashdata('member');
                 }
 
-                $this->load->view('admin/admin_header');
-                $this->load->view('admin/admin_left_menu', $data);
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_add_members');
                 $this->load->view('admin/admin_footer');
 
