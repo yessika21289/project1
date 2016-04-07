@@ -32,7 +32,7 @@
 			foreach ($albums_item->photos as $key2 => $photos_item) {
 				echo '<div class="album-cover-photo"
 					style="width:'.$width.'; height:'.$height.'; float:left;
-					background-image:url(\'/'.$photos_item->photo.'\'); background-repeat:no-repeat; background-position:center; background-size:cover">sdffsdfsf';
+					background-image:url(\'/'.$photos_item->photo.'\'); background-repeat:no-repeat; background-position:center; background-size:cover">';
 				echo '</div>';
 
 				if($key2 == $key_break) break;

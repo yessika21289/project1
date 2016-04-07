@@ -369,7 +369,7 @@ hr.hr-event{
 	margin-bottom:30px;
 }
 
-.album-cover-photo:after {
+/*.album-cover-photo:after {
     background-color: white;
     content: '';
     display: block;
@@ -379,7 +379,7 @@ hr.hr-event{
     right: 1px;
     bottom: 1px;
     z-index: 0;
-}
+}*/
 
 .album-cover-desc-cont{
 	padding-left:0px !important;

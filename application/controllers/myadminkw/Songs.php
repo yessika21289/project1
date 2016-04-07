@@ -158,6 +158,7 @@ class Songs extends CI_Controller {
                             $crop2_config['image_library'] = 'gd2';
                             $crop2_config['source_image']   = $cover_file;
                             $crop2_config['new_image'] = $cover_file_home;
+                            $crop2_config['quality'] = '100%';
                             $crop2_config['maintain_ratio'] = FALSE;
                             if($img_width <= $img_height){
                                 $crop2_config['y_axis'] = ($img_height- 370) / 2;

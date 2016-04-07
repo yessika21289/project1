@@ -50,6 +50,7 @@ class Galleries extends CI_Controller {
 
             $path = 'assets/galleries/';
             $album_dir = $path . strtolower($_POST['album_title']) . '/';
+            $thumb_dir = $album_dir . '/thumb/';
 
             if (!is_dir($path)) {
                 $error = $path . ' folder is not exist';
@@ -63,6 +64,7 @@ class Galleries extends CI_Controller {
             }
             elseif (!is_dir($album_dir)) {
                 mkdir($album_dir, 0777, TRUE);
+                mkdir($thumb_dir, 0777, TRUE);
             }
 
             $added_id = $this->Galleries_model->addAlbum($user, $_POST, $album_dir);
@@ -103,6 +105,7 @@ class Galleries extends CI_Controller {
                     for ($i = 0; $i < count($_FILES['photos']['name']); $i++) {
                         $photo_ext = strtolower(pathinfo($_FILES['photos']['name'][$i], PATHINFO_EXTENSION));
                         $photo_file = $new_album_dir . time() . '_' . ($i + 1) . '.' . $photo_ext;
+                        $thumb_file = $new_album_dir . '/thumb/thumb_' . time() . '_' . ($i + 1) . '.' . $photo_ext;
 
                         if (!in_array($photo_ext, array('jpg', 'jpeg', 'png'))) {
                             $error = 'Only jpg/jpeg/png which are allowed.';
@@ -111,12 +114,28 @@ class Galleries extends CI_Controller {
                         }
                         else if (move_uploaded_file($_FILES['photos']['tmp_name'][$i], $photo_file)) {
                             $this->load->library('image_lib');
-                            $config['image_library'] = 'gd2';
-                            $config['source_image'] = $photo_file;
-                            $config['width'] = 180;
-                            $config['height'] = 135;
+                            
+                            $size = getimagesize($photo_file);
+                            $img_width = $size[0];
+                            $img_height = $size[1];
 
-                            $this->image_lib->initialize($config);
+                            if($img_width > 1280 || $img_height > 1280){
+                                $config['image_library'] = 'gd2';
+                                $config['source_image'] = $photo_file;
+                                $config['quality'] = '100%';
+                                $config['width'] = 1280;
+                                $config['height'] = 1280;
+                                
+                                $this->image_lib->initialize($config);
+                                $this->image_lib->resize();
+                            }
+
+                            $config2['image_library'] = 'gd2';
+                            $config2['source_image'] = $photo_file;
+                            $config2['new_image'] = $thumb_file;
+                            $config2['width'] = 250;
+
+                            $this->image_lib->initialize($config2);
                             $this->image_lib->resize();
 
                             $added_id = $this->Galleries_model->addPhotos($user, $photo_file, $album_id);
@@ -157,6 +176,7 @@ class Galleries extends CI_Controller {
                     for ($i = 0; $i < count($_FILES['photos']['name']); $i++) {
                         $photo_ext = strtolower(pathinfo($_FILES['photos']['name'][$i], PATHINFO_EXTENSION));
                         $photo_file = $album_dir . time() . '_' . ($i + 1) . '.' . $photo_ext;
+                        $thumb_file = $album_dir . '/thumb/thumb_' . time() . '_' . ($i + 1) . '.' . $photo_ext;
 
                         if (!in_array($photo_ext, array('jpg', 'jpeg', 'png'))) {
                             $error = 'Only jpg/jpeg/png which are allowed.';
@@ -165,12 +185,28 @@ class Galleries extends CI_Controller {
                         }
                         else if (move_uploaded_file($_FILES['photos']['tmp_name'][$i], $photo_file)) {
                             $this->load->library('image_lib');
-                            $config['image_library'] = 'gd2';
-                            $config['source_image'] = $photo_file;
-                            $config['width'] = 180;
-                            $config['height'] = 135;
 
-                            $this->image_lib->initialize($config);
+                            $size = getimagesize($photo_file);
+                            $img_width = $size[0];
+                            $img_height = $size[1];
+
+                            if($img_width > 1280 || $img_height > 1280){
+                                $config['image_library'] = 'gd2';
+                                $config['source_image'] = $photo_file;
+                                $config['quality'] = '100%';
+                                $config['width'] = 1280;
+                                $config['height'] = 1280;
+                                
+                                $this->image_lib->initialize($config);
+                                $this->image_lib->resize();
+                            }
+
+                            $config2['image_library'] = 'gd2';
+                            $config2['source_image'] = $photo_file;
+                            $config2['new_image'] = $thumb_file;
+                            $config2['width'] = 250;
+
+                            $this->image_lib->initialize($config2);
                             $this->image_lib->resize();
 
                             $added_id = $this->Galleries_model->addPhotos($user, $photo_file, $album_id);
@@ -237,7 +273,14 @@ class Galleries extends CI_Controller {
             $this->load->model('Galleries_model');
             if (!empty($photo_id)) {
                 $photo_file = $this->Galleries_model->getPhotoFile($photo_id);
-                if (!empty($photo_file[0]->photo)) unlink($photo_file[0]->photo);
+                if (!empty($photo_file[0]->photo)){
+                    unlink($photo_file[0]->photo);
+
+                    //delete thumbnail
+                    $path_section = explode('/',$photo_file[0]->photo);
+                    $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
+                    unlink($thumb_path);
+                }
                 $delete = $this->Galleries_model->deletePhoto($photo_id);
                 if ($delete) $this->session->set_flashdata('delete_confirm', $delete);
                 redirect('myadminkw/Galleries/edit/' . $photo_file[0]->album_id);
