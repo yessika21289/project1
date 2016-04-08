@@ -21,6 +21,7 @@ class Galleries extends CI_Controller {
     function index() {
         $user = $this->session->userdata('logged_in');
         if(isset($user)) {
+            $data['name'] = $this->session->userdata('username');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -33,8 +34,8 @@ class Galleries extends CI_Controller {
 
             $data['menu_active'] = 'galleries';
 
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_galleries');
             $this->load->view('admin/admin_footer');
         } else {
@@ -250,14 +251,15 @@ class Galleries extends CI_Controller {
                 redirect('myadminkw/Galleries');
             }
             else {
+                $data['name'] = $this->session->userdata('username');
                 if (!empty($this->session->flashdata('error_upload'))) {
                     $data['error_upload'] = $this->session->flashdata('error_upload');
                 }
 
                 $data['albums'] = $this->Galleries_model->getAlbums();
                 $data['menu_active'] = 'add_galleries';
-                $this->load->view('admin/admin_header');
-                $this->load->view('admin/admin_left_menu', $data);
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_add_galleries');
                 $this->load->view('admin/admin_footer');
             }
@@ -269,15 +271,16 @@ class Galleries extends CI_Controller {
     function edit($album_id = NULL) {
         $user = $this->session->userdata('logged_in');
         if(isset($user)) {
-            $user = $this->session->userdata('username');
+            $data['name'] = $this->session->userdata('username');
+            $user = $data['name'];
             $this->load->model('Galleries_model');
 
             $data['album'] = $this->Galleries_model->getAlbums($album_id);
             $data['photos'] = $this->Galleries_model->getPhotos($album_id);
 
             $data['menu_active'] = 'galleries';
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_edit_galleries');
             $this->load->view('admin/admin_footer');
         } else {

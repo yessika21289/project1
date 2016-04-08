@@ -30,9 +30,10 @@ class AboutUs extends CI_Controller
                 $data['about_us'] = $about_us[0]->about;
                 $data['tagline'] = $about_us[0]->tagline;
             }
+            $data['name'] = $this->session->userdata('username');
             $data['menu_active'] = 'about_us';
-            $this->load->view('admin/admin_header');
-            $this->load->view('admin/admin_left_menu', $data);
+            $this->load->view('admin/admin_header', $data);
+            $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_about_us');
             $this->load->view('admin/admin_footer');
         } else {

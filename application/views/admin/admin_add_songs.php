@@ -75,19 +75,25 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-8" style="margin-left: 15px; width: 64%;">
-                                        Lyric:
-                                        <textarea class="form-control ckeditor" name="lyric" rows="6"><?php echo $lyric; ?></textarea>
+                                    <div class="row" style="margin-top:5px;">
+                                        <div class="col-md-2" style="width: 13.6667%; padding-right:5px;">
+                                            <label class="pull-right upload-song">Lyric :</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea class="form-control editor-2" name="lyric" rows="20"><?php echo $lyric; ?></textarea>
+                                        </div>
+                                    </div>
 
-                                        <div class="lyric">
-                                            <span class="pull-right" style="margin-top:20px;">
-                                                <button type="submit" class="btn btn-primary">
-                                                    Save
-                                                </button>
-                                                <a class="btn btn-danger" title="Cancel"
-                                                   href="<?php echo base_url(); ?>myadminkw/Songs">Cancel
-                                                </a>
-                                            </span>
+                                    <div class="row" style="margin-top:5px;">
+                                        <div class="col-md-8" style="width: 63.66667%">
+                                        <span class="pull-right" style="margin-top:20px;">
+                                            <button type="submit" class="btn btn-primary">
+                                                Save
+                                            </button>
+                                            <a class="btn btn-danger" title="Cancel"
+                                               href="<?php echo base_url(); ?>myadminkw/Songs">Cancel
+                                            </a>
+                                        </span>
                                         </div>
                                     </div>
                                 </div>

@@ -46,13 +46,16 @@
                               method="post" enctype="multipart/form-data">
 
                             <div class="row">
-                                <div class="col-md-1">Album</div>
-                                <div class="col-md-2">
+                                <div class="col-md-2">Album</div>
+                                <div class="col-md-4">
                                     <input class="form-control" type="text" name="album_title"
                                            value="<?php echo $title; ?>">
                                 </div>
-                                <div class="col-md-2" style="width: 10%;">Album Date</div>
-                                <div class="col-md-2">
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-2">Album Date</div>
+                                <div class="col-md-4">
                                     <input class="form-control" type="date" name="album_date"
                                        value="<?php echo $album_date; ?>">
                                     <input type="hidden" name="album_id" value="<?php echo $album_id; ?>">
@@ -61,7 +64,7 @@
 
                             <br/>
 
-                            <div class="row">
+                            <div class="row" style="padding-left: 15px;">
                                 <?php foreach ($photos as $photo): ?>
                                     <div class="MultiFile-label col-md-3">
                                         <a class="MultiFile-remove"
