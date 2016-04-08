@@ -21,8 +21,11 @@ class Gallery extends CI_Controller {
 		$this->load->view('tag_close');
 	}
 
-	public function photo($album_id)
+	public function photo($album_id = NULL)
 	{
+		if(empty($album_id))
+			redirect('gallery');
+		
 		$data['title'] = 'Galeri Foto';
 
 		$this->load->model('Galleries_model');
