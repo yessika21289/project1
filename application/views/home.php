@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kawandasawolu</title>
-
+	<link rel="icon" href="/assets/img/faviconkw.ico?" type="image/x-icon">
 	<?php
 	echo link_tag('/assets/css/front.css');
 	echo link_tag('/assets/css/bootstrap.min.v3.6.6.css');

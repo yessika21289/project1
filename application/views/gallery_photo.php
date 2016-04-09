@@ -2,13 +2,13 @@
 	<ol class="breadcrumb" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li><a href="/gallery">Galeri Album</a></li>
-		<li class="active">Galeri Foto</li>
+		<li class="active"><?php echo $photos[0]->title;?></li>
 	</ol>
-	<h1>Galeri Album</h1><br/>
+	<h1 style='font-family: "Trebuchet MS", Helvetica, sans-serif;'><?php echo $photos[0]->title;?></h1><br/>
 
 	<div class="grid">
 	<?php
-		foreach ($photos as $key => $photos_item) {
+		foreach ($photos[0]->photos as $key => $photos_item) {
 			$path_section = explode('/',$photos_item->photo);
             $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
 			echo '<div class="grid-photo">

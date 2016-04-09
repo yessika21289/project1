@@ -29,7 +29,7 @@ class Gallery extends CI_Controller {
 		$data['title'] = 'Galeri Foto';
 
 		$this->load->model('Galleries_model');
-        $photos = $this->Galleries_model->getPhotos($album_id);
+        $photos = $this->Galleries_model->getAlbumsAndPhotos($album_id);
         if (!empty($photos)) $data['photos'] = $photos;
 
 		$this->load->view('tag_open',$data);
