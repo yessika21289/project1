@@ -25,6 +25,10 @@ class Home extends CI_Controller {
         $news = $this->News_model->getData();
         if(!empty($news)) $data['news'] = $news;
 
+        $this->load->model('Events_model');
+        $events = $this->Events_model->getData();
+        if(!empty($events)) $data['events'] = $events;
+
         $this->load->model('Songs_model');
         $songs = $this->Songs_model->getData();
         if (!empty($songs)) $data['songs'] = $songs;

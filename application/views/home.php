@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12">
-						<h2>About Us</h2>
+						<h2><a href='/about'>Tentang Kami</a></h2>
 						<br/>
 						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px; border-right: 3px solid #555555">
 							<i class="fa fa-quote-left" style="font-size:1.5em"></i>
@@ -88,14 +88,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
-						<h2>Berita</h2>
+						<h2><a href="/news">Berita</a></h2>
 						<ol type="1">
 						<?php foreach ($news as $key => $news_item) {
 							echo '
 							<li>
 								<dl>
-									<dt>'.$news_item->title.'</dt>
-									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="">[baca]</a></dd>
+									<dt><a href="/news/news_detail/'.$news_item->id.'">'.$news_item->title.'</a></dt>
+									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="/news/news_detail/'.$news_item->id.'">[baca]</a></dd>
 								</dl>
 							</li>';
 
@@ -103,14 +103,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						}
 						?>
 						</ol>
-						<h2>Events</h2>
+						<h2><a href="/event">Event</a></h2>
 						<ol type="1">
-						<?php foreach ($news as $key => $news_item) {
+						<?php foreach ($events as $key => $events_item) {
 							echo '
 							<li>
 								<dl>
-									<dt>'.$news_item->title.'</dt>
-									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="">[baca]</a></dd>
+									<dt><a href="/event/event_detail/'.$events_item->id.'">'.$events_item->title.'</a></dt>
+									<dd>'.date('d F Y',$events_item->start_date).(($events_item->start_date != $events_item->end_date) ? ' - '.date('d F Y',$events_item->end_date) : "").'<br/><a href="/event/event_detail/'.$events_item->id.'">[lihat]</a></dd>
 								</dl>
 							</li>';
 
@@ -136,13 +136,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<img src="<?php print_r(str_replace('.','_home.',$songs[0]->song_cover_path));?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<h2>Songs</h2>
+					<h2><a href="/song">Lagu</a></h2>
 					<ol type="1">
 					<?php foreach ($songs as $key => $songs_item) {
 						echo '
 						<li>
 							<dl>
-								<dt>'.$songs_item->title.'</dt>
+								<dt><a href="/song/lyric/'.$songs_item->id.'">'.$songs_item->title.'</a></dt>
 								<dd>'.$songs_item->artist.'</dd>
 							</dl>
 						</li>';
@@ -151,6 +151,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 					?>
 					</ol>
+					<div class="col-xs-12">
+						<a href="/song">[Dengarkan]</a>
+					</div>
 				</div>
 				<div class="col-xs-12">
 					<hr class="hr-home" />
@@ -163,7 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Video</h2>
+					<h2><a href="/video">Video</a></h2>
 				</div>
 				<?php foreach ($videos as $key => $videos_item) {
 					echo '
@@ -177,6 +180,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					if ($key == 2) break; //limit only max. 3 videos
 				}
 				?>
+				<div class="col-xs-12" style="text-align:center">
+					<a href="/video">[Tonton yang lain]</a>
+				</div>
 				<div class="col-xs-12">
 					<hr class="hr-home" />
 				</div>
@@ -187,12 +193,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="gallery">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
-					<h2>Galeri</h2>
-				</div>
-				<div style="text-align:center; position:relative">
-					Every moment is a special moment for us.<br/>
-					[<a href="/gallery">Explore more</a>]
+				<div class="col-xs-12 gallery-header">
+					<h2><a href="/gallery">Galeri</a></h2>
+					Setiap momen spesial bersama Kawandasawolu.<br/>
+					<a href="/gallery">[Lihat selebihnya]</a>
 				</div>
 				<div id="gallery-item-cont">
 				<?php $photo_index = array_rand($photos,5);?>
@@ -237,7 +241,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Merchandise</h2>
+					<h2><a href="/merchandise">Merchandise</a></h2>
 					<br/>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
 						<div id="slideshow" style="margin:auto">
@@ -249,7 +253,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
 					Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
 					<br/><br/>
-					[<a href="/merchandise">Get more</a>]
+					<a href="/merchandise">[Beli sekarang]</a>
 					</div>
 				</div>
 			</div>
@@ -263,7 +267,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Member</h2>
+					<h2><a href="/member">Anggota</a></h2>
 				</div>
 				<?php $member_index = array_rand($members,6);?>
 
@@ -276,9 +280,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 				?>
 				<div class="col-xs-12">
-					<a href="/member">[See more]</a>
-				</div>
-				
+					<a href="/member">[Kenal kami]</a><br/><br/>
+				</div>				
 			</div>
 		</div>
 	</section>
@@ -287,7 +290,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Contact Us</h2>
+					<h2><a href="/contact">Kontak Kami</a></h2>
 					<br/>
 					<div class="col-xs-12">
 						<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/icon/fb_inverse.png" width="64" /></a>
@@ -297,7 +300,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a href="https://www.youtube.com/user/kawandasawolu" target="_blank"><img src="/assets/img/icon/youtube.png" width="64" /></a>
 						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" /></a>
 						<br/><br/>
-						If you have any inquiry, please <a href="/contact">send us message</a>.<br/><br/><br/>
+						Ingin mengenal Kawandasawolu lebih jauh, jangan sungkan untuk <a href="/contact" class="link-mail">menghubungi kami</a>.<br/><br/><br/>
 						<img src="/assets/img/logojawa2.png" height="100%" />
 						<br/><br/><br/>
 					</div>
@@ -305,6 +308,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 	</section>
+	<?php include('footer.php');?>
 </div>
 
 <script type="text/javascript" src="/assets/js/jquery-2.2.0.min.js"></script>
@@ -312,7 +316,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="/assets/js/scrolling-nav.js"></script>
-<script type="text/javascript" src="/assets/js/fadeSlideShow.js"></script>
+<script type="text/javascript" src="/assets/js/fadeSlideShow-minified.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
 

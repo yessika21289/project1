@@ -11,8 +11,8 @@
 				<img src="/'.$songs_item->song_cover_path.'" width="100" height="100" />
 			</div>
 			<div class="song-desc">
-				<h4><a href="/song/lirik/'.$songs_item->id.'">'.$songs_item->title.'</a></h4>
-				<span>Release: '.$songs_item->release_date.'<br/>
+				<h4><a href="/song/lyric/'.$songs_item->id.'">'.$songs_item->title.'</a></h4>
+				<span>Release: '.date('d F Y',$songs_item->release_date).'<br/>
 				Artist: '.$songs_item->artist.'</span>
 			</div>
 		</div>';

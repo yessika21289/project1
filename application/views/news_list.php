@@ -7,10 +7,10 @@
 	<?php foreach($news as $key=>$news_item){
 		echo '
 		<div class="col-xs-12 news-list-item">
-			<h3>'.$news_item->title.'</h3>
+			<h3><a href="/news/news_detail/'.$news_item->id.'">'.$news_item->title.'</a></h3>
 			<div class="news-list-date">'.date('d F Y H:i:s',$news_item->created_at).'</div>
 			'.word_limiter($news_item->content,64).'
-			<a href="news/news_detail/'.$news_item->id.'">[Selengkapnya]</a>
+			<a href="/news/news_detail/'.$news_item->id.'">[Selengkapnya]</a>
 		</div>';
 	}
 	?>

@@ -4,16 +4,15 @@
 		<li class="active">Galeri Album</li>
 	</ol>
 	
-	<h1>Galeri Foto</h1><br/>
+	<h1>Galeri Album</h1><br/>
 	<?php
+		$album_no = 0;
 		foreach ($albums as $key => $albums_item) {
-			if($key == 0)
-				echo '<div class="col-md-6 col-sm-4 col-ms-6 col-xs-12 album-cover-first">';
-			else
-				echo '<div class="col-md-3 col-sm-4 col-ms-6 col-xs-12 album-cover">';
-
 			$count_photos = count($albums_item->photos);
-			if($count_photos == 1){
+
+			if($count_photos == 0)
+				continue;
+			elseif($count_photos == 1){
 				$width = '100%';
 				$height = '100%';
 				$key_break = 0;
@@ -28,6 +27,16 @@
 				$height = '50%';
 				$key_break = 3;
 			}
+
+			$album_no++;
+
+			echo '<a href="/gallery/photo/'.$albums_item->id.'">';
+
+			if($album_no == 1)
+				echo '<div class="col-md-6 col-sm-4 col-ms-6 col-xs-12 album-cover-first">';
+			else
+				echo '<div class="col-md-3 col-sm-4 col-ms-6 col-xs-12 album-cover">';
+
 			echo '<div style="border: 5px #999999 solid; height: inherit; width:auto">';
 			foreach ($albums_item->photos as $key2 => $photos_item) {
 				echo '<div class="album-cover-photo"
@@ -46,7 +55,9 @@
 					</div>
 				</div>
 				</div>
-			</div>';
+			</div>
+			</a>';
+
 		}
 	?>
 </div>

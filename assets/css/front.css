@@ -48,6 +48,15 @@ section h2{
 	font-size: 4em;
 }
 
+section h2 a{
+	color: rgb(0,0,0);
+}
+
+section h2 a:hover{
+	color: #CA292B;
+	text-decoration: none;
+}
+
 hr.hr-home{
 	width: 60%;
     margin: 20px auto 20px auto;
@@ -65,7 +74,6 @@ hr.hr-home{
 .about-us-bg-home{
 	height: 100%;
 	width:100%;
-	/*background-color: rgb(250,235,135);*/
 	background-color: #FFFFFF;
 }
 
@@ -83,26 +91,23 @@ hr.hr-home{
 	margin-left: 30px;
 }
 
+#news dt a{
+	color: rgb(0,0,0);
+	text-decoration: underline;
+}
+
 .news-bg-home{
-	/*background-color: rgb(202,41,43);*/
 	background-size:cover;
 	height: 100%;
 	width:100%;
 }
 
 #song{
-	/*background-color: rgb(250,235,135);*/
 	background-color: #FFFFFF;
 }
 
-#video{
-	/*background-color: rgb(202,41,43);*/
-	background-color: #FFFFFF;
-	/*color: #FFFFFF;*/
-}
-
-#video h2{
-	text-align: center;
+#song dt a{
+	color: rgb(0,0,0);
 }
 
 #song h2{
@@ -114,9 +119,16 @@ hr.hr-home{
 }
 
 .song-cover-home{
-	/*height: 400px;*/
 	width: 400px !important;
 	margin-right: 25px;
+}
+
+#video{
+	background-color: #FFFFFF;
+}
+
+#video h2{
+	text-align: center;
 }
 
 #gallery{
@@ -125,6 +137,12 @@ hr.hr-home{
 
 #gallery h2{
 	text-align: center;
+}
+
+.gallery-header{
+	text-align:center;
+	position:relative;
+	float:none !important;
 }
 
 #gallery-item-cont{
@@ -158,15 +176,12 @@ hr.hr-home{
 
 #member{
 	color: #000000;
-	/*background-color: rgb(250,235,135);*/
 	background-color: #FFFFFF;
 }
 
 #contact_us{
 	color: #FFFFFF;
 	background-color: rgb(202,41,43);
-	/*height: 100%;*/
-	/*background-image: url('/assets/img/batik_back2.jpg');*/
 }
 
 #contact_us img{
@@ -175,6 +190,9 @@ hr.hr-home{
 
 #contact_us a{
 	color: #FFFFFF;
+}
+
+#contact_us .link-mail{
 	text-decoration: underline;
 }
 
@@ -190,8 +208,6 @@ hr.hr-home{
 
 .page-scroll{
 	color: #FFFFFF !important;
-	/*font-size: 0.8em;
-	padding: 6px !important;*/
 }
 
 .page-scroll:hover{
@@ -430,11 +446,49 @@ hr.hr-event{
 	font-style: italic !important;
 }
 
+/*=========CONTACT=========*/
+.mail-notif-success{
+	background-color: #7EE874;
+	color: #16960B;
+	border: 1px #16960B solid;
+	padding: 5px 10px;
+}
+
+.mail-notif-failed{
+	background-color: #E69E9E;
+	color: #D90000;
+	border: 1px #D90000 solid;
+	padding: 5px 10px;
+}
+
 /*=========FOOTER=========*/
 .footer{
 	text-align: center;
 	padding: 10px;
 	background-color: rgba(0,0,0,0.7);
+	color: #FFFFFF;
+}
+
+.footer-socmed{
+	float:right;
+	position: absolute;
+	right:10px;
+	margin-top:-1px;
+}
+
+.footer-powered{
+	float:left;
+	position: absolute;
+	left:10px;
+	font-size: 0.8em;
+	margin-top:3px;
+}
+
+.footer-powered a{
+	color: #FFFFFF;
+}
+
+.footer-powered a:hover{
 	color: #FFFFFF;
 }
 
@@ -462,6 +516,9 @@ hr.hr-event{
 		height: 65px;
 	}
 
+	.footer-socmed{
+		position: relative;
+	}
 }
 
 @media (min-width:992px) and (max-width: 1199px){

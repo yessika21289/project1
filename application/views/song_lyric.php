@@ -8,15 +8,15 @@
 	<br/>
 	<div class="col-xs-12">
 		<img src="/<?php print_r($songs[0]->song_cover_path);?>" width="200" height="200" />
-		<br/>Release: <?php print_r($songs[0]->release_date);?><br/><br/>
+		<br/>Release: <?php print_r(date('d F Y',$songs[0]->release_date));?><br/><br/>
 		<audio src="/<?php print_r($songs[0]->song_path);?>" preload="auto"></audio>
 		
 		<div class="lyric">
+		<br/>
 		<?php
 		echo $songs[0]->lyric;
 		?>
 		</div>
-
 	</div>
 	
 </div>

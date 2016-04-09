@@ -124,7 +124,7 @@
                                     <?php endif; ?>
                                 </td>
 
-                                <td><?php echo nl2br(substr($song->lyric, 0, 100)); ?></td>
+                                <td><?php echo character_limiter($song->lyric, 100); ?></td>
                                 <td><?php echo $song->artist; ?></td>
                                 <td><?php echo date('d-m-Y', $song->release_date); ?></td>
                                 <td><?php echo date('d-m-Y | H:i:s', $song->updated_at); ?></td>
