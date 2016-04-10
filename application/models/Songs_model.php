@@ -7,8 +7,9 @@ class Songs_model extends CI_Model
         $this->allowed_tags = '<p><div><br><span><strong><em><sub><sup><ul><ol><li><a><blockquote><iframe><img>';
     }
 
-    function getData($song_id = NULL) {
+    function getData($song_id = NULL, $show = 'active') {
         if(!empty($song_id)) $this->db->where('id', $song_id);
+        if($show == 'active') $this->db->where('is_active', 1);
         $this->db->order_by('updated_at', 'desc');
         $query = $this->db->get('songs');
         return $query->result();

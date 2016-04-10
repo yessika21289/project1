@@ -63,13 +63,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-12 col-sm-12">
 						<h2><a href='/about'>Tentang Kami</a></h2>
 						<br/>
+						<?php if(!empty($tagline)):?>
 						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px; border-right: 3px solid #555555">
 							<i class="fa fa-quote-left" style="font-size:1.5em"></i>
 							<?php echo $tagline;?>
 						</div>
+						<?php endif;?>
+						<?php if(!empty($about_us)):?>						
 						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="text-align:left">
 							<?php echo word_limiter($about_us,64);?> [<a href="/about">Read more</a>]
 						</div>
+						<?php endif;?>
 					</div>
 				</div>
 				<div class="col-xs-12">
@@ -81,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<section id="news">
 		<div class="bcg skrollable skrollable-between news-bg-home" 
-		data-bottom-top="background-position: center 00px;"
+		data-bottom-top="background-position: center 0px;"
 		data-top-bottom="background-position: center 0px;"
 		data-anchor-target="#news"
 		style="background-image: url(/assets/img/news_grad.png);">
@@ -89,6 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
 						<h2><a href="/news">Berita</a></h2>
+					<?php if(!empty($news)):?>
 						<ol type="1">
 						<?php foreach ($news as $key => $news_item) {
 							echo '
@@ -103,7 +108,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						}
 						?>
 						</ol>
+					<?php else:?>
+						<div>Tidak ada berita saat ini.</div>
+					<?php endif;?>
 						<h2><a href="/event">Event</a></h2>
+					<?php if(!empty($events)):?>
 						<ol type="1">
 						<?php foreach ($events as $key => $events_item) {
 							echo '
@@ -118,25 +127,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						}
 						?>
 						</ol>
-					</div>
-					<div class="col-xs-12">
-						<hr class="hr-home" />
+					<?php else:?>
+						<div>Tidak ada event saat ini.</div>
+					<?php endif;?>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
 	<section id="song">
 		<div class="container">
 			<div class="row">
+				<?php if(!empty($songs)):?>
 				<div class="col-sm-6 hidden-xs song-cover-home"
 					data-bottom-top="margin-left:-500px; transform:rotate(-90deg);"
 					data-center-center="margin-left:-100px; transform:rotate(0deg);">
 					<img src="<?php print_r(str_replace('.','_home.',$songs[0]->song_cover_path));?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
 				</div>
+				<?php endif;?>
 				<div class="col-xs-12 col-sm-6">
 					<h2><a href="/song">Lagu</a></h2>
+					<?php if(!empty($songs)):?>
 					<ol type="1">
 					<?php foreach ($songs as $key => $songs_item) {
 						echo '
@@ -154,11 +169,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-12">
 						<a href="/song">[Dengarkan]</a>
 					</div>
-				</div>
-				<div class="col-xs-12">
-					<hr class="hr-home" />
+					<?php else:?>
+						<div>Tidak ada lagu saat ini.</div>
+					<?php endif;?>
 				</div>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
@@ -168,6 +186,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-xs-12">
 					<h2><a href="/video">Video</a></h2>
 				</div>
+				<?php if(!empty($videos)):?>
 				<?php foreach ($videos as $key => $videos_item) {
 					echo '
 					<div class="col-lg-4 col-sm-6 col-xs-12">
@@ -183,10 +202,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-xs-12" style="text-align:center">
 					<a href="/video">[Tonton yang lain]</a>
 				</div>
-				<div class="col-xs-12">
-					<hr class="hr-home" />
-				</div>
+				<?php else:?>
+					<div>Tidak ada video saat ini.</div>
+				<?php endif;?>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
@@ -195,11 +217,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-xs-12 gallery-header">
 					<h2><a href="/gallery">Galeri</a></h2>
+					<?php if(!empty($photos)):?>
 					Setiap momen spesial bersama Kawandasawolu.<br/>
 					<a href="/gallery">[Lihat selebihnya]</a>
+					<?php endif;?>
 				</div>
+				<?php if(!empty($photos)):?>
 				<div id="gallery-item-cont">
-				<?php $photo_index = array_rand($photos,5);?>
+				<?php
+				$count_rand = (count($photos) >= 5) ? 5 : count($photos);
+				$photo_index = array_rand($photos, $count_rand);?>
 					<div 
 					data-bottom-top="right: 200px;"
 					data-center-center="right: 550px;"
@@ -229,11 +256,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					style="right: 0px; width: 300px; height: 300px; background-image:url('/<?php print_r($photos[$photo_index[0]]->photo);?>');">
 					</div>
 				</div>
+				<?php else:?>
+					<div style="text-align:center">Tidak ada foto saat ini.</div>
+				<?php endif;?>
 				<div style="clear:both"></div>
-				<div class="col-xs-12">
-					<hr class="hr-home" />
-				</div>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
@@ -242,12 +272,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-xs-12">
 					<h2><a href="/merchandise">Merchandise</a></h2>
+					<?php if(!empty($merchandise)):?>
 					<br/>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
 						<div id="slideshow" style="margin:auto">
-						    <div style="background-color:white"><img src="/assets/img/kaos.png" width="100%" border="0" alt="" /></div>
-						    <div style="background-color:white"><img src="/assets/img/cd.png" width="100%" border="0" alt="" /></div>
-						    <div style="background-color:white"><img src="/assets/img/topi.png" width="100%" border="0" alt="" /></div>
+							<?php
+							$count_rand = (count($merchandise) >= 3) ? 3 : count($merchandise);
+							$merchandise_index = array_rand($merchandise, $count_rand);
+							foreach ($merchandise_index as $key => $index) {?>
+						    <div style="background-color:white"><img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="" /></div>
+						    <?php } ?>
 						</div>
 					</div>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
@@ -255,11 +289,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<br/><br/>
 					<a href="/merchandise">[Beli sekarang]</a>
 					</div>
+					<?php else:?>
+						<div style="text-align:center">Tidak ada merchandise saat ini.</div>
+					<?php endif;?>
 				</div>
-			</div>
 				<div class="col-xs-12">
 					<hr class="hr-home" />
 				</div>
+			</div>
 		</div>
 	</section>
 
@@ -269,9 +306,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-xs-12">
 					<h2><a href="/member">Anggota</a></h2>
 				</div>
-				<?php $member_index = array_rand($members,6);?>
+				<?php
+				if(!empty($members)):
+				$count_rand = (count($members) >= 6) ? 6 : count($members);
+				$member_index = array_rand($members,$count_rand);
 
-				<?php foreach ($member_index as $key => $index) {
+				foreach ($member_index as $key => $index) {
 				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
 						<img src="/'.$members[$index]['avatar'].'" alt="" width="100%" style="border-radius:50%; border:4px #999999 solid"/><br/>
 						'.$members[$index]['name'].'
@@ -281,7 +321,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				?>
 				<div class="col-xs-12">
 					<a href="/member">[Kenal kami]</a><br/><br/>
-				</div>				
+				</div>
+				<?php else:?>
+					<div style="text-align:center">Tidak ada member saat ini.</div>
+				<?php endif;?>
 			</div>
 		</div>
 	</section>

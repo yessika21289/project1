@@ -29,7 +29,7 @@ class Songs extends CI_Controller {
             $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
 
             $this->load->model('Songs_model');
-            $songs = $this->Songs_model->getData();
+            $songs = $this->Songs_model->getData(NULL, 'all');
             if (!empty($songs)) {
                 $data['songs'] = $songs;
             }

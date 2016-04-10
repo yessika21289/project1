@@ -29,7 +29,7 @@ class Members extends CI_Controller {
             $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
 
             $this->load->model('Members_model');
-            $members = $this->Members_model->getData();
+            $members = $this->Members_model->getData(NULL, 'all');
 
             if (!empty($members)) {
                 $data['members'] = $members;

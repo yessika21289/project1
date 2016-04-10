@@ -29,7 +29,7 @@ class Galleries extends CI_Controller {
             $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
 
             $this->load->model('Galleries_model');
-            $albums = $this->Galleries_model->getAlbums();
+            $albums = $this->Galleries_model->getAlbums(NULL, 'all');
             if (!empty($albums)) $data['albums'] = $albums;
 
             $data['menu_active'] = 'galleries';

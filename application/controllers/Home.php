@@ -41,6 +41,10 @@ class Home extends CI_Controller {
         $photos = $this->Galleries_model->getPhotos();
         if (!empty($photos)) $data['photos'] = $photos;
 
+        $this->load->model('Merchandise_model');
+        $merchandise = $this->Merchandise_model->getData();
+        if (!empty($merchandise)) $data['merchandise'] = $merchandise;
+
         $this->load->model('Members_model');
         $members = $this->Members_model->getData();
 

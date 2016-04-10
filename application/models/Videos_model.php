@@ -7,8 +7,9 @@ class Videos_model extends CI_Model
         $this->allowed_tags = '<p><div><br><span><strong><em><sub><sup><ul><ol><li><a><blockquote><iframe><img>';
     }
 
-    function getData($video_id = NULL) {
+    function getData($video_id = NULL, $show = 'active') {
         if(!empty($video_id)) $this->db->where('id', $video_id);
+        if($show == 'active') $this->db->where('is_active', 1);
         $this->db->order_by('updated_at', 'desc');
         $query = $this->db->get('videos');
         return $query->result();

@@ -29,7 +29,7 @@ class Merchandise extends CI_Controller {
             $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
 
             $this->load->model('Merchandise_model');
-            $merchandise = $this->Merchandise_model->getData();
+            $merchandise = $this->Merchandise_model->getData(NULL, 'all');
 
             if (!empty($merchandise)) $data['merchandise'] = $merchandise;
 
@@ -87,8 +87,7 @@ class Merchandise extends CI_Controller {
                             $this->load->library('image_lib');
                             $config['image_library'] = 'gd2';
                             $config['source_image'] = $merchandise_file;
-                            $config['width'] = 180;
-                            $config['height'] = 135;
+                            $config['width'] = 250;
 
                             $this->image_lib->initialize($config);
                             $this->image_lib->resize();
