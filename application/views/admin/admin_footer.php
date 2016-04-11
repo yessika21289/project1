@@ -10,6 +10,9 @@
 <script src="<?php echo base_url(); ?>assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 <!--custome script for all page-->
+
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/form-validation-script.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
 
 <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->

@@ -31,6 +31,7 @@ class AboutUs extends CI_Controller
                 $data['tagline'] = $about_us[0]->tagline;
             }
             $data['name'] = $this->session->userdata('username');
+            $data['is_authorized'] = $this->session->userdata('is_authorized');
             $data['menu_active'] = 'about_us';
             $this->load->view('admin/admin_header', $data);
             $this->load->view('admin/admin_left_menu');

@@ -22,6 +22,7 @@ class Galleries extends CI_Controller {
         $user = $this->session->userdata('logged_in');
         if(isset($user)) {
             $data['name'] = $this->session->userdata('username');
+            $data['is_authorized'] = $this->session->userdata('is_authorized');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -198,6 +199,7 @@ class Galleries extends CI_Controller {
             }
             else {
                 $data['name'] = $this->session->userdata('username');
+                $data['is_authorized'] = $this->session->userdata('is_authorized');
                 if (!empty($this->session->flashdata('error_upload'))) {
                     $data['error_upload'] = $this->session->flashdata('error_upload');
                 }
@@ -218,6 +220,7 @@ class Galleries extends CI_Controller {
         $user = $this->session->userdata('logged_in');
         if(isset($user)) {
             $data['name'] = $this->session->userdata('username');
+            $data['is_authorized'] = $this->session->userdata('is_authorized');
             $user = $data['name'];
             $this->load->model('Galleries_model');
 

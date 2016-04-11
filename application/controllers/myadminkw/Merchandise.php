@@ -22,6 +22,7 @@ class Merchandise extends CI_Controller {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
             $data['name'] = $this->session->userdata('username');
+            $data['is_authorized'] = $this->session->userdata('is_authorized');
             $data['added_id'] = $this->session->flashdata('added_id');
             $data['updated_id'] = $this->session->flashdata('updated_id');
             $data['set_active'] = $this->session->flashdata('set_active');
@@ -143,6 +144,7 @@ class Merchandise extends CI_Controller {
             // ========================================= goto MEMBER's form ============================================= //
             else {
                 $data['name'] = $this->session->userdata('username');
+                $data['is_authorized'] = $this->session->userdata('is_authorized');
                 if (!empty($merchandise_id)) {
                     $merchandise = $this->Merchandise_model->getData($merchandise_id);
                     $data['merchandise'] = array(

@@ -125,6 +125,24 @@
                 </ul>
             </li>
 
+            <?php if($is_authorized == 1): ?>
+                <li class="sub-menu <?php if(in_array($menu_active, array('add_users', 'users'))) echo 'active'; ?>">
+                    <a href="javascript:" class="">
+                        <i class="icon_shield_alt"></i>
+                        <span>Users</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li class="<?php if($menu_active == 'add_users') echo 'active'; ?>">
+                            <a class="" href="<?php echo base_url(); ?>myadminkw/Users/add">Add User</a>
+                        </li>
+                        <li class="<?php if($menu_active == 'users') echo 'active'; ?>">
+                            <a class="" href="<?php echo base_url(); ?>myadminkw/Users">See All Users</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php endif; ?>
+
         </ul>
         <!-- sidebar menu end-->
     </div>

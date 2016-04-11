@@ -26,6 +26,7 @@ class Myadminkw extends CI_Controller
 		if(isset($user)) {
 			$data['menu_active'] = 'dashboard';
 			$data['name'] = $this->session->userdata('username');
+			$data['is_authorized'] = $this->session->userdata('is_authorized');
 			$this->load->view('admin/admin_header', $data);
 			$this->load->view('admin/admin_left_menu');
 			$this->load->view('admin/dashboard');
