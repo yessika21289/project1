@@ -30,7 +30,7 @@ class Videos extends CI_Controller {
             $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
 
             $this->load->model('Videos_model');
-            $videos = $this->Videos_model->getData();
+            $videos = $this->Videos_model->getData(NULL, 'all');
             if (!empty($videos)) $data['videos'] = $videos;
 
             $data['menu_active'] = 'videos';

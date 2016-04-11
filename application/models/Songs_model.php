@@ -7,8 +7,9 @@ class Songs_model extends CI_Model
         $this->allowed_tags = '<p><div><br><span><strong><em><sub><sup><ul><ol><li><a><blockquote><iframe><img>';
     }
 
-    function getData($song_id = NULL) {
+    function getData($song_id = NULL, $show = 'active') {
         if(!empty($song_id)) $this->db->where('id', $song_id);
+        if($show == 'active') $this->db->where('is_active', 1);
         $this->db->order_by('updated_at', 'desc');
         $query = $this->db->get('songs');
         return $query->result();
@@ -42,19 +43,23 @@ class Songs_model extends CI_Model
         $title = $post['title'];
         $lyric = $post['lyric'];
         $artist = $post['artist'];
-        $release_date = $post['release_date'];
+        $release_date = strtotime($post['release_date']);
 
         $data = array(
             'title' => $title,
             'lyric' => $lyric,
             'artist' => $artist,
             'release_date' => $release_date,
-            'song_cover_path' => (!empty($cover_file)) ? $cover_file : NULL,
-            'song_path' => (!empty($song_file)) ? $song_file : NULL,
             'updated_at' => time(),
             'updated_by' => $user,
             'is_active' => 1
         );
+
+        if(!empty($cover_file))
+            $data['song_cover_path'] = $cover_file;
+
+        if(!empty($song_file))
+            $data['song_path'] = $song_file;
 
         $this->db->where('id', $post['song_id']);
         $update = $this->db->update('songs', $data);

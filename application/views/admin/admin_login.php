@@ -30,8 +30,20 @@
     <![endif]-->
 </head>
 
-  <body class="admin-background">
-
+  <body>
+    <div id="banner">
+        <div style="height:30%">
+            <img src="/assets/img/triangle_ornament.png" height="100%" />
+        </div>
+        <div class="col-xs-12" style="position: absolute; top:0; text-align: center">
+            <img src="/assets/img/logojawa2.png" height="100%" />
+        </div>
+        <div style="height:40%; position: absolute; bottom: 0; left:0">
+            <img src="/assets/img/clouds.png" height="100%" />
+        </div>
+        <div style="height: 30%; position: absolute; bottom: 0; left: 0">
+            <img src="/assets/img/becak_tugu_pohon.png" height="100%" />
+        </div>
     <div class="container">
 
       <form class="login-form" action="<?php echo base_url(); ?>myadminkw/login" enctype="multipart/form-data" method="post">
@@ -60,7 +72,7 @@
       </form>
 
     </div>
-
+    </div>
 
   </body>
 </html>

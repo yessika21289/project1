@@ -4,10 +4,10 @@
     <meta name=”robots” content=”noindex,nofollow”>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
+    <meta name="description" content="Kawandasawolu Admin">
+    <meta name="author" content="Willi Kristianto, Yessika Naftali Budiono">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>img/favicon.png">
+    <link rel="icon" href="<?php echo base_url(); ?>assets/img/faviconkw.ico?" type="image/x-icon">
 
     <title>Kawandasawolu Admin</title>
 
@@ -46,7 +46,7 @@
         </div>
 
         <!--logo start-->
-        <a href="<?php echo base_url(); ?>Admin" class="logo">
+        <a href="<?php echo base_url(); ?>myadminkw" class="logo">
             <img src="<?php echo base_url() ?>assets/img/logo_header.png">
             <span class="lite"> Admin</span></a>
         <!--logo end-->

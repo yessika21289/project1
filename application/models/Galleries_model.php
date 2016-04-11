@@ -7,15 +7,17 @@ class Galleries_model extends CI_Model
         $this->allowed_tags = '<p><div><br><span><strong><em><sub><sup><ul><ol><li><a><blockquote><iframe><img>';
     }
 
-    function getAlbums($album_id = NULL) {
+    function getAlbums($album_id = NULL, $show = 'active') {
         if(!empty($album_id)) $this->db->where('id', $album_id);
+        if($show == 'active') $this->db->where('is_active', 1);
         $this->db->order_by('created_at', 'desc');
         $query = $this->db->get('albums');
         return $query->result();
     }
 
-    function getAlbumsAndPhotos($album_id = NULL) {
+    function getAlbumsAndPhotos($album_id = NULL, $show = 'active') {
         if(!empty($album_id)) $this->db->where('id', $album_id);
+        if($show == 'active') $this->db->where('is_active', 1);
 
         $this->db->where('is_active', 1);
         $this->db->order_by('created_at', 'desc');

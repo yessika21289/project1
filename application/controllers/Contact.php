@@ -39,8 +39,40 @@ class Contact extends CI_Controller {
               'style'		=> 'padding:5px 10px'
 			);
 		$data['title'] = 'Kontak Kami';
+    $data['send_mail'] = $this->session->userdata('send_mail');
 		$this->load->view('tag_open',$data);
 		$this->load->view('contact_us');
 		$this->load->view('tag_close');
 	}
+
+  public function send()
+  {
+    $this->load->library('session');
+    $this->load->library('email');
+
+    $nama   = $this->input->post('nama');
+    $email  = $this->input->post('email');
+    $subject = $this->input->post('subject');
+    $msg = $this->input->post('msg');
+
+    $config['smtp_host'] = 'mail.kawandasawolu.com';
+    $config['smtp_user'] = 'management@kawandasawolu';
+    $config['smtp_pass'] = 'K4waNdasaw0lu';
+    $config['wordwrap'] = TRUE;
+
+    $this->email->initialize($config);
+
+    $this->email->from($email, $nama);
+    $this->email->to('willi.duta@gmail.com');
+
+    $this->email->subject($subject);
+    $this->email->message($msg);
+
+    if($this->email->send())
+      $this->session->set_flashdata('send_mail', 'success');
+    else
+      $this->session->set_flashdata('send_mail', 'failed');
+
+    redirect('contact');
+  }
 }

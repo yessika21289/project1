@@ -14,16 +14,7 @@
 			</div>
 			<div class="col-sm-8 xs-12 video-desc">
 				<h3>'.$videos_item->title.'</h3>
-				Keterangan
-				<p>asdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdas<br/>
-				asdfdsfsafas<br/>
-				asdfdsafdsaf
-				asdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdas<br/>
-				asdfdsfsafas<br/>
-				asdfdsafdsaf
-				asdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdasasdfafaasfdadsfasfafasfasfasfafadsfdas<br/>
-				asdfdsfsafas<br/>
-				asdfdsafdsaf
+				'.$videos_item->description.'
 				</p>
 			</div>
 		</div>';

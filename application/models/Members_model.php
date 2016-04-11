@@ -7,9 +7,10 @@ class Members_model extends CI_Model
         $this->allowed_tags = '<p><div><br><span><strong><em><sub><sup><ul><ol><li><a><blockquote><iframe><img>';
     }
 
-    function getData($member_id = NULL) {
+    function getData($member_id = NULL, $show = 'active') {
         $members = array();
         if(!empty($member_id)) $this->db->where('id', $member_id);
+        if($show == 'active') $this->db->where('is_active', 1);
         $this->db->order_by('updated_at', 'desc');
         $query = $this->db->get('members');
         $results = $query->result();
@@ -72,6 +73,7 @@ class Members_model extends CI_Model
             'updated_by' => $user,
             'is_active' => 1
         );
+        
         if(!empty($avatar_file))
             $data['avatar'] = $avatar_file;
 

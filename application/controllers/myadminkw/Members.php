@@ -30,7 +30,7 @@ class Members extends CI_Controller {
             $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
 
             $this->load->model('Members_model');
-            $members = $this->Members_model->getData();
+            $members = $this->Members_model->getData(NULL, 'all');
 
             if (!empty($members)) {
                 $data['members'] = $members;
@@ -106,11 +106,9 @@ class Members extends CI_Controller {
                             if($img_width <= $img_height){
                                 if($img_width/$img_height <= 0.75){
                                     $crop1_config['width']  = 135;
-                                    //$crop1_config['height'] = 135*$img_height/$img_width;
                                 }
                                 else{
                                     $crop1_config['height'] = 180;
-                                    //$crop1_config['width'] = 180*$img_width/$img_height;
                                 }
                             }
                             else{
@@ -133,7 +131,7 @@ class Members extends CI_Controller {
                                 $crop2_config['x_axis'] = ($img_width - 135) / 2;
                             }
                             else{
-                                $crop2_config['7_axis'] = ($img_height- 180) / 2;
+                                $crop2_config['y_axis'] = ($img_height- 180) / 2;
                             }
                             $crop2_config['width']  = 135;
                             $crop2_config['height'] = 180;

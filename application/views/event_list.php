@@ -7,11 +7,11 @@
 	<?php foreach($events as $key=>$event_item){
 		echo '
 		<div class="col-xs-12 news-list-item">
-			<h3>'.$event_item->title.'</h3>
+			<h3><a href="/event/event_detail/'.$event_item->id.'">'.$event_item->title.'</a></h3>
 			<div class="event-list-date">'.date('d F Y',$event_item->start_date).(($event_item->start_date != $event_item->end_date) ? ' - '.date('d F Y',$event_item->end_date) : "").'</div>
 			<hr class="hr-event"/>
 			'.$event_item->content.'
-			<a href="news/news_detail/'.$event_item->id.'">[Selengkapnya]</a>
+			<a href="/event/event_detail/'.$event_item->id.'">[Selengkapnya]</a>
 		</div>';
 	}
 	?>

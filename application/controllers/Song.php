@@ -20,7 +20,7 @@ class Song extends CI_Controller {
 		$this->load->view('tag_close');
 	}
 
-	public function lirik($song_id = 0)
+	public function lyric($song_id = 0)
 	{
 		$this->load->model('Songs_model');
         $songs = $this->Songs_model->getData($song_id);

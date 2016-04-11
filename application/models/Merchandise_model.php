@@ -7,8 +7,9 @@ class Merchandise_model extends CI_Model
         $this->allowed_tags = '<p><div><br><span><strong><em><sub><sup><ul><ol><li><a><blockquote><iframe><img>';
     }
 
-    function getData($merchandise_id = NULL) {
+    function getData($merchandise_id = NULL, $show = 'active') {
         if(!empty($merchandise_id)) $this->db->where('id', $merchandise_id);
+        if($show == 'active') $this->db->where('is_active', 1);
         $this->db->order_by('updated_at', 'desc');
         $query = $this->db->get('merchandise');
         $results = $query->result();

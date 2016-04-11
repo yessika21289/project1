@@ -25,6 +25,10 @@ class Home extends CI_Controller {
         $news = $this->News_model->getData();
         if(!empty($news)) $data['news'] = $news;
 
+        $this->load->model('Events_model');
+        $events = $this->Events_model->getData();
+        if(!empty($events)) $data['events'] = $events;
+
         $this->load->model('Songs_model');
         $songs = $this->Songs_model->getData();
         if (!empty($songs)) $data['songs'] = $songs;
@@ -36,6 +40,10 @@ class Home extends CI_Controller {
         $this->load->model('Galleries_model');
         $photos = $this->Galleries_model->getPhotos();
         if (!empty($photos)) $data['photos'] = $photos;
+
+        $this->load->model('Merchandise_model');
+        $merchandise = $this->Merchandise_model->getData();
+        if (!empty($merchandise)) $data['merchandise'] = $merchandise;
 
         $this->load->model('Members_model');
         $members = $this->Members_model->getData();

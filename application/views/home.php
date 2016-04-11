@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kawandasawolu</title>
-
+	<link rel="icon" href="/assets/img/faviconkw.ico?" type="image/x-icon">
 	<?php
 	echo link_tag('/assets/css/front.css');
 	echo link_tag('/assets/css/bootstrap.min.v3.6.6.css');
@@ -61,15 +61,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12">
-						<h2>About Us</h2>
+						<h2><a href='/about'>Tentang Kami</a></h2>
 						<br/>
+						<?php if(!empty($tagline)):?>
 						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px; border-right: 3px solid #555555">
 							<i class="fa fa-quote-left" style="font-size:1.5em"></i>
 							<?php echo $tagline;?>
 						</div>
+						<?php endif;?>
+						<?php if(!empty($about_us)):?>						
 						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="text-align:left">
 							<?php echo word_limiter($about_us,64);?> [<a href="/about">Read more</a>]
 						</div>
+						<?php endif;?>
 					</div>
 				</div>
 				<div class="col-xs-12">
@@ -81,21 +85,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<section id="news">
 		<div class="bcg skrollable skrollable-between news-bg-home" 
-		data-bottom-top="background-position: center 00px;"
+		data-bottom-top="background-position: center 0px;"
 		data-top-bottom="background-position: center 0px;"
 		data-anchor-target="#news"
 		style="background-image: url(/assets/img/news_grad.png);">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
-						<h2>Berita</h2>
+						<h2><a href="/news">Berita</a></h2>
+					<?php if(!empty($news)):?>
 						<ol type="1">
 						<?php foreach ($news as $key => $news_item) {
 							echo '
 							<li>
 								<dl>
-									<dt>'.$news_item->title.'</dt>
-									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="">[baca]</a></dd>
+									<dt><a href="/news/news_detail/'.$news_item->id.'">'.$news_item->title.'</a></dt>
+									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="/news/news_detail/'.$news_item->id.'">[baca]</a></dd>
 								</dl>
 							</li>';
 
@@ -103,14 +108,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						}
 						?>
 						</ol>
-						<h2>Events</h2>
+					<?php else:?>
+						<div>Tidak ada berita saat ini.</div>
+					<?php endif;?>
+						<h2><a href="/event">Event</a></h2>
+					<?php if(!empty($events)):?>
 						<ol type="1">
-						<?php foreach ($news as $key => $news_item) {
+						<?php foreach ($events as $key => $events_item) {
 							echo '
 							<li>
 								<dl>
-									<dt>'.$news_item->title.'</dt>
-									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="">[baca]</a></dd>
+									<dt><a href="/event/event_detail/'.$events_item->id.'">'.$events_item->title.'</a></dt>
+									<dd>'.date('d F Y',$events_item->start_date).(($events_item->start_date != $events_item->end_date) ? ' - '.date('d F Y',$events_item->end_date) : "").'<br/><a href="/event/event_detail/'.$events_item->id.'">[lihat]</a></dd>
 								</dl>
 							</li>';
 
@@ -118,31 +127,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						}
 						?>
 						</ol>
-					</div>
-					<div class="col-xs-12">
-						<hr class="hr-home" />
+					<?php else:?>
+						<div>Tidak ada event saat ini.</div>
+					<?php endif;?>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
 	<section id="song">
 		<div class="container">
 			<div class="row">
+				<?php if(!empty($songs)):?>
 				<div class="col-sm-6 hidden-xs song-cover-home"
 					data-bottom-top="margin-left:-500px; transform:rotate(-90deg);"
 					data-center-center="margin-left:-100px; transform:rotate(0deg);">
-					<img src="<?php print_r($songs[0]->song_cover_path);?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
+					<img src="<?php print_r(str_replace('.','_home.',$songs[0]->song_cover_path));?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
 				</div>
+				<?php endif;?>
 				<div class="col-xs-12 col-sm-6">
-					<h2>Songs</h2>
+					<h2><a href="/song">Lagu</a></h2>
+					<?php if(!empty($songs)):?>
 					<ol type="1">
 					<?php foreach ($songs as $key => $songs_item) {
 						echo '
 						<li>
 							<dl>
-								<dt>'.$songs_item->title.'</dt>
+								<dt><a href="/song/lyric/'.$songs_item->id.'">'.$songs_item->title.'</a></dt>
 								<dd>'.$songs_item->artist.'</dd>
 							</dl>
 						</li>';
@@ -151,11 +166,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 					?>
 					</ol>
-				</div>
-				<div class="col-xs-12">
-					<hr class="hr-home" />
+					<div class="col-xs-12">
+						<a href="/song">[Dengarkan]</a>
+					</div>
+					<?php else:?>
+						<div>Tidak ada lagu saat ini.</div>
+					<?php endif;?>
 				</div>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
@@ -163,8 +184,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Video</h2>
+					<h2><a href="/video">Video</a></h2>
 				</div>
+				<?php if(!empty($videos)):?>
 				<?php foreach ($videos as $key => $videos_item) {
 					echo '
 					<div class="col-lg-4 col-sm-6 col-xs-12">
@@ -177,25 +199,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					if ($key == 2) break; //limit only max. 3 videos
 				}
 				?>
-				<div class="col-xs-12">
-					<hr class="hr-home" />
+				<div class="col-xs-12" style="text-align:center">
+					<a href="/video">[Tonton yang lain]</a>
 				</div>
+				<?php else:?>
+					<div>Tidak ada video saat ini.</div>
+				<?php endif;?>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
 	<section id="gallery">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
-					<h2>Galeri</h2>
+				<div class="col-xs-12 gallery-header">
+					<h2><a href="/gallery">Galeri</a></h2>
+					<?php if(!empty($photos)):?>
+					Setiap momen spesial bersama Kawandasawolu.<br/>
+					<a href="/gallery">[Lihat selebihnya]</a>
+					<?php endif;?>
 				</div>
-				<div style="text-align:center; position:relative">
-					Every moment is a special moment for us.<br/>
-					[<a href="/gallery">Explore more</a>]
-				</div>
+				<?php if(!empty($photos)):?>
 				<div id="gallery-item-cont">
-				<?php $photo_index = array_rand($photos,5);?>
+				<?php
+				$count_rand = (count($photos) >= 5) ? 5 : count($photos);
+				$photo_index = array_rand($photos, $count_rand);?>
 					<div 
 					data-bottom-top="right: 200px;"
 					data-center-center="right: 550px;"
@@ -225,11 +256,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					style="right: 0px; width: 300px; height: 300px; background-image:url('/<?php print_r($photos[$photo_index[0]]->photo);?>');">
 					</div>
 				</div>
+				<?php else:?>
+					<div style="text-align:center">Tidak ada foto saat ini.</div>
+				<?php endif;?>
 				<div style="clear:both"></div>
-				<div class="col-xs-12">
-					<hr class="hr-home" />
-				</div>
 			</div>
+		</div>
+		<div class="col-xs-12">
+			<hr class="hr-home" />
 		</div>
 	</section>
 
@@ -237,25 +271,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Merchandise</h2>
+					<h2><a href="/merchandise">Merchandise</a></h2>
+					<?php if(!empty($merchandise)):?>
 					<br/>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
 						<div id="slideshow" style="margin:auto">
-						    <div style="background-color:white"><img src="/assets/img/kaos.png" width="100%" border="0" alt="" /></div>
-						    <div style="background-color:white"><img src="/assets/img/cd.png" width="100%" border="0" alt="" /></div>
-						    <div style="background-color:white"><img src="/assets/img/topi.png" width="100%" border="0" alt="" /></div>
+							<?php
+							$count_rand = (count($merchandise) >= 3) ? 3 : count($merchandise);
+							$merchandise_index = array_rand($merchandise, $count_rand);
+							foreach ($merchandise_index as $key => $index) {?>
+						    <div style="background-color:white"><img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="" /></div>
+						    <?php } ?>
 						</div>
 					</div>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
 					Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
 					<br/><br/>
-					[<a href="/merchandise">Get more</a>]
+					<a href="/merchandise">[Beli sekarang]</a>
 					</div>
+					<?php else:?>
+						<div style="text-align:center">Tidak ada merchandise saat ini.</div>
+					<?php endif;?>
 				</div>
-			</div>
 				<div class="col-xs-12">
 					<hr class="hr-home" />
 				</div>
+			</div>
 		</div>
 	</section>
 
@@ -263,11 +304,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Member</h2>
+					<h2><a href="/member">Anggota</a></h2>
 				</div>
-				<?php $member_index = array_rand($members,6);?>
+				<?php
+				if(!empty($members)):
+				$count_rand = (count($members) >= 6) ? 6 : count($members);
+				$member_index = array_rand($members,$count_rand);
 
-				<?php foreach ($member_index as $key => $index) {
+				foreach ($member_index as $key => $index) {
 				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
 						<img src="/'.$members[$index]['avatar'].'" alt="" width="100%" style="border-radius:50%; border:4px #999999 solid"/><br/>
 						'.$members[$index]['name'].'
@@ -276,9 +320,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 				?>
 				<div class="col-xs-12">
-					<a href="/member">[See more]</a>
+					<a href="/member">[Kenal kami]</a><br/><br/>
 				</div>
-				
+				<?php else:?>
+					<div style="text-align:center">Tidak ada member saat ini.</div>
+				<?php endif;?>
 			</div>
 		</div>
 	</section>
@@ -287,7 +333,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Contact Us</h2>
+					<h2><a href="/contact">Kontak Kami</a></h2>
 					<br/>
 					<div class="col-xs-12">
 						<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/icon/fb_inverse.png" width="64" /></a>
@@ -297,7 +343,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a href="https://www.youtube.com/user/kawandasawolu" target="_blank"><img src="/assets/img/icon/youtube.png" width="64" /></a>
 						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" /></a>
 						<br/><br/>
-						If you have any inquiry, please <a href="/contact">send us message</a>.<br/><br/><br/>
+						Ingin mengenal Kawandasawolu lebih jauh, jangan sungkan untuk <a href="/contact" class="link-mail">menghubungi kami</a>.<br/><br/><br/>
 						<img src="/assets/img/logojawa2.png" height="100%" />
 						<br/><br/><br/>
 					</div>
@@ -305,6 +351,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 	</section>
+	<?php include('footer.php');?>
 </div>
 
 <script type="text/javascript" src="/assets/js/jquery-2.2.0.min.js"></script>
@@ -312,7 +359,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="/assets/js/scrolling-nav.js"></script>
-<script type="text/javascript" src="/assets/js/fadeSlideShow.js"></script>
+<script type="text/javascript" src="/assets/js/fadeSlideShow-minified.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
 

@@ -1,10 +1,9 @@
 <div class="container content">
 	<ol class="breadcrumb" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
-		<li><a href="/gallery">Galeri Album</a></li>
-		<li class="active">Galeri Foto</li>
+		<li class="active">Merchandise</li>
 	</ol>
-	<h1>Galeri Album</h1><br/>
+	<h1>Merchandise</h1><br/>
 
 	<div class="grid">
 	<?php
