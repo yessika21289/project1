@@ -24,18 +24,6 @@
                     </div>
                 </div>
             </div>
-        <?php elseif(isset($updated_id)): ?>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <strong>Success!</strong> User has been updated.
-                    </div>
-                </div>
-            </div>
         <?php elseif(isset($set_active)): ?>
             <div class="row">
                 <div class="col-md-6">
@@ -74,7 +62,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-5">
                 <section class="panel">
                     <?php
                     if(empty($users)):
@@ -111,19 +99,13 @@
 
                                     <td>
                                         <span class="title"><?php echo $row->username; ?></span>
-                                        <?php if($row->is_authorized == 1): ?>
-                                            <br/><span class="label label-primary">-superadmin-</span>
-                                        <?php endif; ?>
                                     </td>
 
                                     <td>
                                         <div class="btn-group">
-                                            <a class="btn btn-primary" title="Edit"
-                                               href="<?php echo base_url() ?>myadminkw/Users/add/<?php echo $row->id; ?>">
-                                                <i class="icon_pencil-edit"></i></a>
                                             <?php if($row->is_authorized == 0): ?>
                                                 <a class="btn btn-success" title="Pass superadmin status"
-                                                   href="<?php echo base_url() ?>myadminkw/Users/add?id=<?php echo $row->id; ?>&is_active=1">
+                                                   href="<?php echo base_url() ?>myadminkw/Users/add?id=<?php echo $row->id; ?>&is_authorized=1">
                                                     <i class="icon_key_alt"></i></a>
                                             <?php endif; ?>
                                             <a class="btn btn-danger" title="Delete"

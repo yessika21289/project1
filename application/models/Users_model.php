@@ -42,22 +42,21 @@ class Users_model extends CI_Model
         else return false;
     }
 
-    function set_active($user, $post) {
-        $data = array(
-            'is_active' => $post['is_active'],
-            'updated_at' => time(),
-            'updated_by' => $user
-        );
+    function pass_key($logged_in_id, $post) {
+        $this->db->where('id', $post['user_id']);
+        $set_authorized = $this->db->update('users', array('is_authorized' => $post['is_authorized']));
 
-        $this->db->where('id', $post['news_id']);
-        $update = $this->db->update('news', $data);
-        if($data['is_active'] == 1) return 'published';
-        else return 'unpublished';
+        $this->db->where('id', $logged_in_id);
+        $un_authorized = $this->db->update('users', array('is_authorized' => 0));
+
+        if($set_authorized && $un_authorized) return true;
+        else return false;
+
     }
 
-    function delete($news_id) {
-        $this->db->where('id', $news_id);
-        $delete = $this->db->delete('news');
+    function delete($user_id) {
+        $this->db->where('id', $user_id);
+        $delete = $this->db->delete('users');
         return $delete;
     }
 }

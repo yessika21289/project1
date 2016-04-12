@@ -12,37 +12,37 @@
     <title>Admin Login</title>
 
     <!-- Bootstrap CSS -->    
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.v3.0.0.css" rel="stylesheet">
     <!-- bootstrap theme -->
-    <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-    <link href="assets/css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom styles -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/html5shiv.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
   <body>
-    <div id="banner">
+    <div id="banner" style="z-index: 0;">
         <div style="height:30%">
-            <img src="/assets/img/triangle_ornament.png" height="100%" />
+            <img src="<?php echo base_url(); ?>assets/img/triangle_ornament.png" height="100%" />
         </div>
         <div class="col-xs-12" style="position: absolute; top:0; text-align: center">
-            <img src="/assets/img/logojawa2.png" height="100%" />
+            <img src="<?php echo base_url(); ?>assets/img/logojawa2.png" height="100%" />
         </div>
-        <div style="height:40%; position: absolute; bottom: 0; left:0">
-            <img src="/assets/img/clouds.png" height="100%" />
+        <div style="height:40%; position: absolute; bottom: 0; left:0; z-index: -1;">
+            <img src="<?php echo base_url(); ?>assets/img/clouds.png" height="100%" style="z-index: -2;" />
         </div>
         <div style="height: 30%; position: absolute; bottom: 0; left: 0">
-            <img src="/assets/img/becak_tugu_pohon.png" height="100%" />
+            <img src="<?php echo base_url(); ?>assets/img/becak_tugu_pohon.png" height="100%" style="z-index: -3;" />
         </div>
     <div class="container">
 
