@@ -226,7 +226,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div id="gallery-item-cont">
 				<?php
 				$count_rand = (count($photos) >= 5) ? 5 : count($photos);
-				$photo_index = array_rand($photos, $count_rand);?>
+				$photo_index = array_rand($photos, $count_rand);
+				$photo_index = ($photo_index == 0) ? array(0) : $photo_index;
+				?>
 					<div 
 					data-bottom-top="right: 200px;"
 					data-center-center="right: 550px;"
@@ -279,6 +281,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<?php
 							$count_rand = (count($merchandise) >= 3) ? 3 : count($merchandise);
 							$merchandise_index = array_rand($merchandise, $count_rand);
+							$merchandise_index = ($merchandise_index == 0) ? array(0) : $merchandise_index;
 							foreach ($merchandise_index as $key => $index) {?>
 						    <div style="background-color:white"><img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="" /></div>
 						    <?php } ?>
@@ -310,6 +313,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				if(!empty($members)):
 				$count_rand = (count($members) >= 6) ? 6 : count($members);
 				$member_index = array_rand($members,$count_rand);
+				$member_index = ($member_index == 0) ? array(0) : $member_index;
 
 				foreach ($member_index as $key => $index) {
 				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
