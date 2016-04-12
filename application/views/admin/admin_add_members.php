@@ -33,7 +33,6 @@
             $facebook = (!empty($member['socmed']['facebook'])) ? $member['socmed']['facebook'] : '';
             $twitter = (!empty($member['socmed']['twitter'])) ? $member['socmed']['twitter'] : '';
             $instagram = (!empty($member['socmed']['instagram'])) ? $member['socmed']['instagram'] : '';
-            $path = (!empty($member['socmed']['path'])) ? $member['socmed']['path'] : '';
             $web = (!empty($member['socmed']['web'])) ? $member['socmed']['web'] : '';
         ?>
 
@@ -79,11 +78,6 @@
                                             <input type="text" class="form-control col-md-10 socmed-add-textfield" name="instagram"
                                                    placeholder="Instagram ID" value="<?php echo $instagram; ?>">
 
-                                            <span class="col-md-1 socmed-add-icon">
-                                                <img src="<?php echo base_url(); ?>assets/img/path-icon.png">
-                                            </span>
-                                            <input type="text" class="form-control col-md-10 socmed-add-textfield" name="path"
-                                                   placeholder="Path ID" value="<?php echo $path; ?>">
 
                                             <span class="col-md-1 socmed-add-icon">
                                                 <img src="<?php echo base_url(); ?>assets/img/web-icon.png">

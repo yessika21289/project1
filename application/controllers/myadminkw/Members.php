@@ -66,7 +66,6 @@ class Members extends CI_Controller {
                         'facebook' => $_POST['facebook'],
                         'twitter' => $_POST['twitter'],
                         'instagram' => $_POST['instagram'],
-                        'path' => $_POST['path'],
                         'web' => $_POST['web']
                     ),
                 );
