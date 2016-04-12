@@ -55,15 +55,16 @@ class Contact extends CI_Controller {
     $subject = $this->input->post('subject');
     $msg = $this->input->post('msg');
 
-    $config['smtp_host'] = 'mail.kawandasawolu.com';
-    $config['smtp_user'] = 'management@kawandasawolu';
+    $config['smtp_host'] = 'rejodani.kawandasawolu.com';
+    $config['smtp_user'] = 'management@kawandasawolu.com';
     $config['smtp_pass'] = 'K4waNdasaw0lu';
+    $config['smtp_port'] = '465';
     $config['wordwrap'] = TRUE;
 
     $this->email->initialize($config);
 
     $this->email->from($email, $nama);
-    $this->email->to('willi.duta@gmail.com');
+    $this->email->to('management@kawandasawolu.com');
 
     $this->email->subject($subject);
     $this->email->message($msg);

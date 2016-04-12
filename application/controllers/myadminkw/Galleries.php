@@ -227,14 +227,16 @@ class Galleries extends CI_Controller {
                             $this->image_lib->initialize($config);
                             $this->image_lib->resize();
                         }
+                    }
 
+                    foreach ($photo_upload as $key => $photo_item) {
                         $config2['image_library'] = 'gd2';
                         $config2['source_image'] = $photo_item;
                         $config2['new_image'] = $photo_thumb[$key];
                         $config2['width'] = 250;
 
                         $this->image_lib->initialize($config2);
-                        $this->image_lib->resize();
+                        $this->image_lib->resize();                        
                     }
                 }
 
@@ -321,12 +323,16 @@ class Galleries extends CI_Controller {
                 if (!empty($photos)) {
                     foreach ($photos as $photo) {
                         unlink($photo->photo);
+                        $path_section = explode('/',$photo_file[0]->photo);
+                        $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
+                        unlink($thumb_path);
                     }
                     $this->Galleries_model->deletePhotos($album_id);
                 }
 
                 $album = $this->Galleries_model->getAlbums($album_id);
                 if (!empty($album)) {
+                    rmdir($album[0]->directory . '/thumb');
                     rmdir($album[0]->directory);
                     $delete = $this->Galleries_model->delete($album_id);
                 }

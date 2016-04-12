@@ -22,18 +22,20 @@
 </div>
 
 <!-- Masonry script // gallery thumbnail -->
-<script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="/assets/js/imagesloaded.pkgd.js"></script>
+<script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="/assets/jquery-fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-var $grid = $('#grid').imagesLoaded( function() {
-	$('.grid').masonry({
-	  // options
-	  itemSelector: '.grid-photo',
-	  columnWidth: 10,
-	  percentPosition: true,
-	});
+$(document).ready(function(){
+	var $grid = $('#grid').imagesLoaded( function() {
+		$('.grid').masonry({
+		  // options
+		  itemSelector: '.grid-photo',
+		  columnWidth: 10,
+		  percentPosition: true,
+		});
+	})
+	$("a.album_photo").fancybox();
 })
-$("a.album_photo").fancybox();
 </script>
 <!-- ==================================== -->
