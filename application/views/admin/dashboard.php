@@ -10,6 +10,19 @@
                 </ol>
             </div>
         </div>
+        <?php if(isset($user_updated)): ?>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <strong>Success!</strong> <?php echo $user_updated; ?>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
         <h1>
             Welcome, <?php echo $name; ?>!
         </h1>

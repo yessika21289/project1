@@ -122,3 +122,12 @@ div.warning {
 div.success {
     background-color: #dff8e3;
 }
+
+.form .required{
+    color: red;
+}
+
+label.error {
+    color: red;
+    font-size: 9pt;
+}

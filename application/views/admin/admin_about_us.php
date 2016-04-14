@@ -1,3 +1,7 @@
+<?php
+    print sha1(md5('123456'));exit;
+?>
+
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">

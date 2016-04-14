@@ -122,16 +122,7 @@
                                             else echo '-';
                                         ?>
                                     </div>
-                                    <div class="col-md-6">
-                                        <img src="<?php echo base_url(); ?>assets/img/path-icon.png" class="socmed-icon">
-                                        <?php
-                                            if(!empty($member['socmed']['path'])) echo $member['socmed']['path'];
-                                            else echo '-';
-                                        ?>
-                                    </div>
-                                </div>
 
-                                <div class="row">
                                     <div class="col-md-6">
                                         <img src="<?php echo base_url(); ?>assets/img/web-icon.png" class="socmed-icon">
                                         <?php

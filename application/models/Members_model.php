@@ -49,7 +49,7 @@ class Members_model extends CI_Model
 
         $keys = array_keys($post);
         foreach($keys as $key) {
-            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web')) && !empty($post[$key])) {
+            if (in_array($key, array('facebook', 'twitter', 'instagram', 'web')) && !empty($post[$key])) {
                 $socmed = array(
                     'id_member' => $insert_id,
                     'type' => $key,
@@ -85,7 +85,7 @@ class Members_model extends CI_Model
 
         $keys = array_keys($post);
         foreach($keys as $key) {
-            if (in_array($key, array('facebook', 'twitter', 'instagram', 'path', 'web')) && !empty($post[$key])) {
+            if (in_array($key, array('facebook', 'twitter', 'instagram', 'web')) && !empty($post[$key])) {
                 $socmed = array(
                     'id_member' => $post['member_id'],
                     'type' => $key,
