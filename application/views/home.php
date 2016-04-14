@@ -83,6 +83,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</section>
 
+	<section id="gap">
+		<div class="bcg skrollable skrollable-between gap-bg-home"
+		data-anchor-target="#gap">
+		</div>
+	</section>
+
 	<section id="news">
 		<div class="bcg skrollable skrollable-between news-bg-home" 
 		data-bottom-top="background-position: center 0px;"
@@ -283,7 +289,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							$merchandise_index = array_rand($merchandise, $count_rand);
 							$merchandise_index = ($merchandise_index == 0) ? array(0) : $merchandise_index;
 							foreach ($merchandise_index as $key => $index) {?>
-						    <div style="background-color:white"><img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="" /></div>
+						    <div style="background-color:#F1F1F1"><img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="" /></div>
 						    <?php } ?>
 						</div>
 					</div>
@@ -324,7 +330,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 				?>
 				<div class="col-xs-12">
-					<a href="/member">[Kenal kami]</a><br/><br/>
+					<a href="/member">[Kenal kami]</a>
 				</div>
 				<?php else:?>
 					<div style="text-align:center">Tidak ada member saat ini.</div>
