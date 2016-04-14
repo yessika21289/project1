@@ -74,12 +74,12 @@ hr.hr-home{
 .about-us-bg-home{
 	height: 100%;
 	width:100%;
-	background-color: #FFFFFF;
+	background-color: #F9F9F9;
 }
 
 #news{
 	/*min-height: 500px;*/
-	background-color: #FFFFFF;
+	background-color: #E8E8E8;
 }
 
 #news h2{
@@ -97,13 +97,14 @@ hr.hr-home{
 }
 
 .news-bg-home{
-	background-size:cover;
+	/*background-image: url(/assets/img/news_grad.png);
+	background-size:cover;*/
 	height: 100%;
 	width:100%;
 }
 
 #song{
-	background-color: #FFFFFF;
+	background-color: #F9F9F9;
 }
 
 #song dt a{
@@ -124,7 +125,7 @@ hr.hr-home{
 }
 
 #video{
-	background-color: #FFFFFF;
+	background-color: #E8E8E8;
 }
 
 #video h2{
@@ -132,7 +133,7 @@ hr.hr-home{
 }
 
 #gallery{
-	background-color: #FFFFFF;
+	background-color: #F9F9F9;
 }
 
 #gallery h2{
@@ -157,9 +158,9 @@ hr.hr-home{
 	position: absolute;
 	background-size: cover;
 	background-position: center;
-	-webkit-box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.5);
-	-moz-box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.5);
-	box-shadow: -10px -10px 15px 0px rgba(0,0,0,0.5);
+	-webkit-box-shadow: -5px 4px 8px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: -5px 4px 8px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: -5px 4px 8px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #member, #contact_us{
@@ -167,7 +168,7 @@ hr.hr-home{
 }
 
 #merchandise{
-	background-color: #FFFFFF;
+	background-color: #E8E8E8;
 }
 
 #merchandise h2{
@@ -176,7 +177,16 @@ hr.hr-home{
 
 #member{
 	color: #000000;
-	background-color: #FFFFFF;
+	background-color: #F9F9F9;
+}
+
+.member-img-home{
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #contact_us{
@@ -290,14 +300,14 @@ hr.hr-event{
 }
 
 .member-item-info{
-	background-color: white;
+	/*background-color: white;*/
 	margin-top: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius:10px;
 	padding: 5px;
-	height: 110px;
-	border: 1px #AAAAAA solid;
+	height: 85px;
+	/*border: 1px #AAAAAA solid;*/
 }
 
 .member-item-info hr{
@@ -311,9 +321,11 @@ hr.hr-event{
 }
 
 .img-profile{
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius:25px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	/*border: 3px #CCCCCC solid;*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*=========VIDEO=========*/

@@ -103,16 +103,10 @@ class Members extends CI_Controller {
                             //---------ratio (135/180) = 0.75-----------
 
                             if($img_width <= $img_height){
-                                if($img_width/$img_height <= 0.75){
-                                    $crop1_config['width']  = 135;
-                                }
-                                else{
-                                    $crop1_config['height'] = 180;
-                                }
+                                $crop1_config['width']  = 180;
                             }
                             else{
                                 $crop1_config['height'] = 180;
-                                $crop1_config['width']  = 180/$img_height*$img_width;
                             }
 
                             $this->image_lib->initialize($crop1_config);
@@ -127,12 +121,12 @@ class Members extends CI_Controller {
                             $crop2_config['source_image']   = $avatar_file;
                             $crop2_config['maintain_ratio'] = FALSE;
                             if($img_width <= $img_height){
-                                $crop2_config['x_axis'] = ($img_width - 135) / 2;
+                                $crop2_config['x_axis'] = ($img_width - 180) / 2;
                             }
                             else{
                                 $crop2_config['y_axis'] = ($img_height- 180) / 2;
                             }
-                            $crop2_config['width']  = 135;
+                            $crop2_config['width']  = 180;
                             $crop2_config['height'] = 180;
 
                             $this->image_lib->initialize($crop2_config);

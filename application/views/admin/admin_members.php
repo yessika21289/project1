@@ -91,10 +91,10 @@
                             if($member['id'] == $set_active_id && $set_active == 'unpublished') $row_changed = 'warning';
                         ?>
                         <div class="panel-body <?php echo $row_changed; ?>">
-                            <div class="col-md-2 clearfix" style="width: 13.6667%;">
+                            <div class="col-md-3 clearfix" style="text-align:center">
                                 <img src="<?php echo base_url().$avatar; ?>" class="view-avatar" />
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-9">
                                 <h2 style="margin-top: 0;"><?php echo $member['name']; ?></h2>
                                 <hr style="margin-top: 0px; margin-bottom: 10px; border-top: 1px solid #cccccc"/>
                                 <div class="row">

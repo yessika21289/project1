@@ -20,9 +20,10 @@
     border: groove;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
-    width: 135px;
+    width: 180px;
     height:180px;
     background: url(../img/default_avatar.png) no-repeat center;
+    margin: auto;
 }
 
 .edit-cover, .edit-avatar, .edit-merchandise {
@@ -30,9 +31,10 @@
     background-color: #878787;
     opacity: 0.8;
     display: block;
-    width: 131px;
+    width: 176px;
     margin-top: -23px;
-    margin-left: 2px;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
     font-weight: lighter;
 }
@@ -78,7 +80,7 @@ label.upload-song {
 
 .view-avatar {
     position: relative;
-    width: 135px;
+    width: 180px;
     height:180px;
 }
 

@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<h2><a href='/about'>Tentang Kami</a></h2>
 						<br/>
 						<?php if(!empty($tagline)):?>
-						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px; border-right: 3px solid #555555">
+						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px; border-right: 3px solid #555555; z-index:0">
 							<i class="fa fa-quote-left" style="font-size:1.5em"></i>
 							<?php echo $tagline;?>
 						</div>
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 				<div class="col-xs-12">
-					<hr class="hr-home" />
+					<!-- <hr class="hr-home" /> -->
 				</div>
 			</div>
 		</div>
@@ -87,8 +87,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="bcg skrollable skrollable-between news-bg-home" 
 		data-bottom-top="background-position: center 0px;"
 		data-top-bottom="background-position: center 0px;"
-		data-anchor-target="#news"
-		style="background-image: url(/assets/img/news_grad.png);">
+		data-anchor-target="#news">
+			
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8">
@@ -135,7 +135,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<div class="col-xs-12">
-			<hr class="hr-home" />
+			<!-- <hr class="hr-home" /> -->
 		</div>
 	</section>
 
@@ -176,7 +176,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<div class="col-xs-12">
-			<hr class="hr-home" />
+			<!-- <hr class="hr-home" /> -->
 		</div>
 	</section>
 
@@ -208,7 +208,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<div class="col-xs-12">
-			<hr class="hr-home" />
+			<!-- <hr class="hr-home" /> -->
 		</div>
 	</section>
 
@@ -233,25 +233,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					data-bottom-top="right: 200px;"
 					data-center-center="right: 550px;"
 					class="gallery-item-home"
-					style="right: 0px; width: 100px; height: 100px; background-image:url('/<?php print_r($photos[$photo_index[4]]->photo);?>');">
+					style="right: 0px; top: 40px; width: 100px; height: 100px; background-image:url('/<?php print_r($photos[$photo_index[4]]->photo);?>');">
 					</div>
 					<div 
 					data-bottom-top="right: 150px;"
 					data-center-center="right: 450px;"
 					class="gallery-item-home"
-					style="right: 0px; width: 150px; height: 150px; background-image:url('/<?php print_r($photos[$photo_index[3]]->photo);?>');">
+					style="right: 0px; top: 30px; width: 150px; height: 150px; background-image:url('/<?php print_r($photos[$photo_index[3]]->photo);?>');">
 					</div>
 					<div 
 					data-bottom-top="right: 100px;"
 					data-center-center="right: 325px;"
 					class="gallery-item-home"
-					style="right: 0px; width: 200px; height: 200px; background-image:url('/<?php print_r($photos[$photo_index[2]]->photo);?>');">
+					style="right: 0px; top: 20px; width: 200px; height: 200px; background-image:url('/<?php print_r($photos[$photo_index[2]]->photo);?>');">
 					</div>
 					<div 
 					data-bottom-top="right: 50px;"
 					data-center-center="right: 175px;"
 					class="gallery-item-home"
-					style="right: 0px; width: 250px; height: 250px; background-image:url('/<?php print_r($photos[$photo_index[1]]->photo);?>');">
+					style="right: 0px; top: 10px; width: 250px; height: 250px; background-image:url('/<?php print_r($photos[$photo_index[1]]->photo);?>');">
 					</div>
 					<div 
 					class="gallery-item-home" 
@@ -265,7 +265,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<div class="col-xs-12">
-			<hr class="hr-home" />
+			<!-- <hr class="hr-home" /> -->
 		</div>
 	</section>
 
@@ -297,7 +297,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<?php endif;?>
 				</div>
 				<div class="col-xs-12">
-					<hr class="hr-home" />
+					<!-- <hr class="hr-home" /> -->
 				</div>
 			</div>
 		</div>
@@ -317,7 +317,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				foreach ($member_index as $key => $index) {
 				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
-						<img src="/'.$members[$index]['avatar'].'" alt="" width="100%" style="border-radius:50%; border:4px #999999 solid"/><br/>
+						<img src="/'.$members[$index]['avatar'].'" class="member-img-home" alt="" width="100%"/><br/>
 						'.$members[$index]['name'].'
 					</div>
 					';

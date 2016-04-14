@@ -51,7 +51,7 @@
                                 <div class="form-group form-song">
 
                                     <div class="row">
-                                        <div class="col-md-2 clearfix preview-avatar" style="width: 13.6667%;">
+                                        <div class="col-md-3 clearfix preview-avatar">
                                             <div id="avatar-image-holder" class="avatar" style="<?php echo $avatar; ?>"></div>
                                             <input id="upload-avatar" type="file" name="avatar" />
                                             <a href="" id="upload-avatar-link" class="edit-avatar">Edit</a>
