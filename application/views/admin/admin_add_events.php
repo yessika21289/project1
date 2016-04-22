@@ -56,9 +56,7 @@
                                 <div class="row">
                                     <label class="control-label col-md-1">Content:</label>
                                     <div class="col-md-7">
-                                        <textarea class="form-control ckeditor" name="content" rows="6">
-                                            <?php echo $content; ?>
-                                        </textarea>
+                                        <textarea class="form-control editor" name="content" rows="6"><?php echo $content; ?></textarea>
                                         <input type="hidden" name="event_id" value="<?php echo $event_id; ?>">
                                         <span class="pull-right" style="margin-top:20px;">
                                             <button type="submit" class="btn btn-primary">

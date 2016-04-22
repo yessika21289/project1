@@ -11,7 +11,7 @@ class Members_model extends CI_Model
         $members = array();
         if(!empty($member_id)) $this->db->where('id', $member_id);
         if($show == 'active') $this->db->where('is_active', 1);
-        $this->db->order_by('updated_at', 'desc');
+        $this->db->order_by('name', 'asc');
         $query = $this->db->get('members');
         $results = $query->result();
 

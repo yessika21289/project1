@@ -1,9 +1,10 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Berita</li>
 	</ol>
 	<h1>Video</h1><br/>
+	<?php if(!empty($videos)):?>
 	<?php foreach ($videos as $key => $videos_item) {
 		echo '
 		<div style="margin-bottom:50px;">
@@ -20,4 +21,7 @@
 		</div>';
 	}
 	?>
+	<?php else:?>
+		<div>Tidak ada video saat ini.</div>
+	<?php endif;?>
 </div>

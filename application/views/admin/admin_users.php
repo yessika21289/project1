@@ -103,11 +103,11 @@
 
                                     <td>
                                         <div class="btn-group">
-                                            <?php if($row->is_authorized == 0): ?>
-                                                <a class="btn btn-success" title="Pass superadmin status"
+                                            <?php //if($row->is_authorized == 0): ?>
+                                                <!-- <a class="btn btn-success" title="Pass superadmin status"
                                                    href="<?php echo base_url() ?>myadminkw/Users/add?id=<?php echo $row->id; ?>&is_authorized=1">
-                                                    <i class="icon_key_alt"></i></a>
-                                            <?php endif; ?>
+                                                    <i class="icon_key_alt"></i></a> -->
+                                            <?php //endif; ?>
                                             <a class="btn btn-danger" title="Delete"
                                                onclick="return confirm('Are you sure?');"
                                                href="<?php echo base_url() ?>myadminkw/Users/delete/<?php echo $row->id; ?>">

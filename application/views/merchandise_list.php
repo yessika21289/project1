@@ -1,10 +1,11 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Merchandise</li>
 	</ol>
 	<h1>Merchandise</h1><br/>
 
+	<?php if(!empty($merchandise)):?>
 	<div class="grid">
 	<?php
 		foreach ($merchandise as $key => $merchandise_item) {
@@ -20,6 +21,10 @@
 		}
 	?>
 	</div>
+	<?php else:?>
+		<div>Tidak ada merchandise saat ini.</div>
+	<?php endif;?>
+</div>
 </div>
 
 <!-- Masonry script // gallery thumbnail -->

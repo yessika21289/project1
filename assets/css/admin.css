@@ -4,7 +4,9 @@
     position: relative;
     width: 135px;
     height:135px;
-    background: url(../img/default_cover.PNG) no-repeat center;
+    background: url(../img/default_cover.png) no-repeat center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .merchandise {
@@ -14,6 +16,8 @@
     width: 135px;
     height:135px;
     background: url(../img/default_merchandise.png) no-repeat center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .avatar {
@@ -31,12 +35,16 @@
     background-color: #878787;
     opacity: 0.8;
     display: block;
-    width: 176px;
+    width: 132px;
     margin-top: -23px;
     margin-left: auto;
     margin-right: auto;
     color: white;
     font-weight: lighter;
+}
+
+.edit-avatar{
+    width: 176px;
 }
 
 .edit-cover:hover, .edit-avatar:hover, .edit-merchandise:hover {

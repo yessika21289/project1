@@ -106,7 +106,7 @@ class Users extends CI_Controller {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
             $this->load->model('Users_model');
-            if (!empty($users_id)) {
+            if (!empty($user_id)) {
                 $delete = $this->Users_model->delete($user_id);
                 if ($delete) $this->session->set_flashdata('delete_confirm', $delete);
                 redirect('myadminkw/Users');

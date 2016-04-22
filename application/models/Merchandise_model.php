@@ -40,11 +40,14 @@ class Merchandise_model extends CI_Model
             'title' => $post['title'],
             'price' => $post['price'],
             'description' => $post['desc'],
-            'image' => !empty($merchandise_file) ? $merchandise_file : NULL,
             'updated_at' => time(),
             'updated_by' => $user,
             'is_active' => 1
         );
+
+        if(!empty($merchandise_file))
+            $data['image'] = $merchandise_file;
+
         $this->db->where('id', $post['merchandise_id']);
         $this->db->update('merchandise', $data);
 

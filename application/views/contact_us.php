@@ -1,5 +1,5 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Kontak Kami</li>
 	</ol>

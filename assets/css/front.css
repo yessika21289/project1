@@ -42,7 +42,60 @@ body{
 	padding: 10px;
 }
 
+.red-btn{
+	padding: 10px;
+	background-color: #CA292B;
+	color: #FFFFFF;
+}
+
+.red-btn:hover{
+	background-color: #AF2022;
+}
+
+.org-btn{
+	padding: 10px;
+	background-color: #F79A26;
+	color: #FFFFFF;
+}
+
+.org-btn:hover{
+	background-color: #F78619;
+}
+
+.navbar-home, .navbar-home-fixed{
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	margin: auto !important;
+	width: 100%;
+	text-align: center;
+}
+
+.navbar-home-fixed{
+	position: fixed;
+	display: none;
+	background-color: #CA292B;
+}
+
+.navbar-collapse{ /*override*/
+	max-height: none !important;
+}
+
+#up{
+	width: 64px;
+	height: 64px;
+	position: fixed;
+	bottom: 64px;
+	right: 64px;
+	z-index: 1;
+	display: none;
+}
+
 /*==========HOME============*/
+section{
+	padding-top: 65px;
+	padding-bottom: 60px;
+}
 section h2{
 	font-family:'Alex Brush';
 	font-size: 4em;
@@ -69,16 +122,20 @@ hr.hr-home{
 
 #about_us{
 	text-align: center;
+	background-color: #F9F9F9;
+	padding-top: 65px;
+	padding-bottom: 60px;
 }
 
-.about-us-bg-home{
+/*.about-us-bg-home{
 	height: 100%;
 	width:100%;
 	background-color: #F9F9F9;
-}
+}*/
 
 #gap{
 	height: 50%;
+	padding: 0;
 }
 
 .gap-bg-home{
@@ -91,12 +148,16 @@ hr.hr-home{
 #news{
 	/*min-height: 500px;*/
 	background-color: #F1F1F1;
-	padding-bottom: 30px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 #news h2{
-	margin-left: 12px;
-	margin-bottom: 20px;
+	/*margin-left: 12px;
+	margin-bottom: 20px;*/
+	margin: 0px;
+	padding: 10px;
+	text-align: center;
 }
 
 #news ol{
@@ -115,16 +176,33 @@ hr.hr-home{
 	width:100%;
 }
 
+.news-cont-left, .news-cont-right{
+	padding: 15px 20px 20px 20px;
+}
+
+.news-cont-left{
+	background-color: #F5D549;
+}
+
+.news-cont-right{
+	background-color: #F79A26;
+}
+
 #song{
-	background-color: #F9F9F9;
+	background-image: url(/assets/img/bg_song.jpg);
+	background-size: cover;
+	background-position: center;
+	color: #FFFFFF;
+	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
 #song dt a{
-	color: rgb(0,0,0);
+	color: #FFFFFF;
 }
 
 #song h2{
+	margin-top: 0px;
 	margin-left: 12px;
 }
 
@@ -149,6 +227,7 @@ hr.hr-home{
 #gallery{
 	background-color: #F9F9F9;
 	padding-bottom: 30px;
+	text-align: center;
 }
 
 #gallery h2{
@@ -164,9 +243,16 @@ hr.hr-home{
 #gallery-item-cont{
 	position: relative;
 	top: 15px;
-	height:300px; 
 	width: 650px; 
-	margin: auto;
+	margin: 0 auto 60px auto;
+}
+
+.gallery-item-slider{
+	height: 150px !important;
+	margin: 10px;
+	border: 5px #999999 solid;
+	background-size: cover;
+	background-position:center;
 }
 
 .gallery-item-home{
@@ -182,6 +268,11 @@ hr.hr-home{
 	text-align: center;
 }
 
+#member{
+	padding-top: 65px;
+	padding-bottom: 60px;
+}
+
 #merchandise{
 	background-color: #F1F1F1;
 	padding-bottom: 30px;
@@ -195,6 +286,12 @@ hr.hr-home{
 	color: #000000;
 	background-color: #F9F9F9;
 	padding-bottom: 30px;
+}
+
+.member-img-cont{
+	width: 15%;
+	margin: 20px;
+	display:inline-block;
 }
 
 .member-img-home{
@@ -221,6 +318,10 @@ hr.hr-home{
 
 #contact_us .link-mail{
 	text-decoration: underline;
+}
+
+#contact-us-img-logo{
+	width: 20%;
 }
 
 /*==========HEADER=========*/
@@ -351,6 +452,12 @@ hr.hr-event{
 	word-wrap: break-word;
 	overflow-y: auto;
 	margin-bottom: 50px;
+}
+
+.video-caption{
+	background-color: #CA292B;
+	color: #FFFFFF;
+	padding: 0 10px;
 }
 
 .videoWrapper {
@@ -521,12 +628,23 @@ hr.hr-event{
 	color: #FFFFFF;
 }
 
-
-@media (max-width: 350px){
-	.song-desc{
-		width: 100%;
-	}
+#back-clouds{
+	position:fixed;
+	bottom:0;
+	z-index:-1;
+	height:40%;
+	opacity:0.3;
 }
+
+#back-becak{
+	position:fixed;
+	bottom:0;
+	z-index:-1;
+	height:30%;
+	left:10%;
+}
+
+/*=========MEDIA QUERY=========*/
 
 @media (min-width: 768px){
 	.menu-header{
@@ -540,13 +658,15 @@ hr.hr-event{
 		height: initial !important;
 	}
 
-	.header-back-batik{
-		background-size: initial;
-		height: 65px;
-	}
-
 	.footer-socmed{
+		float: none;
 		position: relative;
+		right: 0px;
+		margin-top: 0px;
+	}
+	
+	.member-img-cont{
+		width: 30%;
 	}
 }
 
@@ -564,5 +684,19 @@ hr.hr-event{
 	.nav>li>a{
 	    padding-left: 9px !important;
 	    padding-right: 9px !important;
+	}
+
+	.member-img-cont{
+		width: 25%;
+	}
+}
+
+@media (max-width: 350px){
+	.song-desc{
+		width: 100%;
+	}
+
+	.member-img-cont{
+		width: 50%;
 	}
 }

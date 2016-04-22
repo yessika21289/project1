@@ -113,11 +113,11 @@ class Merchandise extends CI_Controller {
                 }
                 // ======================================== UPDATE AN ITEM ============================================ //
                 else {
-                    $merchandise = $this->Merchandise_model->getData($_POST['merchandise_id']);
+                    /*$merchandise = $this->Merchandise_model->getData($_POST['merchandise_id']);
 
                     if (!empty($merchandise[0]->image)) {
                         unlink($merchandise[0]->image);
-                    }
+                    }*/
 
                     $updated_merchandise_id = $this->Merchandise_model->update($user, $_POST, $merchandise_file);
                     if ($updated_merchandise_id) {
@@ -150,7 +150,8 @@ class Merchandise extends CI_Controller {
                         'id' => $merchandise[0]->id,
                         'price' => $merchandise[0]->price,
                         'title' => $merchandise[0]->title,
-                        'desc' => $merchandise[0]->description
+                        'desc' => $merchandise[0]->description,
+                        'image_url' => $merchandise[0]->image
                     );
                 }
 

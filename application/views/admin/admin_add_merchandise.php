@@ -30,6 +30,7 @@
             $title = (!empty($merchandise['title'])) ? $merchandise['title'] : '';
             $desc = (!empty($merchandise['desc'])) ? $merchandise['desc'] : '';
             $price = (!empty($merchandise['price'])) ? $merchandise['price'] : '';
+            $image = (!empty($merchandise['image_url'])) ? "background-image:url('/".$merchandise['image_url']."')" : '';
         ?>
 
         <div class="row">
@@ -47,7 +48,7 @@
 
                                     <div class="row">
                                         <div class="col-md-2 clearfix preview-merchandise" style="width: 13.6667%;">
-                                            <div id="merchandise-image-holder" class="merchandise"></div>
+                                            <div id="merchandise-image-holder" class="merchandise" style="<?php echo $image; ?>"></div>
                                             <input id="upload-merchandise" type="file" name="merchandise" />
                                             <a href="" id="upload-merchandise-link" class="edit-merchandise">Edit</a>
                                         </div>

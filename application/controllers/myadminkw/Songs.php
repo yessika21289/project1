@@ -208,7 +208,7 @@ class Songs extends CI_Controller {
                 }
                 // ============================================ UPDATE SONG ============================================ //
                 else {
-                    $song = $this->Songs_model->getData($_POST['song_id']);
+                    /*$song = $this->Songs_model->getData($_POST['song_id']);
                     if (!empty($_FILES['song_cover']['tmp_name'])){
                         if (!empty($song[0]->song_cover_path)) {
                             unlink($song[0]->song_cover_path);
@@ -219,7 +219,7 @@ class Songs extends CI_Controller {
                         if (!empty($song[0]->song_path)) {
                             unlink($song[0]->song_path);
                         }
-                    }
+                    }*/
 
                     $updated_id = $this->Songs_model->update($user, $_POST, $cover_file, $song_file);
                     if ($updated_id) {

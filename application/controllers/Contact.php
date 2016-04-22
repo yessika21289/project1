@@ -50,10 +50,10 @@ class Contact extends CI_Controller {
     $this->load->library('session');
     $this->load->library('email');
 
-    $nama   = $this->input->post('nama');
-    $email  = $this->input->post('email');
-    $subject = $this->input->post('subject');
-    $msg = $this->input->post('msg');
+    $nama     = $this->input->post('nama');
+    $email    = $this->input->post('email');
+    $subject  = $this->input->post('subject');
+    $message  = $this->input->post('message');
 
     $config['smtp_host'] = 'rejodani.kawandasawolu.com';
     $config['smtp_user'] = 'management@kawandasawolu.com';
@@ -67,7 +67,7 @@ class Contact extends CI_Controller {
     $this->email->to('management@kawandasawolu.com');
 
     $this->email->subject($subject);
-    $this->email->message($msg);
+    $this->email->message($message);
 
     if($this->email->send())
       $this->session->set_flashdata('send_mail', 'success');

@@ -1,5 +1,5 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li><a href="/event">Event</a></li>
 		<li class="active"><?php echo $event[0]->title;?></li>

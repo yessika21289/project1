@@ -1,5 +1,5 @@
 	<nav class="navbar navbar-default navbar-fixed-top kw-nav-top" role="navigation">
-        <div class="header-back-batik">
+        <div class="hidden-xs header-back-batik">
         </div>
         <div class="container">
             <div class="navbar-header page-scroll">

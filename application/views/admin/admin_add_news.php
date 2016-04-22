@@ -39,9 +39,7 @@
                                 <div class="row">
                                     <label class="control-label col-md-1">Content:</label>
                                     <div class="col-md-11">
-                                        <textarea class="form-control editor" name="content" rows="6">
-                                            <?php echo $content; ?>
-                                        </textarea>
+                                        <textarea class="form-control editor" name="content" rows="6"><?php echo $content; ?></textarea>
                                         <input type="hidden" name="news_id" value="<?php echo $news_id; ?>">
                                         <span class="pull-right" style="margin-top:20px;">
                                             <button type="submit" class="btn btn-primary">

@@ -1,9 +1,10 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Berita</li>
 	</ol>
 	<h1>Berita Kawandasawolu</h1><br/>
+	<?php if(!empty($news)):?>
 	<?php foreach($news as $key=>$news_item){
 		echo '
 		<div class="col-xs-12 news-list-item">
@@ -14,4 +15,7 @@
 		</div>';
 	}
 	?>
+	<?php else:?>
+		<div>Tidak ada berita saat ini.</div>
+	<?php endif;?>
 </div>

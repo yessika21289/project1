@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name=”robots” content=”noindex,nofollow”>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kawandasawolu</title>
@@ -12,14 +13,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	echo link_tag('/assets/css/bootstrap.min.v3.6.6.css');
 	echo link_tag('/assets/css/bootstrap-ms.css');
 	echo link_tag('/assets/css/font-awesome.min.css');
+	echo link_tag('/assets/slick/slick.css');
+	echo link_tag('/assets/slick/slick-theme.css');
 	echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');
 	?>
+	<style type="text/css">
+		.navbar-nav>li {
+			float: none;
+		    display: inline-block;
+		}
+		.navbar-home-fixed>.navbar-nav>li{
+			float: left;
+			display: block;
+		}
+		.navbar-nav>li:hover{
+			background-color: #AF2022 !important;
+		}
+	</style>
 </head>
 <body>
 
 <!-- <div class="navbar hidden-xs" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:0; z-index:1; opacity:0.7; width: 55px; height:100%"> -->
 
-<div class="navbar hidden-xs" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:20%; z-index:1; opacity:0.7">
+<!-- <div class="navbar hidden-xs" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:20%; z-index:1; opacity:0.7">
 	<a class="page-scroll right-menu" href="#banner"><img src="/assets/img/icon/home.png"/></a>
 	<a class="page-scroll right-menu" href="#about_us"><img src="/assets/img/icon/about.png"/></a>
 	<a class="page-scroll right-menu" href="#news"><img src="/assets/img/icon/news.png"/></a>
@@ -29,14 +45,91 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<a class="page-scroll right-menu" href="#merchandise"><img src="/assets/img/icon/hat.png"/></a>
 	<a class="page-scroll right-menu" href="#member"><img src="/assets/img/icon/member.png"/></a>
 	<a class="page-scroll right-menu" href="#contact_us"><img src="/assets/img/icon/contact.png"/></a>
-</div>
+</div> -->
 <!-- </div> -->
+
+<div class="hidden-xs navbar-home-fixed">
+	<div class="navbar-header page-scroll">
+	    <a class="navbar-brand page-scroll" href="/">
+	    	<img src="/assets/img/logo_header.png" style="float:left" />
+	    </a>
+	</div>
+
+	<div style="float:left">
+	    <ul class="nav navbar-nav" style="width:100%; float:left">
+	        <li>
+	            <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/news">Berita</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/event">Event</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/song">Lagu</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/video">Video</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/gallery">Galeri</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/merchandise">Merchandise</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/member">Anggota</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/contact">Kontak Kami</a>
+	        </li>
+	    </ul>
+	</div>
+</div>
+
+<div id="up">
+	<a class="page-scroll" href="#banner"><img src="/assets/img/arrow_up.png"/></a>
+</div>
+
 <div id="skrollr-body">
-	<section id="banner" style="position: relative; background-color:#CA292B; z-index:-2">
-		<div style="height:30%">
+	<section id="banner" style="position: relative; background-color:#CA292B; z-index:-2; padding:0px;">
+		<div class="hidden-xs navbar-home" style="position:relative">
+		    <ul class="nav navbar-nav" style="width:100%">
+		        <li>
+		            <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/news">Berita</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/event">Event</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/song">Lagu</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/video">Video</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/gallery">Galeri</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/merchandise">Merchandise</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/member">Anggota</a>
+		        </li>
+		        <li>
+		            <a class="page-scroll menu-header" href="/contact">Kontak Kami</a>
+		        </li>
+		    </ul>
+		</div>
+		<div style="height:30%; position: absolute;">
 			<img src="/assets/img/triangle_ornament.png" height="100%" />
 		</div>
-		<div class="col-xs-12" style="position: fixed; z-index:-1; text-align:center">
+
+		<div class="col-xs-12" style="position: fixed; z-index:-1; text-align:center; top:30%;">
 		<img src="/assets/img/logojawa2.png" height="100%" />
 		</div>
 		<div 
@@ -54,30 +147,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</section>
 
 	<section id="about_us">
-		<div class="bcg skrollable skrollable-between about-us-bg-home" 
-		data-top-top="background-position: center 0px;"
-		data-top-bottom="background-position: center 200px;"
-		data-anchor-target="#about_us">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12">
-						<h2><a href='/about'>Tentang Kami</a></h2>
-						<br/>
-						<?php if(!empty($tagline)):?>
-						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="text-align:left; font-size:1.7em; margin-bottom:25px; border-right: 3px solid #555555; z-index:0">
-							<i class="fa fa-quote-left" style="font-size:1.5em"></i>
-							<?php echo $tagline;?>
-						</div>
-						<?php endif;?>
-						<?php if(!empty($about_us)):?>						
-						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="text-align:left">
-							<?php echo word_limiter($about_us,64);?> [<a href="/about">Read more</a>]
-						</div>
-						<?php endif;?>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<h2><a href='/about'>Tentang Kami</a></h2>
+					<br/>
+					<?php if(!empty($about_us)):?>
+					<div style="text-align:center">
+						<?php echo word_limiter($about_us,64);?>
 					</div>
-				</div>
-				<div class="col-xs-12">
-					<!-- <hr class="hr-home" /> -->
+					<a href="/about"><span class="red-btn">Read more</span></a>
+					<?php endif;?>
 				</div>
 			</div>
 		</div>
@@ -90,58 +170,60 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</section>
 
 	<section id="news">
-		<div class="bcg skrollable skrollable-between news-bg-home" 
-		data-bottom-top="background-position: center 0px;"
-		data-top-bottom="background-position: center 0px;"
-		data-anchor-target="#news">
-			
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-8">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6" style="margin-bottom:10px">
+					<div style="background-color:#F2BF48">
 						<h2><a href="/news">Berita</a></h2>
-					<?php if(!empty($news)):?>
-						<ol type="1">
-						<?php foreach ($news as $key => $news_item) {
-							echo '
-							<li>
-								<dl>
-									<dt><a href="/news/news_detail/'.$news_item->id.'">'.$news_item->title.'</a></dt>
-									<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="/news/news_detail/'.$news_item->id.'">[baca]</a></dd>
-								</dl>
-							</li>';
+					</div>
+					<div class="news-cont-left">
+				<?php if(!empty($news)):?>
+					<ol type="1">
+					<?php foreach ($news as $key => $news_item) {
+						echo '
+						<li>
+							<dl>
+								<dt><a href="/news/news_detail/'.$news_item->id.'">'.$news_item->title.'</a></dt>
+								<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="/news/news_detail/'.$news_item->id.'">[baca]</a></dd>
+							</dl>
+						</li>';
 
-							if ($key == 1) break; //limit only max. 2 news
-						}
-						?>
-						</ol>
-					<?php else:?>
-						<div>Tidak ada berita saat ini.</div>
-					<?php endif;?>
+						if ($key == 1) break; //limit only max. 2 news
+					}
+					?>
+					</ol>
+				<?php else:?>
+					<div>Tidak ada berita saat ini.</div>
+				<?php endif;?>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-sm-6">
+					<div style="background-color:#F17731">
 						<h2><a href="/event">Event</a></h2>
-					<?php if(!empty($events)):?>
-						<ol type="1">
-						<?php foreach ($events as $key => $events_item) {
-							echo '
-							<li>
-								<dl>
-									<dt><a href="/event/event_detail/'.$events_item->id.'">'.$events_item->title.'</a></dt>
-									<dd>'.date('d F Y',$events_item->start_date).(($events_item->start_date != $events_item->end_date) ? ' - '.date('d F Y',$events_item->end_date) : "").'<br/><a href="/event/event_detail/'.$events_item->id.'">[lihat]</a></dd>
-								</dl>
-							</li>';
+					</div>
+					<div class="news-cont-right">
+				<?php if(!empty($events)):?>
+					<ol type="1">
+					<?php foreach ($events as $key => $events_item) {
+						echo '
+						<li>
+							<dl>
+								<dt><a href="/event/event_detail/'.$events_item->id.'">'.$events_item->title.'</a></dt>
+								<dd>'.date('d F Y',$events_item->start_date).(($events_item->start_date != $events_item->end_date) ? ' - '.date('d F Y',$events_item->end_date) : "").'<br/><a href="/event/event_detail/'.$events_item->id.'">[lihat]</a></dd>
+							</dl>
+						</li>';
 
-							if ($key == 1) break; //limit only max. 2 events
-						}
-						?>
-						</ol>
-					<?php else:?>
-						<div>Tidak ada event saat ini.</div>
-					<?php endif;?>
+						if ($key == 1) break; //limit only max. 2 events
+					}
+					?>
+					</ol>
+				<?php else:?>
+					<div>Tidak ada event saat ini.</div>
+				<?php endif;?>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-xs-12">
-			<!-- <hr class="hr-home" /> -->
 		</div>
 	</section>
 
@@ -173,7 +255,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					?>
 					</ol>
 					<div class="col-xs-12">
-						<a href="/song">[Dengarkan]</a>
+						<a href="/song"><span class="org-btn">Listen More</span></a>
 					</div>
 					<?php else:?>
 						<div>Tidak ada lagu saat ini.</div>
@@ -196,7 +278,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php foreach ($videos as $key => $videos_item) {
 					echo '
 					<div class="col-lg-4 col-sm-6 col-xs-12">
-						'.character_limiter($videos_item->title,48).'
+						<div class="video-caption">'.character_limiter($videos_item->title,48).'</div>
 						<div class="videoWrapper">
 							<iframe width="100%" src="https://www.youtube.com/embed/'.$videos_item->link.'?showinfo=0" frameborder="0" allowfullscreen></iframe>
 						</div>
@@ -206,15 +288,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 				?>
 				<div class="col-xs-12" style="text-align:center">
-					<a href="/video">[Tonton yang lain]</a>
+					<a href="/video"><span class="red-btn">Watch More</span></a>
 				</div>
 				<?php else:?>
 					<div>Tidak ada video saat ini.</div>
 				<?php endif;?>
 			</div>
-		</div>
-		<div class="col-xs-12">
-			<!-- <hr class="hr-home" /> -->
 		</div>
 	</section>
 
@@ -224,54 +303,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-xs-12 gallery-header">
 					<h2><a href="/gallery">Galeri</a></h2>
 					<?php if(!empty($photos)):?>
-					Setiap momen spesial bersama Kawandasawolu.<br/>
-					<a href="/gallery">[Lihat selebihnya]</a>
+					Lihat momen-momen keren dan memalukan yang kami lakukan dalam galeri foto berikut ini.
 					<?php endif;?>
 				</div>
 				<?php if(!empty($photos)):?>
 				<div id="gallery-item-cont">
 				<?php
-				$count_rand = (count($photos) >= 5) ? 5 : count($photos);
+				$count_rand = (count($photos) >= 9) ? 9 : count($photos);
 				$photo_index = array_rand($photos, $count_rand);
 				$photo_index = ($photo_index == 0) ? array(0) : $photo_index;
-				?>
-					<div 
-					data-bottom-top="right: 200px;"
-					data-center-center="right: 550px;"
-					class="gallery-item-home"
-					style="right: 0px; top: 40px; width: 100px; height: 100px; background-image:url('/<?php print_r($photos[$photo_index[4]]->photo);?>');">
+				
+				foreach ($photo_index as $key => $index) {?>
+					<div class="gallery-item-slider" style="background-image:url('/<?php print_r($photos[$index]->photo);?>');">
 					</div>
-					<div 
-					data-bottom-top="right: 150px;"
-					data-center-center="right: 450px;"
-					class="gallery-item-home"
-					style="right: 0px; top: 30px; width: 150px; height: 150px; background-image:url('/<?php print_r($photos[$photo_index[3]]->photo);?>');">
-					</div>
-					<div 
-					data-bottom-top="right: 100px;"
-					data-center-center="right: 325px;"
-					class="gallery-item-home"
-					style="right: 0px; top: 20px; width: 200px; height: 200px; background-image:url('/<?php print_r($photos[$photo_index[2]]->photo);?>');">
-					</div>
-					<div 
-					data-bottom-top="right: 50px;"
-					data-center-center="right: 175px;"
-					class="gallery-item-home"
-					style="right: 0px; top: 10px; width: 250px; height: 250px; background-image:url('/<?php print_r($photos[$photo_index[1]]->photo);?>');">
-					</div>
-					<div 
-					class="gallery-item-home" 
-					style="right: 0px; width: 300px; height: 300px; background-image:url('/<?php print_r($photos[$photo_index[0]]->photo);?>');">
-					</div>
+				<?php }?>
+
 				</div>
 				<?php else:?>
 					<div style="text-align:center">Tidak ada foto saat ini.</div>
 				<?php endif;?>
-				<div style="clear:both"></div>
+				<span class="red-btn">
+					See More
+				</span>
 			</div>
-		</div>
-		<div class="col-xs-12">
-			<!-- <hr class="hr-home" /> -->
 		</div>
 	</section>
 
@@ -296,14 +350,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
 					Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
 					<br/><br/>
-					<a href="/merchandise">[Beli sekarang]</a>
+					<a href="/merchandise"><span class="red-btn">Buy Now</span></a>
 					</div>
 					<?php else:?>
 						<div style="text-align:center">Tidak ada merchandise saat ini.</div>
 					<?php endif;?>
-				</div>
-				<div class="col-xs-12">
-					<!-- <hr class="hr-home" /> -->
 				</div>
 			</div>
 		</div>
@@ -317,12 +368,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<?php
 				if(!empty($members)):
-				$count_rand = (count($members) >= 6) ? 6 : count($members);
+				$count_rand = (count($members) >= 5) ? 5 : count($members);
 				$member_index = array_rand($members,$count_rand);
 				$member_index = ($member_index == 0) ? array(0) : $member_index;
 
 				foreach ($member_index as $key => $index) {
-				 	echo '<div class="col-xs-6 col-ms-3 col-sm-2">
+				 	echo '<div class="member-img-cont">
 						<img src="/'.$members[$index]['avatar'].'" class="member-img-home" alt="" width="100%"/><br/>
 						'.$members[$index]['name'].'
 					</div>
@@ -330,7 +381,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 				?>
 				<div class="col-xs-12">
-					<a href="/member">[Kenal kami]</a>
+					<a href="/member"><span class="red-btn">See More</span></a>
 				</div>
 				<?php else:?>
 					<div style="text-align:center">Tidak ada member saat ini.</div>
@@ -352,9 +403,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a href="https://www.soundcloud.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/soundcloud_icon.png" width="64" /></a>
 						<a href="https://www.youtube.com/user/kawandasawolu" target="_blank"><img src="/assets/img/icon/youtube.png" width="64" /></a>
 						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" /></a>
+						<a href="https://plus.google.com/+kawandasawolu/" target="_blank"><img src="/assets/img/icon/gplus.png" width="64" /></a>
 						<br/><br/>
-						Ingin mengenal Kawandasawolu lebih jauh, jangan sungkan untuk <a href="/contact" class="link-mail">menghubungi kami</a>.<br/><br/><br/>
-						<img src="/assets/img/logojawa2.png" height="100%" />
+						Ingin mengenal kami lebih jauh? Atau ingin mengundang kami di acara/pagelaran Anda?<br/>Jangan sungkan untuk menghubungi kami <a href="/contact" class="link-mail">di sini</a>.<br/><br/><br/>
+						<img src="/assets/img/logojawa2.png" id="contact-us-img-logo" />
 						<br/><br/><br/>
 					</div>
 				</div>
@@ -370,6 +422,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="/assets/js/scrolling-nav.js"></script>
 <script type="text/javascript" src="/assets/js/fadeSlideShow-minified.js"></script>
+<script type="text/javascript" src="/assets/slick/slick.min.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
 
@@ -409,6 +462,18 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 	// Kick off one resize to fix all videos on page load
 	}).resize();
 
+	$(document).scroll(function() {
+		var scrollDepth = $(this).scrollTop();
+		var windowHeight = $(window).outerHeight();
+		if (scrollDepth > windowHeight) {
+		    $('.navbar-home-fixed').fadeIn('fast');
+		    $('#up').fadeIn('slow');
+		} else {
+		    $('.navbar-home-fixed').fadeOut('fast');
+		    $('#up').fadeOut('slow');
+		}
+	});
+
 	$(document).ready(function(){
 	    $('#slideshow').fadeSlideShow({
 	    	width: 240,
@@ -419,6 +484,14 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 			PrevElement: false,
 			ListElement: false
 	    });
+
+	    $('#gallery-item-cont').slick({
+	    	dots: true,
+		    slidesToShow: 3,
+		  	slidesToScroll: 3,
+		 	autoplay: true,
+		  	autoplaySpeed: 2000,
+		});
 	});
 </script>
 </body>

@@ -1,9 +1,10 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Lagu</li>
 	</ol>
 	<h1>Kumpulan Lagu</h1><br/>
+	<?php if(!empty($events)):?>
 	<?php foreach ($songs as $key => $songs_item) {
 		echo '
 		<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-bottom:20px">
@@ -18,4 +19,7 @@
 		</div>';
 	}
 	?>
+	<?php else:?>
+		<div>Tidak ada lagu saat ini.</div>
+	<?php endif;?>
 </div>

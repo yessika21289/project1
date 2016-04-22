@@ -1,10 +1,11 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Galeri Album</li>
 	</ol>
 	
 	<h1>Galeri Album</h1><br/>
+	<?php if(!empty($albums)):?>
 	<?php
 		$album_no = 0;
 		foreach ($albums as $key => $albums_item) {
@@ -60,6 +61,9 @@
 
 		}
 	?>
+	<?php else:?>
+		<div>Tidak ada foto saat ini.</div>
+	<?php endif;?>
 </div>
 
 <script>

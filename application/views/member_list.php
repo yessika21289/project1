@@ -1,16 +1,16 @@
 <div class="container content">
-	<ol class="breadcrumb" style="margin-bottom: 5px;">
+	<ol class="breadcrumb hidden-xs" style="margin-bottom: 5px;">
 		<li><a href="/">Home</a></li>
 		<li class="active">Anggota</li>
 	</ol>
 	<h1>Anggota Kawandasawolu</h1><br/>
+	<?php if(!empty($members)):?>
 	<?php foreach ($members as $key => $members_item) {
 		echo '
-		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 member-list-item">
+		<div class="col-lg-2 col-md-3 col-sm-4 col-ms-4 col-xs-6 member-list-item">
 			'.img(array('src'=>'/'.$members_item['avatar'],'alt'=>'profile1','width'=>'100%','class'=>'img-profile')).'
 			<div class="member-item-info">
-				<div>'.$members_item['name'].'</div>
-				<hr/>
+				<div><strong>'.$members_item['name'].'</strong></div>
 				<div>';
 				if(isset($members_item['socmed']['facebook']))
 					echo anchor('http://www.facebook.com/'.$members_item['socmed']['facebook'],img(array('src'=>'assets/img/fb-icon.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
@@ -26,4 +26,8 @@
 		</div>';
 	}
 	?>
+	<?php else:?>
+		<div>Tidak ada anggota saat ini.</div>
+	<?php endif;?>
+</div>
 </div>

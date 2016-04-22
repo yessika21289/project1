@@ -154,13 +154,13 @@ class Members extends CI_Controller {
                 }
                 // ======================================== UPDATE A MEMBER ============================================ //
                 else {
-                    $member = $this->Members_model->getData($_POST['member_id']);
+                    /*$member = $this->Members_model->getData($_POST['member_id']);
 
                     if (!empty($_FILES['avatar']['tmp_name'])) {
                         if (!empty($member[0]['avatar'])) {
                             unlink($member[0]['avatar']);
                         }
-                    }
+                    }*/
 
                     $updated_member_id = $this->Members_model->update($user, $_POST, $avatar_file);
                     if ($updated_member_id) {
