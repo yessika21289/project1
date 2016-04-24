@@ -21,7 +21,7 @@ body{
 }
 
 .container h1{
-	font-family:'Alex Brush';
+	font-family:'Verdana';
 	font-size:60px;
 }
 
@@ -97,7 +97,7 @@ section{
 	padding-bottom: 60px;
 }
 section h2{
-	font-family:'Alex Brush';
+	font-family:'Verdana';
 	font-size: 4em;
 }
 
@@ -330,17 +330,18 @@ hr.hr-home{
 	border-color: #921C1E !important;
 }
 
-.navbar-nav>li:hover{
-	background-color: #DDDDDD !important;
+.navbar-nav>li>a:focus, .navbar-nav>li>a:hover{
+	background-color: #AF2022 !important;
+	color: #FFFFFF !important;
 }
 
 .page-scroll{
 	color: #FFFFFF !important;
 }
 
-.page-scroll:hover{
+/*.page-scroll:hover{
 	color: #000000 !important;
-}
+}*/
 
 .breadcrumb{
 	background-color: transparent !important;
@@ -447,17 +448,18 @@ hr.hr-event{
 }
 
 /*=========VIDEO=========*/
-.video-desc{
+/*.video-desc{
 	height: 250px;
 	word-wrap: break-word;
 	overflow-y: auto;
 	margin-bottom: 50px;
-}
+}*/
 
 .video-caption{
 	background-color: #CA292B;
 	color: #FFFFFF;
-	padding: 0 10px;
+	padding: 5px 15px;
+	line-height: 1.5em;
 }
 
 .videoWrapper {
@@ -465,7 +467,6 @@ hr.hr-event{
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 0px;
 	height: 0;
-	margin-bottom: 25px;
 }
 
 .videoWrapper iframe {
@@ -475,6 +476,19 @@ hr.hr-event{
 	width: 100%;
 	height: 100%;
 }
+
+
+.video-description{
+	line-height:1.5em;
+	padding:5px 0;
+}
+
+.grid-video{
+	width: 350px;
+	float: left;
+	margin: 15px;
+}
+
 
 /*=========SONG=========*/
 .song-cover{
@@ -554,7 +568,7 @@ hr.hr-event{
 }
 
 /*=========MERCHANDISE=========*/
-.merchandise-item-info{
+.merchandise-item-info, #how-to-buy{
 	background-color:rgba(255,255,255,0.9);
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
@@ -566,6 +580,14 @@ hr.hr-event{
 	text-align: center;
 	line-height: 0.8em;
 	padding: 10px;
+}
+
+#how-to-buy{
+	line-height: 1.5em;
+}
+
+#how-to-buy h3{
+	margin-top: 10px;
 }
 
 .merchandise-item-info strong{
@@ -580,6 +602,10 @@ hr.hr-event{
 
 .merchandise-item-info span:last-child{
 	font-style: italic !important;
+}
+
+hr.hr-merchandise{
+	border-top-color: #AAAAAA;
 }
 
 /*=========CONTACT=========*/

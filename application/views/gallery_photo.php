@@ -26,7 +26,7 @@
 <script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="/assets/jquery-fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
+$(window).load(function(){
 	var $grid = $('#grid').imagesLoaded( function() {
 		$('.grid').masonry({
 		  // options

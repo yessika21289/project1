@@ -54,8 +54,7 @@
                                     <label class="control-label col-md-2" style="width: 10%;">Description</label>
 
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control"
-                                               name="description" value="<?php echo $description; ?>">
+                                        <textarea class="form-control editor" name="description" rows="6"><?php echo $description; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="row">

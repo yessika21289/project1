@@ -454,56 +454,6 @@ if (window.jQuery)(function ($) {
 					
 					var names = $('<span/>');
 					$.each(files, function (i, file) {
-						var v = String(file.name || '' ),
-								S = MultiFile.STRING,
-								n = S.label || S.file || S.name,
-								t = S.title || S.tooltip || S.selected,
-								p = '<img class="MultiFile-preview" style="'+ MultiFile.previewCss+'"/>',
-								label =	$(
-										(
-											'<span class="MultiFile-label" title="' + t + '">'+
-												'<span class="MultiFile-title">'+ n +'</span>'+
-												(MultiFile.preview || $(slave).is('.with-preview') ? p : '' )+
-											'</span>'
-										)
-										.replace(/\$(file|name)/gi, (v.match(/[^\/\\]+$/gi)||[v])[0])
-										.replace(/\$(ext|extension|type)/gi, (v.match(/[^\.]+$/gi)||[''])[0])
-										.replace(/\$(size)/gi, sl(file.size || 0))
-										.replace(/\$(preview)/gi, p)
-										.replace(/\$(i)/gi, i)
-								);
-						
-						// now supports preview via locale string.
-						// just add an <img class='MultiFile-preview'/> anywhere within the "file" string
-						label.find('img.MultiFile-preview').each(function(){
-							var t = this;
-							var oFReader = new FileReader();
-							oFReader.readAsDataURL(file);
-							oFReader.onload = function (oFREvent) {
-								t.src = oFREvent.target.result;
-							};
-						});
-
-						// append file label to list
-						if(i>1) names.append(', ');
-						names.append(label);
-
-						var v = String(file.name || '' );
-						names[names.length] =
-							(
-								'<span class="MultiFile-title" title="' + MultiFile.STRING.selected + '">'
-									+ MultiFile.STRING.file +
-								'</span>'
-							)
-							.replace(/\$(file|name)/gi, (v.match(/[^\/\\]+$/gi)||[v])[0])
-							.replace(/\$(ext|extension|type)/gi, (v.match(/[^\.]+$/gi)||[''])[0])
-							.replace(/\$(size)/gi, sl(file.size || 0))
-							.replace(/\$(i)/gi, i)
-						;
-					});
-
-					//$.each(files, function (i, file) {
-						// Create label elements
 						var
 							r = $('<div class="MultiFile-label col-md-3"></div>'),
 							b = $('<a class="MultiFile-remove" href="#' + MultiFile.wrapID + '">' + MultiFile.STRING.remove + '</a>'	)
@@ -575,10 +525,130 @@ if (window.jQuery)(function ($) {
 
 									return false;
 								});
+						var v = String(file.name || '' ),
+								S = MultiFile.STRING,
+								n = S.label || S.file || S.name,
+								t = S.title || S.tooltip || S.selected,
+								p = '<img class="MultiFile-preview" style="'+ MultiFile.previewCss+'"/>',
+								label =	$(
+										(
+											'<span class="MultiFile-label" title="' + t + '">'+
+												'<span class="MultiFile-title">'+ n +'</span><br/>'+
+												(MultiFile.preview || $(slave).is('.with-preview') ? p : '' )+
+											'</span>'
+										)
+										.replace(/\$(file|name)/gi, (v.match(/[^\/\\]+$/gi)||[v])[0])
+										.replace(/\$(ext|extension|type)/gi, (v.match(/[^\.]+$/gi)||[''])[0])
+										.replace(/\$(size)/gi, sl(file.size || 0))
+										.replace(/\$(preview)/gi, p)
+										.replace(/\$(i)/gi, i)
+								);
+						r.append(b,' ',label);
+						// now supports preview via locale string.
+						// just add an <img class='MultiFile-preview'/> anywhere within the "file" string
+						label.find('img.MultiFile-preview').each(function(){
+							var t = this;
+							var oFReader = new FileReader();
+							oFReader.readAsDataURL(file);
+							oFReader.onload = function (oFREvent) {
+								t.src = oFREvent.target.result;
+							};
+						});
+
+						// append file label to list
+						if(i>1) names.append(', ');
+						names.append(r);
+						var v = String(file.name || '' );
+						names[names.length] =
+							(
+								'<span class="MultiFile-title" title="' + MultiFile.STRING.selected + '">'
+									+ MultiFile.STRING.file +
+								'</span>'
+							)
+							.replace(/\$(file|name)/gi, (v.match(/[^\/\\]+$/gi)||[v])[0])
+							.replace(/\$(ext|extension|type)/gi, (v.match(/[^\.]+$/gi)||[''])[0])
+							.replace(/\$(size)/gi, sl(file.size || 0))
+							.replace(/\$(i)/gi, i)
+						;
+					});
+
+					//$.each(files, function (i, file) {
+						// Create label elements
+						/*var
+							r = $('<div class="MultiFile-label col-md-3"></div>'),
+							b = $('<a class="MultiFile-remove" href="#' + MultiFile.wrapID + '">' + MultiFile.STRING.remove + '</a>'	)
+								
+								// ********
+								// TODO:
+								// refactor this as a single event listener on the control's
+								// wrapper for better performance and cleaner code
+								// ********
+								.click(function () {
+
+									// get list of files being removed
+									var files_being_removed = FILE_LIST(slave);
+									
+									//# Trigger Event! onFileRemove
+									MultiFile.trigger('FileRemove', slave, MultiFile, files_being_removed);
+									//# End Event!
+
+									MultiFile.n--;
+									MultiFile.current.disabled = false;
+
+									// remove the relevant <input type="file"/> element
+									$(slave).remove();
+
+									// remove the relevant label
+									$(this).parent().remove();
+
+									// Show most current element again (move into view) and clear selection
+									$(MultiFile.current).css({
+										position: '',
+										top: ''
+									});
+									$(MultiFile.current).reset().val('').attr('value', '')[0].value = '';
+
+									// point to currently visible element (always true, not necessary)
+									//MultiFile.current = MultiFile.wrapper.find('[type=file]:visible');
+
+									// rebuild array with the files that are left.
+									var files_remaining = [], remain_size = 0;
+									// go through each slave
+									$(MultiFile.wrapper).find('input[type=file]').each(function(){
+										// go through each file in each slave
+										$.each(FILE_LIST(this), function (i, file) {
+											if(file.name){
+												//console.log('MultiFile.debug> FileRemove> remaining file', file.size, file);
+												// fresh file array
+												files_remaining[files_remaining.length] = file;
+												// fresh size count
+												remain_size += file.size;
+											};
+										});
+									});
+
+									// update MultiFile object
+									MultiFile.files = files_remaining;
+									MultiFile.total_size = remain_size;
+									MultiFile.size_label = sl(remain_size);
+
+									// update current control's reference to MultiFile object
+									$(MultiFile.wrapper).data('MultiFile', MultiFile);
+
+									//# Trigger Event! afterFileRemove
+									MultiFile.trigger('afterFileRemove', slave, MultiFile, files_being_removed);
+									//# End Event!
+
+									//# Trigger Event! onFileChange
+									MultiFile.trigger('FileChange', MultiFile.current, MultiFile, files_remaining);
+									//# End Event!
+
+									return false;
+								});*/
 
 						// Insert label
 						MultiFile.list.append(
-							r.append(b, ' ', names)
+							names
 						);
 
 					//}); // each file?

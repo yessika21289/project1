@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	echo link_tag('/assets/css/scrolling-nav.css');
 	echo link_tag('/assets/css/font-awesome.min.css');
 	echo link_tag('/assets/jquery-fancybox/jquery.fancybox.css');
-	echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');
+	//echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');
 	?>
 	<script type="text/javascript" src="/assets/js/jquery-2.2.0.min.js"></script>
 </head>

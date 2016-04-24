@@ -184,7 +184,7 @@ class Galleries extends CI_Controller {
                     $this->session->set_flashdata('error_upload', $error);
                     redirect('myadminkw/Galleries/add');
                 }
-                else if (!empty($_FILES['photos']['tmp_name'][0])) {
+                else if (isset($_FILES['photos']['tmp_name']) && count($_FILES['photos']['tmp_name']) > 0) {
                     $photo_upload = array();
                     $photo_thumb = array();
                     for ($i = 0; $i < count($_FILES['photos']['name']); $i++) {

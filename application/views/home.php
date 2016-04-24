@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	echo link_tag('/assets/css/font-awesome.min.css');
 	echo link_tag('/assets/slick/slick.css');
 	echo link_tag('/assets/slick/slick-theme.css');
-	echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');
+	/*echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');*/
 	?>
 	<style type="text/css">
 		.navbar-nav>li {
@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			float: left;
 			display: block;
 		}
-		.navbar-nav>li:hover{
+		.nav>li>a:hover{
 			background-color: #AF2022 !important;
 		}
 	</style>
@@ -92,39 +92,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<a class="page-scroll" href="#banner"><img src="/assets/img/arrow_up.png"/></a>
 </div>
 
-<div id="skrollr-body">
+	<div id="skrollr-body"><div class="hidden-xs navbar-home" style="position:relative">
+	    <ul class="nav navbar-nav" style="width:100%">
+	        <li>
+	            <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/news">Berita</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/event">Event</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/song">Lagu</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/video">Video</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/gallery">Galeri</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/merchandise">Merchandise</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/member">Anggota</a>
+	        </li>
+	        <li>
+	            <a class="page-scroll menu-header" href="/contact">Kontak Kami</a>
+	        </li>
+	    </ul>
+	</div>
 	<section id="banner" style="position: relative; background-color:#CA292B; z-index:-2; padding:0px;">
-		<div class="hidden-xs navbar-home" style="position:relative">
-		    <ul class="nav navbar-nav" style="width:100%">
-		        <li>
-		            <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/news">Berita</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/event">Event</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/song">Lagu</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/video">Video</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/gallery">Galeri</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/merchandise">Merchandise</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/member">Anggota</a>
-		        </li>
-		        <li>
-		            <a class="page-scroll menu-header" href="/contact">Kontak Kami</a>
-		        </li>
-		    </ul>
-		</div>
+		
 		<div style="height:30%; position: absolute;">
 			<img src="/assets/img/triangle_ornament.png" height="100%" />
 		</div>

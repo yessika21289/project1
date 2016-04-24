@@ -4,7 +4,14 @@
 		<li class="active">Merchandise</li>
 	</ol>
 	<h1>Merchandise</h1><br/>
-
+	<div id="how-to-buy">
+	<h3>Cara Beli</h3>
+	1. asdfsfdssafadsfasdas<br/>
+	2. asdfsfdssafadsfasdas<br/>
+	3. asdfsfdssafadsfasdas<br/>
+	4. asdfsfdssafadsfasdas<br/>
+	5. asdfsfdssafadsfasdas
+	</div>
 	<?php if(!empty($merchandise)):?>
 	<div class="grid">
 	<?php
@@ -31,13 +38,15 @@
 <script type="text/javascript" src="/assets/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="/assets/js/imagesloaded.pkgd.js"></script>
 <script type="text/javascript">
-var $grid = $('#grid').imagesLoaded( function() {
-	$('.grid').masonry({
-	  // options
-	  itemSelector: '.grid-photo',
-	  columnWidth: 10,
-	  percentPosition: true,
-	});
+$(window).load(function(){
+	var $grid = $('#grid').imagesLoaded( function() {
+		$('.grid').masonry({
+		  // options
+		  itemSelector: '.grid-photo',
+		  columnWidth: 10,
+		  percentPosition: true,
+		});
+	})
 })
 </script>
 <!-- ==================================== -->
