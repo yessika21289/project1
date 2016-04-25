@@ -26,6 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			float: left;
 			display: block;
 		}*/
+		.navbar-fixed-top{
+			display: none;
+		}
 		.nav>li>a:hover{
 			background-color: #AF2022 !important;
 		}
