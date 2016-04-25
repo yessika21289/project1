@@ -1,5 +1,6 @@
 <footer class="footer">
 	<div class="footer-socmed">
+		Follow us: 
 		<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/fb_icon.png" width="20" /></a>
 		<a href="https://www.twitter.com/kawandasawolu" target="_blank"><img src="/assets/img/twitter_icon.png" width="20"/></a>
 		<a href="http://www.dailymotion.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/dailymotion.png" width="20"/></a>
@@ -12,6 +13,6 @@
 		Powered by <a href="http://www.wk-productions.com">WK Productions</a>
 	</div>
 	<div>
-		Copyright © 2016
+		© 2016 Kawandasawolu
 	</div>
 </footer>

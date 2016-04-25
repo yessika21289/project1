@@ -46,6 +46,7 @@ body{
 	padding: 10px;
 	background-color: #CA292B;
 	color: #FFFFFF;
+	font-size: 14px;
 }
 
 .red-btn:hover{
@@ -56,6 +57,7 @@ body{
 	padding: 10px;
 	background-color: #F79A26;
 	color: #FFFFFF;
+	font-size: 14px;
 }
 
 .org-btn:hover{
@@ -65,6 +67,10 @@ body{
 .btn-wrapper{
 	margin-top: 40px;
 	text-align: center;
+}
+
+.btn-wrapper a:hover{
+	text-decoration: none;
 }
 
 .navbar-home, .navbar-home-fixed{
@@ -149,8 +155,12 @@ hr.hr-home{
 	background-position: center;
 }
 
+.gap-header-home{
+	height: 65px;
+}
+
 #news{
-	/*min-height: 500px;*/
+	padding-top: 60px;
 	background-color: #F1F1F1;
 }
 
@@ -166,9 +176,16 @@ hr.hr-home{
 	margin-left: 30px;
 }
 
+#news dt{
+	font-size: 16px;
+}
+
+#news dd{
+	font-size: 14px;
+}
+
 #news dt a{
 	color: rgb(0,0,0);
-	text-decoration: underline;
 }
 
 .news-bg-home{
@@ -202,7 +219,7 @@ hr.hr-home{
 }
 
 #song h2{
-	margin-top: 0px;
+	margin-top: 30px;
 	margin-left: 12px;
 }
 
@@ -230,6 +247,7 @@ hr.hr-home{
 
 #gallery h2{
 	text-align: center;
+	margin-bottom: 35px;
 }
 
 .gallery-header{
@@ -246,7 +264,7 @@ hr.hr-home{
 }
 
 .gallery-item-slider{
-	height: 150px !important;
+	height: 200px !important;
 	margin: 10px;
 	border: 5px #999999 solid;
 	background-size: cover;
@@ -297,6 +315,7 @@ hr.hr-home{
 #contact_us{
 	color: #FFFFFF;
 	background-color: rgb(202,41,43);
+	padding-bottom: 80px;
 }
 
 #contact_us img{
@@ -618,8 +637,9 @@ hr.hr-merchandise{
 .footer{
 	text-align: center;
 	padding: 10px;
-	background-color: rgba(0,0,0,0.7);
+	background-color: #CA292B;
 	color: #FFFFFF;
+	border-top: 1px #921C1E solid;
 }
 
 .footer-socmed{
@@ -686,6 +706,10 @@ hr.hr-merchandise{
 		width: 30%;
 	}
 
+	#contact-us-img-logo{
+		width: 40%;
+	}
+
 	.grid-video{
 		width: 97%;
 	}
@@ -711,6 +735,10 @@ hr.hr-merchandise{
 		width: 25%;
 	}
 
+	#contact-us-img-logo{
+		width: 30%;
+	}
+
 	.grid-video{
 		width: 45%;
 	}
@@ -723,5 +751,9 @@ hr.hr-merchandise{
 
 	.member-img-cont{
 		width: 50%;
+	}
+
+	#contact-us-img-logo{
+		width: 70%;
 	}
 }

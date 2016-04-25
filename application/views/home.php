@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div> -->
 <!-- </div> -->
 
-<?php include('header_fixed.php');?>
+<?php include('header_fixed_home.php');?>
 
 <div id="up">
 	<a class="page-scroll" href="#banner"><img src="/assets/img/arrow_up.png"/></a>
@@ -60,31 +60,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div id="skrollr-body"><div class="hidden-xs navbar-home" style="position:relative">
 	    <ul class="nav navbar-nav" style="width:100%">
 	        <li>
-	            <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
+	            <a class="page-scroll menu-header" href="#about_us">Tentang Kami</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/news">Berita</a>
+	            <a class="page-scroll menu-header" href="#news">Berita</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/event">Event</a>
+	            <a class="page-scroll menu-header" href="#news">Event</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/song">Lagu</a>
+	            <a class="page-scroll menu-header" href="#song">Lagu</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/video">Video</a>
+	            <a class="page-scroll menu-header" href="#video">Video</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/gallery">Galeri</a>
+	            <a class="page-scroll menu-header" href="#gallery">Galeri</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/merchandise">Merchandise</a>
+	            <a class="page-scroll menu-header" href="#merchandise">Merchandise</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/member">Anggota</a>
+	            <a class="page-scroll menu-header" href="#member">Anggota</a>
 	        </li>
 	        <li>
-	            <a class="page-scroll menu-header" href="/contact">Kontak Kami</a>
+	            <a class="page-scroll menu-header" href="#contact_us">Kontak Kami</a>
 	        </li>
 	    </ul>
 	</div>
@@ -115,6 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12">
+					<div class="gap-header-home"></div>
 					<h2>Tentang Kami</h2>
 					<?php if(!empty($about_us)):?>
 					<div style="text-align:center">
@@ -138,26 +139,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="news">
 		<div class="container">
 			<div class="row">
+				<div class="gap-header-home"></div>
 				<div class="col-xs-12 col-sm-6" style="margin-bottom:10px">
 					<div style="background-color:#F2BF48">
-						<h2>Berita</h2>
+						<h2><a href="/news">Berita</a></h2>
 					</div>
 					<div class="news-cont-left">
 				<?php if(!empty($news)):?>
-					<ol type="1">
 					<?php foreach ($news as $key => $news_item) {
 						echo '
-						<li>
 							<dl>
 								<dt><a href="/news/news_detail/'.$news_item->id.'">'.$news_item->title.'</a></dt>
-								<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="/news/news_detail/'.$news_item->id.'">[baca]</a></dd>
-							</dl>
-						</li>';
+								<dd>'.nl2br(word_limiter($news_item->content,32)).' <a href="/news/news_detail/'.$news_item->id.'">&laquo;baca</a></dd>
+							</dl>';
 
 						if ($key == 1) break; //limit only max. 2 news
 					}
 					?>
-					</ol>
 				<?php else:?>
 					<div>Tidak ada berita saat ini.</div>
 				<?php endif;?>
@@ -166,24 +164,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<div class="col-xs-12 col-sm-6">
 					<div style="background-color:#F17731">
-						<h2>Event</h2>
+						<h2><a href="/event">Event</a></h2>
 					</div>
 					<div class="news-cont-right">
 				<?php if(!empty($events)):?>
-					<ol type="1">
 					<?php foreach ($events as $key => $events_item) {
 						echo '
-						<li>
 							<dl>
 								<dt><a href="/event/event_detail/'.$events_item->id.'">'.$events_item->title.'</a></dt>
-								<dd>'.date('d F Y',$events_item->start_date).(($events_item->start_date != $events_item->end_date) ? ' - '.date('d F Y',$events_item->end_date) : "").'<br/><a href="/event/event_detail/'.$events_item->id.'">[lihat]</a></dd>
-							</dl>
-						</li>';
+								<dd>'.date('d F Y',$events_item->start_date).(($events_item->start_date != $events_item->end_date) ? ' - '.date('d F Y',$events_item->end_date) : "").'<br/><a href="/event/event_detail/'.$events_item->id.'">&laquo;lihat</a></dd>
+							</dl>';
 
 						if ($key == 1) break; //limit only max. 2 events
 					}
 					?>
-					</ol>
 				<?php else:?>
 					<div>Tidak ada event saat ini.</div>
 				<?php endif;?>
@@ -234,8 +228,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="video">
 		<div class="container">
 			<div class="row">
+				<div class="gap-header-home"></div>
 				<div class="col-xs-12">
-					<h2>Video</h2>
+					<h2 style="margin-bottom: 30px;">Video</h2>
 				</div>
 				<?php if(!empty($videos)):?>
 				<?php foreach ($videos as $key => $videos_item) {
@@ -263,10 +258,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="gallery">
 		<div class="container">
 			<div class="row">
+				<div class="gap-header-home"></div>
 				<div class="col-xs-12 gallery-header">
 					<h2><a href="/gallery">Galeri</a></h2>
 					<?php if(!empty($photos)):?>
-					Lihat momen-momen keren dan memalukan yang kami lakukan dalam galeri foto berikut ini.
+					<div>Lihat momen-momen keren dan memalukan yang kami lakukan dalam galeri foto berikut ini.</div>
 					<?php endif;?>
 				</div>
 				<?php if(!empty($photos)):?>
@@ -296,6 +292,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
+					<div class="gap-header-home"></div>
 					<h2>Merchandise</h2>
 					<?php if(!empty($merchandise)):?>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
@@ -327,6 +324,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="member">
 		<div class="container">
 			<div class="row">
+				<div class="gap-header-home"></div>
 				<div class="col-xs-12">
 					<h2>Anggota</h2>
 				</div>
@@ -357,10 +355,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="contact_us">
 		<div class="container">
 			<div class="row">
+				<div class="gap-header-home"></div>
 				<div class="col-xs-12">
 					<h2>Kontak Kami</h2>
-					<br/>
 					<div class="col-xs-12">
+						Ingin mengenal kami lebih jauh? Atau ingin mengundang kami di acara/pagelaran Anda?<br/>Jangan sungkan untuk menghubungi kami <a href="/contact" class="link-mail">di sini</a>.
+						<br/><br/>
 						<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/icon/fb_inverse.png" width="64" /></a>
 						<a href="https://www.twitter.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/twitter_inverse.png" width="64" /></a>
 						<a href="http://www.dailymotion.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/dailymotion.png" width="64" /></a>
@@ -369,9 +369,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" /></a>
 						<a href="https://plus.google.com/+kawandasawolu/" target="_blank"><img src="/assets/img/icon/gplus.png" width="64" /></a>
 						<br/><br/>
-						Ingin mengenal kami lebih jauh? Atau ingin mengundang kami di acara/pagelaran Anda?<br/>Jangan sungkan untuk menghubungi kami <a href="/contact" class="link-mail">di sini</a>.<br/><br/><br/>
 						<img src="/assets/img/logojawa2.png" id="contact-us-img-logo" />
-						<br/><br/><br/>
 					</div>
 				</div>
 			</div>
@@ -429,7 +427,7 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 	$(document).scroll(function() {
 		var scrollDepth = $(this).scrollTop();
 		var windowHeight = $(window).outerHeight();
-		if (scrollDepth > windowHeight) {
+		if ((scrollDepth+1) > windowHeight) {
 		    $('.navbar-fixed-top').fadeIn('fast');
 		    $('#up').fadeIn('slow');
 		} else {
@@ -455,6 +453,22 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 		  	slidesToScroll: 3,
 		 	autoplay: true,
 		  	autoplaySpeed: 2000,
+		  	responsive:[
+		  		{
+		  			breakpoint: 768,
+		  			settings: {
+		  				slidesToShow: 2,
+		  				slidesToScroll: 2
+		  			}
+		  		},
+		  		{
+		  			breakpoint: 450,
+		  			settings: {
+		  				slidesToShow: 1,
+		  				slidesToScroll: 1,
+		  			}
+		  		}
+		  	]
 		});
 	});
 </script>
