@@ -18,14 +18,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	/*echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');*/
 	?>
 	<style type="text/css">
-		.navbar-nav>li {
+		.navbar-home .navbar-nav>li {
 			float: none;
 		    display: inline-block;
 		}
-		.navbar-home-fixed>.navbar-nav>li{
+		/*.navbar-home-fixed>.navbar-nav>li{
 			float: left;
 			display: block;
-		}
+		}*/
 		.nav>li>a:hover{
 			background-color: #AF2022 !important;
 		}
@@ -48,45 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div> -->
 <!-- </div> -->
 
-<div class="hidden-xs navbar-home-fixed">
-	<div class="navbar-header page-scroll">
-	    <a class="navbar-brand page-scroll" href="/">
-	    	<img src="/assets/img/logo_header.png" style="float:left" />
-	    </a>
-	</div>
-
-	<div style="float:left">
-	    <ul class="nav navbar-nav" style="width:100%; float:left">
-	        <li>
-	            <a class="page-scroll menu-header" href="/about">Tentang Kami</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/news">Berita</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/event">Event</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/song">Lagu</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/video">Video</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/gallery">Galeri</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/merchandise">Merchandise</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/member">Anggota</a>
-	        </li>
-	        <li>
-	            <a class="page-scroll menu-header" href="/contact">Kontak Kami</a>
-	        </li>
-	    </ul>
-	</div>
-</div>
+<?php include('header_fixed.php');?>
 
 <div id="up">
 	<a class="page-scroll" href="#banner"><img src="/assets/img/arrow_up.png"/></a>
@@ -150,13 +112,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12">
-					<h2><a href='/about'>Tentang Kami</a></h2>
-					<br/>
+					<h2>Tentang Kami</h2>
 					<?php if(!empty($about_us)):?>
 					<div style="text-align:center">
 						<?php echo word_limiter($about_us,64);?>
 					</div>
-					<a href="/about"><span class="red-btn">Read more</span></a>
+					<div class="col-xs-12 btn-wrapper">
+						<a href="/about"><span class="red-btn">Read more</span></a>
+					</div>
 					<?php endif;?>
 				</div>
 			</div>
@@ -174,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-xs-12 col-sm-6" style="margin-bottom:10px">
 					<div style="background-color:#F2BF48">
-						<h2><a href="/news">Berita</a></h2>
+						<h2>Berita</h2>
 					</div>
 					<div class="news-cont-left">
 				<?php if(!empty($news)):?>
@@ -200,7 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<div class="col-xs-12 col-sm-6">
 					<div style="background-color:#F17731">
-						<h2><a href="/event">Event</a></h2>
+						<h2>Event</h2>
 					</div>
 					<div class="news-cont-right">
 				<?php if(!empty($events)):?>
@@ -238,7 +201,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<?php endif;?>
 				<div class="col-xs-12 col-sm-6">
-					<h2><a href="/song">Lagu</a></h2>
+					<h2>Lagu</h2>
 					<?php if(!empty($songs)):?>
 					<ol type="1">
 					<?php foreach ($songs as $key => $songs_item) {
@@ -254,7 +217,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 					?>
 					</ol>
-					<div class="col-xs-12">
+					<div class="col-xs-12 btn-wrapper" style="text-align: left">
 						<a href="/song"><span class="org-btn">Listen More</span></a>
 					</div>
 					<?php else:?>
@@ -263,23 +226,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12">
-			<!-- <hr class="hr-home" /> -->
-		</div>
 	</section>
 
 	<section id="video">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2><a href="/video">Video</a></h2>
+					<h2>Video</h2>
 				</div>
 				<?php if(!empty($videos)):?>
 				<?php foreach ($videos as $key => $videos_item) {
 					echo '
 					<div class="col-lg-4 col-sm-6 col-xs-12">
 						<div class="video-caption">'.character_limiter($videos_item->title,48).'</div>
-						<div class="videoWrapper">
+						<div class="videoWrapper" style="margin-bottom: 30px;">
 							<iframe width="100%" src="https://www.youtube.com/embed/'.$videos_item->link.'?showinfo=0" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div>';
@@ -287,7 +247,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					if ($key == 2) break; //limit only max. 3 videos
 				}
 				?>
-				<div class="col-xs-12" style="text-align:center">
+				<div class="col-xs-12 btn-wrapper">
 					<a href="/video"><span class="red-btn">Watch More</span></a>
 				</div>
 				<?php else:?>
@@ -322,9 +282,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php else:?>
 					<div style="text-align:center">Tidak ada foto saat ini.</div>
 				<?php endif;?>
-				<span class="red-btn">
-					See More
-				</span>
+				<div class="col-xs-12 btn-wrapper">
+					<a href="/gallery"><span class="red-btn">See More</span></a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -333,9 +293,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2><a href="/merchandise">Merchandise</a></h2>
+					<h2>Merchandise</h2>
 					<?php if(!empty($merchandise)):?>
-					<br/>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
 						<div id="slideshow" style="margin:auto">
 							<?php
@@ -348,9 +307,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 					</div>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
-					Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
-					<br/><br/>
-					<a href="/merchandise"><span class="red-btn">Buy Now</span></a>
+						Kami menjual berbagai merchandise yang menjadi atribut kami. Ini adalah kebanggaan kami untuk memberikan yang terbaik bagi pada fans Kawandasawolu.
+						<br/><br/>
+						<div class="col-xs-12 btn-wrapper" style="text-align:left">
+							<a href="/merchandise"><span class="red-btn">Buy Now</span></a>
+						</div>
 					</div>
 					<?php else:?>
 						<div style="text-align:center">Tidak ada merchandise saat ini.</div>
@@ -364,7 +325,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2><a href="/member">Anggota</a></h2>
+					<h2>Anggota</h2>
 				</div>
 				<?php
 				if(!empty($members)):
@@ -380,7 +341,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					';
 				}
 				?>
-				<div class="col-xs-12">
+				<div class="col-xs-12 btn-wrapper">
 					<a href="/member"><span class="red-btn">See More</span></a>
 				</div>
 				<?php else:?>
@@ -394,7 +355,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2><a href="/contact">Kontak Kami</a></h2>
+					<h2>Kontak Kami</h2>
 					<br/>
 					<div class="col-xs-12">
 						<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/icon/fb_inverse.png" width="64" /></a>
@@ -466,10 +427,10 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 		var scrollDepth = $(this).scrollTop();
 		var windowHeight = $(window).outerHeight();
 		if (scrollDepth > windowHeight) {
-		    $('.navbar-home-fixed').fadeIn('fast');
+		    $('.navbar-fixed-top').fadeIn('fast');
 		    $('#up').fadeIn('slow');
 		} else {
-		    $('.navbar-home-fixed').fadeOut('fast');
+		    $('.navbar-fixed-top').fadeOut('fast');
 		    $('#up').fadeOut('slow');
 		}
 	});

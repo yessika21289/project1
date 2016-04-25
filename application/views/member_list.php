@@ -13,13 +13,13 @@
 				<div><strong>'.$members_item['name'].'</strong></div>
 				<div>';
 				if(isset($members_item['socmed']['facebook']))
-					echo anchor('http://www.facebook.com/'.$members_item['socmed']['facebook'],img(array('src'=>'assets/img/fb-icon.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
+					echo anchor('http://www.facebook.com/'.$members_item['socmed']['facebook'],img(array('src'=>'assets/img/facebook-flat.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
 				if(isset($members_item['socmed']['twitter']))
-					echo anchor('http://www.twitter.com/'.$members_item['socmed']['twitter'],img(array('src'=>'assets/img/twitter-icon.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
+					echo anchor('http://www.twitter.com/'.$members_item['socmed']['twitter'],img(array('src'=>'assets/img/twitter-flat.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
 				if(isset($members_item['socmed']['instagram']))
-					echo anchor('http://www.instagram.com/'.$members_item['socmed']['instagram'],img(array('src'=>'assets/img/instagram-icon.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
+					echo anchor('http://www.instagram.com/'.$members_item['socmed']['instagram'],img(array('src'=>'assets/img/instagram-flat.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
 				if(isset($members_item['socmed']['web']))
-					echo anchor('http://'.$members_item['socmed']['web'],img(array('src'=>'assets/img/web-icon.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
+					echo anchor('http://'.$members_item['socmed']['web'],img(array('src'=>'assets/img/web-flat.png','alt'=>'member social media','width'=>'24')), array('target'=>'_blank'));
 		echo '
 				</div>
 			</div>
