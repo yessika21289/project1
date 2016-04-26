@@ -109,7 +109,7 @@
                 </ul>
             </li>
 
-            <li class="sub-menu <?php if(in_array($menu_active, array('add_merchandise', 'merchandise'))) echo 'active'; ?>">
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_merchandise', 'merchandise', 'howtobuy'))) echo 'active'; ?>">
                 <a href="javascript:" class="">
                     <i class="icon_gift_alt"></i>
                     <span>Merchandise</span>
@@ -121,6 +121,9 @@
                     </li>
                     <li class="<?php if($menu_active == 'merchandise') echo 'active'; ?>">
                         <a class="" href="<?php echo base_url(); ?>myadminkw/Merchandise">See All Merchandise</a>
+                    </li>
+                    <li class="<?php if($menu_active == 'howtobuy') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>myadminkw/Merchandise/howtobuy">How to Buy</a>
                     </li>
                 </ul>
             </li>

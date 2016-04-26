@@ -79,4 +79,50 @@ class Merchandise_model extends CI_Model
         $delete = $this->db->delete('merchandise');
         return $delete;
     }
+
+    function get_howtobuy() {
+        $query = $this->db->get('howtobuy');
+        $result = $query->result();
+        if(!empty($query->result())) return $result[0]->list;
+        else return false;
+    }
+
+    function add_howtobuy($user, $post) {
+        $list = trim(strip_tags($post['howtobuy'], $this->allowed_tags));
+
+        $data = array(
+            'list' => $list,
+            'created_at' => time(),
+            'created_by' => $user,
+            'updated_at' => time(),
+            'updated_by' => $user
+        );
+        $this->db->empty_table('howtobuy');
+        $this->db->query("ALTER TABLE `howtobuy` AUTO_INCREMENT 1");
+        $insert = $this->db->insert('howtobuy', $data);
+        return $insert;
+    }
+
+    function update_howtobuy($user, $post) {
+        $list = trim(strip_tags($post['howtobuy'], $this->allowed_tags));
+
+        $data = array(
+            'list' => $list,
+            'updated_at' => time(),
+            'updated_by' => $user
+        );
+
+        $this->db->where('id', 1);
+        $update = $this->db->update('howtobuy', $data);
+        return $update;
+    }
+
+    function delete_howtobuy() {
+        $delete = $this->db->empty_table('howtobuy');
+        if($delete) {
+            $this->db->query("ALTER TABLE `howtobuy` AUTO_INCREMENT 1");
+            return true;
+        }
+        else return false;
+    }
 }
