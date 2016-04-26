@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
 
-                                <?php endif; ?>
+
 
                                 <div class="row">
                                     <div class="col-md-7">
@@ -129,6 +129,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <?php endif; ?>
 
                             </form>
                         </div>
