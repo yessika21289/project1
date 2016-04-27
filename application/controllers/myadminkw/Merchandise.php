@@ -207,20 +207,15 @@ class Merchandise extends CI_Controller {
 
             if($save == 1) {
                 if(!empty($howtobuy)) {
-                    $updated = $this->Merchandise_model->update_howtobuy($user, $_POST);
+                    $updated = $this->Merchandise_model->update_howtobuy($data['name'], $_POST);
                     if ($updated) $this->session->set_flashdata('update_confirm', 1);
                     redirect('myadminkw/Merchandise/howtobuy');
                 }
                 else {
-                    $added = $this->Merchandise_model->add_howtobuy($user, $_POST);
+                    $added = $this->Merchandise_model->add_howtobuy($data['name'], $_POST);
                     if ($added) $this->session->set_flashdata('add_confirm', 1);
                     redirect('myadminkw/Merchandise/howtobuy');
                 }
-            }
-            elseif($clear == 1) {
-                $delete = $this->Merchandise_model->delete_howtobuy();
-                if($delete) $this->session->set_flashdata('delete_confirm', 1);
-                redirect('myadminkw/Merchandise/howtobuy');
             }
             else {
 

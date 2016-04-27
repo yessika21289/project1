@@ -72,10 +72,6 @@
                                                 type="submit" name="save" value="1">
                                                 Save
                                             </button>
-                                            <button style="margin-top:20px;" class="btn btn-primary"
-                                                    type="submit" name="clear" value="1">
-                                                Clear
-                                            </button>
                                         </span>
                                     </div>
 

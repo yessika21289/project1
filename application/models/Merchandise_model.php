@@ -116,13 +116,4 @@ class Merchandise_model extends CI_Model
         $update = $this->db->update('howtobuy', $data);
         return $update;
     }
-
-    function delete_howtobuy() {
-        $delete = $this->db->empty_table('howtobuy');
-        if($delete) {
-            $this->db->query("ALTER TABLE `howtobuy` AUTO_INCREMENT 1");
-            return true;
-        }
-        else return false;
-    }
 }
