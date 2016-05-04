@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name=”robots” content=”noindex,nofollow”>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="<?php echo $meta_description;?>">
 	<title>Kawandasawolu</title>
 	<link rel="icon" href="/assets/img/faviconkw.ico?" type="image/x-icon">
 	<?php
@@ -115,7 +115,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12">
-					<div class="gap-header-home"></div>
 					<h2>Tentang Kami</h2>
 					<?php if(!empty($about_us)):?>
 					<div style="text-align:center">
@@ -139,7 +138,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="news">
 		<div class="container">
 			<div class="row">
-				<div class="gap-header-home"></div>
 				<div class="col-xs-12 col-sm-6" style="margin-bottom:10px">
 					<div style="background-color:#F2BF48">
 						<h2><a href="/news">Berita</a></h2>
@@ -228,7 +226,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="video">
 		<div class="container">
 			<div class="row">
-				<div class="gap-header-home"></div>
 				<div class="col-xs-12">
 					<h2 style="margin-bottom: 30px;">Video</h2>
 				</div>
@@ -258,7 +255,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="gallery">
 		<div class="container">
 			<div class="row">
-				<div class="gap-header-home"></div>
 				<div class="col-xs-12 gallery-header">
 					<h2><a href="/gallery">Galeri</a></h2>
 					<?php if(!empty($photos)):?>
@@ -272,8 +268,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$photo_index = array_rand($photos, $count_rand);
 				$photo_index = ($photo_index == 0) ? array(0) : $photo_index;
 				
-				foreach ($photo_index as $key => $index) {?>
-					<div class="gallery-item-slider" style="background-image:url('/<?php print_r($photos[$index]->photo);?>');">
+				foreach ($photo_index as $key => $index) {
+					$path_section = explode('/',$photos[$index]->photo);
+                    $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
+                ?>
+					<div class="gallery-item-slider" style="background-image:url('/<?php print_r($thumb_path);?>');">
 					</div>
 				<?php }?>
 
@@ -292,7 +291,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="gap-header-home"></div>
 					<h2>Merchandise</h2>
 					<?php if(!empty($merchandise)):?>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
@@ -324,7 +322,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="member">
 		<div class="container">
 			<div class="row">
-				<div class="gap-header-home"></div>
 				<div class="col-xs-12">
 					<h2>Anggota</h2>
 				</div>
@@ -355,7 +352,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="contact_us">
 		<div class="container">
 			<div class="row">
-				<div class="gap-header-home"></div>
 				<div class="col-xs-12">
 					<h2>Kontak Kami</h2>
 					<div class="col-xs-12">

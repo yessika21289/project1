@@ -118,8 +118,7 @@ section h2 a{
 }
 
 section h2 a:hover{
-	color: #CA292B;
-	text-decoration: none;
+	color: rgb(0,0,0);
 }
 
 hr.hr-home{
@@ -524,7 +523,7 @@ hr.hr-event{
 }
 
 .song-desc h4{
-	margin-bottom: 10px;
+	margin-bottom: 7px;
 }
 
 .song-desc h4 a{
@@ -533,6 +532,7 @@ hr.hr-event{
 
 .song-desc span{
 	font-size: 0.8em;
+	line-height: 1.3em;
 }
 
 .lyric{
@@ -578,7 +578,7 @@ hr.hr-event{
 }
 
 /*=========MERCHANDISE=========*/
-.merchandise-item-info, #how-to-buy{
+.merchandise-item-info{
 	background-color:rgba(255,255,255,0.9);
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
@@ -588,16 +588,24 @@ hr.hr-event{
 	border-top: 1px solid #CCCCCC;
 	border-right: 1px solid #CCCCCC;
 	text-align: center;
-	line-height: 0.8em;
+	line-height: 1.3em;
 	padding: 10px;
 }
 
-#how-to-buy{
+#how-to-buy{ 
 	line-height: 1.5em;
 }
 
 #how-to-buy h3{
 	margin-top: 10px;
+}
+
+#how-to-buy hr{
+	border-top-color: #AAAAAA;
+}
+
+#how-to-buy .how-to-buy-text{
+	margin-left: 18px;
 }
 
 .merchandise-item-info strong{
@@ -612,6 +620,13 @@ hr.hr-event{
 
 .merchandise-item-info span:last-child{
 	font-style: italic !important;
+}
+
+.merchandise-item-title{
+	font-weight: bold;
+    font-size: 1.3em;
+    margin: 3px 0 10px 0;
+    line-height: 1.2em;
 }
 
 hr.hr-merchandise{

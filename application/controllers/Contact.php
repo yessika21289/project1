@@ -38,6 +38,7 @@ class Contact extends CI_Controller {
               'value'       => 'Kirim Pesan',
               'style'		=> 'padding:5px 10px'
 			);
+    $data['meta_description'] = 'Kontak manajemen Kawandasawolu';
 		$data['title'] = 'Kontak Kami';
     $data['send_mail'] = $this->session->userdata('send_mail');
 		$this->load->view('tag_open',$data);

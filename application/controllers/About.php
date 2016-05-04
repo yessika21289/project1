@@ -10,6 +10,7 @@ class About extends CI_Controller {
 
 	public function index()
 	{
+		$data['meta_description'] = 'Informasi mengenai profile dari kawandasawolu';
 		$data['title'] = 'Tentang Kami';
 		$this->load->model('About_us_model');
         $about_us = $this->About_us_model->getData();

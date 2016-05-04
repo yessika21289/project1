@@ -11,6 +11,7 @@ class Member extends CI_Controller {
 
 	public function index()
 	{
+		$data['meta_description'] = 'Daftar anggota Kawandasawolu';
 		$data['title'] = 'Anggota';
 		$this->load->model('Members_model');
         $members = $this->Members_model->getData();

@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Kawandasawolu';
-		$data['meta_description'] = '';
+		$data['meta_description'] = 'Kawandasawolu, sekumpulan para lelaki dari Yogyakarta pengcover lagu 48 group';
 		$data['meta_keywords'] = 'kawandasawolu, empat puluh delapan, 48, JKT48, AKB48';
 		
 		$this->load->model('About_us_model');

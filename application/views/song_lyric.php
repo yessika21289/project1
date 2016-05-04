@@ -4,6 +4,7 @@
 		<li><a href="/song">Song</a></li>
 		<li class="active">Lirik</li>
 	</ol>
+	<?php if(!empty($songs)):?>
 	<h1><?php print_r($songs[0]->title);?></h1>
 	<br/>
 	<div class="col-xs-12">
@@ -18,6 +19,9 @@
 		?>
 		</div>
 	</div>
+	<?php else:?>
+		<div>Lirik lagu tidak ditemukan.</div>
+	<?php endif;?>
 	
 </div>
 

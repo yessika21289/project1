@@ -11,6 +11,7 @@ class News extends CI_Controller {
 
 	public function index()
 	{
+		$data['meta_description'] = 'Berita terbaru terkait Kawandasawolu';
 		$data['title'] = 'Berita';
 		$this->load->model('News_model');
         $news = $this->News_model->getData();
@@ -23,10 +24,12 @@ class News extends CI_Controller {
 
 	public function news_detail($news_id = NULL)
 	{
-		$data['title'] = 'Berita';
 		$this->load->model('News_model');
         $news = $this->News_model->getData($news_id);
         if(!empty($news)) $data['news'] = $news;
+
+        $data['meta_description'] = $news[0]->title.'; berita Kawandasawolu';
+		$data['title'] = $news[0]->title;
 
 		$this->load->view('tag_open',$data);
 		$this->load->view('news_detail');

@@ -40,9 +40,11 @@
 
 			echo '<div style="border: 5px #999999 solid; height: inherit; width:auto">';
 			foreach ($albums_item->photos as $key2 => $photos_item) {
+				$path_section = explode('/',$photos_item->photo);
+                $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
 				echo '<div class="album-cover-photo"
 					style="width:'.$width.'; height:'.$height.'; float:left;
-					background-image:url(\'/'.$photos_item->photo.'\'); background-repeat:no-repeat; background-position:center; background-size:cover">';
+					background-image:url(\'/'.$thumb_path.'\'); background-repeat:no-repeat; background-position:center; background-size:cover">';
 				echo '</div>';
 
 				if($key2 == $key_break) break;

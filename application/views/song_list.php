@@ -4,7 +4,7 @@
 		<li class="active">Lagu</li>
 	</ol>
 	<h1>Kumpulan Lagu</h1><br/>
-	<?php if(!empty($events)):?>
+	<?php if(!empty($songs)):?>
 	<?php foreach ($songs as $key => $songs_item) {
 		echo '
 		<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-bottom:20px">
@@ -13,8 +13,10 @@
 			</div>
 			<div class="song-desc">
 				<h4><a href="/song/lyric/'.$songs_item->id.'">'.$songs_item->title.'</a></h4>
-				<span>Release: '.date('d F Y',$songs_item->release_date).'<br/>
-				Artist: '.$songs_item->artist.'</span>
+				<span>
+					<div>Release: '.date('d F Y',$songs_item->release_date).'</div>
+					<div>Artist: '.$songs_item->artist.'</div>
+				</span>
 			</div>
 		</div>';
 	}

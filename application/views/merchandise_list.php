@@ -6,11 +6,10 @@
 	<h1>Merchandise</h1><br/>
 	<div id="how-to-buy">
 	<h3>Cara Beli</h3>
-	1. asdfsfdssafadsfasdas<br/>
-	2. asdfsfdssafadsfasdas<br/>
-	3. asdfsfdssafadsfasdas<br/>
-	4. asdfsfdssafadsfasdas<br/>
-	5. asdfsfdssafadsfasdas
+	<div class="how-to-buy-text">
+	<?php if(!empty($howtobuy)) echo $howtobuy; ?>
+	</div>
+	<hr/>
 	</div>
 	<?php if(!empty($merchandise)):?>
 	<div class="grid">
@@ -19,7 +18,7 @@
 			echo '<div class="grid-photo">
 					<img src="/'.$merchandise_item->image.'" width="100%" alt=""/>
 					<div class="merchandise-item-info">
-						<strong>'.$merchandise_item->title.'</strong><br/><br/>
+						<div class="merchandise-item-title">'.$merchandise_item->title.'</div>
 						<span>'.$merchandise_item->description.'</span>
 						<hr/>
 						<span>IDR '.number_format($merchandise_item->price,2,",",".").'</span>
