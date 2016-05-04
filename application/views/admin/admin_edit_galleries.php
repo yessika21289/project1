@@ -43,13 +43,14 @@
                         <div class="panel-body">
 
                         <form action="<?php echo base_url(); ?>myadminkw/Galleries/edit_album" class="form-horizontal"
-                              method="post" enctype="multipart/form-data">
+                              method="post" enctype="multipart/form-data" id="form-new-gallery" role="form">
 
                             <div class="row">
                                 <div class="col-md-2">Album</div>
                                 <div class="col-md-4">
+<!--                                    <input type="hidden" name="old_album_title" value="--><?php //echo $title; ?><!--">-->
                                     <input class="form-control" type="text" name="album_title"
-                                           value="<?php echo $title; ?>">
+                                       value="<?php echo $title; ?>" disabled>
                                 </div>
                             </div>
                             <br/>
@@ -57,22 +58,22 @@
                                 <div class="col-md-2">Album Date</div>
                                 <div class="col-md-4">
                                     <input class="form-control" type="date" name="album_date"
-                                       value="<?php echo $album_date; ?>">
-                                    <input type="hidden" name="album_id" value="<?php echo $album_id; ?>">
+                                       value="<?php echo $album_date; ?>" disabled>
+                                    <input type="hidden" id="album_id" name="album_id" value="<?php echo $album_id; ?>">
                                 </div>
                             </div>
 
                             <br/>
 
-                            <div class="row" style="padding-left: 15px;">
+                            <div class="row" style="padding-left: 15px;" id="images_preview">
                                 <?php foreach ($photos as $photo): ?>
-                                    <div class="MultiFile-label col-md-3">
-                                        <a class="MultiFile-remove"
+                                    <div class="img-preview-label col-md-3">
+                                        <a class="img-preview-remove"
                                            href="<?php echo base_url() ?>myadminkw/Galleries/del_photo/<?php echo $photo->id; ?>">
                                             <i class="fa fa-trash-o"></i>
                                         </a>
-                                        <span class="MultiFile-label">
-                                            <span class="MultiFile-title">
+                                        <span class="img-preview-label">
+                                            <span class="img-preview-title">
                                                 <?php echo substr($photo->photo, strrpos($photo->photo, '/') + 1); ?>
                                             </span>
                                             <img class="MultiFile-preview" style="max-height: 150px; max-width: 150px;"
@@ -87,7 +88,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label><strong>Add more photos</strong></label>
-                                    <input type="file" multiple class="multi with-preview" name="photos[]"/>
+                                    <input type="file" multiple name="photos[]" id="photos"/>
+                                </div>
+                                <div class="uploading">
+                                    <label>&nbsp;</label>
+                                    <img src="<?php echo base_url().'assets/img/uploading.gif';?>"/>
                                 </div>
                             </div>
 
