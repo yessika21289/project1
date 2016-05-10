@@ -13,14 +13,13 @@
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/form-validation-script.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.form.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
 
 <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.uploadPreview.min.js"></script>
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>-->
-<script src="<?php echo base_url(); ?>assets/multifile-master/jquery.MultiFile.js" type="text/javascript"
-        language="javascript"></script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/tinymce/tinymce.min.js"></script>
 
@@ -140,6 +139,23 @@
     function addAlbum() {
         $("#add-album-form").toggle('slow');
     }
+
+    $(document).ready(function(){
+        $('#photos').on('change',function(){
+            $('#form-new-gallery').ajaxForm({
+                target:'#images_preview',
+                beforeSubmit:function(e){
+                    $('.uploading').show();
+                },
+                success:function(e){
+                    $('.uploading').hide();
+                    window.location.href = '/myadminkw/Galleries/edit/'+$("#album_id").val();
+                },
+                error:function(e){
+                }
+            }).submit();
+        });
+    });
 
 </script>
 
