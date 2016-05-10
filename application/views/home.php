@@ -336,8 +336,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				foreach ($member_index as $key => $index) {
 				 	echo '<div class="member-img-cont">
-						<img src="/'.$members[$index]['avatar'].'" class="member-img-home" alt="" width="100%"/><br/>
-						'.$members[$index]['name'].'
+						<img src="/'.$members[$index]['avatar'].'" class="member-img-home" alt="" width="100%"/>
+						<div class="member-item-info">'.$members[$index]['name'].'</div>
 					</div>
 					';
 				}
