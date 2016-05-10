@@ -16,7 +16,7 @@
 	<?php
 		foreach ($merchandise as $key => $merchandise_item) {
 			echo '<div class="grid-photo">
-					<img src="/'.$merchandise_item->image.'" width="100%" alt=""/>
+					<img src="/'.$merchandise_item->image.'" width="100%" alt="'.$merchandise_item->title.'"/>
 					<div class="merchandise-item-info">
 						<div class="merchandise-item-title">'.$merchandise_item->title.'</div>
 						<span>'.$merchandise_item->description.'</span>

@@ -13,7 +13,7 @@
             $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
 			echo '<div class="grid-photo">
 				<a class="album_photo" rel='.str_replace(' ','_','album').' href="/'.$photos_item->photo.'">
-					<img src="/'.$thumb_path.'" width="100%" alt=""/>
+					<img src="/'.$thumb_path.'" width="100%" alt="'.$photos[0]->title.' '.$key.'"/>
 				</a>
 			</div>';
 		}

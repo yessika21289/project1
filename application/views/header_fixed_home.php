@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="/">
-                	<img src="/assets/img/logo_header.png" style="float:left" />
+                	<img src="/assets/img/logo_header.png" style="float:left" alt="Header Logo Kawandasawolu Home" />
                 </a>
             </div>
 

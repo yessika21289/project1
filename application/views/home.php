@@ -22,10 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			float: none;
 		    display: inline-block;
 		}
-		/*.navbar-home-fixed>.navbar-nav>li{
-			float: left;
-			display: block;
-		}*/
 		.navbar-fixed-top{
 			display: none;
 		}
@@ -36,25 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-<!-- <div class="navbar hidden-xs" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:0; z-index:1; opacity:0.7; width: 55px; height:100%"> -->
-
-<!-- <div class="navbar hidden-xs" style="background-image:url('/assets/img/batik_back2.jpg'); background-size:contain;position:fixed; right:0; top:20%; z-index:1; opacity:0.7">
-	<a class="page-scroll right-menu" href="#banner"><img src="/assets/img/icon/home.png"/></a>
-	<a class="page-scroll right-menu" href="#about_us"><img src="/assets/img/icon/about.png"/></a>
-	<a class="page-scroll right-menu" href="#news"><img src="/assets/img/icon/news.png"/></a>
-	<a class="page-scroll right-menu" href="#song"><img src="/assets/img/icon/song.png"/></a>
-	<a class="page-scroll right-menu" href="#video"><img src="/assets/img/icon/video.png"/></a>
-	<a class="page-scroll right-menu" href="#gallery"><img src="/assets/img/icon/album.png"/></a>
-	<a class="page-scroll right-menu" href="#merchandise"><img src="/assets/img/icon/hat.png"/></a>
-	<a class="page-scroll right-menu" href="#member"><img src="/assets/img/icon/member.png"/></a>
-	<a class="page-scroll right-menu" href="#contact_us"><img src="/assets/img/icon/contact.png"/></a>
-</div> -->
-<!-- </div> -->
-
 <?php include('header_fixed_home.php');?>
 
 <div id="up">
-	<a class="page-scroll" href="#banner"><img src="/assets/img/arrow_up.png"/></a>
+	<a class="page-scroll" href="#banner"><img src="/assets/img/arrow_up.png" alt="Button to go to the top of Kawandasawolu homepage" title="Go to top Kawandasawolu"/></a>
 </div>
 
 	<div id="skrollr-body"><div class="hidden-xs navbar-home" style="position:relative">
@@ -91,23 +72,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section id="banner" style="position: relative; background-color:#CA292B; z-index:-2; padding:0px;">
 		
 		<div style="height:30%; position: absolute;">
-			<img src="/assets/img/triangle_ornament.png" height="100%" />
+			<img src="/assets/img/triangle_ornament.png" height="100%" alt="Ornamen Segitiga Kawandasawolu" />
 		</div>
 
 		<div class="col-xs-12" style="position: fixed; z-index:-1; text-align:center; top:30%;">
-		<img src="/assets/img/logojawa2.png" height="100%" />
+		<img src="/assets/img/logojawa2.png" height="100%" alt="Logo Kawandasawolu" />
 		</div>
 		<div 
 		data-top-bottom="left:-200px;"
 		data-bottom-bottom="left:0px;"
 		style="height:40%; position: absolute; bottom: 0; right:0">
-		<img src="/assets/img/clouds.png" height="100%" />
+		<img src="/assets/img/clouds.png" height="100%" alt="Ornamen Langit Kawandasawolu" />
 		</div>
 		<div 
 		data-top-bottom="left:300px;"
 		data-bottom-bottom="left:0px;"
 		style="height: 30%; position: absolute; bottom: 0;">
-		<img src="/assets/img/becak_tugu_pohon.png" height="100%" />
+		<img src="/assets/img/becak_tugu_pohon.png" height="100%" alt="Becak Tugu Pohon Kawandasawolu" />
 		</div>
 	</section>
 
@@ -192,7 +173,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-sm-6 hidden-xs song-cover-home"
 					data-bottom-top="margin-left:-500px; transform:rotate(-90deg);"
 					data-center-center="margin-left:-100px; transform:rotate(0deg);">
-					<img src="<?php print_r(str_replace('.','_home.',$songs[0]->song_cover_path));?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
+					<?php
+						$song_cover = (!empty($songs[0]->song_cover_path)) ? str_replace('.','_home.',$songs[0]->song_cover_path) : 'assets/img/default_cover.png';
+					?>
+					<img src="/<?php echo $song_cover;?>" alt="<?php print_r($songs[0]->title);?>" width="100%" />
 				</div>
 				<?php endif;?>
 				<div class="col-xs-12 col-sm-6">
@@ -208,7 +192,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</dl>
 						</li>';
 
-						if ($key == 4) break; //limit only max. 5 songs
+						if ($key == 2) break; //limit only max. 5 songs
 					}
 					?>
 					</ol>
@@ -300,7 +284,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							$merchandise_index = array_rand($merchandise, $count_rand);
 							$merchandise_index = ($merchandise_index == 0) ? array(0) : $merchandise_index;
 							foreach ($merchandise_index as $key => $index) {?>
-						    <div style="background-color:#F1F1F1"><img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="" /></div>
+						    <div style="background-color:#F1F1F1">
+						    	<img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="<?php print_r($merchandise[$index]->title);?>" />
+						    </div>
 						    <?php } ?>
 						</div>
 					</div>
@@ -333,7 +319,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				foreach ($member_index as $key => $index) {
 				 	echo '<div class="member-img-cont">
-						<img src="/'.$members[$index]['avatar'].'" class="member-img-home" alt="" width="100%"/><br/>
+						<img src="/'.$members[$index]['avatar'].'" class="member-img-home" alt="'.$members[$index]['name'].'" width="100%"/><br/>
 						'.$members[$index]['name'].'
 					</div>
 					';
@@ -357,15 +343,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-12">
 						Ingin mengenal kami lebih jauh? Atau ingin mengundang kami di acara/pagelaran Anda?<br/>Jangan sungkan untuk menghubungi kami <a href="/contact" class="link-mail">di sini</a>.
 						<br/><br/>
-						<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/icon/fb_inverse.png" width="64" /></a>
-						<a href="https://www.twitter.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/twitter_inverse.png" width="64" /></a>
-						<a href="http://www.dailymotion.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/dailymotion.png" width="64" /></a>
-						<a href="https://www.soundcloud.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/soundcloud_icon.png" width="64" /></a>
-						<a href="https://www.youtube.com/user/kawandasawolu" target="_blank"><img src="/assets/img/icon/youtube.png" width="64" /></a>
-						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" /></a>
-						<a href="https://plus.google.com/+kawandasawolu/" target="_blank"><img src="/assets/img/icon/gplus.png" width="64" /></a>
+						<a href="https://www.facebook.com/kawandasawolu.yk/" target="_blank"><img src="/assets/img/icon/fb_inverse.png" width="64" alt="Facebook Kawandasawolu" /></a>
+						<a href="https://www.twitter.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/twitter_inverse.png" width="64" alt="Twitter Kawandasawolu" /></a>
+						<a href="http://www.dailymotion.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/dailymotion.png" width="64" alt="Dailymotion Kawandasawolu" /></a>
+						<a href="https://www.soundcloud.com/kawandasawolu" target="_blank"><img src="/assets/img/icon/soundcloud_icon.png" width="64" alt="Soundcloud Kawandasawolu" /></a>
+						<a href="https://www.youtube.com/user/kawandasawolu" target="_blank"><img src="/assets/img/icon/youtube.png" width="64" alt="Youtube Kawandasawolu" /></a>
+						<a href="https://www.instagram.com/kawandasawolu/" target="_blank"><img src="/assets/img/icon/instagram.png" width="64" alt="Instagram Kawandasawolu" /></a>
+						<a href="https://plus.google.com/+kawandasawolu/" target="_blank"><img src="/assets/img/icon/gplus.png" width="64" alt="Gplus Kawandasawolu" /></a>
 						<br/><br/>
-						<img src="/assets/img/logojawa2.png" id="contact-us-img-logo" />
+						<img src="/assets/img/logojawa2.png" id="contact-us-img-logo" alt="Logo Kawandasawolu" />
 					</div>
 				</div>
 			</div>

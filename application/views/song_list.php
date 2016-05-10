@@ -6,10 +6,11 @@
 	<h1>Kumpulan Lagu</h1><br/>
 	<?php if(!empty($songs)):?>
 	<?php foreach ($songs as $key => $songs_item) {
+		$song_cover = (!empty($songs_item->song_cover_path)) ? $songs_item->song_cover_path : 'assets/img/default_cover.png';
 		echo '
 		<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="margin-bottom:20px">
 			<div class="song-cover">
-				<img src="/'.$songs_item->song_cover_path.'" width="100" height="100" />
+				<img src="/'.$song_cover.'" width="100" height="100" alt="'.$songs_item->title.'" />
 			</div>
 			<div class="song-desc">
 				<h4><a href="/song/lyric/'.$songs_item->id.'">'.$songs_item->title.'</a></h4>

@@ -8,7 +8,8 @@
 	<h1><?php print_r($songs[0]->title);?></h1>
 	<br/>
 	<div class="col-xs-12">
-		<img src="/<?php print_r($songs[0]->song_cover_path);?>" width="200" height="200" />
+		<?php $song_cover = (!empty($songs[0]->song_cover_path)) ? $songs[0]->song_cover_path : 'assets/img/default_cover.png';?>
+		<img src="/<?php print_r($song_cover);?>" width="200" height="200" alt="<?php print_r($songs[0]->title);?>" />
 		<br/>Release: <?php print_r(date('d F Y',$songs[0]->release_date));?><br/><br/>
 		<audio src="/<?php print_r($songs[0]->song_path);?>" preload="auto"></audio>
 		
