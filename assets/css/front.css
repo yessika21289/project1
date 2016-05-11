@@ -1,3 +1,14 @@
+@font-face {
+	font-family: "AvantGarde";
+    src: url("/assets/fonts/Avant Garde Book BT.eot");
+    src: url("/assets/fonts/Avant Garde Book BT.eot?#iefix") format("embedded-opentype"),
+    	 url("/assets/fonts/Avant Garde Book BT.woff2") format("woff2"),
+		 url("/assets/fonts/Avant Garde Book BT.woff") format("woff"),
+		 url("/assets/fonts/Avant Garde Book BT.ttf") format("truetype"),
+		 url('/assets/fonts/Avant Garde Book BT.otf') format('otf'),
+		 url("/assets/fonts/Avant Garde Book BT.svg#AvantGarde-Book Th") format("svg");
+}
+
 * {
 	padding:0;
 	margin:0;
@@ -21,7 +32,7 @@ body{
 }
 
 .container h1{
-	font-family:'Verdana';
+	font-family:'AvantGarde';
 	font-size:60px;
 }
 
@@ -108,7 +119,7 @@ section{
 	padding-bottom: 60px;
 }
 section h2{
-	font-family:'Verdana';
+	font-family:'AvantGarde';
 	font-size: 48px;
 	margin: 0 0 40px 0;
 }
@@ -512,7 +523,7 @@ hr.hr-event{
 	-moz-border-radius: 25px;
 	border-radius:25px;
 	background-color: rgba(255,255,255,0.5);
-	height: 122px;
+	height: 137px;
 	float: left;
 	width:60%;
 	padding: 0px 10px;

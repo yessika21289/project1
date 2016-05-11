@@ -179,8 +179,8 @@ class Songs extends CI_Controller {
                             $crop3_config['source_image']  = $cover_file_home;
                             $crop3_config['new_image'] = $cover_file;
 
-                            $crop3_config['width']  = 135;
-                            $crop3_config['height'] = 135;
+                            $crop3_config['width']  = 200;
+                            $crop3_config['height'] = 200;
 
                             $this->image_lib->initialize($crop3_config);
 

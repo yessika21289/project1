@@ -240,7 +240,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 gallery-header">
-					<h2><a href="/gallery">Galeri</a></h2>
+					<h2>Galeri</h2>
 					<?php if(!empty($photos)):?>
 					<div>Lihat momen-momen keren dan memalukan yang kami lakukan dalam galeri foto berikut ini.</div>
 					<?php endif;?>
