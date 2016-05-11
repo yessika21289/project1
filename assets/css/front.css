@@ -300,6 +300,7 @@ hr.hr-home{
 	width: 15%;
 	margin: 20px;
 	display:inline-block;
+	font-weight: bold;
 }
 
 .member-img-home{
@@ -336,7 +337,7 @@ hr.hr-home{
 /*==========HEADER=========*/
 .kw-nav-top{
 	background-color: #CA292B !important;
-	border-color: #921C1E !important;
+	border: none !important;
 }
 
 .navbar-nav>li>a:focus, .navbar-nav>li>a:hover{
@@ -652,9 +653,8 @@ hr.hr-merchandise{
 .footer{
 	text-align: center;
 	padding: 10px;
-	background-color: #CA292B;
+	background-color: #AF2022;
 	color: #FFFFFF;
-	border-top: 1px #921C1E solid;
 }
 
 .footer-socmed{

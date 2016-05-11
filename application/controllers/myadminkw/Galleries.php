@@ -83,7 +83,8 @@ class Galleries extends CI_Controller {
             $user = $this->session->userdata('username');
             $this->load->model('Galleries_model');
             $path = 'assets/galleries/';
-            $new_album_dir = $path . strtolower($_POST['album_title']) . '/';
+            $new_album_dir = $path . strtolower($_POST['album_title']);
+//            $old_album_dir = $path . strtolower($_POST['old_album_title']);
 
             if (!empty($_POST)) {
                 $album_id = $_POST['album_id'];
@@ -326,7 +327,7 @@ class Galleries extends CI_Controller {
                 if (!empty($photos)) {
                     foreach ($photos as $photo) {
                         unlink($photo->photo);
-                        $path_section = explode('/',$photo_file[0]->photo);
+                        $path_section = explode('/',$photo->photo);
                         $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
                         unlink($thumb_path);
                     }
