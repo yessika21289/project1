@@ -42,7 +42,7 @@
                     </header>
                         <div class="panel-body">
 
-                        <form action="<?php echo base_url(); ?>myadminkw/Galleries/edit_album" class="form-horizontal"
+                        <form action="<?php echo base_url(); ?>myadminkw/Galleries/add" class="form-horizontal"
                               method="post" enctype="multipart/form-data" id="form-new-gallery" role="form">
 
                             <div class="row">
@@ -101,11 +101,8 @@
                             <div class="row">
                                 <div class="col-md-12 ">
                                     <span class="pull-left">
-                                        <button type="submit" class="btn btn-primary">
-                                            Save
-                                        </button>
-                                        <a class="btn btn-danger" title="Cancel"
-                                           href="<?php echo base_url(); ?>myadminkw/Galleries">Cancel
+                                        <a class="btn btn-danger" title="Album List"
+                                           href="<?php echo base_url(); ?>myadminkw/Galleries">Back to Album List
                                         </a>
                                     </span>
                                 </div>
