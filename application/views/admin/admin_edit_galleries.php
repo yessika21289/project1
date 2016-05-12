@@ -79,7 +79,7 @@
                                             <span class="img-preview-title">
                                                 <?php echo substr($photo->photo, strrpos($photo->photo, '/') + 1); ?>
                                             </span>
-                                            <img class="MultiFile-preview" style="max-height: 150px; max-width: 150px;"
+                                            <img class="MultiFile-preview" style="max-height: 130px; max-width: 150px;"
                                                  src="<?php echo base_url() . $thumb_path; ?>">
                                         </span>
                                     </div>
