@@ -119,10 +119,8 @@ class Galleries extends CI_Controller {
                             redirect('myadminkw/Galleries/add');
                         }
                     }
-
+                    $this->load->library('image_lib');
                     foreach ($photo_upload as $key => $photo_item) {
-                        $this->load->library('image_lib');
-
                         $size = getimagesize($photo_item);
                         $img_width = $size[0];
                         $img_height = $size[1];
@@ -140,13 +138,20 @@ class Galleries extends CI_Controller {
                     }
 
                     foreach ($photo_upload as $key => $photo_item) {
-                        $config2['image_library'] = 'gd2';
-                        $config2['source_image'] = $photo_item;
-                        $config2['new_image'] = $photo_thumb[$key];
-                        $config2['width'] = 250;
+                        $size = getimagesize($photo_item);
+                        $img_width = $size[0];
+                        $img_height = $size[1];
 
-                        $this->image_lib->initialize($config2);
-                        $this->image_lib->resize();                        
+                            $config2['image_library'] = 'gd2';
+                            $config2['source_image'] = $photo_item;
+                            $config2['new_image'] = $photo_thumb[$key];
+
+                            if($img_width > 400 || $img_height > 400) {
+                                $config2['width'] = 400;
+                            }
+
+                            $this->image_lib->initialize($config2);
+                            $this->image_lib->resize();
                     }
                 }
 
