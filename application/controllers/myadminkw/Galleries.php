@@ -71,7 +71,7 @@ class Galleries extends CI_Controller {
 
             $added_id = $this->Galleries_model->addAlbum($user, $_POST, $album_dir);
             if ($added_id) $this->session->set_flashdata('added_id', $added_id);
-            redirect('myadminkw/Galleries/add');
+            redirect('myadminkw/Galleries/edit/'.$added_id);
         } else {
             redirect('myadminkw');
         }

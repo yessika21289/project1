@@ -50,7 +50,7 @@
                                 <div class="col-md-4">
 <!--                                    <input type="hidden" name="old_album_title" value="--><?php //echo $title; ?><!--">-->
                                     <input class="form-control" type="text" name="album_title"
-                                       value="<?php echo $title; ?>" disabled>
+                                       value="<?php echo $title; ?>" readonly>
                                 </div>
                             </div>
                             <br/>
@@ -58,7 +58,7 @@
                                 <div class="col-md-2">Album Date</div>
                                 <div class="col-md-4">
                                     <input class="form-control" type="date" name="album_date"
-                                       value="<?php echo $album_date; ?>" disabled>
+                                       value="<?php echo $album_date; ?>" readonly>
                                     <input type="hidden" id="album_id" name="album_id" value="<?php echo $album_id; ?>">
                                 </div>
                             </div>
