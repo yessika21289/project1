@@ -96,17 +96,6 @@ class Galleries_model extends CI_Model
         return $album_id;
     }
 
-    function editPhotos($user, $photo_id, $new_photo) {
-        $data = array(
-            'photo' => $new_photo,
-            'updated_at' => time(),
-            'updated_by' => $user
-        );
-        $this->db->where('id', $photo_id);
-        if($this->db->update('photos', $data)) return true;
-        else return false;
-    }
-
     function deletePhoto($photo_id) {
         $this->db->where('id', $photo_id);
         $delete = $this->db->delete('photos');
