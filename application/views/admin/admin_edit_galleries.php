@@ -66,7 +66,10 @@
                             <br/>
 
                             <div class="row" style="padding-left: 15px;" id="images_preview">
-                                <?php foreach ($photos as $photo): ?>
+                                <?php foreach ($photos as $photo):
+                                    $path_section = explode('/',$photo->photo);
+                                    $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
+                                ?>
                                     <div class="img-preview-label col-md-3">
                                         <a class="img-preview-remove"
                                            href="<?php echo base_url() ?>myadminkw/Galleries/del_photo/<?php echo $photo->id; ?>">
@@ -77,7 +80,7 @@
                                                 <?php echo substr($photo->photo, strrpos($photo->photo, '/') + 1); ?>
                                             </span>
                                             <img class="MultiFile-preview" style="max-height: 150px; max-width: 150px;"
-                                                 src="<?php echo base_url() . $photo->photo; ?>">
+                                                 src="<?php echo base_url() . $thumb_path; ?>">
                                         </span>
                                     </div>
                                 <?php endforeach; ?>
