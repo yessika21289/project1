@@ -109,7 +109,6 @@ class Galleries extends CI_Controller {
                         }
                         else if (move_uploaded_file($_FILES['photos']['tmp_name'][$i], $photo_file)) {
                             $added_id = $this->Galleries_model->addPhotos($user, $photo_file, $album_id);
-
                             array_push($photo_upload, $photo_file);
                             array_push($photo_thumb, $thumb_file);
                         }
@@ -119,6 +118,7 @@ class Galleries extends CI_Controller {
                             redirect('myadminkw/Galleries/add');
                         }
                     }
+
                     $this->load->library('image_lib');
                     foreach ($photo_upload as $key => $photo_item) {
                         $size = getimagesize($photo_item);
@@ -134,29 +134,36 @@ class Galleries extends CI_Controller {
                             
                             $this->image_lib->initialize($config);
                             $this->image_lib->resize();
+                            $this->image_lib->clear();
                         }
                     }
 
                     foreach ($photo_upload as $key => $photo_item) {
-                        $size = getimagesize($photo_item);
-                        $img_width = $size[0];
-                        $img_height = $size[1];
+                        $size_thumb = getimagesize($photo_item);
+                        $thumb_width = $size_thumb[0];
+                        $thumb_height = $size_thumb[1];
 
-                            $config2['image_library'] = 'gd2';
-                            $config2['source_image'] = $photo_item;
-                            $config2['new_image'] = $photo_thumb[$key];
+                        $config2['image_library'] = 'gd2';
+                        $config2['source_image'] = $photo_item;
+                        $config2['new_image'] = $photo_thumb[$key];
 
-                            if($img_width > 400 || $img_height > 400) {
-                                $config2['width'] = 400;
-                            }
+                        if($thumb_width > 400 || $thumb_height > 400) {
+                            $config2['width'] = 400;
+                            $config2['height'] = 400;
+                        }
+                        else{
+                            $config2['width'] = '';
+                            $config2['height'] = '';
+                        }
 
-                            $this->image_lib->initialize($config2);
-                            $this->image_lib->resize();
+                        $this->image_lib->initialize($config2);
+                        $this->image_lib->resize();
+                        $this->image_lib->clear();
                     }
                 }
 
-                if ($added_id) $this->session->set_flashdata('added_id', $added_id);
-                redirect('myadminkw/Galleries');
+                //if ($added_id) $this->session->set_flashdata('added_id', $added_id);
+                //redirect('myadminkw/Galleries');
             }
             elseif ($this->input->get('is_active') != NULL) {
                 $post['album_id'] = $this->input->get('id');
