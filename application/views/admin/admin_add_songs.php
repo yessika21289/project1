@@ -1,3 +1,19 @@
+<style type="text/css">
+    .ui-progressbar {
+        position: relative;
+    }
+    .progress-label {
+        position: absolute;
+        left: 50%;
+        top: 4px;
+        font-weight: bold;
+        text-shadow: 1px 1px 0 #fff;
+    }
+    .ui-widget-header {
+        background-color: #4cd964;
+        border-color: #4cd964;
+    }
+</style>
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
@@ -45,7 +61,7 @@
                     </header>
                     <div class="panel-body">
                         <div class="form">
-                            <form action="<?php echo base_url(); ?>myadminkw/Songs/add" class="form-horizontal"
+                            <form action="<?php echo base_url(); ?>myadminkw/Songs/add" id ="uploadSong" class="form-horizontal"
                                   method="post" enctype="multipart/form-data">
                                 <div class="form-group form-song">
 
@@ -71,7 +87,7 @@
                                             <label class="pull-right upload-song">Upload song :</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="file" class="form-control" name="song">
+                                            <input type="file" id="song-file" class="form-control" name="song">
                                         </div>
                                     </div>
 
@@ -80,7 +96,12 @@
                                             <label class="pull-right upload-song">Lyric :</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea class="form-control editor-2" name="lyric" rows="20"><?php echo $lyric; ?></textarea>
+                                            <textarea class="form-control editor-2" name="lyric" rows="2"><?php echo $lyric; ?></textarea>
+                                            <div class="row" style="margin-top:20px; margin-left: 0px; width: 100%">
+                                                <div id="progressbar">
+                                                    <div class="progress-label"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -110,3 +131,65 @@
 <!--main content end-->
 </section>
 <!-- container section start -->
+<script type="text/javascript">
+    $('#uploadSong').submit(function(e) {
+        $(".btn-primary").attr("disabled","disabled");
+        $(".btn-danger").attr("disabled","disabled");
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: "<?php echo base_url(); ?>myadminkw/Songs/add",
+            data:formData,
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                if(myXhr.upload){
+                    if($("#song-file").val() != "") {
+                        myXhr.upload.addEventListener('progress',progress, false);
+                    }
+                }
+                return myXhr;
+            },
+            cache:false,
+            contentType: false,
+            processData: false,
+
+            success:function(data){
+                window.setTimeout(redirect,2000)
+            },
+
+            error: function(data){
+                console.log(data);
+            }
+        });
+
+        e.preventDefault();
+
+    });
+
+    function progress(e){
+
+        if(e.lengthComputable){
+            var max = e.total;
+            var current = e.loaded;
+
+            var Percentage = (current * 100)/max;
+
+            $( "#progressbar" ).progressbar({
+              value: Percentage,
+              change: function() {
+                $( ".progress-label" ).text( Math.ceil(Percentage) + "%" );
+              }
+            });
+
+
+            if(Percentage >= 100)
+            {
+                $( ".progress-label" ).text( Math.ceil(Percentage) + "%" );
+            }
+        }  
+     }
+
+     function redirect(){
+        window.location.href = '/myadminkw/Songs';
+     }
+</script>

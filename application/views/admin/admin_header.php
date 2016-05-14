@@ -11,6 +11,8 @@
 
     <title>Kawandasawolu Admin</title>
 
+    <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery-ui-1.10.4.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.v3.0.0.css" rel="stylesheet">
     <!-- bootstrap theme -->

@@ -231,7 +231,7 @@ class Songs extends CI_Controller {
                     }
                 }
 
-                redirect('myadminkw/Songs');
+                //redirect('myadminkw/Songs');
             }
             // ========================================== PUBLISH / UNPUBLISH ========================================== //
             elseif ($this->input->get('is_active') != NULL) {
