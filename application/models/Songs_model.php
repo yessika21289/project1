@@ -85,6 +85,14 @@ class Songs_model extends CI_Model
         $query = $this->db->get('songs');
         $result = $query->result();
         if(!empty($result)) {
+            $path_section = explode('/',$result[0]->song_cover_path);
+            $cover_name_section = explode('.', $path_section[3]);
+            $home_path = $path_section[0] . '/'
+                . $path_section[1] . '/'
+                . $path_section[2] . '/'
+                . $cover_name_section[0] . '_home.'
+                . $cover_name_section[1];
+            unlink($home_path);
             unlink($result[0]->song_cover_path);
             unlink($result[0]->song_path);
         }
