@@ -41,16 +41,14 @@
                         Edit Gallery
                     </header>
                         <div class="panel-body">
-
-                        <form action="<?php echo base_url(); ?>myadminkw/Galleries/add" class="form-horizontal"
-                              method="post" enctype="multipart/form-data" id="form-new-gallery" role="form">
-
+                        <form action="<?php echo base_url(); ?>myadminkw/Galleries/edit_album" class="form-horizontal"
+                              method="post">
                             <div class="row">
                                 <div class="col-md-2">Album</div>
                                 <div class="col-md-4">
 <!--                                    <input type="hidden" name="old_album_title" value="--><?php //echo $title; ?><!--">-->
                                     <input class="form-control" type="text" name="album_title"
-                                       value="<?php echo $title; ?>" readonly>
+                                       value="<?php echo $title; ?>">
                                 </div>
                             </div>
                             <br/>
@@ -58,13 +56,21 @@
                                 <div class="col-md-2">Album Date</div>
                                 <div class="col-md-4">
                                     <input class="form-control" type="date" name="album_date"
-                                       value="<?php echo $album_date; ?>" readonly>
-                                    <input type="hidden" id="album_id" name="album_id" value="<?php echo $album_id; ?>">
+                                       value="<?php echo $album_date; ?>">
+                                    <input type="hidden" name="album_id" value="<?php echo $album_id; ?>">
+                                    <input type="hidden" name="old_album_title" value="<?php echo $title; ?>">
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="submit" class="btn btn-primary" value="Edit">
                                 </div>
                             </div>
+                        </form>
 
-                            <br/>
+                        <br/>
 
+                        <form action="<?php echo base_url(); ?>myadminkw/Galleries/add" class="form-horizontal"
+                              method="post" enctype="multipart/form-data" id="form-new-gallery" role="form">
+                            <input type="hidden" id="album_id" name="album_id" value="<?php echo $album_id; ?>">
                             <div class="row" style="padding-left: 15px;" id="images_preview">
                                 <?php foreach ($photos as $photo):
                                     $path_section = explode('/',$photo->photo);

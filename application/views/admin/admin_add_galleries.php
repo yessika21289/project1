@@ -42,19 +42,6 @@
                     </header>
                     <div class="panel-body">
 
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="col-md-12">
-                                    <a class="btn btn-primary" id="add-album" title="Add"
-                                       href="#" onclick="addAlbum()">
-                                        <span class="fa fa-plus"></span> Add Album
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <br/>
-
                         <div id="add-album-form" class="row form">
                             <form action="<?php echo base_url(); ?>myadminkw/Galleries/add_album" class="form-horizontal"
                                   method="post" enctype="multipart/form-data">
@@ -77,67 +64,14 @@
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button class="btn btn-primary pull-right" type="submit">Save</button>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-
-                        <br/>
-
-                        <div class="form">
-                            <form action="<?php echo base_url(); ?>myadminkw/Galleries/add" class="form-horizontal"
-                                  method="post" enctype="multipart/form-data" id="form-new-gallery" role="form">
-                                <?php if(!empty($albums)): ?>
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        <label class="col-md-1 control-label">Album</label>
-                                        <div class="col-md-4">
-                                            <select name="album_id" class="form-control" id="album_id">
-                                                <?php foreach($albums as $album): ?>
-                                                <option value="<?php echo $album->id; ?>">
-                                                    <?php echo $album->title.' ('.date('d-m-Y', $album->album_date).')'; ?>
-                                                </option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <br/>
-
-                                <div class="row" style="margin-left: 0px;">
-                                    <div class="col-md-12">
-                                        <input type="file" multiple name="photos[]" id="photos"/>
-                                    </div>
-                                    <div class="uploading">
-                                        <label>&nbsp;</label>
-                                        <img src="<?php echo base_url().'assets/img/uploading.gif';?>"/>
-                                    </div>
-                                </div>
-
-                                <div id="images_preview">
-
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        <div class="col-md-12 ">
-                                        <span class="pull-left" style="margin-top:20px;">
-                                            <button type="submit" class="btn btn-primary">
-                                                Save
-                                            </button>
+                                        <div class="pull-right">
+                                            <button class="btn btn-primary" type="submit">Save</button>
                                             <a class="btn btn-danger" title="Cancel"
                                                href="<?php echo base_url(); ?>myadminkw/Galleries">Cancel
                                             </a>
-                                        </span>
                                         </div>
                                     </div>
                                 </div>
-
-                                <?php endif; ?>
 
                             </form>
                         </div>

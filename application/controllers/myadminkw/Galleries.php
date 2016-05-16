@@ -161,9 +161,6 @@ class Galleries extends CI_Controller {
                         $this->image_lib->clear();
                     }
                 }
-
-                //if ($added_id) $this->session->set_flashdata('added_id', $added_id);
-                //redirect('myadminkw/Galleries');
             }
             elseif ($this->input->get('is_active') != NULL) {
                 $post['album_id'] = $this->input->get('id');
@@ -209,6 +206,25 @@ class Galleries extends CI_Controller {
             $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_edit_galleries');
             $this->load->view('admin/admin_footer');
+        } else {
+            redirect('myadminkw');
+        }
+    }
+
+    function edit_album() {
+        $user = $this->session->userdata('logged_in');
+        if(isset($user)) {
+            $user = $this->session->userdata('username');
+            $path = 'assets/galleries/';
+
+            $new_album_title = $_POST['album_title'];
+            $new_album_dir = $path . strtolower($new_album_title) . '/';
+
+            $old_album_title = $_POST['old_album_title'];
+            $old_album_dir = $path . strtolower($old_album_title) . '/';
+
+            $this->load->model('Galleries_model');
+            $this->Galleries_model->editAlbum($_POST, $user, $new_album_dir);
         } else {
             redirect('myadminkw');
         }

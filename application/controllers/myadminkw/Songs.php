@@ -208,10 +208,18 @@ class Songs extends CI_Controller {
                 }
                 // ============================================ UPDATE SONG ============================================ //
                 else {
-                    /*$song = $this->Songs_model->getData($_POST['song_id']);
+                    $song = $this->Songs_model->getData($_POST['song_id']);
                     if (!empty($_FILES['song_cover']['tmp_name'])){
                         if (!empty($song[0]->song_cover_path)) {
                             unlink($song[0]->song_cover_path);
+                            $path_section = explode('/',$song[0]->song_cover_path);
+                            $cover_name_section = explode('.', $path_section[3]);
+                            $home_path = $path_section[0] . '/'
+                                . $path_section[1] . '/'
+                                . $path_section[2] . '/'
+                                . $cover_name_section[0] . '_home.'
+                                . $cover_name_section[1];
+                            unlink($home_path);
                         }
                     }
 
@@ -219,7 +227,7 @@ class Songs extends CI_Controller {
                         if (!empty($song[0]->song_path)) {
                             unlink($song[0]->song_path);
                         }
-                    }*/
+                    }
 
                     $updated_id = $this->Songs_model->update($user, $_POST, $cover_file, $song_file);
                     if ($updated_id) {

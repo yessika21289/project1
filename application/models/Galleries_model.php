@@ -47,7 +47,7 @@ class Galleries_model extends CI_Model
         return $insert_id;
     }
 
-    function editAlbum($post, $user, $old_album_dir, $new_album_dir) {
+    function editAlbum($post, $user, $new_album_dir) {
         $data = array(
             'title' => !empty($post['album_title']) ? $post['album_title'] : '',
             'directory' => $new_album_dir,
@@ -56,7 +56,6 @@ class Galleries_model extends CI_Model
             'updated_by' => $user,
             'is_active' => 1
         );
-        rename($old_album_dir, $new_album_dir);
         $this->db->where('id', $post['album_id']);
         $update = $this->db->update('albums', $data);
         if($update) return $post['album_id'];
