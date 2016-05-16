@@ -26,6 +26,19 @@
                 </div>
             </div>
         <?php endif; ?>
+        <?php if (isset($updated_id)): ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>Success! </strong>Album has been changed.
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <?php
             $album_id = (!empty($album[0]->id)) ? $album[0]->id : '';
