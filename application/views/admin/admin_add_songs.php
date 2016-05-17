@@ -96,7 +96,7 @@
                                             <label class="pull-right upload-song">Lyric :</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea class="form-control editor-2" name="lyric" rows="2"><?php echo $lyric; ?></textarea>
+                                            <textarea class="form-control editor-2" name="lyric" rows="20"><?php echo $lyric; ?></textarea>
                                             <div class="row" style="margin-top:20px; margin-left: 0px; width: 100%">
                                                 <div id="progressbar">
                                                     <div class="progress-label"></div>
@@ -154,7 +154,10 @@
             processData: false,
 
             success:function(data){
-                window.setTimeout(redirect,2000)
+                if($("#song-file").val() != "")
+                    window.setTimeout(redirect,2000)
+                else
+                    redirect();
             },
 
             error: function(data){
@@ -167,7 +170,7 @@
     });
 
     function progress(e){
-
+        $( ".progress-label" ).text( "0%" );
         if(e.lengthComputable){
             var max = e.total;
             var current = e.loaded;
