@@ -101,4 +101,11 @@ class Songs_model extends CI_Model
         $delete = $this->db->delete('songs');
         return $delete;
     }
+
+    function add_count($post){
+        $this->db->where('id', $post['song_id']);
+        $update = $this->db->update('songs', array('play_count' => $post['count']));
+        if($update) return $post['song_id'];
+        else return false;
+    }
 }

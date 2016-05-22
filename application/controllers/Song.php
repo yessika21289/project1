@@ -39,4 +39,11 @@ class Song extends CI_Controller {
 		$this->load->view('song_lyric');
 		$this->load->view('tag_close');
 	}
+
+	public function add_count()
+	{
+		$this->load->model('Songs_model');
+		$updated_id = $this->Songs_model->add_count($_POST);
+		return $updated_id;
+	}
 }

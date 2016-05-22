@@ -518,6 +518,16 @@ hr.hr-event{
 	width: 100px;
 }
 
+.play-count{
+	border: 1px #CCCCCC solid;
+    float: right;
+    font-size: 0.7em;
+    margin: -15px -15px 0 0;
+    background-color: #FAEA88;
+    padding: 3px;
+    border-radius: 10px;
+}
+
 .song-desc{
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
