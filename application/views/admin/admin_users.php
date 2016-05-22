@@ -20,7 +20,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> User has been added.
+                        <strong>Success!</strong> New user has been added.
                     </div>
                 </div>
             </div>

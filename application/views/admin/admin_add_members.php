@@ -30,6 +30,7 @@
             $member_id = (!empty($member['id'])) ? $member['id'] : '';
             $name = (!empty($member['name'])) ? $member['name'] : '';
             $avatar = (!empty($member['avatar'])) ? "background-image:url('/".$member['avatar']."')" : '';
+            $generation_id = (!empty($member['generation_id'])) ? $member['generation_id'] : '';
             $facebook = (!empty($member['socmed']['facebook'])) ? $member['socmed']['facebook'] : '';
             $twitter = (!empty($member['socmed']['twitter'])) ? $member['socmed']['twitter'] : '';
             $instagram = (!empty($member['socmed']['instagram'])) ? $member['socmed']['instagram'] : '';
@@ -50,10 +51,23 @@
                                 <div class="form-group form-song">
 
                                     <div class="row">
-                                        <div class="col-md-3 clearfix preview-avatar">
+                                        <div class="col-md-3 clearfix">
                                             <div id="avatar-image-holder" class="avatar" style="<?php echo $avatar; ?>"></div>
                                             <input id="upload-avatar" type="file" name="avatar" />
                                             <a href="" id="upload-avatar-link" class="edit-avatar">Edit</a>
+
+                                            <select class="form-control" style="margin-top: 20px;" name="generation_id">
+                                                <option <?php if(empty($generation_id)) echo 'selected'; ?> value="default">Generation</option>
+                                                <?php foreach($generations as $generation): ?>
+                                                <option
+                                                    value="<?php echo $generation->id; ?>"
+                                                    <?php if($generation_id == $generation->id) echo 'selected'; ?>
+                                                >
+                                                    <?php echo $generation->name; ?>
+                                                </option>
+                                                <?php endforeach; ?>
+                                            </select>
+
                                         </div>
 
                                         <div class="col-md-6">

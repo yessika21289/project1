@@ -20,7 +20,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> Video has been added.
+                        <strong>Success!</strong> New video has been added.
                     </div>
                 </div>
             </div>

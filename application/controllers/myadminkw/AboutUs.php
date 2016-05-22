@@ -45,8 +45,9 @@ class AboutUs extends CI_Controller
     function update() {
         $user = $this->session->userdata('logged_in');
         if(isset($user)) {
+            $user = $this->session->userdata('username');
             $this->load->model('About_us_model');
-            $added = $this->About_us_model->add($_POST);
+            $added = $this->About_us_model->add($_POST, $user);
 
             if(!empty($added)) $this->session->set_flashdata('add_confirm', $added);
             redirect('myadminkw/AboutUs');
