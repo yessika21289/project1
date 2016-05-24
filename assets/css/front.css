@@ -433,6 +433,20 @@ hr.hr-event{
 
 
 /*=========MEMBER=========*/
+.generation-label{
+	/*border: 1px #CA292B solid;*/
+	clear: both;
+	margin-bottom: 30px;
+	background-image: url('/assets/img/label_back.jpg');
+	background-repeat: repeat-y;
+	/*background-color: #CA292B;*/
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-size: 1.1em;
+	letter-spacing: 5px;
+	padding: 5px 13px;
+}
+
 .member-list-item{
 	text-align: center;
 	margin-bottom: 30px;
@@ -440,14 +454,10 @@ hr.hr-event{
 }
 
 .member-item-info{
-	/*background-color: white;*/
 	margin-top: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius:10px;
 	padding: 5px;
 	height: 85px;
-	/*border: 1px #AAAAAA solid;*/
+	overflow: hidden;
 }
 
 .member-item-info hr{
@@ -525,7 +535,9 @@ hr.hr-event{
     margin: -15px -15px 0 0;
     background-color: #FAEA88;
     padding: 3px;
-    border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
 
 .song-desc{

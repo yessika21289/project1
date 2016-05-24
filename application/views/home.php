@@ -369,40 +369,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/slick/slick.min.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
-
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$('.navbar-fixed-top').fadeIn('fast');
+	}
     // Find all YouTube videos
-var $allVideos = $("iframe[src^='//www.youtube.com']"),
+	var $allVideos = $("iframe[src^='//www.youtube.com']"),
 
     // The element that is fluid width
     $fluidEl = $("body");
 
 	// Figure out and save aspect ratio for each video
 	$allVideos.each(function() {
-
 	  $(this)
 	    .data('aspectRatio', this.height / this.width)
-
 	    // and remove the hard coded width/height
 	    .removeAttr('height')
 	    .removeAttr('width');
-
 	});
 
 	// When the window is resized
 	$(window).resize(function() {
-
 	  var newWidth = $fluidEl.width();
-
 	  // Resize all videos according to their own aspect ratio
 	  $allVideos.each(function() {
-
 	    var $el = $(this);
 	    $el
 	      .width(newWidth)
 	      .height(newWidth * $el.data('aspectRatio'));
-
 	  });
-
 	// Kick off one resize to fix all videos on page load
 	}).resize();
 
@@ -419,6 +413,7 @@ var $allVideos = $("iframe[src^='//www.youtube.com']"),
 	});
 
 	$(document).ready(function(){
+		window.dispatchEvent(new Event('resize'));
 	    $('#slideshow').fadeSlideShow({
 	    	width: 240,
 	    	height: 320,
