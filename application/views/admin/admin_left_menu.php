@@ -93,6 +93,13 @@
                 </ul>
             </li>
 
+            <li <?php if($menu_active == 'generations') echo 'class="active"'; ?> >
+                <a class="" href="<?php echo base_url(); ?>myadminkw/Generations">
+                    <i class="icon_flowchart"></i>
+                    <span>Generations</span>
+                </a>
+            </li>
+
             <li class="sub-menu <?php if(in_array($menu_active, array('add_members', 'members'))) echo 'active'; ?>">
                 <a href="javascript:" class="">
                     <i class="icon_id_alt"></i>

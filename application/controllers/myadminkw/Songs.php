@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Songs extends CI_Controller {
+class Songs extends CI_Controller
+{
 
     /**
      * Index Page for this controller.
@@ -18,7 +19,8 @@ class Songs extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    function index() {
+    function index()
+    {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
             $data['name'] = $this->session->userdata('username');
@@ -41,13 +43,13 @@ class Songs extends CI_Controller {
             $this->load->view('admin/admin_left_menu');
             $this->load->view('admin/admin_songs');
             $this->load->view('admin/admin_footer');
-        }
-        else {
+        } else {
             redirect('myadminkw');
         }
     }
 
-    function add($song_id = NULL) {
+    function add($song_id = NULL)
+    {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
             $user = $this->session->userdata('username');
@@ -81,21 +83,17 @@ class Songs extends CI_Controller {
                         $error = $song_folder . ' folder is not exist';
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('myadminkw/Songs/add');
-                    }
-                    else if (file_exists($song_file)) {
+                    } else if (file_exists($song_file)) {
                         $error = 'Song already exist.';
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('myadminkw/Songs/add');
-                    }
-                    else if (!in_array($song_ext, array('mp3', 'wav'))) {
+                    } else if (!in_array($song_ext, array('mp3', 'wav'))) {
                         $error = 'Only mp3/wav which are allowed.';
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('myadminkw/Songs/add');
-                    }
-                    else {
+                    } else {
                         if (move_uploaded_file($_FILES['song']['tmp_name'], $song_file)) {
-                        }
-                        else {
+                        } else {
                             $error = 'Upload song failed!';
                             $this->session->set_flashdata('error_upload', $error);
                             redirect('myadminkw/Songs/add');
@@ -116,20 +114,17 @@ class Songs extends CI_Controller {
                         if (!empty($song_file)) unlink($song_file);
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('myadminkw/Songs/add');
-                    }
-                    else if (file_exists($cover_file)) {
+                    } else if (file_exists($cover_file)) {
                         $error = 'Cover already exist.';
                         if (!empty($song_file)) unlink($song_file);
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('myadminkw/Songs/add');
-                    }
-                    else if (!in_array($cover_ext, array('jpg', 'jpeg', 'png'))) {
+                    } else if (!in_array($cover_ext, array('jpg', 'jpeg', 'png'))) {
                         $error = 'Only jpg/jpeg/png which are allowed.';
                         if (!empty($song_file)) unlink($song_file);
                         $this->session->set_flashdata('error_upload', $error);
                         redirect('myadminkw/Songs/add');
-                    }
-                    else {
+                    } else {
                         if (move_uploaded_file($_FILES['song_cover']['tmp_name'], $cover_file)) {
                             $this->load->library('image_lib');
 
@@ -138,14 +133,13 @@ class Songs extends CI_Controller {
                             $img_height = $size[1];
 
                             $crop1_config['image_library'] = 'gd2';
-                            $crop1_config['source_image']  = $cover_file;
+                            $crop1_config['source_image'] = $cover_file;
 
                             //---------ratio (370/370) = 1-----------
 
-                            if($img_width/$img_height <= 1){
-                                $crop1_config['width']  = 370;
-                            }
-                            else{
+                            if ($img_width / $img_height <= 1) {
+                                $crop1_config['width'] = 370;
+                            } else {
                                 $crop1_config['height'] = 370;
                             }
 
@@ -158,17 +152,16 @@ class Songs extends CI_Controller {
                             $img_height = $size[1];
 
                             $crop2_config['image_library'] = 'gd2';
-                            $crop2_config['source_image']   = $cover_file;
+                            $crop2_config['source_image'] = $cover_file;
                             $crop2_config['new_image'] = $cover_file_home;
                             $crop2_config['quality'] = '100%';
                             $crop2_config['maintain_ratio'] = FALSE;
-                            if($img_width <= $img_height){
-                                $crop2_config['y_axis'] = ($img_height- 370) / 2;
-                            }
-                            else{
+                            if ($img_width <= $img_height) {
+                                $crop2_config['y_axis'] = ($img_height - 370) / 2;
+                            } else {
                                 $crop2_config['x_axis'] = ($img_width - 370) / 2;
                             }
-                            $crop2_config['width']  = 370;
+                            $crop2_config['width'] = 370;
                             $crop2_config['height'] = 370;
 
                             $this->image_lib->initialize($crop2_config);
@@ -176,17 +169,16 @@ class Songs extends CI_Controller {
                             $this->image_lib->crop();
 
                             $crop3_config['image_library'] = 'gd2';
-                            $crop3_config['source_image']  = $cover_file_home;
+                            $crop3_config['source_image'] = $cover_file_home;
                             $crop3_config['new_image'] = $cover_file;
 
-                            $crop3_config['width']  = 200;
+                            $crop3_config['width'] = 200;
                             $crop3_config['height'] = 200;
 
                             $this->image_lib->initialize($crop3_config);
 
                             $this->image_lib->resize();
-                        }
-                        else {
+                        } else {
                             $error = 'Upload cover failed!';
                             if (!empty($song_file)) unlink($song_file);
                             $this->session->set_flashdata('error_upload', $error);
@@ -200,19 +192,17 @@ class Songs extends CI_Controller {
                     $added_id = $this->Songs_model->add($user, $_POST, $cover_file, $song_file);
                     if ($added_id) {
                         $this->session->set_flashdata('added_id', $added_id);
-                    }
-                    else {
+                    } else {
                         if (!empty($song_file)) unlink($song_file);
                         if (!empty($cover_file)) unlink($song_file);
                     }
-                }
-                // ============================================ UPDATE SONG ============================================ //
+                } // ============================================ UPDATE SONG ============================================ //
                 else {
                     $song = $this->Songs_model->getData($_POST['song_id']);
-                    if (!empty($_FILES['song_cover']['tmp_name'])){
+                    if (!empty($_FILES['song_cover']['tmp_name'])) {
                         if (!empty($song[0]->song_cover_path)) {
                             unlink($song[0]->song_cover_path);
-                            $path_section = explode('/',$song[0]->song_cover_path);
+                            $path_section = explode('/', $song[0]->song_cover_path);
                             $cover_name_section = explode('.', $path_section[3]);
                             $home_path = $path_section[0] . '/'
                                 . $path_section[1] . '/'
@@ -223,7 +213,7 @@ class Songs extends CI_Controller {
                         }
                     }
 
-                    if (!empty($_FILES['song']['tmp_name'])){
+                    if (!empty($_FILES['song']['tmp_name'])) {
                         if (!empty($song[0]->song_path)) {
                             unlink($song[0]->song_path);
                         }
@@ -232,16 +222,14 @@ class Songs extends CI_Controller {
                     $updated_id = $this->Songs_model->update($user, $_POST, $cover_file, $song_file);
                     if ($updated_id) {
                         $this->session->set_flashdata('updated_id', $updated_id);
-                    }
-                    else {
+                    } else {
                         if (!empty($song_file)) unlink($song_file);
                         if (!empty($cover_file)) unlink($song_file);
                     }
                 }
 
                 //redirect('myadminkw/Songs');
-            }
-            // ========================================== PUBLISH / UNPUBLISH ========================================== //
+            } // ========================================== PUBLISH / UNPUBLISH ========================================== //
             elseif ($this->input->get('is_active') != NULL) {
                 $post['song_id'] = $this->input->get('id');
                 $post['is_active'] = $this->input->get('is_active');
@@ -250,8 +238,7 @@ class Songs extends CI_Controller {
                 $this->session->set_flashdata('set_active_id', $post['song_id']);
 
                 redirect('myadminkw/Songs');
-            }
-            // ============================================ goto SONG's FORM ============================================ //
+            } // ============================================ goto SONG's FORM ============================================ //
             else {
                 $data['name'] = $this->session->userdata('username');
                 $data['is_authorized'] = $this->session->userdata('is_authorized');
@@ -278,13 +265,13 @@ class Songs extends CI_Controller {
                 $this->load->view('admin/admin_footer');
 
             }
-        }
-        else {
+        } else {
             redirect('myadminkw');
         }
     }
 
-    function delete($song_id = NULL) {
+    function delete($song_id = NULL)
+    {
         $user = $this->session->userdata('logged_in');
         if (isset($user)) {
             $this->load->model('Songs_model');
@@ -295,12 +282,10 @@ class Songs extends CI_Controller {
                     $this->session->set_flashdata('delete_confirm', $delete);
                 }
                 redirect('myadminkw/Songs');
-            }
-            else {
+            } else {
                 redirect('myadminkw/Songs');
             }
-        }
-        else {
+        } else {
             redirect('myadminkw');
         }
     }

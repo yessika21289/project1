@@ -154,13 +154,13 @@ class Members extends CI_Controller {
                 }
                 // ======================================== UPDATE A MEMBER ============================================ //
                 else {
-                    /*$member = $this->Members_model->getData($_POST['member_id']);
+                    $member = $this->Members_model->getData($_POST['member_id']);
 
                     if (!empty($_FILES['avatar']['tmp_name'])) {
                         if (!empty($member[0]['avatar'])) {
                             unlink($member[0]['avatar']);
                         }
-                    }*/
+                    }
 
                     $updated_member_id = $this->Members_model->update($user, $_POST, $avatar_file);
                     if ($updated_member_id) {
@@ -194,6 +194,8 @@ class Members extends CI_Controller {
                         'id' => $member[0]['id'],
                         'name' => $member[0]['name'],
                         'avatar' => $member[0]['avatar'],
+                        'generation_id' => $member[0]['generation_id'],
+                        'generation_name' => $member[0]['generation_name'],
                         'is_active' => $member[0]['is_active'],
                     );
 
@@ -208,6 +210,9 @@ class Members extends CI_Controller {
                     $data['error_upload'] = $this->session->flashdata('error_upload');
                     $data['member'] = $this->session->flashdata('member');
                 }
+
+                $this->load->model('Generations_model');
+                $data['generations'] = $this->Generations_model->getData();
 
                 $this->load->view('admin/admin_header', $data);
                 $this->load->view('admin/admin_left_menu');

@@ -9,10 +9,13 @@ class Members_model extends CI_Model
 
     function getData($member_id = NULL, $show = 'active') {
         $members = array();
-        if(!empty($member_id)) $this->db->where('id', $member_id);
-        if($show == 'active') $this->db->where('is_active', 1);
-        $this->db->order_by('name', 'asc');
-        $query = $this->db->get('members');
+        $this->db->select('members.*, generations.name as generation_name');
+        if(!empty($member_id)) $this->db->where('members.id', $member_id);
+        if($show == 'active') $this->db->where('members.is_active', 1);
+        $this->db->order_by('members.name', 'asc');
+        $this->db->from('members');
+        $this->db->join('generations', 'generations.id = members.generation_id', 'left');
+        $query = $this->db->get();
         $results = $query->result();
 
         $i = 0;
@@ -20,6 +23,8 @@ class Members_model extends CI_Model
             $members[$i]['id'] = $result->id;
             $members[$i]['name'] = $result->name;
             $members[$i]['avatar'] = $result->avatar;
+            $members[$i]['generation_id'] = $result->generation_id;
+            $members[$i]['generation_name'] = $result->generation_name;
             $members[$i]['is_active'] = $result->is_active;
 
             $this->db->where('id_member', $result->id);
@@ -38,6 +43,7 @@ class Members_model extends CI_Model
         $data = array(
             'name' => $post['name'],
             'avatar' => !empty($avatar_file) ? $avatar_file : NULL,
+            'generation_id' => $post['generation_id'] != 'default' ? $post['generation_id'] : NULL,
             'created_at' => time(),
             'created_by' => $user,
             'updated_at' => time(),
@@ -69,6 +75,7 @@ class Members_model extends CI_Model
     function update($user, $post, $avatar_file) {
         $data = array(
             'name' => $post['name'],
+            'generation_id' => $post['generation_id'] != 'default' ? $post['generation_id'] : NULL,
             'updated_at' => time(),
             'updated_by' => $user,
             'is_active' => 1

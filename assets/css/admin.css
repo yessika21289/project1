@@ -143,3 +143,9 @@ label.error {
     display: none;
     margin-top: 15px;
 }
+
+input.form-control.edit-field {
+    background-color: #fffb80;
+    color: #000;
+    border-color: #999;
+}
