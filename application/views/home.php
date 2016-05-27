@@ -363,12 +363,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/js/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="/assets/js/scrolling-nav.js"></script>
+<script type="text/javascript" src="/assets/js/skrollr.menu.min.js"></script>
 <script type="text/javascript" src="/assets/js/fadeSlideShow-minified.js"></script>
 <script type="text/javascript" src="/assets/slick/slick.min.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
+    skrollr.menu.init(s);
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		$('.navbar-fixed-top').fadeIn('fast');
 	}
