@@ -8,15 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="description" content="<?php echo $meta_description;?>">
 	<title>Kawandasawolu</title>
 	<link rel="icon" href="/assets/img/faviconkw.ico?" type="image/x-icon">
-	<?php
-	echo link_tag('/assets/css/front.css');
-	echo link_tag('/assets/css/bootstrap.min.v3.6.6.css');
-	echo link_tag('/assets/css/bootstrap-ms.css');
-	echo link_tag('/assets/css/font-awesome.min.css');
-	echo link_tag('/assets/slick/slick.css');
-	echo link_tag('/assets/slick/slick-theme.css');
-	/*echo link_tag('https://fonts.googleapis.com/css?family=Alex+Brush');*/
-	?>
+	
 	<style type="text/css">
 		.navbar-home .navbar-nav>li {
 			float: none;
@@ -99,7 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<h2>Tentang Kami</h2>
 					<?php if(!empty($about_us)):?>
 					<div style="text-align:center">
-						<?php echo word_limiter($about_us,64);?>
+						<?php echo word_limiter($about_us, $word_delimiter);?>
 					</div>
 					<div class="col-xs-12 btn-wrapper">
 						<a href="/about"><span class="red-btn">Read more</span></a>
@@ -359,7 +351,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</section>
 	<?php include('footer.php');?>
 </div>
-
+<?php
+	echo link_tag('assets/css/front.css');
+	echo link_tag('assets/css/bootstrap.min.v3.6.6.css');
+	echo link_tag('assets/css/bootstrap-ms.css');
+	echo link_tag('assets/css/font-awesome.min.css');
+	echo link_tag('assets/slick/slick.css');
+	echo link_tag('assets/slick/slick-theme.css');
+?>
 <script type="text/javascript" src="/assets/js/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>

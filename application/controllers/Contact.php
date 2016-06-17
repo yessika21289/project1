@@ -40,6 +40,7 @@ class Contact extends CI_Controller {
 			);
     $data['meta_description'] = 'Kontak manajemen Kawandasawolu';
 		$data['title'] = 'Kontak Kami';
+    $data['active']= 'contact';
     $data['send_mail'] = $this->session->userdata('send_mail');
 		$this->load->view('tag_open',$data);
 		$this->load->view('contact_us');

@@ -18,6 +18,7 @@ class About_us_model extends CI_Model
         $data = array(
             'about' => $about,
             'tagline' => $post['tagline'],
+            'word_delimiter' => $post['word_delimiter'],
             'created_at' => time(),
             'created_by' => $user,
             'updated_at' => time(),

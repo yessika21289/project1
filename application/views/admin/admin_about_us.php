@@ -62,14 +62,24 @@
                                         <textarea class="form-control editor" name="about_us" rows="6">
                                             <?php if(!empty($about_us)) echo $about_us ?>
                                         </textarea>
-                                        <span class="pull-right">
-                                            <button style="margin-top:20px;" type="submit" class="btn btn-primary">
-                                                Save
-                                            </button>
-                                        </span>
                                     </div>
-
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-1">Word Delimiter:</label>
+                                    <div class="col-sm-11">
+                                        <input placeholder="Word Delimiter" class="form-control"
+                                           type="text" name="word_delimiter" value="<?php if(!empty($word_delimiter)) echo $word_delimiter; ?>">
+                                        <label><em>Used for delimit words that are shown on landing page.</em></label>
+                                    </div>
+                                </div>
+
+
+                                <span class="pull-right">
+                                    <button type="submit" class="btn btn-primary">
+                                        Save
+                                    </button>
+                                </span>
                             </form>
                         </div>
                     </div>

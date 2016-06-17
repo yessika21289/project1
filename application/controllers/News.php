@@ -13,6 +13,7 @@ class News extends CI_Controller {
 	{
 		$data['meta_description'] = 'Berita terbaru terkait Kawandasawolu';
 		$data['title'] = 'Berita';
+		$data['active']= 'news';
 		$this->load->model('News_model');
         $news = $this->News_model->getData();
         if(!empty($news)) $data['news'] = $news;
@@ -24,6 +25,7 @@ class News extends CI_Controller {
 
 	public function news_detail($news_id = NULL)
 	{
+		$data['active']= 'news';
 		$this->load->model('News_model');
         $news = $this->News_model->getData($news_id);
         if(!empty($news)) $data['news'] = $news;

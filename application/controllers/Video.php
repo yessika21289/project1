@@ -12,6 +12,7 @@ class Video extends CI_Controller {
 	{
 		$data['meta_description'] = 'Video acara, pentas, maupun konser yang dibawakan oleh Kawandasawolu';
 		$data['title'] = 'Video';
+		$data['active']= 'video';
         $this->load->model('Videos_model');
         $videos = $this->Videos_model->getData();
         if(!empty($videos)) $data['videos'] = $videos;

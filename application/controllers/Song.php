@@ -12,6 +12,7 @@ class Song extends CI_Controller {
 	{
 		$data['meta_description'] = 'Lagu-lagu yang sudah dicover oleh Kawandasawolu';
 		$data['title'] = 'Lagu';
+		$data['active']= 'song';
 		$this->load->model('Songs_model');
         $songs = $this->Songs_model->getData();
         if (!empty($songs)) $data['songs'] = $songs;
@@ -23,6 +24,7 @@ class Song extends CI_Controller {
 
 	public function lyric($song_id = 0)
 	{
+		$data['active']= 'song';
 		$this->load->model('Songs_model');
         $songs = $this->Songs_model->getData($song_id);
         if (!empty($songs)) {

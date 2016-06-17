@@ -13,6 +13,7 @@ class Member extends MY_Controller {
 	{
 		$data['meta_description'] = 'Daftar anggota Kawandasawolu';
 		$data['title'] = 'Anggota';
+		$data['active']= 'member';
 		$this->load->model('Members_model');
         $members = $this->Members_model->getData();
         if (!empty($members)) {

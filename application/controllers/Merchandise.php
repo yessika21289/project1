@@ -12,6 +12,7 @@ class Merchandise extends CI_Controller {
 	{
 		$data['meta_description'] = 'Daftar dan tata cara beli merchandise Kawandasawolu';
 		$data['title'] = 'Merchandise';
+		$data['active']= 'merchandise';
 		$this->load->model('Merchandise_model');
         $merchandise = $this->Merchandise_model->getData();
         if (!empty($merchandise)) $data['merchandise'] = $merchandise;

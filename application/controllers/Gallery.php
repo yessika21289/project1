@@ -12,6 +12,7 @@ class Gallery extends CI_Controller {
 	{
 		$data['meta_description'] = 'Album foto acara Kawandasawolu';
 		$data['title'] = 'Galeri Album';
+		$data['active']= 'gallery';
 		
 		$this->load->model('Galleries_model');
         $albums = $this->Galleries_model->getAlbumsAndPhotos();
@@ -27,6 +28,7 @@ class Gallery extends CI_Controller {
 		if(empty($album_id))
 			redirect('gallery');
 
+		$data['active']= 'gallery';
 		$this->load->model('Galleries_model');
         $photos = $this->Galleries_model->getAlbumsAndPhotos($album_id);
         if (!empty($photos)) $data['photos'] = $photos;

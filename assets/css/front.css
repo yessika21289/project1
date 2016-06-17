@@ -16,7 +16,7 @@
 
 html, body {
 	height:100%;
-	font-family: Verdana;
+	font-family: Verdana !important;
 	font-size: 16px !important;
 	line-height: 2em !important;
 }
@@ -351,7 +351,12 @@ hr.hr-home{
 	border: none !important;
 }
 
-.navbar-nav>li>a:focus, .navbar-nav>li>a:hover{
+.nav{
+	font-family: 'AvantGarde';
+	letter-spacing: 0.4px;
+}
+
+.navbar-nav>li>a:focus, .navbar-nav>li>a:hover, .navbar-nav>li.active>a{
 	background-color: #AF2022 !important;
 	color: #FFFFFF !important;
 }
@@ -464,6 +469,10 @@ hr.hr-event{
 	margin: auto;
 	border-top-color: #AAAAAA;
 	width: 80%;
+}
+
+.member-item-info div:first-child{
+	line-height: 1em;
 }
 
 .member-item-info div a{
@@ -766,6 +775,12 @@ hr.hr-merchandise{
 @media (min-width:992px) and (max-width: 1199px){
 	.page-scroll{
 		font-size: 0.9em;
+	}
+}
+
+@media (min-width:800px){
+	section#about_us p{
+		padding: 0 70px;
 	}
 }
 

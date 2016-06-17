@@ -13,6 +13,7 @@ class Event extends CI_Controller {
 	{
 		$data['meta_description'] = 'Acara, pentas, maupun konser Kawandasawolu';
 		$data['title'] = 'Event';
+		$data['active']= 'event';
 		$this->load->model('Events_model');
         $events = $this->Events_model->getData();
         if(!empty($events)) $data['events'] = $events;
@@ -24,6 +25,7 @@ class Event extends CI_Controller {
 
 	public function event_detail($event_id = NULL)
 	{
+		$data['active']= 'event';
 		$this->load->model('Events_model');
         $event = $this->Events_model->getData($event_id);
         if(!empty($event)) $data['event'] = $event;

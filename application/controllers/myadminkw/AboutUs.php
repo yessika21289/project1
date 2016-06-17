@@ -29,6 +29,7 @@ class AboutUs extends CI_Controller
             if(!empty($about_us)) {
                 $data['about_us'] = $about_us[0]->about;
                 $data['tagline'] = $about_us[0]->tagline;
+                $data['word_delimiter'] = (!empty($about_us[0]->word_delimiter)) ? $about_us[0]->word_delimiter : 36;
             }
             $data['name'] = $this->session->userdata('username');
             $data['is_authorized'] = $this->session->userdata('is_authorized');
