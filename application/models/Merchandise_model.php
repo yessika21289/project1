@@ -80,39 +80,43 @@ class Merchandise_model extends CI_Model
         return $delete;
     }
 
-    function get_howtobuy() {
+    function get_howtobuy($type) {
+        $this->db->where('type', $type);
         $query = $this->db->get('howtobuy');
         $result = $query->result();
         if(!empty($query->result())) return $result[0]->list;
         else return false;
     }
 
-    function add_howtobuy($user, $post) {
+    function add_howtobuy($user, $post, $type) {
         $list = trim(strip_tags($post['howtobuy'], $this->allowed_tags));
 
         $data = array(
             'list' => $list,
+            'type' => $type,
             'created_at' => time(),
             'created_by' => $user,
             'updated_at' => time(),
             'updated_by' => $user
         );
-        $this->db->empty_table('howtobuy');
-        $this->db->query("ALTER TABLE `howtobuy` AUTO_INCREMENT 1");
+        $this->db->where('type', $type);
+        $this->db->delete('howtobuy');
+
         $insert = $this->db->insert('howtobuy', $data);
         return $insert;
     }
 
-    function update_howtobuy($user, $post) {
+    function update_howtobuy($user, $post, $type) {
         $list = trim(strip_tags($post['howtobuy'], $this->allowed_tags));
 
         $data = array(
             'list' => $list,
+            'type' => $type,
             'updated_at' => time(),
             'updated_by' => $user
         );
 
-        $this->db->where('id', 1);
+        $this->db->where('type', $type);
         $update = $this->db->update('howtobuy', $data);
         return $update;
     }

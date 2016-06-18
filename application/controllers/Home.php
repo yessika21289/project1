@@ -46,6 +46,9 @@ class Home extends CI_Controller {
         $merchandise = $this->Merchandise_model->getData();
         if (!empty($merchandise)) $data['merchandise'] = $merchandise;
 
+        $textlandingpage = $this->Merchandise_model->get_howtobuy('textlandingpage');
+        if (!empty($textlandingpage)) $data['text_landingpage'] = $textlandingpage;
+
         $this->load->model('Members_model');
         $members = $this->Members_model->getData();
 

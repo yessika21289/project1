@@ -132,6 +132,9 @@
                     <li class="<?php if($menu_active == 'howtobuy') echo 'active'; ?>">
                         <a class="" href="<?php echo base_url(); ?>myadminkw/Merchandise/howtobuy">How to Buy</a>
                     </li>
+                    <li class="<?php if($menu_active == 'textlandingpage') echo 'active'; ?>">
+                        <a class="" href="<?php echo base_url(); ?>myadminkw/Merchandise/textlandingpage">Text Landing Page</a>
+                    </li>
                 </ul>
             </li>
 
