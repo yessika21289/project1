@@ -199,7 +199,7 @@ class Merchandise extends CI_Controller {
             $data['menu_active'] = 'howtobuy';
 
             $this->load->model('Merchandise_model');
-            $howtobuy = $this->Merchandise_model->get_howtobuy();
+            $howtobuy = $this->Merchandise_model->get_howtobuy('howtobuy');
             if (!empty($howtobuy)) $data['howtobuy'] = $howtobuy;
 
             $save = isset($_POST['save']) ? $_POST['save'] : 0;
@@ -207,12 +207,12 @@ class Merchandise extends CI_Controller {
 
             if($save == 1) {
                 if(!empty($howtobuy)) {
-                    $updated = $this->Merchandise_model->update_howtobuy($data['name'], $_POST);
+                    $updated = $this->Merchandise_model->update_howtobuy($data['name'], $_POST, 'howtobuy');
                     if ($updated) $this->session->set_flashdata('update_confirm', 1);
                     redirect('myadminkw/Merchandise/howtobuy');
                 }
                 else {
-                    $added = $this->Merchandise_model->add_howtobuy($data['name'], $_POST);
+                    $added = $this->Merchandise_model->add_howtobuy($data['name'], $_POST, 'howtobuy');
                     if ($added) $this->session->set_flashdata('add_confirm', 1);
                     redirect('myadminkw/Merchandise/howtobuy');
                 }
@@ -222,6 +222,48 @@ class Merchandise extends CI_Controller {
                 $this->load->view('admin/admin_header', $data);
                 $this->load->view('admin/admin_left_menu');
                 $this->load->view('admin/admin_merchandise_howtobuy');
+                $this->load->view('admin/admin_footer');
+            }
+        } else {
+            redirect('myadminkw');
+        }
+    }
+
+    function textlandingpage() {
+        $user = $this->session->userdata('logged_in');
+        if (isset($user)) {
+            $data['name'] = $this->session->userdata('username');
+            $data['is_authorized'] = $this->session->userdata('is_authorized');
+            $data['add_confirm'] = $this->session->flashdata('add_confirm');
+            $data['update_confirm'] = $this->session->flashdata('update_confirm');
+            $data['set_active'] = $this->session->flashdata('set_active');
+            $data['set_active_id'] = $this->session->flashdata('set_active_id');
+            $data['delete_confirm'] = $this->session->flashdata('delete_confirm');
+            $data['menu_active'] = 'textlandingpage';
+
+            $this->load->model('Merchandise_model');
+            $text = $this->Merchandise_model->get_howtobuy('textlandingpage');
+            if (!empty($text)) $data['text'] = $text;
+
+            $save = isset($_POST['save']) ? $_POST['save'] : 0;
+            $clear = isset($_POST['clear']) ? $_POST['clear'] : 0;
+
+            if($save == 1) {
+                if(!empty($text)) {
+                    $updated = $this->Merchandise_model->update_howtobuy($data['name'], $_POST, 'textlandingpage');
+                    if ($updated) $this->session->set_flashdata('update_confirm', 1);
+                    redirect('myadminkw/Merchandise/textlandingpage');
+                }
+                else {
+                    $added = $this->Merchandise_model->add_howtobuy($data['name'], $_POST, 'textlandingpage');
+                    if ($added) $this->session->set_flashdata('add_confirm', 1);
+                    redirect('myadminkw/Merchandise/textlandingpage');
+                }
+            }
+            else {
+                $this->load->view('admin/admin_header', $data);
+                $this->load->view('admin/admin_left_menu');
+                $this->load->view('admin/admin_merchandise_textlandingpage');
                 $this->load->view('admin/admin_footer');
             }
         } else {

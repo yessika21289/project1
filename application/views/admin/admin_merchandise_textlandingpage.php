@@ -4,10 +4,10 @@
         <!--overview start-->
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="icon_gift_alt"></i> How to Buy</h3>
+                <h3 class="page-header"><i class="icon_gift_alt"></i> Text Landing Page</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url(); ?>myadminkw">Home</a></li>
-                    <li><i class="icon_gift_alt"></i>How to Buy</li>
+                    <li><i class="icon_gift_alt"></i>Text Landing Page</li>
                 </ol>
             </div>
         </div>
@@ -20,7 +20,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> "How to Buy" has been updated.
+                        <strong>Success!</strong> Merchandise text in landing page has been updated.
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>Success!</strong> "How to Buy" has been added.
+                        <strong>Success!</strong> Merchandise text in landing page has been added.
                     </div>
                 </div>
             </div>
@@ -56,20 +56,20 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        How to Buy
+                        Merchandise Text in Landing Page
                     </header>
                     <div class="panel-body">
                         <div class="form">
-                            <form action="<?php echo base_url(); ?>myadminkw/Merchandise/howtobuy" class="form-horizontal" method="post">
+                            <form action="<?php echo base_url(); ?>myadminkw/Merchandise/textlandingpage" class="form-horizontal" method="post">
                                 <div class="form-group">
-                                    <label class="control-label col-sm-1">How to buy:</label>
+                                    <label class="control-label col-sm-1">Text to show:</label>
                                     <div class="col-sm-11">
                                         <textarea class="form-control editor" name="howtobuy" rows="6">
-                                            <?php if(!empty($howtobuy)) echo $howtobuy; ?>
+                                            <?php if(!empty($text)) echo $text; ?>
                                         </textarea>
                                         <span class="pull-right">
                                             <button style="margin-top:20px;" class="btn btn-primary"
-                                                type="submit" name="save" value="1">
+                                                    type="submit" name="save" value="1">
                                                 Save
                                             </button>
                                         </span>
