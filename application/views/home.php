@@ -283,7 +283,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 					</div>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
-						<?php echo $text_landingpage; ?>
+						<?php if(!empty($text_landingpage)) echo $text_landingpage; ?>
 						<br/><br/>
 						<div class="col-xs-12 btn-wrapper" style="text-align:left">
 							<a href="/merchandise"><span class="red-btn">Buy Now</span></a>
