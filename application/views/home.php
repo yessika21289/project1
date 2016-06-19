@@ -61,26 +61,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        </li>
 	    </ul>
 	</div>
-	<section id="banner" style="position: relative; background-color:#CA292B; z-index:-2; padding:0px;">
+	<section id="banner">
 		
 		<div style="height:30%; position: absolute;">
-			<img src="/assets/img/triangle_ornament.png" height="100%" alt="Ornamen Segitiga Kawandasawolu" />
+			<img src="/assets/img/triangle_ornament.png" height="100%" alt="Kawandasawolu" />
 		</div>
 
-		<div class="col-xs-12" style="position: fixed; z-index:-1; text-align:center; top:30%;">
-		<img src="/assets/img/logojawa2.png" height="100%" alt="Logo Kawandasawolu" />
+		<div id="logo_banner" class="col-xs-12">
+			<img src="/assets/img/logojawa2.png" height="100%" alt="Logo Kawandasawolu" />
 		</div>
-		<div 
+		<div id="clouds_banner"
 		data-top-bottom="left:-200px;"
-		data-bottom-bottom="left:0px;"
-		style="height:40%; position: absolute; bottom: 0; right:0">
-		<img src="/assets/img/clouds.png" height="100%" alt="Ornamen Langit Kawandasawolu" />
+		data-bottom-bottom="left:0px;">
+			<img src="/assets/img/clouds.png" height="100%" alt="Kawandasawolu" />
 		</div>
-		<div 
+		<div id="becak_tugu_banner"
 		data-top-bottom="left:300px;"
-		data-bottom-bottom="left:0px;"
-		style="height: 30%; position: absolute; bottom: 0;">
-		<img src="/assets/img/becak_tugu_pohon.png" height="100%" alt="Becak Tugu Pohon Kawandasawolu" />
+		data-bottom-bottom="left:0px;">
+			<img src="/assets/img/becak_tugu_pohon.png" height="100%" alt="Kawandasawolu" />
 		</div>
 	</section>
 
@@ -367,7 +365,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/slick/slick.min.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
-    skrollr.menu.init(s);
+    var open = false;
+    skrollr.menu.init(s,{
+    	change: function(newHash, newTopPosition){
+    		if(open)
+    			$('.navbar-toggle').click();
+    		else
+    			open = true;
+    	}
+    });
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		$('.navbar-fixed-top').fadeIn('fast');
 	}

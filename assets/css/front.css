@@ -140,6 +140,31 @@ hr.hr-home{
 
 #banner{
 	height: 100%;
+	position: relative;
+	background-color:#CA292B;
+	z-index:-2;
+	padding:0px;
+}
+
+#logo_banner{
+	position: fixed;
+	z-index:-1;
+	text-align:center;
+	top:30%;
+	height: 40%;
+}
+
+#clouds_banner{
+	height: 40%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#becak_tugu_banner{
+	height: 30%;
+	position: absolute;
+	bottom: 0;
 }
 
 #about_us{
@@ -804,6 +829,25 @@ hr.hr-merchandise{
 
 	.grid-video{
 		width: 45%;
+	}
+}
+
+@media (max-width: 400px){
+	#logo_banner{
+		top: 40%;
+		height: auto;
+	}
+
+	#logo_banner img{
+		width: 50%;
+	}
+
+	#clouds_banner{
+		height: 30%;
+	}
+
+	#becak_tugu_banner{
+		height: 20%;
 	}
 }
 
