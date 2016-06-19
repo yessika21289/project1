@@ -18,7 +18,7 @@ class Merchandise extends CI_Controller {
         if (!empty($merchandise)) $data['merchandise'] = $merchandise;
 
         $this->load->model('Merchandise_model');
-        $howtobuy = $this->Merchandise_model->get_howtobuy('faq');
+        $howtobuy = $this->Merchandise_model->get_howtobuy('howtobuy');
         if (!empty($howtobuy)) $data['howtobuy'] = $howtobuy;
 
 		$this->load->view('tag_open',$data);
