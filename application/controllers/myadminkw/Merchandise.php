@@ -199,7 +199,7 @@ class Merchandise extends CI_Controller {
             $data['menu_active'] = 'howtobuy';
 
             $this->load->model('Merchandise_model');
-            $howtobuy = $this->Merchandise_model->get_howtobuy('faq');
+            $howtobuy = $this->Merchandise_model->get_howtobuy('howtobuy');
             if (!empty($howtobuy)) $data['howtobuy'] = $howtobuy;
 
             $save = isset($_POST['save']) ? $_POST['save'] : 0;
@@ -207,12 +207,12 @@ class Merchandise extends CI_Controller {
 
             if($save == 1) {
                 if(!empty($howtobuy)) {
-                    $updated = $this->Merchandise_model->update_howtobuy($data['name'], $_POST, 'faq');
+                    $updated = $this->Merchandise_model->update_howtobuy($data['name'], $_POST, 'howtobuy');
                     if ($updated) $this->session->set_flashdata('update_confirm', 1);
                     redirect('myadminkw/Merchandise/howtobuy');
                 }
                 else {
-                    $added = $this->Merchandise_model->add_howtobuy($data['name'], $_POST, 'faq');
+                    $added = $this->Merchandise_model->add_howtobuy($data['name'], $_POST, 'howtobuy');
                     if ($added) $this->session->set_flashdata('add_confirm', 1);
                     redirect('myadminkw/Merchandise/howtobuy');
                 }
