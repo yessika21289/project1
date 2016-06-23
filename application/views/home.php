@@ -20,6 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		.nav>li>a:hover{
 			background-color: #AF2022 !important;
 		}
+		.flex-direction-nav a{
+			display: none !important;
+		}
 	</style>
 </head>
 <body>
@@ -237,19 +240,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<?php if(!empty($photos)):?>
 				<div id="gallery-item-cont">
-				<?php
-				$count_rand = (count($photos) >= 9) ? 9 : count($photos);
-				$photo_index = array_rand($photos, $count_rand);
-				$photo_index = ($photo_index == 0) ? array(0) : $photo_index;
-				
-				foreach ($photo_index as $key => $index) {
-					$path_section = explode('/',$photos[$index]->photo);
-                    $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
-                ?>
-					<div class="gallery-item-slider" style="background-image:url('/<?php print_r($thumb_path);?>');">
-					</div>
-				<?php }?>
-
+					<ul class="slides">
+					<?php
+					$count_rand = (count($photos) >= 9) ? 9 : count($photos);
+					$photo_index = array_rand($photos, $count_rand);
+					$photo_index = ($photo_index == 0) ? array(0) : $photo_index;
+					
+					foreach ($photo_index as $key => $index) {
+						$path_section = explode('/',$photos[$index]->photo);
+	                    $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
+	                ?>
+						<li>
+							<div class="gallery-item-slider" style="background-image:url('/<?php print_r($thumb_path);?>');"></div> 
+						</li>
+					<?php }?>
+					</ul>
 				</div>
 				<?php else:?>
 					<div style="text-align:center">Tidak ada foto saat ini.</div>
@@ -269,15 +274,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<?php if(!empty($merchandise)):?>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
 						<div id="slideshow" style="margin:auto">
+							<ul class="slides">
 							<?php
 							$count_rand = (count($merchandise) >= 3) ? 3 : count($merchandise);
 							$merchandise_index = array_rand($merchandise, $count_rand);
 							$merchandise_index = ($merchandise_index == 0) ? array(0) : $merchandise_index;
 							foreach ($merchandise_index as $key => $index) {?>
-						    <div style="background-color:#F1F1F1">
-						    	<img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="<?php print_r($merchandise[$index]->title);?>" />
-						    </div>
+								<li>
+								    <div style="background-color:#F1F1F1">
+								    	<img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="<?php print_r($merchandise[$index]->title);?>" />
+								    </div>
+							    </li>
 						    <?php } ?>
+						    </ul>
 						</div>
 					</div>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-8">
@@ -354,24 +363,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	echo link_tag('assets/css/bootstrap.min.v3.6.6.css');
 	echo link_tag('assets/css/bootstrap-ms.css');
 	echo link_tag('assets/css/font-awesome.min.css');
-	echo link_tag('assets/slick/slick.css');
-	echo link_tag('assets/slick/slick-theme.css');
+	echo link_tag('assets/css/flexslider.css');
 ?>
 <script type="text/javascript" src="/assets/js/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
 <script type="text/javascript" src="/assets/js/skrollr.menu.min.js"></script>
-<script type="text/javascript" src="/assets/js/fadeSlideShow-minified.js"></script>
-<script type="text/javascript" src="/assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
-    var open = false;
     skrollr.menu.init(s,{
     	change: function(newHash, newTopPosition){
-    		if(open)
+    		if($('.navbar-collapse').hasClass('in'))
     			$('.navbar-toggle').click();
-    		else
-    			open = true;
     	}
     });
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -417,41 +421,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 	});
 
+	$(window).load(function(){
+		$('#gallery-item-cont').flexslider({
+          animation: "slide",
+          animationSpeed: 400,
+          animationLoop: true,
+          itemWidth: 210,
+          itemMargin: 5,
+          minItems: 1,
+          maxItems: 3,
+          start: function(slider){
+            $('body').removeClass('loading');
+            flexslider = slider;
+          }
+        });
+
+        $('#slideshow').flexslider({
+          animation: "fade",
+          animationSpeed: 400,
+          animationLoop: true,
+          itemWidth: 210,
+          itemMargin: 5,
+          minItems: 1,
+          maxItems: 1,
+          start: function(slider){
+            $('body').removeClass('loading');
+            flexslider = slider;
+          },
+          controlNav: ""
+        });
+	});
+
 	$(document).ready(function(){
 		window.dispatchEvent(new Event('resize'));
-	    $('#slideshow').fadeSlideShow({
-	    	width: 240,
-	    	height: 320,
-	    	allowKeyboardCtrl: false,
-	    	PlayPauseElement: false,
-			NextElement: false,
-			PrevElement: false,
-			ListElement: false
-	    });
-
-	    $('#gallery-item-cont').slick({
-	    	dots: true,
-		    slidesToShow: 3,
-		  	slidesToScroll: 3,
-		 	autoplay: true,
-		  	autoplaySpeed: 2000,
-		  	responsive:[
-		  		{
-		  			breakpoint: 768,
-		  			settings: {
-		  				slidesToShow: 2,
-		  				slidesToScroll: 2
-		  			}
-		  		},
-		  		{
-		  			breakpoint: 450,
-		  			settings: {
-		  				slidesToShow: 1,
-		  				slidesToScroll: 1,
-		  			}
-		  		}
-		  	]
-		});
 	});
 </script>
 </body>
