@@ -116,7 +116,7 @@
                 </ul>
             </li>
 
-            <li class="sub-menu <?php if(in_array($menu_active, array('add_merchandise', 'merchandise', 'howtobuy'))) echo 'active'; ?>">
+            <li class="sub-menu <?php if(in_array($menu_active, array('add_merchandise', 'merchandise', 'howtobuy', 'textlandingpage'))) echo 'active'; ?>">
                 <a href="javascript:" class="">
                     <i class="icon_gift_alt"></i>
                     <span>Merchandise</span>
