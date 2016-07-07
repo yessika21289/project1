@@ -371,7 +371,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/js/skrollr.menu.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript">
-    var s = skrollr.init();
+    var s = skrollr.init({forceHeight: false});
     skrollr.menu.init(s,{
     	change: function(newHash, newTopPosition){
     		if($('.navbar-collapse').hasClass('in'))
@@ -430,6 +430,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           itemMargin: 5,
           minItems: 1,
           maxItems: 3,
+          slideshowSpeed: 3000,
+          pauseOnAction: false,
           start: function(slider){
             $('body').removeClass('loading');
             flexslider = slider;
@@ -444,6 +446,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           itemMargin: 5,
           minItems: 1,
           maxItems: 1,
+          slideshowSpeed: 3000,
+          pauseOnAction: false,
           start: function(slider){
             $('body').removeClass('loading');
             flexslider = slider;

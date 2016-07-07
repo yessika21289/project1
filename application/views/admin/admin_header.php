@@ -57,7 +57,7 @@
         <div class="top-nav notification-row">
                     <span class="username">Welcome,
                         <a href="<?php echo base_url().'myadminkw/Users/add/'.$this->session->userdata('user_id'); ?>">
-                        <?php echo ucfirst($name); ?>
+                        <?php echo $name; ?>
                         </a>
                     !</span>
                     <a href="<?php echo base_url(); ?>myadminkw/logout" class="username pull-right">

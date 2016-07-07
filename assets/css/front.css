@@ -378,7 +378,7 @@ hr.hr-home{
 
 .nav{
 	font-family: 'AvantGarde';
-	letter-spacing: 0.4px;
+	letter-spacing: 0.2px;
 }
 
 .navbar-nav>li>a:focus, .navbar-nav>li>a:hover, .navbar-nav>li.active>a{
