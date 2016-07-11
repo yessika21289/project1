@@ -3,7 +3,7 @@
 		<li><a href="/">Home</a></li>
 		<li class="active">Berita</li>
 	</ol>
-	<h1>Berita Kawandasawolu</h1><br/>
+	<h1>Berita</h1><br/>
 	<?php if(!empty($news)):?>
 	<?php foreach($news as $key=>$news_item){
 		echo '

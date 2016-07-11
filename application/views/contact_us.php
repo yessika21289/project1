@@ -3,7 +3,7 @@
 		<li><a href="/">Home</a></li>
 		<li class="active">Kontak Kami</li>
 	</ol>
-	<h1>Kontak Kawandasawolu</h1>
+	<h1>Kontak</h1>
 	<div class="col-sm-7 col-xs-12" style="margin-bottom:25px;">
 	Kami sangat menantikan Anda. Silakan isi form di bawah ini untuk menghubungi kami.
 	<br/><br/>

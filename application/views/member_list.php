@@ -3,7 +3,7 @@
 		<li><a href="/">Home</a></li>
 		<li class="active">Anggota</li>
 	</ol>
-	<h1>Anggota Kawandasawolu</h1><br/>
+	<h1>Anggota</h1><br/>
 	<?php
 	if(!empty($members)):
 		$tmp_generation = '';

@@ -34,6 +34,7 @@ body{
 .container h1{
 	font-family:'AvantGarde';
 	font-size:60px;
+	word-wrap: break-word;
 }
 
 .skrollr-desktop body {
@@ -773,6 +774,10 @@ hr.hr-merchandise{
 }
 
 @media (max-width: 767px){
+	.container h1{
+		font-size: 48px;
+	}
+
 	.navbar-brand{
 		height: initial !important;
 	}
@@ -852,6 +857,10 @@ hr.hr-merchandise{
 }
 
 @media (max-width: 350px){
+	.container h1{
+		font-size: 40px;
+	}
+
 	.song-desc{
 		width: 100%;
 	}

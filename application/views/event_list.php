@@ -3,7 +3,7 @@
 		<li><a href="/">Home</a></li>
 		<li class="active">Event</li>
 	</ol>
-	<h1>Event Kawandasawolu</h1><br/>
+	<h1>Event</h1><br/>
 	<?php if(!empty($events)):?>
 	<?php foreach($events as $key=>$event_item){
 		echo '

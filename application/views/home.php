@@ -20,6 +20,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		.nav>li>a:hover{
 			background-color: #AF2022 !important;
 		}
+		.flexslider{
+			background-color: transparent !important;
+			border: none !important;
+		}
 		.flex-direction-nav a{
 			display: none !important;
 		}
@@ -239,7 +243,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<?php endif;?>
 				</div>
 				<?php if(!empty($photos)):?>
-				<div id="gallery-item-cont">
+				<div id="gallery-item-cont" class="flexslider">
 					<ul class="slides">
 					<?php
 					$count_rand = (count($photos) >= 9) ? 9 : count($photos);
@@ -251,7 +255,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                    $thumb_path = $path_section[0] . '/' . $path_section[1] . '/' . $path_section[2] . '/thumb/thumb_' . $path_section[3];
 	                ?>
 						<li>
-							<div class="gallery-item-slider" style="background-image:url('/<?php print_r($thumb_path);?>');"></div> 
+							<div class="gallery-item-slider" style="background-image:url('/<?php print_r($thumb_path);?>');"></div>
 						</li>
 					<?php }?>
 					</ul>
@@ -273,7 +277,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<h2>Merchandise</h2>
 					<?php if(!empty($merchandise)):?>
 					<div class="col-xs-12 col-ms-6 col-sm-6 col-md-4">
-						<div id="slideshow" style="margin:auto">
+						<div id="slideshow" class="flexslider" style="margin:auto">
 							<ul class="slides">
 							<?php
 							$count_rand = (count($merchandise) >= 3) ? 3 : count($merchandise);
@@ -281,10 +285,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							$merchandise_index = ($merchandise_index == 0) ? array(0) : $merchandise_index;
 							foreach ($merchandise_index as $key => $index) {?>
 								<li>
-								    <div style="background-color:#F1F1F1">
-								    	<img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="<?php print_r($merchandise[$index]->title);?>" />
-								    </div>
-							    </li>
+									<div style="background-color:#F1F1F1">
+										<img src="/<?php print_r($merchandise[$index]->image);?>" width="100%" border="0" alt="<?php print_r($merchandise[$index]->title);?>" />
+									</div>
+								</li>
 						    <?php } ?>
 						    </ul>
 						</div>
@@ -371,14 +375,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/assets/js/skrollr.menu.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript">
-    var s = skrollr.init({forceHeight: false});
-    skrollr.menu.init(s,{
-    	change: function(newHash, newTopPosition){
-    		if($('.navbar-collapse').hasClass('in'))
-    			$('.navbar-toggle').click();
-    	}
-    });
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    
+    var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if(mobile) {
 		$('.navbar-fixed-top').fadeIn('fast');
 	}
     // Find all YouTube videos
@@ -435,6 +434,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           start: function(slider){
             $('body').removeClass('loading');
             flexslider = slider;
+            var s = skrollr.init({forceHeight: false});
+            skrollr.menu.init(s,{
+		    	change: function(newHash, newTopPosition){
+		    		if($('.navbar-collapse').hasClass('in'))
+		    			$('.navbar-toggle').click();
+		    	}
+		    });
           }
         });
 
@@ -454,10 +460,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           },
           controlNav: ""
         });
-	});
-
-	$(document).ready(function(){
-		window.dispatchEvent(new Event('resize'));
 	});
 </script>
 </body>
